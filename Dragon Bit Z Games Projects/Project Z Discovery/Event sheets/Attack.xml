@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Attack</name>
+    <events>
+        <variable constant="0" name="Punch_Combo" sid="791203047272335" static="0" type="number">0</variable>
+        <event-group description="" sid="241001368107757" title="Base attack7">
+            <sub-events>
+                <event-group description="" sid="259121193730631" title="Weak_Punch8">
+                    <sub-events>
+                        <event-block sid="829461475901475">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="790995898803111" type="Keyboard">
+                                    <param id="0" name="Key">75</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="562794631841917" type="Player">
+                                    <param id="0" name="Instance variable">Super_Sayian</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="590398348204814" type="Player" />
+                                <condition id="2" inverted="1" name="Key is down" sid="556112983152950" type="Keyboard">
+                                    <param id="0" name="Key">69</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="973988262326213" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="820516796015936" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="550601471202519" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="199963398637862" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="528339228856559" type="Player">
+                                    <param id="0" name="Instance variable">Attacking</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="766315654572774" type="Player">
+                                    <param id="0" name="Instance variable">Fireing_Beam</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="708516240264198" type="Player">
+                                    <param id="0" name="Instance variable">NoClip</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="607096681049451">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="253953209490959" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="990510280823015">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="387618932586883" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="758845636641919" type="Player">
+                                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="166109766246985" type="Keyboard">
+                                                    <param id="0" name="Key">69</param>
+                                                </condition>
+                                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="245655065060728" type="Player" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="829055639850734" type="Player">
+                                                    <param id="0" name="Vector X">96</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="307748600458834" type="System">
+                                                    <param id="0" name="Variable">Punch_Combo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="375451462230467">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="868298979221587" type="Player">
+                                                            <param id="0" name="Instance variable">Super_Sayian</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="754543751605034" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="264572053626750" type="Player">
+                                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                                            <param id="1" name="From">0</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="602562973157546" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="190932598940101">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="463589663954203" type="Player">
+                                                            <param id="0" name="Instance variable">Super_Sayian</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="679354627219209" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="421026693332643" type="Player">
+                                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                                            <param id="1" name="From">0</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="393277421887708" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="222831320532368">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="215926983069270" type="Player">
+                                                            <param id="0" name="Instance variable">Super_Sayian</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="183461379911603" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="604651651666515" type="Player">
+                                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                                            <param id="1" name="From">0</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="628888030448957" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="653805412209946">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="313216376382581" type="System">
+                                            <param id="0" name="Variable">Punch_Combo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="137102166528119" type="System">
+                                            <param id="0" name="Variable">Punch_Combo</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="188960226207412">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="730561001070604" type="Keyboard">
+                                    <param id="0" name="Key">75</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="165557072699395" type="Player">
+                                    <param id="0" name="Instance variable">Super_Sayian</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" name="Is mirrored" sid="989591688808123" type="Player" />
+                                <condition id="2" inverted="1" name="Key is down" sid="198254253712607" type="Keyboard">
+                                    <param id="0" name="Key">69</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="546655732838264" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="640802208058822" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="612323948544986" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="708514651883361" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="671737530590018" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="163446244330248" type="Player">
+                                    <param id="0" name="Instance variable">Attacking</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="591898847290022" type="Player">
+                                    <param id="0" name="Instance variable">Fireing_Beam</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="871800950320131" type="Player">
+                                    <param id="0" name="Instance variable">NoClip</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="936940151304061">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="357826387479217" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="379366165490395">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="121294169203844" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="278647916702798" type="Player">
+                                                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="296810304910998" type="Keyboard">
+                                                    <param id="0" name="Key">69</param>
+                                                </condition>
+                                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="467115591010707" type="Player" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="214812490439480" type="Player">
+                                                    <param id="0" name="Vector X">-96</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="203385194391455" type="System">
+                                                    <param id="0" name="Variable">Punch_Combo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="350872650471053">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="795388603891389" type="Player">
+                                                            <param id="0" name="Instance variable">Super_Sayian</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="712241291914509" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="200416142892194" type="Player">
+                                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                                            <param id="1" name="From">0</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="523017414970567" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="406056341689833">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="203639392753336" type="Player">
+                                                            <param id="0" name="Instance variable">Super_Sayian</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="216132331664624" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="349170698343550" type="Player">
+                                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                                            <param id="1" name="From">0</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="187335721916389" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="663559915004035">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="192576394654133" type="Player">
+                                                            <param id="0" name="Instance variable">Super_Sayian</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-14" name="Compare variable" sid="496004570413335" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="800557381366063" type="Player">
+                                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                                            <param id="1" name="From">0</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="566122617756887" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="103437021049597">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="525325852074967" type="System">
+                                            <param id="0" name="Variable">Punch_Combo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="348177565781174" type="System">
+                                            <param id="0" name="Variable">Punch_Combo</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="112889187169690" title="Animation_event7">
+            <sub-events>
+                <event-block sid="375447322091076">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="744684880864210" type="Player">
+                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="469647259043564" type="Player">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="406360512653187">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="379686250594223" type="Player">
+                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="308238232447617" type="Player">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="799756626622361">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="129753351018869" type="Player">
+                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="650896339697262" type="Player">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="157711228776421">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="239147752924950" type="Player">
+                            <param id="0" name="Animation">&quot;KickSSJ1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="384073307531196" type="Player">
+                            <param id="0" name="Animation">&quot;JumpSSJ1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="267264354792980">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="288689117948578" type="Player">
+                            <param id="0" name="Animation">&quot;RightPunchSSJ1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="156216992707268" type="Player">
+                            <param id="0" name="Animation">&quot;JumpSSJ1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="781563675536307">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="878544993899434" type="Player">
+                            <param id="0" name="Animation">&quot;LeftPunchSSJ1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="934292280633773" type="Player">
+                            <param id="0" name="Animation">&quot;JumpSSJ1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="271655550883028">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="314626823753874" type="Player">
+                            <param id="0" name="Animation">&quot;KickSSJ2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="558095648810906" type="Player">
+                            <param id="0" name="Animation">&quot;JumpSSJ2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="516033608788421">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="345124756285164" type="Player">
+                            <param id="0" name="Animation">&quot;RightPunchSSJ2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="981361071177396" type="Player">
+                            <param id="0" name="Animation">&quot;JumpSSJ2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="360101494179753">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="659842521315153" type="Player">
+                            <param id="0" name="Animation">&quot;LeftPunchSSJ2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="187780382562511" type="Player">
+                            <param id="0" name="Animation">&quot;JumpSSJ2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
