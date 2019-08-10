@@ -90,7 +90,74 @@
                 <action behavior="LineOfSight" id="1" name="Set cone of view" sid="774321036150294" type="RR_Soldier_NPC">
                     <param id="0" name="Cone of view">80</param>
                 </action>
+                <action id="-10" name="Set value" sid="922086550638155" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">LifeBar</param>
+                    <param id="1" name="Value">4</param>
+                </action>
+                <action id="-3" name="Create object" sid="434313904800066" type="System">
+                    <param id="0" name="Object to create">NPClifeBar</param>
+                    <param id="1" name="Layer">NPC.LayerName</param>
+                    <param id="2" name="X">RR_Soldier_NPC.ImagePointX(1)</param>
+                    <param id="3" name="Y">RR_Soldier_NPC.ImagePointY(1)</param>
+                </action>
             </actions>
+        </event-block>
+        <event-block sid="353553801541733">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="251913175464028" type="System" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="290808539337919" type="NPClifeBar">
+                    <param id="0" name="X">RR_Soldier_NPC.ImagePointX(1)</param>
+                </action>
+                <action id="-2" name="Set Y" sid="178314917047587" type="NPClifeBar">
+                    <param id="0" name="Y">RR_Soldier_NPC.ImagePointY(1)</param>
+                </action>
+                <action id="5" name="Set frame" sid="969478540193468" type="NPClifeBar">
+                    <param id="0" name="Frame number">RR_Soldier_NPC.LifeBar</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="418115715174309">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="369523365583215" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">LifeBar</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="543301155075666" type="NPClifeBar" />
+                <action id="-9" name="Destroy" sid="920927887225744" type="RR_Soldier_NPC" />
+            </actions>
+        </event-block>
+        <event-block any="1" sid="572761897531983">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="349337566525947" type="Player">
+                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="351983276884154" type="Player">
+                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block any="1" sid="434650745532983">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="205000428177020" type="System">
+                            <param id="0" name="Variable">Punch_Combo</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="712684076477577" type="RR_Soldier_NPC">
+                            <param id="0" name="Instance variable">LifeBar</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
