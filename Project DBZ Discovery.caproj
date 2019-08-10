@@ -27,6 +27,7 @@
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
@@ -476,14 +477,20 @@
                                         <animation framecount="1" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="573711590448875" speed="5">
                                             <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
                                         </animation>
-                                        <animation framecount="1" loop="0" name="Socked" pingpong="0" repeatcount="1" repeatto="0" sid="339058760288477" speed="7">
+                                        <animation framecount="6" loop="0" name="Socked" pingpong="0" repeatcount="2" repeatto="3" sid="339058760288477" speed="16">
+                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
+                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
+                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
+                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
+                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
                                             <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
                                         </animation>
-                                        <animation framecount="2" loop="0" name="Preparing_Fire" pingpong="0" repeatcount="1" repeatto="0" sid="192637356923236" speed="10">
-                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
+                                        <animation framecount="1" loop="0" name="Preparing_Fire" pingpong="0" repeatcount="1" repeatto="0" sid="192637356923236" speed="10">
                                             <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
                                         </animation>
-                                        <animation framecount="2" loop="0" name="Fireing" pingpong="0" repeatcount="1" repeatto="0" sid="438920705469922" speed="10">
+                                        <animation framecount="4" loop="0" name="Fireing" pingpong="0" repeatcount="2" repeatto="0" sid="438920705469922" speed="10">
+                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
+                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
                                             <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
                                             <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
                                         </animation>
@@ -3525,6 +3532,19 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Bullete" sid="457111287680681">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="966282775079447">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="128684056869236" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Player" plugin-id="Sprite" sid="705406461379555">
@@ -3540,7 +3560,6 @@
                 <member>Kid_Goku</member>
                 <member>Kid_Goku_Earily</member>
                 <member>Krillin_Middle</member>
-                <member>RR_Soldier_NPC</member>
                 <member>Shenkai</member>
                 <member>Teen_Gohan</member>
                 <member>Tien_Middel</member>
@@ -3635,6 +3654,19 @@
                 <member>Sandbag</member>
             </members>
         </family>
+        <family name="NPC" plugin-id="Sprite" sid="792101950124305">
+            <members>
+                <member>RR_Soldier_NPC</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Platform" sid="496012860799174">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="LineOfSight" sid="586771049730274">
+                    <behavior id="LOS" />
+                </behavior-type>
+            </behaviors>
+        </family>
     </families>
     <layout-folder>
         <layout>Intro.xml</layout>
@@ -3663,6 +3695,7 @@
         <event-sheet>Full Screen Option.xml</event-sheet>
         <event-sheet>Clouds.xml</event-sheet>
         <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Gun_Soldier_Npc.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />
@@ -3733,6 +3766,7 @@
         <file name="throw2.ogg" />
         <file name="updated menu theme.ogg" />
         <file name="you got a item.ogg" />
+        <file name="Gun sound.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="21 さよなら戦士たち.ogg" />

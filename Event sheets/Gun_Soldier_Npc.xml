@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Gun_Soldier_Npc</name>
+    <events>
+        <event-block sid="912220197484940">
+            <conditions>
+                <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="652535591447098" type="RR_Soldier_NPC">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="953763857022816" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="480498562622663" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="316997226053993">
+            <conditions>
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="301765256776213" type="RR_Soldier_NPC">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="634262330376231" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="511710108688924" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Socked&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="593461629640969">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="318949968925194" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="801147464069028" type="RR_Soldier_NPC">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="957874380696785" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="934179435511701" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Preparing_Fire&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="135760531836017" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="4" name="Set animation" sid="395229595577350" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Fireing&quot;</param>
+                    <param id="1" name="From">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="728604057912159" type="RR_Soldier_NPC">
+                    <param id="0" name="Object">Bullete</param>
+                    <param id="1" name="Layer">8</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="0" name="Play" sid="739242550003303" type="Audio">
+                    <param id="0" name="Audio file">Gun sound</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-9</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-16" name="Wait" sid="660715502012197" type="System">
+                    <param id="0" name="Seconds">0.4</param>
+                </action>
+                <action id="4" name="Set animation" sid="123681178461494" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Fireing&quot;</param>
+                    <param id="1" name="From">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="433593517379670" type="RR_Soldier_NPC">
+                    <param id="0" name="Object">Bullete</param>
+                    <param id="1" name="Layer">8</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="0" name="Play" sid="175783158578324" type="Audio">
+                    <param id="0" name="Audio file">Gun sound</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-9</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="806081193986332">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="253642207151487" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="LineOfSight" id="0" name="Set range" sid="728126688430434" type="RR_Soldier_NPC">
+                    <param id="0" name="Range">50</param>
+                </action>
+                <action behavior="LineOfSight" id="1" name="Set cone of view" sid="774321036150294" type="RR_Soldier_NPC">
+                    <param id="0" name="Cone of view">50</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
