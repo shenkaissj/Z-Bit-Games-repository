@@ -6,7 +6,7 @@
         <event-block sid="912220197484940">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="985508435084694" type="System">
-                    <param id="0" name="Interval (seconds)">1</param>
+                    <param id="0" name="Interval (seconds)">3</param>
                 </condition>
                 <condition id="-7" name="Compare instance variable" sid="335939758061335" type="RR_Soldier_NPC">
                     <param id="0" name="Instance variable">LifeBar</param>
@@ -28,7 +28,7 @@
         <event-block sid="593461629640969">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="318949968925194" type="System">
-                    <param id="0" name="Interval (seconds)">2</param>
+                    <param id="0" name="Interval (seconds)">1</param>
                 </condition>
                 <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="801147464069028" type="RR_Soldier_NPC">
                     <param id="0" name="Object">Player</param>
@@ -47,7 +47,7 @@
                     <param id="1" name="From">1</param>
                 </action>
                 <action id="-16" name="Wait" sid="135760531836017" type="System">
-                    <param id="0" name="Seconds">0.2</param>
+                    <param id="0" name="Seconds">0.1</param>
                 </action>
                 <action id="4" name="Set animation" sid="395229595577350" type="RR_Soldier_NPC">
                     <param id="0" name="Animation">&quot;Fireing&quot;</param>
@@ -56,7 +56,7 @@
                 <action id="0" name="Spawn another object" sid="728604057912159" type="RR_Soldier_NPC">
                     <param id="0" name="Object">Bullete</param>
                     <param id="1" name="Layer">8</param>
-                    <param id="2" name="Image point">1</param>
+                    <param id="2" name="Image point">-2</param>
                 </action>
                 <action id="0" name="Play" sid="739242550003303" type="Audio">
                     <param id="0" name="Audio file">Gun sound</param>
@@ -65,16 +65,16 @@
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
                 <action id="-16" name="Wait" sid="660715502012197" type="System">
-                    <param id="0" name="Seconds">0.3</param>
+                    <param id="0" name="Seconds">0.2</param>
                 </action>
                 <action id="4" name="Set animation" sid="123681178461494" type="RR_Soldier_NPC">
                     <param id="0" name="Animation">&quot;Fireing&quot;</param>
                     <param id="1" name="From">0</param>
                 </action>
-                <action id="0" name="Spawn another object" sid="433593517379670" type="RR_Soldier_NPC">
+                <action id="0" name="Spawn another object" sid="676210224270468" type="RR_Soldier_NPC">
                     <param id="0" name="Object">Bullete</param>
                     <param id="1" name="Layer">8</param>
-                    <param id="2" name="Image point">1</param>
+                    <param id="2" name="Image point">-2</param>
                 </action>
                 <action id="0" name="Play" sid="175783158578324" type="Audio">
                     <param id="0" name="Audio file">Gun sound</param>
@@ -135,6 +135,16 @@
                             <param id="1" name="Layer">NPC.LayerName</param>
                             <param id="2" name="X">RR_Soldier_NPC.ImagePointX(1)</param>
                             <param id="3" name="Y">RR_Soldier_NPC.ImagePointY(1)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="601697775982283" type="System">
+                            <param id="0" name="Object to create">HittingEffect</param>
+                            <param id="1" name="Layer">NPC.LayerName</param>
+                            <param id="2" name="X">RR_Soldier_NPC.ImagePointX(-1)</param>
+                            <param id="3" name="Y">RR_Soldier_NPC.ImagePointY(-1)</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="970628632873079" type="HittingEffect">
+                            <param id="0" name="Pin to">RR_Soldier_NPC</param>
+                            <param id="1" name="Mode">0</param>
                         </action>
                     </actions>
                 </event-block>
