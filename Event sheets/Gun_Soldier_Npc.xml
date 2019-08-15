@@ -17,6 +17,9 @@
                     <param id="2" name="Value">0</param>
                 </condition>
                 <condition id="-1" name="Every tick" sid="229953231891370" type="System" />
+                <condition id="2" inverted="1" name="Is playing" sid="914851341415072" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Defeated&quot;</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="4" name="Set animation" sid="480498562622663" type="RR_Soldier_NPC">
@@ -89,21 +92,40 @@
                 <condition id="-2" name="On start of layout" sid="253642207151487" type="System" />
             </conditions>
             <actions>
-                <action behavior="LineOfSight" id="0" name="Set range" sid="728126688430434" type="RR_Soldier_NPC">
+                <action id="-3" name="Create object" sid="434313904800066" type="System">
+                    <param id="0" name="Object to create">RR_Soldier_NPC</param>
+                    <param id="1" name="Layer">NPC.LayerName</param>
+                    <param id="2" name="X">176</param>
+                    <param id="3" name="Y">128</param>
+                </action>
+                <action id="-3" name="Create object" sid="234269004437714" type="System">
+                    <param id="0" name="Object to create">RR_Soldier_NPC</param>
+                    <param id="1" name="Layer">NPC.LayerName</param>
+                    <param id="2" name="X">120</param>
+                    <param id="3" name="Y">208</param>
+                </action>
+                <action id="-3" name="Create object" sid="704369728891521" type="System">
+                    <param id="0" name="Object to create">RR_Soldier_NPC</param>
+                    <param id="1" name="Layer">NPC.LayerName</param>
+                    <param id="2" name="X">312</param>
+                    <param id="3" name="Y">160</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="995133003083268">
+            <conditions>
+                <condition id="-18" name="On created" sid="573243792947500" type="RR_Soldier_NPC" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="932679362441913" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">LifeBar</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+                <action behavior="LineOfSight" id="0" name="Set range" sid="187031672785375" type="RR_Soldier_NPC">
                     <param id="0" name="Range">100</param>
                 </action>
-                <action behavior="LineOfSight" id="1" name="Set cone of view" sid="774321036150294" type="RR_Soldier_NPC">
+                <action behavior="LineOfSight" id="1" name="Set cone of view" sid="590706463708365" type="RR_Soldier_NPC">
                     <param id="0" name="Cone of view">80</param>
-                </action>
-                <action id="-10" name="Set value" sid="922086550638155" type="RR_Soldier_NPC">
-                    <param id="0" name="Instance variable">LifeBar</param>
-                    <param id="1" name="Value">4</param>
-                </action>
-                <action id="-3" name="Create object" sid="434313904800066" type="System">
-                    <param id="0" name="Object to create">NPClifeBar</param>
-                    <param id="1" name="Layer">NPC.LayerName</param>
-                    <param id="2" name="X">RR_Soldier_NPC.ImagePointX(1)</param>
-                    <param id="3" name="Y">RR_Soldier_NPC.ImagePointY(1)</param>
                 </action>
             </actions>
         </event-block>
@@ -123,30 +145,41 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="418115715174309">
+        <event-block sid="246158994550953">
             <conditions>
-                <condition id="-7" name="Compare instance variable" sid="369523365583215" type="RR_Soldier_NPC">
+                <condition id="-11" name="For Each" sid="839895272082420" type="System">
+                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="940138971286114">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="337949833549799" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="412974959422583" type="System">
+                            <param id="0" name="Object to create">NPClifeBar</param>
+                            <param id="1" name="Layer">NPC.LayerName</param>
+                            <param id="2" name="X">RR_Soldier_NPC.ImagePointX(1)</param>
+                            <param id="3" name="Y">RR_Soldier_NPC.ImagePointY(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="530967765117107">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="960304903655282" type="RR_Soldier_NPC">
                     <param id="0" name="Instance variable">LifeBar</param>
                     <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
+                    <param id="2" name="Value">1</param>
                 </condition>
-                <condition id="-4" name="Trigger once while true" sid="720195223857650" type="System" />
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="543301155075666" type="NPClifeBar" />
                 <action id="4" name="Set animation" sid="125961903817416" type="RR_Soldier_NPC">
                     <param id="0" name="Animation">&quot;Defeated&quot;</param>
                     <param id="1" name="From">1</param>
-                </action>
-                <action id="0" name="Play" sid="155728506642344" type="Audio">
-                    <param id="0" name="Audio file">strongpunch</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">-12</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-                <action id="-10" name="Add to" sid="694307743956628" type="System">
-                    <param id="0" name="Variable">Ki</param>
-                    <param id="1" name="Value">3.200</param>
                 </action>
             </actions>
         </event-block>
