@@ -25,10 +25,54 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="302357659682829">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="235155455817351" type="System">
+                    <param id="0" name="Interval (seconds)">3</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="608240140803350" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">LifeBar</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="273271827821072" type="RR_Soldier_NPC">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="2" inverted="1" name="Is playing" sid="718386436494709" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Defeated&quot;</param>
+                </condition>
+                <condition id="2" inverted="1" name="Is playing" sid="360607112846707" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                </condition>
+                <condition id="2" inverted="1" name="Is playing" sid="228572798060371" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Fireing&quot;</param>
+                </condition>
+                <condition id="2" inverted="1" name="Is playing" sid="739870537865776" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Preparing_Fire&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="499156593714453" type="RR_Soldier_NPC">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="659641000560628" type="System">
+                    <param id="0" name="Seconds">3.1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="688863646914150" type="RR_Soldier_NPC">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="318553100617311" type="System">
+                    <param id="0" name="Seconds">5.1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="577830846492964" type="RR_Soldier_NPC">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="593461629640969">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="318949968925194" type="System">
-                    <param id="0" name="Interval (seconds)">1</param>
+                    <param id="0" name="Interval (seconds)">1.2</param>
                 </condition>
                 <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="801147464069028" type="RR_Soldier_NPC">
                     <param id="0" name="Object">Player</param>
@@ -47,7 +91,7 @@
                     <param id="1" name="From">1</param>
                 </action>
                 <action id="-16" name="Wait" sid="135760531836017" type="System">
-                    <param id="0" name="Seconds">0.1</param>
+                    <param id="0" name="Seconds">0.2</param>
                 </action>
                 <action id="4" name="Set animation" sid="395229595577350" type="RR_Soldier_NPC">
                     <param id="0" name="Animation">&quot;Fireing&quot;</param>
@@ -56,7 +100,7 @@
                 <action id="0" name="Spawn another object" sid="728604057912159" type="RR_Soldier_NPC">
                     <param id="0" name="Object">Bullete</param>
                     <param id="1" name="Layer">8</param>
-                    <param id="2" name="Image point">-2</param>
+                    <param id="2" name="Image point">-3</param>
                 </action>
                 <action id="0" name="Play" sid="739242550003303" type="Audio">
                     <param id="0" name="Audio file">Gun sound</param>
@@ -65,7 +109,7 @@
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
                 <action id="-16" name="Wait" sid="660715502012197" type="System">
-                    <param id="0" name="Seconds">0.2</param>
+                    <param id="0" name="Seconds">0.3</param>
                 </action>
                 <action id="4" name="Set animation" sid="123681178461494" type="RR_Soldier_NPC">
                     <param id="0" name="Animation">&quot;Fireing&quot;</param>
@@ -74,7 +118,7 @@
                 <action id="0" name="Spawn another object" sid="676210224270468" type="RR_Soldier_NPC">
                     <param id="0" name="Object">Bullete</param>
                     <param id="1" name="Layer">8</param>
-                    <param id="2" name="Image point">-2</param>
+                    <param id="2" name="Image point">-3</param>
                 </action>
                 <action id="0" name="Play" sid="175783158578324" type="Audio">
                     <param id="0" name="Audio file">Gun sound</param>
@@ -83,6 +127,24 @@
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="653596396111293">
+            <conditions>
+                <condition id="-18" name="On created" sid="982611794126923" type="Bullete" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="342013081027951">
+                    <conditions>
+                        <condition id="7" name="Is mirrored" sid="245462362410105" type="RR_Soldier_NPC" />
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="579047050981249" type="Bullete">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="995133003083268">
             <conditions>
