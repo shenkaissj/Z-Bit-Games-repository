@@ -30,12 +30,6 @@
                 <condition id="7" name="Is mirrored" sid="801147464069028" type="RR_Soldier_NPC" />
             </conditions>
             <actions>
-                <action behavior="LineOfSight" id="0" name="Set range" sid="989422580951591" type="RR_Soldier_NPC">
-                    <param id="0" name="Range">-100</param>
-                </action>
-                <action behavior="LineOfSight" id="1" name="Set cone of view" sid="419832556838913" type="RR_Soldier_NPC">
-                    <param id="0" name="Cone of view">-80</param>
-                </action>
                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="489918056246984" type="Bullete">
                     <param id="0" name="Angle">180</param>
                 </action>
@@ -46,12 +40,6 @@
                 <condition id="7" inverted="1" name="Is mirrored" sid="802733512590732" type="RR_Soldier_NPC" />
             </conditions>
             <actions>
-                <action behavior="LineOfSight" id="0" name="Set range" sid="139620418395092" type="RR_Soldier_NPC">
-                    <param id="0" name="Range">100</param>
-                </action>
-                <action behavior="LineOfSight" id="1" name="Set cone of view" sid="964123728015735" type="RR_Soldier_NPC">
-                    <param id="0" name="Cone of view">80</param>
-                </action>
                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="836331744351041" type="Bullete">
                     <param id="0" name="Angle">0</param>
                 </action>
@@ -59,8 +47,8 @@
         </event-block>
         <event-block sid="904387971969379">
             <conditions>
-                <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="169550764581402" type="RR_Soldier_NPC">
-                    <param id="0" name="Object">Player</param>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="169550764581402" type="Player">
+                    <param id="0" name="Object">Alert_Collision</param>
                 </condition>
                 <condition id="-1" name="Every tick" sid="786858555097363" type="System" />
             </conditions>
@@ -91,8 +79,8 @@
         </event-block>
         <event-block sid="388316069566825">
             <conditions>
-                <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="123588452241387" type="RR_Soldier_NPC">
-                    <param id="0" name="Object">Player</param>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="573207588994830" type="Player">
+                    <param id="0" name="Object">Alert_Collision</param>
                 </condition>
                 <condition id="-1" name="Every tick" sid="403651382968861" type="System" />
             </conditions>
@@ -126,8 +114,8 @@
                 <condition id="-6" name="Every X seconds" sid="512158970324471" type="System">
                     <param id="0" name="Interval (seconds)">1.2</param>
                 </condition>
-                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="847282330482367" type="RR_Soldier_NPC">
-                    <param id="0" name="Object">Player</param>
+                <condition id="1" name="Is overlapping another object" sid="597266501431864" type="Player">
+                    <param id="0" name="Object">Alert_Collision</param>
                 </condition>
                 <condition id="2" inverted="1" name="Is playing" sid="150863857633154" type="RR_Soldier_NPC">
                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
@@ -137,8 +125,8 @@
             <sub-events>
                 <event-block sid="864581562728860">
                     <conditions>
-                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="143367140799199" type="RR_Soldier_NPC">
-                            <param id="0" name="Object">Player</param>
+                        <condition id="1" name="Is overlapping another object" sid="256834533036442" type="Player">
+                            <param id="0" name="Object">Alert_Collision</param>
                         </condition>
                         <condition id="1" inverted="1" name="Is overlapping another object" sid="887670653789768" type="Punch_Collision">
                             <param id="0" name="Object">RR_Soldier_NPC</param>
@@ -224,15 +212,13 @@
                             <param id="2" name="X">RR_Soldier_NPC.ImagePointX(1)</param>
                             <param id="3" name="Y">RR_Soldier_NPC.ImagePointY(1)</param>
                         </action>
-                        <action id="-3" name="Create object" sid="601697775982283" type="System">
-                            <param id="0" name="Object to create">HittingEffect</param>
-                            <param id="1" name="Layer">NPC.LayerName</param>
-                            <param id="2" name="X">RR_Soldier_NPC.ImagePointX(-1)</param>
-                            <param id="3" name="Y">RR_Soldier_NPC.ImagePointY(-1)</param>
-                        </action>
                         <action behavior="Pin" id="0" name="Pin to object" sid="970628632873079" type="HittingEffect">
                             <param id="0" name="Pin to">RR_Soldier_NPC</param>
                             <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="934541073760714" type="HittingEffect">
+                            <param id="0" name="Pin to">Alert_Collision</param>
+                            <param id="1" name="Mode">1</param>
                         </action>
                     </actions>
                 </event-block>
