@@ -315,6 +315,31 @@
                                                         </action>
                                                     </actions>
                                                 </event-block>
+                                                <event-block sid="357156828801037">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="263216628579096" type="Sandbag">
+                                                            <param id="0" name="Instance variable">Hit_Combos</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="580256108441642" type="HittingEffect">
+                                                            <param id="0" name="Animation">&quot;Hit&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="262037883805847" type="Sandbag">
+                                                            <param id="0" name="Animation">&quot;HurtLeft&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="964299776238590" type="Audio">
+                                                            <param id="0" name="Audio file">hit3</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-12</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
                                                 <event-block sid="609050629373275">
                                                     <conditions>
                                                         <condition id="-7" name="Compare instance variable" sid="984322385315586" type="Sandbag">
@@ -410,6 +435,113 @@
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="493595535552946" title="Beam">
+            <sub-events>
+                <event-block sid="585009848901430">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="746393732019269" type="Beams">
+                            <param id="0" name="Object">Sandbag</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="120324608360213" type="Player" />
+                        <condition id="2" inverted="1" name="Is playing" sid="688617938544756" type="Player">
+                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="950841616323908" type="Player">
+                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="401570872670103">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="137435200227721" type="System">
+                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="248883549770410">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="237317096642462" type="Beams">
+                                            <param id="0" name="Object">Sandbag</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="243395062848378" type="Sandbag">
+                                            <param id="0" name="Vector X">-140</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="674326256579346" type="SmallExplisonEffect">
+                                            <param id="0" name="Animation">&quot;Hit&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="839283117828787" type="Sandbag">
+                                            <param id="0" name="Animation">&quot;HurtLeft&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="422132354959297" type="Audio">
+                                            <param id="0" name="Audio file">small explosion 2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-19</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="274337790729395">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="856644427135807" type="Player" />
+                        <condition id="2" inverted="1" name="Is playing" sid="944907807477830" type="Player">
+                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="367018951065865" type="Player">
+                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="237544438615564">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="394271812883871" type="System">
+                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="584988450366016">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="770838999184752" type="Beams">
+                                            <param id="0" name="Object">Sandbag</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="439240006896588" type="Sandbag">
+                                            <param id="0" name="Vector X">140</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="937541284940403" type="SmallExplisonEffect">
+                                            <param id="0" name="Animation">&quot;Hit&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="433422221651822" type="Sandbag">
+                                            <param id="0" name="Animation">&quot;HurtLeft&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="172376164384528" type="Audio">
+                                            <param id="0" name="Audio file">small explosion 2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-19</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
