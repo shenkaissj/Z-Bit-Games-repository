@@ -4,6 +4,644 @@
     <name>Attack</name>
     <events>
         <variable constant="0" name="Punch_Combo" sid="791203047272335" static="0" type="number">0</variable>
+        <event-group description="" sid="898187696400693" title="SSJ3 attack">
+            <sub-events>
+                <event-group description="" sid="553882782374044" title="Weak_Punch11">
+                    <sub-events>
+                        <event-block sid="536047849731312">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="587426152206515" type="Keyboard">
+                                    <param id="0" name="Key">75</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="331351417588277" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="386954171753263" type="Player" />
+                                <condition id="2" inverted="1" name="Key is down" sid="200422468691671" type="Keyboard">
+                                    <param id="0" name="Key">69</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="288555793307611" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="320283616458589" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="536891206492953" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="831512363401891" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="771954192441306" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="497736858190207" type="Player">
+                                    <param id="0" name="Instance variable">Attacking</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="413556609725609" type="Player">
+                                    <param id="0" name="Instance variable">Fireing_Beam</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="551997917281480" type="Player">
+                                    <param id="0" name="Instance variable">NoClip</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="520695517829142" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="132730513140870">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="897536085502259" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="824983940356390">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="373699324138545" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="997556412002933" type="Player">
+                                                    <param id="0" name="Animation">&quot;WalkSSJ2&quot;</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="991932784773038" type="Keyboard">
+                                                    <param id="0" name="Key">69</param>
+                                                </condition>
+                                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="556537121383234" type="Player" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="478377112031378" type="Player">
+                                                    <param id="0" name="Vector X">96</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="645726684939526" type="System">
+                                                    <param id="0" name="Variable">Punch_Combo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="247832423644850">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="356794779291592" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="965577831774088" type="Player">
+                                                            <param id="0" name="Instance variable">SSJ</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="492914949085668" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="915089414287696" type="Player">
+                                                            <param id="0" name="Animation">&quot;RightPunchSSJ3&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block any="1" sid="196333099705759">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="626992277504912" type="Player">
+                                                                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="532662457308654">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="114008401896873" type="System">
+                                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                                            <param id="1" name="Comparison">5</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-12" name="Subtract from" sid="727676260255353" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Instance variable">LifeBar</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="222663363928706" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="306354592190128" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Vector X">120</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="128318458007284" type="Audio">
+                                                                            <param id="0" name="Audio file">hit3</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-12</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="282915187727817" type="HittingEffect">
+                                                                            <param id="0" name="Animation">&quot;Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="934452067347790" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="577616668291459">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="480813291907848" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="218266172965779" type="Player">
+                                                            <param id="0" name="Instance variable">SSJ</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="875105871209683" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="788403542470164" type="Player">
+                                                            <param id="0" name="Animation">&quot;LeftPunchSSJ3&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block any="1" sid="394800625109669">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="806453820795755" type="Player">
+                                                                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="354822412379041">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="962451113201710" type="System">
+                                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                                            <param id="1" name="Comparison">5</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-12" name="Subtract from" sid="188075355215851" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Instance variable">LifeBar</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="618697244358585" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="624024753482234" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Vector X">120</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="994802434976973" type="Audio">
+                                                                            <param id="0" name="Audio file">hit3</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-12</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="528953706163982" type="HittingEffect">
+                                                                            <param id="0" name="Animation">&quot;Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="666691643327266" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="186952290954977">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="910308515221096" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="295306873857963" type="Player">
+                                                            <param id="0" name="Instance variable">SSJ</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="923269712655226" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="330873332190444" type="Player">
+                                                            <param id="0" name="Animation">&quot;KickSSJ3&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block any="1" sid="567583893386941">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="124870554143229" type="Player">
+                                                                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="409643428501712">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="607366861384578" type="System">
+                                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                                            <param id="1" name="Comparison">5</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-12" name="Subtract from" sid="214389552817507" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Instance variable">LifeBar</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="413371533212728" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="877776590149687" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Vector X">120</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="918910569694569" type="Audio">
+                                                                            <param id="0" name="Audio file">hit3</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-12</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="128854644311231" type="HittingEffect">
+                                                                            <param id="0" name="Animation">&quot;Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="238092359852708" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block any="1" sid="729696240053350">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="158213588717923" type="System">
+                                            <param id="0" name="Variable">Punch_Combo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="327584721611776" type="System">
+                                            <param id="0" name="Variable">Punch_Combo</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="982740496855242">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="761343906956611" type="Keyboard">
+                                    <param id="0" name="Key">75</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="870390512582913" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="7" name="Is mirrored" sid="509050439644386" type="Player" />
+                                <condition id="2" inverted="1" name="Key is down" sid="156675418747981" type="Keyboard">
+                                    <param id="0" name="Key">69</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="520281744811478" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="780441151839484" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="744918657559483" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="662149020986824" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="139009996716646" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="339437421606415" type="Player">
+                                    <param id="0" name="Instance variable">Attacking</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="613805291297200" type="Player">
+                                    <param id="0" name="Instance variable">Fireing_Beam</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="970036106808246" type="Player">
+                                    <param id="0" name="Instance variable">NoClip</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="710394394094164" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="211834683411661">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="950529808820463" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="447879422151169">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="173786445486946" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="583700137639449" type="Player">
+                                                    <param id="0" name="Animation">&quot;WalkSSJ2&quot;</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="679401561284560" type="Keyboard">
+                                                    <param id="0" name="Key">69</param>
+                                                </condition>
+                                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="114227903281581" type="Player" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="971522984988345" type="Player">
+                                                    <param id="0" name="Vector X">-96</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="924585929919878" type="System">
+                                                    <param id="0" name="Variable">Punch_Combo</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="483793958269211">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="654346254971220" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="162307581041983" type="Player">
+                                                            <param id="0" name="Instance variable">SSJ</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="490153364443085" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="755324873861413" type="Player">
+                                                            <param id="0" name="Animation">&quot;RightPunchSSJ3&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block any="1" sid="384598942705937">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="122941633811843" type="Player">
+                                                                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="575923374695189">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="370730371261519" type="System">
+                                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                                            <param id="1" name="Comparison">5</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-12" name="Subtract from" sid="601614458269225" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Instance variable">LifeBar</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="845696437429941" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="132780674863992" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Vector X">-120</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="461543202486644" type="Audio">
+                                                                            <param id="0" name="Audio file">hit3</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-12</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="929197419919411" type="HittingEffect">
+                                                                            <param id="0" name="Animation">&quot;Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="268223847580179" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="State">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="845731114348688">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="342111913426447" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="685075362534329" type="Player">
+                                                            <param id="0" name="Instance variable">SSJ</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="632121641188079" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="973688398670347" type="Player">
+                                                            <param id="0" name="Animation">&quot;LeftPunchSSJ3&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block any="1" sid="366356352279537">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="106723915114217" type="Player">
+                                                                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="136195721620922">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="153366207066989" type="System">
+                                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                                            <param id="1" name="Comparison">5</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-12" name="Subtract from" sid="114151398265507" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Instance variable">LifeBar</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="763858000187645" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="842232952222566" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Vector X">-120</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="372242141093027" type="Audio">
+                                                                            <param id="0" name="Audio file">hit3</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-12</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="212538012508760" type="HittingEffect">
+                                                                            <param id="0" name="Animation">&quot;Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="865565174035748" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="State">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="491634647668928">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="555350465581223" type="System">
+                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="904727997519431" type="Player">
+                                                            <param id="0" name="Instance variable">SSJ</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="543160672930597" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="581266027784870" type="Player">
+                                                            <param id="0" name="Animation">&quot;KickSSJ3&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block any="1" sid="631779025755233">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="891736089335440" type="Player">
+                                                                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions />
+                                                            <sub-events>
+                                                                <event-block sid="280510640344876">
+                                                                    <conditions>
+                                                                        <condition id="-14" name="Compare variable" sid="131632726455435" type="System">
+                                                                            <param id="0" name="Variable">Punch_Combo</param>
+                                                                            <param id="1" name="Comparison">5</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="-12" name="Subtract from" sid="588132231880243" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Instance variable">LifeBar</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="541571293827774" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="478110038377630" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="Vector X">-120</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="121779397284526" type="Audio">
+                                                                            <param id="0" name="Audio file">hit3</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-12</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="945570398500172" type="HittingEffect">
+                                                                            <param id="0" name="Animation">&quot;Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="297639002329830" type="RR_Soldier_NPC">
+                                                                            <param id="0" name="State">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="282662387159044">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="493503854143102" type="System">
+                                            <param id="0" name="Variable">Punch_Combo</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="622503735753476" type="System">
+                                            <param id="0" name="Variable">Punch_Combo</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="272939405152143" title="SSJ2 attack">
             <sub-events>
                 <event-group description="" sid="456722609316381" title="Weak_Punch10">
@@ -2024,6 +2662,45 @@
                     <actions>
                         <action id="4" name="Set animation" sid="137469921410369" type="Player">
                             <param id="0" name="Animation">&quot;JumpSSJ2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="331000372645184">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="633573089118526" type="Player">
+                            <param id="0" name="Animation">&quot;KickSSJ3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="663764167232715" type="Player">
+                            <param id="0" name="Animation">&quot;JumpSSJ3&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="186327508812159">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="803850776472164" type="Player">
+                            <param id="0" name="Animation">&quot;RightPunchSSJ3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="108670958701037" type="Player">
+                            <param id="0" name="Animation">&quot;JumpSSJ3&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="505762091168866">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="924242204590077" type="Player">
+                            <param id="0" name="Animation">&quot;LeftPunchSSJ3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="606141018776696" type="Player">
+                            <param id="0" name="Animation">&quot;JumpSSJ3&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
