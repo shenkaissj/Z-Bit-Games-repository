@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Main_Menu</name>
+    <events>
+        <event-block sid="651896057768987">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="786393136535990" type="Mouse">
+                    <param id="0" name="Object">MainMenu_Buttons</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="139536055538951" type="System" />
+                <condition id="2" inverted="1" name="Is playing" sid="225639394654917" type="FloatingComputerScreen">
+                    <param id="0" name="Animation">MainMenu_Buttons.Name</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="684041941044985" type="Fadein" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="117033918601643" type="Text_Test">
+                    <param id="0" name="Text">MainMenu_Buttons.Name</param>
+                </action>
+                <action id="4" name="Set animation" sid="605157159837363" type="FloatingComputerScreen">
+                    <param id="0" name="Animation">MainMenu_Buttons.Name</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Play" sid="163172399795952" type="Audio">
+                    <param id="0" name="Audio file">select 1</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-12</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="901911690282185">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="249515817049467" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">MainMenu_Buttons</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="629182279332581" type="MainMenu_Buttons">
+                    <param id="0" name="Instance variable">Goto_Layout</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="992354377531955" type="Fadein" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="212675888210916" type="Audio">
+                    <param id="0" name="Audio file">select 2</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-6</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="929368767679479" type="WhiteFadeIn" />
+                <action id="-15" name="Set visible" sid="463269732969901" type="WhiteFadeIn">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="211048676603588" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="210546530680903" type="System">
+                    <param id="0" name="Layout">MainMenu_Buttons.Goto_Layout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="282884297239846">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="896364702451940" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">LeaveGame</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="700156719772560" type="Audio">
+                    <param id="0" name="Audio file">select 2</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-6</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="439196146079880">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="521683259862730" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Fade" id="0" name="Restart fade" sid="538747305167732" type="Fadein" />
+                        <action id="-15" name="Set visible" sid="406489623953119" type="Fadein">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="692063889880948" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="1" name="Close" sid="654773446670130" type="Browser" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="867405348019621">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="816000382902270" type="Keyboard">
+                    <param id="0" name="Key">122</param>
+                </condition>
+                <condition id="10" inverted="1" name="Is fullscreen" sid="490986691557763" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="10" name="Request fullscreen" sid="467156442807636" type="Browser">
+                    <param id="0" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="886262632277349">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="635854786682321" type="Keyboard">
+                    <param id="0" name="Key">122</param>
+                </condition>
+                <condition id="10" name="Is fullscreen" sid="684515164670979" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="11" name="Cancel fullscreen" sid="802268769023263" type="Browser" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
