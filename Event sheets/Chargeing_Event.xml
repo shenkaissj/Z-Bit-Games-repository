@@ -1,0 +1,763 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Chargeing_Event</name>
+    <events>
+        <variable constant="0" name="Ki" sid="475777529966536" static="0" type="number">100</variable>
+        <variable constant="0" name="ki_Max" sid="217363908279101" static="0" type="number">100</variable>
+        <event-group description="this event is for players to charge up there ki bar in game to do there ki abillitys like flying special attacks and transforming." sid="933892540096779" title="Chargeing">
+            <sub-events>
+                <event-block sid="643965108318197">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="447898821162929" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="852663922979325" type="Ki_Bar_3">
+                            <param id="0" name="Width">(Self.Ki_Bar + (Ki - ki_Max) * (Self.Ki_Bar / ki_Max))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="750945924696132">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="436150952950686" type="System">
+                            <param id="0" name="Variable">Ki</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="803676403508107" type="System">
+                            <param id="0" name="Variable">Ki</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="870862935734216" type="Player">
+                            <param id="0" name="Input">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="971529656195459">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="191063498496607" type="System">
+                            <param id="0" name="Variable">Ki</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="988753213485784" type="System">
+                            <param id="0" name="Variable">Ki</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="253554479629322" title="Base Charge">
+                    <sub-events>
+                        <event-block sid="716686190225804">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="418256040626004" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="532555375286415" type="System">
+                                    <param id="0" name="Variable">Ki</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="981620041818124" type="Player" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="213060528192145" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="220934524598957" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="217974193805122" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="821861684176066" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="648741854020954" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="370397216652912" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="645468384949223" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="647937497928647" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="280946609992392" type="Player">
+                                    <param id="0" name="Instance variable">Charge</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="694109932995002" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="834509155215549" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="689929605004197" type="Player">
+                                    <param id="0" name="Instance variable">Transforming</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="613588817390264" type="System">
+                                    <param id="0" name="Variable">Ki</param>
+                                    <param id="1" name="Value">0.20</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="871865431449674" type="Player">
+                                    <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="307985251411562" type="Aura">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="305275727390539" type="Aura">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="484747786906589" type="Player">
+                                    <param id="0" name="Input">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="162967439722648">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="710013237914388" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="468672903156225" type="Audio">
+                                            <param id="0" name="Audio file">ki chargeing sound</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">-18</param>
+                                            <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="216895296168974">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="423655311724637" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="136800563275540" type="Player" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="649461916692603" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="138003604547270" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="896015932770752" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="238003395273730" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="518855127475519" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="743694173148454" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="491204217854191" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="586065177707941" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="577997374619065" type="Player">
+                                    <param id="0" name="Instance variable">Charge</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="272995059036552" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="696887489680404" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="460375300068762" type="Player">
+                                    <param id="0" name="Instance variable">Transforming</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="129519526483511" type="Player">
+                                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="279914202677182" type="Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="6" name="Stop" sid="766563693513284" type="Audio">
+                                    <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="542907074350491" type="Player">
+                                    <param id="0" name="Input">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="931980943975432">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="605488812682093" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="6" name="Stop" sid="320480766705937" type="Audio">
+                                            <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="571815883559662">
+                                            <conditions>
+                                                <condition id="2" name="Is playing" sid="986494047900628" type="Player">
+                                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="718535443703309" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="245804060761549" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="109972955815547" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="502831377812382" title="SSJ1 Charge">
+                    <sub-events>
+                        <event-block sid="701781012298286">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="280197261383182" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="591640233915858" type="System">
+                                    <param id="0" name="Variable">Ki</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="570205098318773" type="Player" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="542275421483721" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="722298691514456" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="438524969670931" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="373400976697351" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="463309938863577" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="170919939112381" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="543885587622141" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="827240317230802" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="749388803859580" type="Player">
+                                    <param id="0" name="Instance variable">Charge</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="617170050395977" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="984591196006438" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="899143502004928" type="Player">
+                                    <param id="0" name="Instance variable">Transforming</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="380390837888310" type="System">
+                                    <param id="0" name="Variable">Ki</param>
+                                    <param id="1" name="Value">0.20</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="327348476697923" type="Player">
+                                    <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="854002197198276" type="Aura">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="407718123704127" type="Aura">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="302538507427864" type="Player">
+                                    <param id="0" name="Input">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="565431673657755">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="323051466623843" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="925070747143304" type="Audio">
+                                            <param id="0" name="Audio file">ki chargeing sound</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">-18</param>
+                                            <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="844843320927894">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="356734128293532" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="892542641421724" type="Player" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="921419712124329" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="927380725332653" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="242740036100186" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="658341678516193" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="342050804779464" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="755969303252077" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="741225394125542" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="357158958872955" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="116515642516397" type="Player">
+                                    <param id="0" name="Instance variable">Charge</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="697672891273818" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="586074671816024" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="209050405307280" type="Player">
+                                    <param id="0" name="Instance variable">Transforming</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="568701260351138" type="Player">
+                                    <param id="0" name="Animation">&quot;IdleSSJ1&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="367127380751392" type="Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="6" name="Stop" sid="159128333417219" type="Audio">
+                                    <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="915205770673176" type="Player">
+                                    <param id="0" name="Input">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="912789398215445">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="939800659766212" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="6" name="Stop" sid="112719218487036" type="Audio">
+                                            <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="823248808966386">
+                                            <conditions>
+                                                <condition id="2" name="Is playing" sid="581956033322301" type="Player">
+                                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="512137246054942" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="898549604246634" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="163582183334040" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="732511410450304" title="SSJ2 Charge">
+                    <sub-events>
+                        <event-block sid="142430428804926">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="876199345007430" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="349443313633452" type="System">
+                                    <param id="0" name="Variable">Ki</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="786350736124665" type="Player" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="548434011629294" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="632781372190165" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="105319176374415" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="266084369796215" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="356216898554342" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="560585211529463" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="332064880789726" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="266817471256980" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="278320815326799" type="Player">
+                                    <param id="0" name="Instance variable">Charge</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="826345639063664" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="197668514997937" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="386351851113249" type="Player">
+                                    <param id="0" name="Instance variable">Transforming</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="729962212457856" type="System">
+                                    <param id="0" name="Variable">Ki</param>
+                                    <param id="1" name="Value">0.20</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="991969922057688" type="Player">
+                                    <param id="0" name="Animation">&quot;ChargeSSJ2&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="966590385704741" type="Aura">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="934668923523735" type="Aura">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="266739738316832" type="Player">
+                                    <param id="0" name="Input">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="151962711130642">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="499931636370922" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="856761079394694" type="Audio">
+                                            <param id="0" name="Audio file">ki chargeing sound</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">-18</param>
+                                            <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="659082346625913">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="815032932487114" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="911751094118222" type="Player" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="808975482885617" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="569430186704209" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="901943453657528" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="275558067201865" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="457351506334808" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="445378979250761" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="293056780366606" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="219316879205214" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="847092715295499" type="Player">
+                                    <param id="0" name="Instance variable">Charge</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="246264071344861" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="633293002966934" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="186390674572395" type="Player">
+                                    <param id="0" name="Instance variable">Transforming</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="463892532454288" type="Player">
+                                    <param id="0" name="Animation">&quot;IdleSSJ2&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="326170664449026" type="Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="6" name="Stop" sid="770038420035923" type="Audio">
+                                    <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="926579709970221" type="Player">
+                                    <param id="0" name="Input">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="834338999558156">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="600366951608799" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="6" name="Stop" sid="849638677387724" type="Audio">
+                                            <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="364102105712792">
+                                            <conditions>
+                                                <condition id="2" name="Is playing" sid="456502092731622" type="Player">
+                                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="923781549807626" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="880131466660242" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="745751858786666" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="268956636552794" title="SSJ3 Charge">
+                    <sub-events>
+                        <event-block sid="963371328560026">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="884484004989294" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="174719049949873" type="System">
+                                    <param id="0" name="Variable">Ki</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="958191104850354" type="Player" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="927730487586585" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="425658876081189" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="368288415754119" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="111442929811738" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="402492837176086" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="243704857087761" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="563808671683873" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="252508784841178" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="181378255561447" type="Player">
+                                    <param id="0" name="Instance variable">Charge</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="204535513677098" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="189753399862227" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="472127678103774" type="Player">
+                                    <param id="0" name="Instance variable">Transforming</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="552432544101014" type="System">
+                                    <param id="0" name="Variable">Ki</param>
+                                    <param id="1" name="Value">0.20</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="400277470465240" type="Player">
+                                    <param id="0" name="Animation">&quot;ChargeSSJ3&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="586950481178952" type="Aura">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="521760808258129" type="Aura">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="953519750106263" type="Player">
+                                    <param id="0" name="Input">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="993069702728048">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="700426962059510" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="826843659947735" type="Audio">
+                                            <param id="0" name="Audio file">ki chargeing sound</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">-18</param>
+                                            <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="181155894465585">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="632161992094265" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="510195298540967" type="Player" />
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="302747001489391" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="502553642592859" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="744215662104274" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="903110594274583" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="580938697877830" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="672909887239592" type="Player" />
+                                <condition id="2" inverted="1" name="Is playing" sid="251232805280232" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="182293012351953" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="120751349640366" type="Player">
+                                    <param id="0" name="Instance variable">Charge</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="742330789794117" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="672017905462599" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="283296934909389" type="Player">
+                                    <param id="0" name="Instance variable">Transforming</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="404068711129425" type="Player">
+                                    <param id="0" name="Animation">&quot;IdleSSJ3&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="742956789239862" type="Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="6" name="Stop" sid="319619035329896" type="Audio">
+                                    <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="388392121771565" type="Player">
+                                    <param id="0" name="Input">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="361350671134306">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="917810055861387" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="6" name="Stop" sid="597215934376338" type="Audio">
+                                            <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="157480744099671">
+                                            <conditions>
+                                                <condition id="2" name="Is playing" sid="299657455837795" type="Player">
+                                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="520855091554612" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="638988571524266" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="967123290246100" type="Player">
+                                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="696381177903713">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="223970310794955" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="798022450542201" type="System">
+                            <param id="0" name="Variable">Ki</param>
+                            <param id="1" name="Value">65</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
