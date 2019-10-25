@@ -32,7 +32,8 @@ vsp = 0;
 
 //Changable Values
 grv = 0.4;
-walkspd = 3;
+walkspd = 2.5;
+jumpheight = -7;
 </string>
           </argument>
         </arguments>
@@ -88,7 +89,7 @@ if (place_meeting(x, y + vsp, barrier_obj)) {
     vsp = 0
 }
 if (jump_press) and (grounded = true) {
-    vsp = -5;
+    vsp = jumpheight;
 }
 y = y + vsp;
 
@@ -96,12 +97,12 @@ y = y + vsp;
 if (!place_meeting(x + sign(hsp), y, barrier_obj)) {
     if (sign(hsp) &gt; 0) {
         sprite_index = SPR_Goku_W;
-        image_speed = 1.19;
+        image_speed = animspd;
         image_xscale = 1;
     }
     else if (sign(hsp) &lt; 0) {
         sprite_index = SPR_Goku_W;
-        image_speed = 1.19;
+        image_speed = animspd;
         image_xscale = -1;
     }
     else {sprite_index = SPR_Goku_I;}
