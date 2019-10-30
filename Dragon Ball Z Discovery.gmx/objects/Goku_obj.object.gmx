@@ -6,7 +6,7 @@
   <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>SPR_Goku_I</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -29,11 +29,39 @@
 grounded = false;
 hsp = 0;
 vsp = 0;
+punched = 0;
+airpunch = 0;
+vanim = true;
 
 //Changable Values
 grv = 0.4;
 walkspd = 2.5;
 jumpheight = -7;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>punched = 0;
+airpunch = 0;
+vanim = true;
 </string>
           </argument>
         </arguments>
@@ -60,6 +88,7 @@ jumpheight = -7;
 left_walk = keyboard_check(ord('A'));
 right_walk = keyboard_check(ord('D'));
 jump_press = keyboard_check_pressed(ord('W'));
+punch_press = keyboard_check_pressed(ord('K'));
 
 // Calculating movements
 var move = right_walk - left_walk;
@@ -69,6 +98,8 @@ vsp = vsp + grv;
 //Checks if you are on the ground
 if (place_meeting(x, y + 1, barrier_obj)){
     grounded = true;
+    airpunch = 0;
+    vanim = true;
 } else {grounded = false;}
 
 // Horizontal collision and movement
@@ -95,30 +126,56 @@ y = y + vsp;
 
 // Animations
 if (!place_meeting(x + sign(hsp), y, barrier_obj)) {
-    if (sign(hsp) &gt; 0) {
+    if (sign(hsp) &gt; 0){
         sprite_index = SPR_Goku_W;
         image_speed = animspd;
         image_xscale = 1;
+        punched = 0;
     }
-    else if (sign(hsp) &lt; 0) {
+    else if (sign(hsp) &lt; 0){
         sprite_index = SPR_Goku_W;
         image_speed = animspd;
         image_xscale = -1;
+        punched = 0;
     }
-    else {sprite_index = SPR_Goku_I;}
+    else if ((sign(hsp)) = 0) and (punched = 0) and (grounded = true)  {sprite_index = SPR_Goku_I;}
 }
 
 if (!place_meeting(x, y + 1, barrier_obj)) {
-    if (sign(vsp) &gt; 0) {
+    if (sign(vsp) &gt; 0) and (vanim = true){
         sprite_index = SPR_Goku_JP;
         image_speed = 0;
         image_index = 1;
     } 
-    else {
-    sprite_index = SPR_Goku_JP;
-    image_speed = 0;
-    image_index = 0;
+    else if (sign(vsp &lt; 0)) and (vanim = true){
+        sprite_index = SPR_Goku_JP;
+        image_speed = 0;
+        image_index = 0;
     }
+    else if (sign(vsp &lt; 0)) or (sign(vsp &gt; 0)) and (vanim = false){
+        sprite_index = SPR_Goku_Punch;
+        image_speed = 0;
+    }
+}
+
+// Punching
+if (punch_press) and (grounded = true) {
+    punched = 1;
+    airpunch = 0;
+    alarm[1] = room_speed * 0.5;
+    sprite_index = SPR_Goku_Punch;
+    image_speed = 0;
+    image_index = image_index + 1;
+}
+if (punched = 1) {
+    hsp = 0;
+}
+if (punch_press) and (grounded = false) {
+    airpunch = 1;
+    punched = 0;
+    alarm[1] = room_speed * 0.5;
+    image_index = image_index + 1;
+    vanim = false;
 }
 </string>
           </argument>
