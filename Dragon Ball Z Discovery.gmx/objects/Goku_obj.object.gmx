@@ -104,10 +104,42 @@ if (place_meeting(x, y + 1, barrier_obj)){
 
 // Horizontal collision and movement
 if (place_meeting(x + hsp, y, barrier_obj)) {
-    while (!place_meeting(x + sign(hsp), y, barrier_obj)) {
-        x = x + sign(hsp);
+
+    //Check if empty space 1-5 pixels above
+    yplus = 0;
+    while ((place_meeting(x + hsp, y - yplus, barrier_obj) and yplus &lt;= abs(5))) {
+        yplus += 1;
+    } 
+    
+    if place_meeting(x + hsp, y - yplus, barrier_obj) {
+        while (!place_meeting(x + sign(hsp), y, barrier_obj)) {
+            x = x + sign(hsp);
+        }
+        hsp = 0
     }
-    hsp = 0
+    else {
+        y -= yplus;
+    }
+
+    // test
+    while ((place_meeting(x + hsp, y + yplus, barrier_obj) and yplus &gt;= -3)) {
+        yplus -= 1;
+    } 
+    
+    if place_meeting(x + hsp, y - yplus, barrier_obj) {
+        while (!place_meeting(x + sign(hsp), y, barrier_obj)) {
+            x = x + sign(hsp);
+        }
+        hsp = 0
+    }
+    else {
+        y -= yplus;
+    }
+    
+    if place_meeting(x + hsp, y + yplus, barrier_obj) {
+        y += yplus;
+    }
+    // test end
 }
 
 x = x + hsp;
@@ -125,7 +157,7 @@ if (jump_press) and (grounded = true) {
 y = y + vsp;
 
 // Animations
-if (!place_meeting(x + sign(hsp), y, barrier_obj)) {
+if (!place_meeting(x + sign(hsp), y - 3, barrier_obj)) {
     if (sign(hsp) &gt; 0){
         sprite_index = SPR_Goku_W;
         image_speed = animspd;
@@ -138,10 +170,10 @@ if (!place_meeting(x + sign(hsp), y, barrier_obj)) {
         image_xscale = -1;
         punched = 0;
     }
-    else if ((sign(hsp)) = 0) and (punched = 0) and (grounded = true)  {sprite_index = SPR_Goku_I;}
+    if ((sign(hsp)) = 0) and (punched = 0) and (grounded = true)  {sprite_index = SPR_Goku_I;}
 }
 
-if (!place_meeting(x, y + 1, barrier_obj)) {
+if (!place_meeting(x, y + 3, barrier_obj)) {
     if (sign(vsp) &gt; 0) and (vanim = true){
         sprite_index = SPR_Goku_JP;
         image_speed = 0;
