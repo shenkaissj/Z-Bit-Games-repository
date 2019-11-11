@@ -32,11 +32,14 @@ vsp = 0;
 punched = 0;
 airpunch = 0;
 vanim = true;
+super = 0;
+charging = 0;
 
 //Changable Values
 grv = 0.4;
 walkspd = 1.2;
 jumpheight = -7;
+
 </string>
           </argument>
         </arguments>
@@ -84,112 +87,11 @@ vanim = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Checking for inputs
-left_walk = keyboard_check(ord('A'));
-right_walk = keyboard_check(ord('D'));
-jump_press = keyboard_check_pressed(ord('W'));
-punch_press = keyboard_check_pressed(ord('K'));
-
-// Calculating movements
-var move = right_walk - left_walk;
-hsp = move * walkspd;
-vsp = vsp + grv;
-
-//Checks if you are on the ground
-if (place_meeting(x, y + 1, barrier_obj)) {
-    grounded = true;
-    airpunch = 0;
-    vanim = true;
-} else {grounded = false;}
-
-// Horizontal collision and movement
-if (place_meeting(x + hsp, y, barrier_obj)) or (place_meeting(x + hsp, y, slope_obj)) {
-
-    //Check if empty space 1-5 pixels above
-    yplus = 0;
-    while ((place_meeting(x + hsp, y - yplus, barrier_obj) and yplus &lt;= abs(5))) {
-        yplus += 1;
-    } 
-    
-    if (place_meeting(x + hsp, y - yplus, barrier_obj)) {
-        while (!place_meeting(x + sign(hsp), y, barrier_obj)) {
-            x = x + sign(hsp);
-        }
-        hsp = 0
-    }
-    else {
-        y -= yplus;
-    }
-    
-}
-
-x = x + hsp;
-
-// Vertical collision and movement
-if (place_meeting(x, y + vsp, barrier_obj)){
-    while (!place_meeting(x, y + sign(vsp), barrier_obj)) {
-        y = y + sign(vsp);
-    }
-        vsp = 0
-}
-if (jump_press) and (grounded = true) {
-    vsp = jumpheight;
-}
-y = y + vsp;
-
-// Animations
-if (!place_meeting(x + sign(hsp), y - 3, barrier_obj)) {
-    if (sign(hsp) &gt; 0){
-        sprite_index = SPR_Goku_W;
-        image_speed = animspd;
-        image_xscale = 1;
-        punched = 0;
-    }
-    else if (sign(hsp) &lt; 0){
-        sprite_index = SPR_Goku_W;
-        image_speed = animspd;
-        image_xscale = -1;
-        punched = 0;
-    }
-    if ((sign(hsp)) = 0) and (punched = 0) and (grounded = true)  {sprite_index = SPR_Goku_I;}
-}
-
-if (!place_meeting(x, y + 3, barrier_obj)) {
-    if (sign(vsp) &gt; 0) and (vanim = true){
-        sprite_index = SPR_Goku_JP;
-        image_speed = 0;
-        image_index = 1;
-    } 
-    else if (sign(vsp &lt; 0)) and (vanim = true){
-        sprite_index = SPR_Goku_JP;
-        image_speed = 0;
-        image_index = 0;
-    }
-    else if (sign(vsp &lt; 0)) or (sign(vsp &gt; 0)) and (vanim = false){
-        sprite_index = SPR_Goku_Punch;
-        image_speed = 0;
-    }
-}
-
-// Punching
-if (punch_press) and (grounded = true) {
-    punched = 1;
-    airpunch = 0;
-    alarm[1] = room_speed * 0.5;
-    sprite_index = SPR_Goku_Punch;
-    image_speed = 0;
-    image_index = image_index + 1;
-}
-if (punched = 1) {
-    hsp = 0;
-}
-if (punch_press) and (grounded = false) {
-    airpunch = 1;
-    punched = 0;
-    alarm[1] = room_speed * 0.5;
-    image_index = image_index + 1;
-    vanim = false;
-}
+            <string>inputs_scr();
+CollisionsMove_scr();
+AnimationNorm_scr();
+PunchNorm_scr();
+SayinNorm2One_scr();
 </string>
           </argument>
         </arguments>
