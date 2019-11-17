@@ -10,6 +10,7 @@ if (place_meeting(x, y + 1, barrier_obj)) {
     vanim = true;
 } else {grounded = false;}
 
+if charging = 0 {
 // Horizontal collision and movement
 if (place_meeting(x + hsp, y, barrier_obj)) or (place_meeting(x + hsp, y, slope_obj)) {
 
@@ -32,6 +33,13 @@ if (place_meeting(x + hsp, y, barrier_obj)) or (place_meeting(x + hsp, y, slope_
 }
 
 x = x + hsp;
+}
+else{
+hsp = 0;
+vsp = 0;
+x = x + 0;
+y = y + 0;
+}
 
 // Vertical collision and movement
 if (place_meeting(x, y + vsp, barrier_obj)){
