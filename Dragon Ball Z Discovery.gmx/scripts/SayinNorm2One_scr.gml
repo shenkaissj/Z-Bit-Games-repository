@@ -12,5 +12,5 @@ charging = 0;
 if charge_press and super = 0 {
     hsp = 0;
     sprite_index = SPR_Goku_C1;
-    image_speed = 1;
+    image_speed = 0.5;
 }
