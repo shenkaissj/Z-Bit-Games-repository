@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Flying_Event</name>
+    <events>
+        <event-group description="this allows the players to fly in game when the c button is being hold while the player is in the air" sid="972554793516257" title="Flying">
+            <sub-events>
+                <event-block sid="299185353668813">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="389744858071013" type="PlayerAndCPU" />
+                        <condition id="2" name="Key is down" sid="106860676085600" type="Keyboard">
+                            <param id="0" name="Key">67</param>
+                        </condition>
+                        <condition behavior="Platform" id="3" inverted="1" name="Is jumping" sid="488311006587969" type="PlayerAndCPU" />
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="335297873128052" type="PlayerAndCPU">
+                            <param id="0" name="Instance variable">Ki</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="749767826938679" type="PlayerAndCPU">
+                            <param id="0" name="Instance variable">Form_limit</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="174789102082366" type="PlayerAndCPU">
+                            <param id="0" name="Instance variable">Form_limit</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0.1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="5" name="Set gravity" sid="448624299749115" type="PlayerAndCPU">
+                            <param id="0" name="Gravity">10</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="927506372115209" type="PlayerAndCPU">
+                            <param id="0" name="Instance variable">Ki</param>
+                            <param id="1" name="Value">0.2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="469595764299883">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="587512927405655" type="Keyboard">
+                            <param id="0" name="Key">67</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="272474427160896" type="PlayerAndCPU" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="5" name="Set gravity" sid="681075963118685" type="PlayerAndCPU">
+                            <param id="0" name="Gravity">807</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="384283852735233">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="734573323202450" type="PlayerAndCPU">
+                            <param id="0" name="Instance variable">Ki</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="5" name="Set gravity" sid="586679491094465" type="PlayerAndCPU">
+                            <param id="0" name="Gravity">807</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

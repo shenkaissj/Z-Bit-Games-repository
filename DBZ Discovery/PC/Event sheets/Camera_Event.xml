@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Camera_Event</name>
+    <events>
+        <event-group description="camera for player" sid="716919051802269" title="Camera3">
+            <sub-events>
+                <variable constant="0" name="CameraSpeed" sid="777052133440380" static="0" type="number">0.09</variable>
+                <variable constant="0" name="LookAhead" sid="509134125950237" static="0" type="number">50</variable>
+                <variable constant="0" name="CameraHight" sid="890291298667724" static="0" type="number">10</variable>
+                <comment>Goku Middle Camera</comment>
+                <event-block sid="234872442542428">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="758106401456994" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="813864233101244">
+                            <conditions>
+                                <condition id="7" name="Is mirrored" sid="917554234652557" type="PlayerAndCPU" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="920284718872832" type="PlayerAndCPU">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="383992860116483" type="Camera">
+                                    <param id="0" name="X">lerp(Self.X, PlayerAndCPU.X + -LookAhead, CameraSpeed)</param>
+                                    <param id="1" name="Y">lerp(Self.Y, PlayerAndCPU.Y -CameraHight, CameraSpeed)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="192138122798267">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="284157865401210" type="PlayerAndCPU" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="872981456086123" type="PlayerAndCPU">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="122330593109396" type="Camera">
+                                    <param id="0" name="X">lerp(Self.X, PlayerAndCPU.X + LookAhead, CameraSpeed)</param>
+                                    <param id="1" name="Y">lerp(Self.Y, PlayerAndCPU.Y -CameraHight, CameraSpeed)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

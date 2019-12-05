@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Charcter_Select</name>
+    <events>
+        <event-group description="this allows you to pick any charcter when it is enabled alwell as containg the 2 instince varibles. form limit and energy attacks formlimit tells the event how many forms a charcter will have. and energy attacks tells the event what move the player should have" sid="796978473994225" title="Charcter Select2">
+            <sub-events>
+                <event-block sid="437117189961106">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="523031674516951" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Character_Icons</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="730225656403786" type="Charcter_Select_Guis" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="776757141486930" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="106620480626128" type="BG_Charcterselect">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="123636974699585" type="Charcter_Select_Guis">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="992791344315930" type="PlayerAndCPU">
+                            <param id="0" name="Max Speed">44</param>
+                        </action>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="149739547165355" type="PlayerAndCPU">
+                            <param id="0" name="Jump strength">300</param>
+                        </action>
+                        <action behavior="Platform" id="5" name="Set gravity" sid="485482412567337" type="PlayerAndCPU">
+                            <param id="0" name="Gravity">407</param>
+                        </action>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="395365861762570" type="PlayerAndCPU">
+                            <param id="0" name="Acceleration">400</param>
+                        </action>
+                        <action behavior="Platform" id="3" name="Set deceleration" sid="248921190206601" type="PlayerAndCPU">
+                            <param id="0" name="Deceleration">310</param>
+                        </action>
+                        <action behavior="Platform" id="6" name="Set max fall speed" sid="886099329005068" type="PlayerAndCPU">
+                            <param id="0" name="Max fall speed">1000</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="325181845775496" type="Aura">
+                            <param id="0" name="Opacity">30</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="961238204495384" type="PlayerAndCPU">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="8Direction" id="8" name="Set enabled" sid="559164945589418" type="PlayerAndCPU">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="115461692003542" type="Gui_Objects">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="132244901171709" type="Spritefonts">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="642997324094325" type="HP_Bars">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="208453866738517" type="Audio">
+                            <param id="0" name="Audio file">select 1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-8</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="968050934747523" type="System">
+                            <param id="0" name="Object to create">Aura</param>
+                            <param id="1" name="Layer">9</param>
+                            <param id="2" name="X">PlayerAndCPU.X</param>
+                            <param id="3" name="Y">PlayerAndCPU.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="980578881330491" type="Aura">
+                            <param id="0" name="Pin to">PlayerAndCPU</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="899172104902871" type="Aura">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="586526161312421" type="System">
+                            <param id="0" name="Object to create">Punch_Collision</param>
+                            <param id="1" name="Layer">9</param>
+                            <param id="2" name="X">PlayerAndCPU.X</param>
+                            <param id="3" name="Y">PlayerAndCPU.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="102511819756326" type="Punch_Collision">
+                            <param id="0" name="Pin to">PlayerAndCPU</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="799315404748514" type="System">
+                            <param id="0" name="Object to create">Max_Power_Sparks</param>
+                            <param id="1" name="Layer">13</param>
+                            <param id="2" name="X">PlayerAndCPU.X</param>
+                            <param id="3" name="Y">PlayerAndCPU.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="991304572936344" type="Max_Power_Sparks">
+                            <param id="0" name="Pin to">PlayerAndCPU</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="819416749332744" type="Max_Power_Sparks">
+                            <param id="0" name="Opacity">80</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="189100261517615" type="Punch_Collision">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="160593291705768" title="Goku2">
+                    <sub-events>
+                        <event-block sid="264730704633792">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="677379329170881" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Goku_Middle_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="440713344071576" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="142188128122429" type="System">
+                                    <param id="0" name="Object to create">Goku_Middel</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="791505507353473" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Goku Middel&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="210964035613743" type="Goku_Middel">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="742668435290047" type="Goku_Middel">
+                                    <param id="0" name="Instance variable">Energy_attacks</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="868622671383779">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="249655379771763" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Goku_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="929018504354342" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="763288599270792" type="System">
+                                    <param id="0" name="Object to create">Goku</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="825034581354711" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Goku&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="124267869428098" type="Goku">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="840168092305795" type="Goku">
+                                    <param id="0" name="Instance variable">Energy_attacks</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="743074932603264">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="325155748312547" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Earily_Kid_Goku_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="751958631230588" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="859013942842189" type="System">
+                                    <param id="0" name="Object to create">Kid_Goku_Earily</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="248355424912395" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;KidGoku Earily&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="363894238946094" type="Kid_Goku_Earily">
+                                    <param id="0" name="Instance variable">Energy_attacks</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="982695685555997" type="Kid_Goku_Earily">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Value">0.1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="625608853972158">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="993346077955966" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Kid_Goku_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="849078060463275" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="679114447627121" type="System">
+                                    <param id="0" name="Object to create">Kid_Goku</param>
+                                    <param id="1" name="Layer">3</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="338067745283452" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;KidGoku Earily&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="756784034701346" type="Kid_Goku">
+                                    <param id="0" name="Instance variable">Energy_attacks</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="856189028560103" type="Kid_Goku">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Value">0.1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="604364508186328" title="Frieza2">
+                    <sub-events>
+                        <event-block sid="428451065185310">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="389836827005709" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Frieza_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="928144384428968" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="468743458613188" type="System">
+                                    <param id="0" name="Object to create">Frieza</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="450846666489743" type="Frieza">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Value">-5</param>
+                                </action>
+                                <action id="0" name="Set text" sid="294211486883048" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Frieza&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="701917165132129" title="Cell2">
+                    <sub-events>
+                        <event-block sid="538950699250069">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="478341418058389" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Cell_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="376733474478328" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="865625106566515" type="System">
+                                    <param id="0" name="Object to create">Cell</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="744105576997804" type="Cell">
+                                    <param id="0" name="Instance variable">Energy_attacks</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="963735774020257" type="Cell">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Value">-3</param>
+                                </action>
+                                <action id="0" name="Set text" sid="340695561603473" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Cell&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="307092750858519" title="Vegeta2">
+                    <sub-events>
+                        <event-block sid="978304808547692">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="420724326582092" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Vegeta_Middle_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="301321268821510" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="714709451460417" type="System">
+                                    <param id="0" name="Object to create">Vegeta_Middle</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="601625749783149" type="Vegeta_Middle">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="289352513058379" type="Vegeta_Middle">
+                                    <param id="0" name="Instance variable">Energy_attacks</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="0" name="Set text" sid="551357571363529" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Vegeta Middel&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="309567155094902">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="706487131425955" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Vegeta_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="736506527452083" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="867691749577357" type="System">
+                                    <param id="0" name="Object to create">Vegeta</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="519505069970649" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Vegeta&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="487988231451491" title="Gohan2">
+                    <sub-events>
+                        <event-block sid="137043478721035">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="643201900002392" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Teen_Gohan_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="388152150288711" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="124479346805136" type="System">
+                                    <param id="0" name="Object to create">Teen_Gohan</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="741650466613653" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Teen Gohan&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="828050717462302">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="506870639925810" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Adult_Gohan_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="865190992491227" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="486524049960852" type="System">
+                                    <param id="0" name="Object to create">Adult_Gohan</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="549439172948748" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Adult Gohan&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="669533473108409">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="134990238642631" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Gohan_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="348430855537155" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="302133929210801" type="System">
+                                    <param id="0" name="Object to create">Ultimate_Gohan</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="222782948036369" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Gohan&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="240261334280043" title="Yamcha2">
+                    <sub-events>
+                        <event-block sid="494167873124433">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="507133475826648" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Yamcha_Middle_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="712968505748645" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="451940886367895" type="System">
+                                    <param id="0" name="Object to create">Yamcha_Middel</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="994247014183964" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Yamcha Middel&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="960831056470474" title="Tien2">
+                    <sub-events>
+                        <event-block sid="138865313502163">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="901694486707590" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Tien_Middle_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="147875231655441" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="500256205945628" type="System">
+                                    <param id="0" name="Object to create">Tien_Middel</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="957685340805216" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Tien Middel&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="819703526773270" title="Trunks2">
+                    <sub-events>
+                        <event-block sid="347505636166503">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="194826556527541" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Future_Trunks_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="420350031429633" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="617781384773373" type="System">
+                                    <param id="0" name="Object to create">Future_Trunks</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="292451017815148" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;FutureTrunks&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="973015937915557" title="Krillin2">
+                    <sub-events>
+                        <event-block sid="901062359403815">
+                            <conditions>
+                                <condition id="6" name="On object clicked" sid="814956468096807" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                    <param id="1" name="Click type">0</param>
+                                    <param id="2" name="Object clicked">Krillin_Icon</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="789818869514228" type="Charcter_Select_Guis" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="320437897831110" type="System">
+                                    <param id="0" name="Object to create">Krillin_Middle</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">24</param>
+                                    <param id="3" name="Y">104</param>
+                                </action>
+                                <action id="0" name="Set text" sid="317936929041554" type="SpriteFont">
+                                    <param id="0" name="Text">&quot;Krillin Middel&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="574604346689085">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="730496990536876" type="Keyboard">
+                            <param id="0" name="Key">27</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Is visible" sid="278991940579086" type="Charcter_Select_Guis" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="810891129660379" type="PlayerAndCPU" />
+                        <action id="-15" name="Set visible" sid="331286949874516" type="BG_Charcterselect">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="228521333871063" type="Charcter_Select_Guis">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="756186610265168" type="Gui_Objects">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="902053547106511" type="Spritefonts">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="633028481355914" type="HP_Bars">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="608310075658815" type="Audio">
+                            <param id="0" name="Audio file">back 1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-8</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="506421116984592" type="Aura" />
+                        <action id="-9" name="Destroy" sid="829657747606367" type="Punch_Collision" />
+                        <action id="-9" name="Destroy" sid="484318510699492" type="Max_Power_Sparks" />
+                        <action id="6" name="Stop" sid="931527335756587" type="Audio">
+                            <param id="0" name="Tag">&quot;Charge&quot;</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="921910563124679" type="Energy_Attack" />
+                    </actions>
+                </event-block>
+                <event-block sid="964363902725038">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="736047895044026" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="969986411248292" type="Charcter_Select_Guis">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="751382705786096" type="Gui_Objects">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="399929688140566" type="Spritefonts">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="873871586605409" type="HP_Bars">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

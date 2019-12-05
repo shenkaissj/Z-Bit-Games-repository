@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Gun_Soldier_Npc</name>
+    <events>
+        <event-block sid="912220197484940">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="985508435084694" type="System">
+                    <param id="0" name="Interval (seconds)">3</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="335939758061335" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">LifeBar</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="229953231891370" type="System" />
+                <condition id="2" inverted="1" name="Is playing" sid="914851341415072" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Defeated&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="480498562622663" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="593461629640969">
+            <conditions>
+                <condition id="7" name="Is mirrored" sid="801147464069028" type="RR_Soldier_NPC" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="489918056246984" type="Bullete">
+                    <param id="0" name="Angle">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="526729407153973">
+            <conditions>
+                <condition id="7" inverted="1" name="Is mirrored" sid="802733512590732" type="RR_Soldier_NPC" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="836331744351041" type="Bullete">
+                    <param id="0" name="Angle">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="904387971969379">
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="169550764581402" type="PlayerAndCPU">
+                    <param id="0" name="Object">Alert_Collision</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="786858555097363" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="592179423774540">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="167062660841095" type="System">
+                            <param id="0" name="Interval (seconds)">1.2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="135685865506125" type="RR_Soldier_NPC">
+                            <param id="0" name="Instance variable">LifeBar</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="937980741100492" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Defeated&quot;</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="731387796937451" type="RR_Soldier_NPC" />
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="874778192976840" type="RR_Soldier_NPC">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="388316069566825">
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="573207588994830" type="PlayerAndCPU">
+                    <param id="0" name="Object">Alert_Collision</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="403651382968861" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="176219336920967">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="275805438432162" type="System">
+                            <param id="0" name="Interval (seconds)">1.2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="451212211672013" type="RR_Soldier_NPC">
+                            <param id="0" name="Instance variable">LifeBar</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="144470453938479" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Defeated&quot;</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="940976044940376" type="RR_Soldier_NPC" />
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="299097804511550" type="RR_Soldier_NPC">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="585181680915846">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="512158970324471" type="System">
+                    <param id="0" name="Interval (seconds)">1.2</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="597266501431864" type="PlayerAndCPU">
+                    <param id="0" name="Object">Alert_Collision</param>
+                </condition>
+                <condition id="2" inverted="1" name="Is playing" sid="150863857633154" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="864581562728860">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="256834533036442" type="PlayerAndCPU">
+                            <param id="0" name="Object">Alert_Collision</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="887670653789768" type="Punch_Collision">
+                            <param id="0" name="Object">RR_Soldier_NPC</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="746876904045837" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Defeated&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="698411506926169" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                        </condition>
+                        <condition id="-1" name="Every tick" sid="687607307705051" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="957949736150498" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Preparing_Fire&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="507210537477742" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="578840647736488" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Fireing&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="854234996622108" type="RR_Soldier_NPC">
+                            <param id="0" name="Object">Bullete</param>
+                            <param id="1" name="Layer">8</param>
+                            <param id="2" name="Image point">-3</param>
+                        </action>
+                        <action id="0" name="Play" sid="257139484732383" type="Audio">
+                            <param id="0" name="Audio file">Gun sound</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-9</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="995133003083268">
+            <conditions>
+                <condition id="-18" name="On created" sid="573243792947500" type="RR_Soldier_NPC" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="932679362441913" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">LifeBar</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="353553801541733">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="251913175464028" type="System" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="290808539337919" type="NPClifeBar">
+                    <param id="0" name="X">RR_Soldier_NPC.ImagePointX(1)</param>
+                </action>
+                <action id="-2" name="Set Y" sid="178314917047587" type="NPClifeBar">
+                    <param id="0" name="Y">RR_Soldier_NPC.ImagePointY(1)</param>
+                </action>
+                <action id="5" name="Set frame" sid="969478540193468" type="NPClifeBar">
+                    <param id="0" name="Frame number">RR_Soldier_NPC.LifeBar</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="246158994550953">
+            <conditions>
+                <condition id="-11" name="For Each" sid="839895272082420" type="System">
+                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="940138971286114">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="337949833549799" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="412974959422583" type="System">
+                            <param id="0" name="Object to create">NPClifeBar</param>
+                            <param id="1" name="Layer">NPC.LayerName</param>
+                            <param id="2" name="X">RR_Soldier_NPC.ImagePointX(1)</param>
+                            <param id="3" name="Y">RR_Soldier_NPC.ImagePointY(1)</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="970628632873079" type="HittingEffect">
+                            <param id="0" name="Pin to">RR_Soldier_NPC</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="530967765117107">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="960304903655282" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">LifeBar</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="125961903817416" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Defeated&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="395369572028514" type="System">
+                    <param id="0" name="Seconds">4.0</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="626923952264373" type="RR_Soldier_NPC" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
