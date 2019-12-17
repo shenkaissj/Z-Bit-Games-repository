@@ -70,12 +70,15 @@
                 <object-type name="Health_Bar_2" sid="488717357762443">
                     <plugin id="Sprite" />
                     <animation-folder>
-                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="339980000061901" speed="5">
+                        <animation framecount="1" loop="0" name="Bar_1" pingpong="0" repeatcount="1" repeatto="0" sid="339980000061901" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\tyler jones\Downloads\Health Bar\sprite_1.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Bar_2" pingpong="0" repeatcount="1" repeatto="0" sid="438521910701795" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" />
                         </animation>
                     </animation-folder>
                 </object-type>
-                <object-type name="Ki_Bar_2" sid="400349224257668">
+                <object-type name="Ki_Bar" sid="400349224257668">
                     <plugin id="Sprite" />
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="965603422392896" speed="5">
@@ -15410,14 +15413,20 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="TimerSymbol" sid="810640919517173">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="353024971714841" speed="5">
+                    <frame duration="1" hotspotX="0.514286" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Player" plugin-id="Sprite" sid="705406461379555">
             <members>
                 <member>Adult_Gohan</member>
                 <member>Cell</member>
-                <member>CPU_Cell</member>
-                <member>CPU_Kid_Goku</member>
                 <member>Ebirto</member>
                 <member>Frieza</member>
                 <member>Future_Trunks</member>
@@ -15492,8 +15501,8 @@
         <family name="Gui_Objects" plugin-id="Sprite" sid="469079723376249">
             <members>
                 <member>Health_Bar_2</member>
+                <member>Ki_Bar</member>
                 <member>Ki_Bar_1</member>
-                <member>Ki_Bar_2</member>
             </members>
         </family>
         <family name="HP_Bars" plugin-id="TiledBg" sid="856422539187224">
@@ -15630,28 +15639,8 @@
         </family>
         <family name="CPU" plugin-id="Sprite" sid="417465879552963">
             <members>
-                <member>Cell</member>
                 <member>CPU_Cell</member>
                 <member>CPU_Kid_Goku</member>
-                <member>Ebirto</member>
-                <member>Frieza</member>
-                <member>Future_Trunks</member>
-                <member>Goku</member>
-                <member>Goku_Middel</member>
-                <member>GT_Goku</member>
-                <member>IsaacBypass</member>
-                <member>Kid_Goku</member>
-                <member>Kid_Goku_Earily</member>
-                <member>Krillin_Middle</member>
-                <member>Piccolo</member>
-                <member>Shenkai</member>
-                <member>Teen_Gohan</member>
-                <member>Tien_Middel</member>
-                <member>TOP_Goku</member>
-                <member>Ultimate_Gohan</member>
-                <member>Vegeta</member>
-                <member>Vegeta_Middle</member>
-                <member>Yamcha_Middel</member>
             </members>
             <instance-variables>
                 <instance-variable name="Bot_SSJ" sid="233365561012848" type="number" />
@@ -15733,6 +15722,7 @@
         </layout-folder>
         <layout-folder name="Objects layout">
             <layout>Objects.xml</layout>
+            <layout>CPUs&amp;NPCS.xml</layout>
         </layout-folder>
     </layout-folder>
     <event-folder>
@@ -15784,7 +15774,9 @@
             </event-folder>
             <event-folder name="NPCs_event">
                 <event-folder name="CPU_Events">
-                    <event-folder name="CPU_Controls" />
+                    <event-folder name="CPU_Controls">
+                        <event-sheet>CPU_Controls.xml</event-sheet>
+                    </event-folder>
                 </event-folder>
                 <event-sheet>Gun_Soldier_Npc.xml</event-sheet>
                 <event-sheet>Sandbag_Collision.xml</event-sheet>

@@ -3,6 +3,64 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>AI_Test_Event</name>
     <events>
+        <event-group description="The Code For Player" sid="138965914425857" title="Player">
+            <sub-events>
+                <include>Transformations_Event</include>
+                <include>Charcter Voice clips</include>
+                <include>Charcter Code</include>
+                <include>Special_Attacks</include>
+                <include>Controls</include>
+                <include>Flying_Event</include>
+                <include>Chargeing_Event</include>
+                <include>Attacking_Event</include>
+                <include>Camera_Event</include>
+                <include>Collisions_Event</include>
+                <include>Health</include>
+            </sub-events>
+        </event-group>
+        <event-group description="Code For Computer" sid="779376008425724" title="CPU" />
+        <event-group description="roam around the map as any charcter" sid="237571270009667" title="Free Roaming event2">
+            <sub-events>
+                <include>in_Game_Objects</include>
+                <include>Clouds</include>
+                <include>Full Screen Option</include>
+                <event-block sid="658743478824726">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="316174142643598" type="Player">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="760009006382093" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="913181552267920">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="707885511531143" type="System" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="794187808446812" type="Camera">
+                    <param id="0" name="Instance variable">Camera_On</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="114071906407389" type="Camera">
+                    <param id="0" name="Instance variable">Camera_Off</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-3" name="Create object" sid="536641971620399" type="System">
+                    <param id="0" name="Object to create">CPU_Cell</param>
+                    <param id="1" name="Layer">3</param>
+                    <param id="2" name="X">344</param>
+                    <param id="3" name="Y">104</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="389635193637761" type="CPU_Cell">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="616700968804817">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="761717232415238" type="System" />
@@ -69,51 +127,6 @@
                 </action>
                 <action id="-15" name="Set visible" sid="332195859060524" type="Punch_Collision">
                     <param id="0" name="Visibility">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-group description="roam around the map as any charcter" sid="237571270009667" title="Free Roaming event2">
-            <sub-events>
-                <include>Transformations_Event</include>
-                <include>Charcter Voice clips</include>
-                <include>Charcter Code</include>
-                <include>Special_Attacks</include>
-                <include>in_Game_Objects</include>
-                <include>Gun_Soldier_Npc</include>
-                <include>Clouds</include>
-                <include>Controls</include>
-                <include>Full Screen Option</include>
-                <include>Flying_Event</include>
-                <include>Health</include>
-                <include>Collisions_Event</include>
-                <include>Camera_Event</include>
-                <include>Attacking_Event</include>
-                <include>Chargeing_Event</include>
-                <event-block sid="658743478824726">
-                    <conditions>
-                        <condition id="-2" name="Compare Y" sid="316174142643598" type="Player">
-                            <param id="0" name="Comparison">4</param>
-                            <param id="1" name="Y co-ordinate">LayoutHeight</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-26" name="Restart layout" sid="760009006382093" type="System" />
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-block sid="913181552267920">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="707885511531143" type="System" />
-            </conditions>
-            <actions>
-                <action id="-13" name="Set boolean" sid="794187808446812" type="Camera">
-                    <param id="0" name="Instance variable">Camera_On</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action id="-13" name="Set boolean" sid="114071906407389" type="Camera">
-                    <param id="0" name="Instance variable">Camera_Off</param>
-                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>
