@@ -1,0 +1,852 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Health</name>
+    <events>
+        <variable constant="0" name="HP" sid="651837757631131" static="0" type="number">100</variable>
+        <variable constant="0" name="HP_Max" sid="409381553130395" static="0" type="number">100</variable>
+        <event-group description="the health for charcters" sid="447940455110056" title="Health">
+            <sub-events>
+                <event-block sid="195338673674059">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="349414661141253" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="869561467533679" type="HP_Bar">
+                            <param id="0" name="Width">(Self.HP_Bar+ (Player.Hp - HP_Max) * (Self.HP_Bar / HP_Max))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="928314747647026">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="623732787983249" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="570019240813632" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="891742093209704">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="557101843600673" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="344875208517689" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block any="1" sid="290304673558811">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="184198600815447" type="Player">
+                    <param id="0" name="Instance variable">Hp</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="442922215617961">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="622274657702937" type="Player" />
+                        <condition id="-7" name="Compare instance variable" sid="112536373319790" type="Player">
+                            <param id="0" name="Instance variable">SSJ</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="136924348571763" type="Player" />
+                        <condition id="-4" name="Trigger once while true" sid="754962480377700" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="506089580337783" type="Player">
+                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="163413529314250" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="917116144861668">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="759080660223216" type="Player">
+                    <param id="0" name="Instance variable">Hp</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="466164612540328">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="336278237173640" type="Player" />
+                        <condition id="-7" name="Compare instance variable" sid="751927219382999" type="Player">
+                            <param id="0" name="Instance variable">SSJ</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="683894373923118" type="Player" />
+                        <condition id="-4" name="Trigger once while true" sid="484196117735786" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="993448467502193" type="Player">
+                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="396235474860210" type="Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="120384995848199">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="649604568184559" type="Player" />
+                <condition id="-7" name="Compare instance variable" sid="956515788307016" type="Player">
+                    <param id="0" name="Instance variable">Hp</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="717332556418620" type="Audio">
+                    <param id="0" name="Audio file">Defeated</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-8</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="159238293890134" title="Base_Damage">
+            <sub-events>
+                <event-group description="" sid="390966741035033" title="Defeated_Base">
+                    <sub-events>
+                        <event-block sid="151857744664767">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="133401498641430" type="Player">
+                                    <param id="0" name="Instance variable">Hp</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="652345872036225" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" name="Is mirrored" sid="879409291195337" type="Player" />
+                                <condition id="-4" name="Trigger once while true" sid="527394203798934" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="745668005304079" type="Player">
+                                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="410857186085468" type="Player">
+                                    <param id="0" name="Vector X">820</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="430798538508461" type="Player">
+                                    <param id="0" name="Vector Y">-180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="158567603509916">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="293537387638675" type="Player">
+                                    <param id="0" name="Instance variable">Hp</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="382206798478314" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="582967059130921" type="Player" />
+                                <condition id="-4" name="Trigger once while true" sid="337908417925475" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="672555228379944" type="Player">
+                                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="879092405984709" type="Player">
+                                    <param id="0" name="Vector X">-820</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="199051862584358" type="Player">
+                                    <param id="0" name="Vector Y">-180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="918902134622916">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="193573446674758" type="Player">
+                            <param id="0" name="Object">HP_Damage</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="826341957589654" type="Player">
+                            <param id="0" name="Instance variable">SSJ</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="199320745100748" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="292077643635046" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="753837700883625" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="127862083064970" type="Player">
+                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="229780271296532" type="Player">
+                            <param id="0" name="Vector X">420</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="956611099111872">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="263926075999493" type="Player">
+                            <param id="0" name="Object">HP_Damage</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="688990553876578" type="Player">
+                            <param id="0" name="Instance variable">SSJ</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="209841171417610" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="365196055082350" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="147036021003333" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="190747906534413" type="Player">
+                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="860976853003093" type="Player">
+                            <param id="0" name="Vector X">-420</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="110491936434565">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="360114155904217" type="Player">
+                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="129002202025832" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="299727625736468" type="Player">
+                            <param id="0" name="Instance variable">SSJ</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="392796924400406" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="183675005445833" type="Player">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="830029245968172">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="837010639602159" type="Player">
+                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="838702781971081" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="518353329535675" type="Player">
+                            <param id="0" name="Instance variable">SSJ</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="893894537298595" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="107984651699130" type="Player">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="354989512036006" title="SSJ_Damage">
+            <sub-events>
+                <event-group description="" sid="151541480777384" title="Defeated_SSJ1">
+                    <sub-events>
+                        <event-block sid="445084164622340">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="248337430943507" type="Player">
+                                    <param id="0" name="Instance variable">Hp</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="421198170750584" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="7" name="Is mirrored" sid="351305159885231" type="Player" />
+                                <condition id="-4" name="Trigger once while true" sid="118856442491112" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="112931148479539" type="Player">
+                                    <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="603005112632912" type="Player">
+                                    <param id="0" name="Vector X">820</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="402955560729363">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="846448915656435" type="Player">
+                                    <param id="0" name="Instance variable">Hp</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="675357980169379" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="775560725627715" type="Player" />
+                                <condition id="-4" name="Trigger once while true" sid="901574681336589" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="170939020742184" type="Player">
+                                    <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="642105679880353" type="Player">
+                                    <param id="0" name="Vector X">-820</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="200178460671966">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="592298956783326" type="Player">
+                            <param id="0" name="Object">HP_Damage</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="240775774880879" type="Player">
+                            <param id="0" name="Instance variable">SSJ</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="325267080900702" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="814919194722783" type="Player" />
+                        <condition id="-4" name="Trigger once while true" sid="110833158051338" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="388942223008889" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="943682137430277" type="Player">
+                            <param id="0" name="Animation">&quot;HurtSSJ1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="198224716154296" type="Player">
+                            <param id="0" name="Vector X">420</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="738879291347133">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="128870436056758" type="Player">
+                            <param id="0" name="Object">HP_Damage</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="979844919116795" type="Player">
+                            <param id="0" name="Instance variable">SSJ</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="171224077480286" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="268941190592576" type="Player" />
+                        <condition id="-4" name="Trigger once while true" sid="814526429143026" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="505466502388103" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="497564884983943" type="Player">
+                            <param id="0" name="Animation">&quot;HurtSSJ1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="460676727519035" type="Player">
+                            <param id="0" name="Vector X">-420</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="592090730067513">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="172771878830055" type="Player">
+                            <param id="0" name="Animation">&quot;HurtSSJ1&quot;</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="788686026730186" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="937652976308607" type="Player">
+                            <param id="0" name="Instance variable">SSJ</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="525753426776180" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="195752552814305" type="Player">
+                            <param id="0" name="Animation">&quot;IdleSSJ1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="921047223522559">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="398132724989717" type="Player">
+                            <param id="0" name="Animation">&quot;HurtSSJ1&quot;</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="547280541640931" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="865889005806691" type="Player">
+                            <param id="0" name="Instance variable">SSJ</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="787086274437149" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="212497023509022" type="Player">
+                            <param id="0" name="Animation">&quot;JumpSSJ1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="586699832442426">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="756264980264142" type="Player">
+                    <param id="0" name="Object">SenzuBean</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="888811414975147" type="SenzuBean" />
+                <action id="-11" name="Add to" sid="403136725545873" type="Player">
+                    <param id="0" name="Instance variable">Hp</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="888652855915425">
+            <conditions>
+                <condition id="4" name="On finished" sid="525927071914603" type="Player">
+                    <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="117706958180244" type="Player">
+                    <param id="0" name="Instance variable">SSJ</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="955241203306555">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="151982084507229" type="Keyboard">
+                    <param id="0" name="Key">78</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="497987092671414" type="Player">
+                    <param id="0" name="Instance variable">Hp</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="621008442510453">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="812560603694349" type="Keyboard">
+                    <param id="0" name="Key">74</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="827332088982459" type="Player">
+                    <param id="0" name="Instance variable">Hp</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="519707980584991">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="708451156142568" type="Keyboard">
+                    <param id="0" name="Key">81</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="263378359804079" type="Player">
+                    <param id="0" name="Instance variable">Knock_Out</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="260723044978038" type="Player">
+                    <param id="0" name="Instance variable">Knock_Out</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="967419847840091">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="477650907674996" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="202539637760029" type="Player">
+                    <param id="0" name="Instance variable">Knock_Out</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="454979982945514" type="Player">
+                    <param id="0" name="Instance variable">Knock_Out</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="405235013536667" title="Base_Knockout">
+            <sub-events>
+                <event-group description="" sid="568463633325009" title="Base_KO">
+                    <sub-events>
+                        <event-block sid="264166461420208">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="906176179186382" type="Player">
+                                    <param id="0" name="Instance variable">Knock_Out</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="494242923992228" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" name="Is mirrored" sid="983426206778540" type="Player" />
+                                <condition id="-4" name="Trigger once while true" sid="249995978293108" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="716626509412391" type="Player">
+                                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="916561701000947" type="Player">
+                                    <param id="0" name="Vector X">500</param>
+                                </action>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="998422747743028" type="Player">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="375180315960866">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="667465222191262" type="Player">
+                                    <param id="0" name="Instance variable">Knock_Out</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="132874093676997" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="457515955422987" type="Player" />
+                                <condition id="-4" name="Trigger once while true" sid="109662158848324" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="664234238114261" type="Player">
+                                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="735526415904987" type="Player">
+                                    <param id="0" name="Vector X">-500</param>
+                                </action>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="134782669158136" type="Player">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block any="1" sid="578647742855929">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="356507182045266" type="Player">
+                            <param id="0" name="Instance variable">Knock_Out</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="263770151481076">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="680070479307565" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="294962658643250" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" name="Is mirrored" sid="415209122021470" type="Player" />
+                                <condition id="-4" name="Trigger once while true" sid="876683000147416" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="248268368315567" type="Player">
+                                    <param id="0" name="Animation">&quot;Down&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="159440729177954" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="0" name="Play" sid="915617845643408" type="Audio">
+                                    <param id="0" name="Audio file">Defeated</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-8</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="708517191169433">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="528091691012162" type="Player">
+                            <param id="0" name="Instance variable">Knock_Out</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="212532032662492">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="426967200176847" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="190009645990695" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="174189992455196" type="Player" />
+                                <condition id="-4" name="Trigger once while true" sid="309651273680316" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="591790366384959" type="Player">
+                                    <param id="0" name="Animation">&quot;Down&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="913534741441720" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="832663004556522" type="Audio">
+                                    <param id="0" name="Audio file">Defeated</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-8</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="162136526942055" title="Base_Recovery">
+            <sub-events>
+                <event-group description="" sid="688685047339607" title="Base_JumpRecovery">
+                    <sub-events>
+                        <event-block sid="536916388154482">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="123966894855458" type="Player">
+                                    <param id="0" name="Instance variable">Knock_Out</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="736101845971579" type="Player">
+                                    <param id="0" name="Instance variable">Hp</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="790292090952670">
+                                    <conditions>
+                                        <condition behavior="Platform" id="3" name="Is jumping" sid="680493530556390" type="Player" />
+                                        <condition id="-7" name="Compare instance variable" sid="897856994206816" type="Player">
+                                            <param id="0" name="Instance variable">SSJ</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="7" name="Is mirrored" sid="512832780701066" type="Player" />
+                                        <condition id="-4" name="Trigger once while true" sid="327220745521586" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="270082372390772" type="Player">
+                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="804658049017261" type="Player">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="803457426835315">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="762981499946142" type="Player">
+                                    <param id="0" name="Instance variable">Knock_Out</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="481083888680969" type="Player">
+                                    <param id="0" name="Instance variable">Hp</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="933822579817773">
+                                    <conditions>
+                                        <condition behavior="Platform" id="3" name="Is jumping" sid="550049893907913" type="Player" />
+                                        <condition id="-7" name="Compare instance variable" sid="953660194205865" type="Player">
+                                            <param id="0" name="Instance variable">SSJ</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="210121058521355" type="Player" />
+                                        <condition id="-4" name="Trigger once while true" sid="561015840204172" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="611644077338941" type="Player">
+                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="792328797104757" type="Player">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="550778352702414">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="576982446829739" type="Player">
+                            <param id="0" name="Instance variable">Knock_Out</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="268577313704330" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="181812251650104">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="744662304994439" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="631143480570665" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" name="Is mirrored" sid="245681046371338" type="Player" />
+                                <condition id="-4" name="Trigger once while true" sid="319838948280194" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="902682578886451" type="Player">
+                                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="713033706442517" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="624242868049411">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="369465327587735" type="Player">
+                            <param id="0" name="Instance variable">Knock_Out</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="449531375979940" type="Player">
+                            <param id="0" name="Instance variable">Hp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="485151114621692">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="324373760799151" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="168565276231050" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="739256221743014" type="Player" />
+                                <condition id="-4" name="Trigger once while true" sid="858468141306583" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="876452743342704" type="Player">
+                                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="190760878076929" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
