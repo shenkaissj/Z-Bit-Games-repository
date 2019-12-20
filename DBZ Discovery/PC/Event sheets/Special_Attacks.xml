@@ -5,249 +5,7 @@
     <events>
         <event-group description="these are the super attacks that can be pulled off in the game with a cirten ammount of ki" sid="785285968671611" title="Special attacks">
             <sub-events>
-                <event-group description="mainly vegeta  or trunks move" sid="900253344993513" title="GalekGun">
-                    <sub-events>
-                        <event-block sid="521763537935086">
-                            <conditions>
-                                <condition id="0" name="On key pressed" sid="549107211564997" type="Keyboard">
-                                    <param id="0" name="Key">70</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Key is down" sid="421851282875482" type="Keyboard">
-                                    <param id="0" name="Key">90</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Key is down" sid="518655410630341" type="Keyboard">
-                                    <param id="0" name="Key">71</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Key is down" sid="609528881068900" type="Keyboard">
-                                    <param id="0" name="Key">75</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Key is down" sid="318762161820219" type="Keyboard">
-                                    <param id="0" name="Key">76</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="961129029384514" type="Player">
-                                    <param id="0" name="Instance variable">SSJ</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="1" inverted="1" name="Is overlapping another object" sid="965854832026298" type="Player">
-                                    <param id="0" name="Object">NoKiblastCollision</param>
-                                </condition>
-                                <condition id="-14" inverted="1" name="Compare variable" sid="296435436673313" type="System">
-                                    <param id="0" name="Variable">Ki</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Is playing" sid="771714391898264" type="Player">
-                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Is playing" sid="159836776699642" type="Player">
-                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Is playing" sid="788367291590514" type="Player">
-                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Is playing" sid="460745523489755" type="Player">
-                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
-                                </condition>
-                                <condition id="-9" inverted="1" name="Is visible" sid="846091607481359" type="Aura" />
-                                <condition id="-14" name="Compare variable" sid="959077787153874" type="System">
-                                    <param id="0" name="Variable">Ki</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">50</param>
-                                </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="864415769161391" type="Player">
-                                    <param id="0" name="Instance variable">Transforming</param>
-                                </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="204963752659321" type="Player">
-                                    <param id="0" name="Instance variable">Dialog</param>
-                                </condition>
-                                <condition id="-7" name="Compare instance variable" sid="856961498207306" type="Player">
-                                    <param id="0" name="Instance variable">Energy_attacks</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">2</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="397398156530151">
-                                    <conditions>
-                                        <condition id="-6" name="Every X seconds" sid="703114042132071" type="System">
-                                            <param id="0" name="Interval (seconds)">12</param>
-                                        </condition>
-                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="856097733064329" type="Player" />
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="670274039066706" type="Player" />
-                                        <condition id="2" inverted="1" name="Key is down" sid="521044780835312" type="Keyboard">
-                                            <param id="0" name="Key">71</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="755825594656111" type="Player">
-                                            <param id="0" name="Instance variable">Energy_attacks</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">2</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-13" name="Set boolean" sid="950598397514163" type="Player">
-                                            <param id="0" name="Instance variable">Fireing_Beam</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="468573563673001" type="Player">
-                                            <param id="0" name="Object">Chargeing_Ki_Beam2</param>
-                                            <param id="1" name="Layer">8</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action id="0" name="Play" sid="714557235994386" type="Audio">
-                                            <param id="0" name="Audio file">ki_attack_charge</param>
-                                            <param id="2" name="Loop">1</param>
-                                            <param id="3" name="Volume">-18</param>
-                                            <param id="1" name="Tag (optional)">&quot;ki&quot;</param>
-                                        </action>
-                                        <action behavior="Fade" id="1" name="Start fade" sid="221803211341781" type="Chargeing_Ki_Beam2" />
-                                        <action id="4" name="Set animation" sid="596174559226460" type="Player">
-                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
-                                            <param id="1" name="From">0</param>
-                                        </action>
-                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="720045313955505" type="Player">
-                                            <param id="0" name="Input">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="988756509262299" type="System">
-                                            <param id="0" name="Seconds">2</param>
-                                        </action>
-                                        <action id="-9" name="Destroy" sid="578432183262937" type="Chargeing_Ki_Beam2" />
-                                        <action id="6" name="Stop" sid="591021088644047" type="Audio">
-                                            <param id="0" name="Tag">&quot;ki&quot;</param>
-                                        </action>
-                                        <action id="4" name="Set animation" sid="521748340336021" type="Player">
-                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="719248463911749" type="System">
-                                            <param id="0" name="Seconds">0.2</param>
-                                        </action>
-                                        <action behavior="ScrollTo" id="0" name="Shake" sid="147255881072107" type="Camera">
-                                            <param id="0" name="Magnitude">-1</param>
-                                            <param id="1" name="Duration">1</param>
-                                            <param id="2" name="Mode">1</param>
-                                        </action>
-                                        <action id="4" name="Set animation" sid="159773911394580" type="GalekGun_Beam">
-                                            <param id="0" name="Animation">&quot;Beam_Loop&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="0" name="Play" sid="912650980437246" type="Audio">
-                                            <param id="0" name="Audio file">beam sfx</param>
-                                            <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">-14</param>
-                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                        </action>
-                                        <action id="0" name="Spawn another object" sid="206525710096080" type="Player">
-                                            <param id="0" name="Object">GalekGun_Beam</param>
-                                            <param id="1" name="Layer">8</param>
-                                            <param id="2" name="Image point">2</param>
-                                        </action>
-                                        <action id="-11" name="Subtract from" sid="130189563339705" type="System">
-                                            <param id="0" name="Variable">Ki</param>
-                                            <param id="1" name="Value">30</param>
-                                        </action>
-                                        <action behavior="ScrollTo" id="0" name="Shake" sid="821266137094428" type="Camera">
-                                            <param id="0" name="Magnitude">-1</param>
-                                            <param id="1" name="Duration">2</param>
-                                            <param id="2" name="Mode">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="739280317105502" type="System">
-                                            <param id="0" name="Seconds">2</param>
-                                        </action>
-                                        <action id="4" name="Set animation" sid="554375482995527" type="GalekGun_Beam">
-                                            <param id="0" name="Animation">&quot;Beam_End&quot;</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="245800803094086" type="System">
-                                            <param id="0" name="Seconds">0.3</param>
-                                        </action>
-                                        <action id="-9" name="Destroy" sid="676898145141482" type="GalekGun_Beam" />
-                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="581798608208624" type="Player">
-                                            <param id="0" name="Input">0</param>
-                                        </action>
-                                        <action id="4" name="Set animation" sid="148971063244755" type="Player">
-                                            <param id="0" name="Animation">&quot;Idle&quot;</param>
-                                            <param id="1" name="From">0</param>
-                                        </action>
-                                        <action id="-13" name="Set boolean" sid="720046082343574" type="Player">
-                                            <param id="0" name="Instance variable">Fireing_Beam</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="914281935224100">
-                            <conditions>
-                                <condition id="-18" name="On created" sid="203597418548016" type="GalekGun_Beam" />
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="458437147361279" type="Player">
-                                    <param id="0" name="Instance variable">Dialog</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="519181180053878">
-                                    <conditions>
-                                        <condition id="7" name="Is mirrored" sid="748016799921563" type="Player" />
-                                        <condition id="-7" name="Compare instance variable" sid="102243247673799" type="Player">
-                                            <param id="0" name="Instance variable">Energy_attacks</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">2</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-8" name="Set angle" sid="979856148954517" type="GalekGun_Beam">
-                                            <param id="0" name="Angle">180</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="241656900802144">
-                            <conditions>
-                                <condition id="-18" name="On created" sid="553990388847555" type="Chargeing_Ki_Beam2" />
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="572673829893001" type="Player">
-                                    <param id="0" name="Instance variable">Dialog</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="248589171322658">
-                                    <conditions>
-                                        <condition id="7" name="Is mirrored" sid="714461559142468" type="Player" />
-                                        <condition id="-7" name="Compare instance variable" sid="564090592075810" type="Player">
-                                            <param id="0" name="Instance variable">Energy_attacks</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">2</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="7" name="Set mirrored" sid="154383974221173" type="Chargeing_Ki_Beam2">
-                                            <param id="0" name="State">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="586626253201278">
-                                    <conditions>
-                                        <condition id="7" inverted="1" name="Is mirrored" sid="602030381051485" type="Player" />
-                                        <condition id="-7" name="Compare instance variable" sid="256140649784910" type="Player">
-                                            <param id="0" name="Instance variable">Energy_attacks</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">2</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="7" name="Set mirrored" sid="138767178619841" type="Chargeing_Ki_Beam2">
-                                            <param id="0" name="State">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-                <event-group description="the main move in the series" sid="690721868517298" title="Kamehameha Base">
+                <event-group description="a kamehameha like beam" sid="690721868517298" title="Beam 1">
                     <sub-events>
                         <event-block sid="561145289075034">
                             <conditions>
@@ -303,15 +61,15 @@
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="802183297356334" type="Player">
                                     <param id="0" name="Instance variable">Dialog</param>
                                 </condition>
-                                <condition id="-7" name="Compare instance variable" sid="765226338482547" type="Player">
-                                    <param id="0" name="Instance variable">Energy_attacks</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
                                 <condition id="-7" inverted="1" name="Compare instance variable" sid="300208872737262" type="Player">
                                     <param id="0" name="Instance variable">Hp</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="129608388031040" type="Player">
+                                    <param id="0" name="Instance variable">Beam_type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -437,8 +195,8 @@
                                 <event-block sid="835875637970291">
                                     <conditions>
                                         <condition id="7" name="Is mirrored" sid="101861026447504" type="Player" />
-                                        <condition id="-7" name="Compare instance variable" sid="590461992305063" type="Player">
-                                            <param id="0" name="Instance variable">Energy_attacks</param>
+                                        <condition id="-7" name="Compare instance variable" sid="122436070171766" type="Player">
+                                            <param id="0" name="Instance variable">Beam_type</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
@@ -463,8 +221,8 @@
                                 <event-block sid="535251710797494">
                                     <conditions>
                                         <condition id="7" name="Is mirrored" sid="137885656456183" type="Player" />
-                                        <condition id="-7" name="Compare instance variable" sid="604784674670968" type="Player">
-                                            <param id="0" name="Instance variable">Energy_attacks</param>
+                                        <condition id="-7" name="Compare instance variable" sid="190280937790829" type="Player">
+                                            <param id="0" name="Instance variable">Beam_type</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
@@ -478,8 +236,8 @@
                                 <event-block sid="886173242221591">
                                     <conditions>
                                         <condition id="7" inverted="1" name="Is mirrored" sid="583310744051893" type="Player" />
-                                        <condition id="-7" name="Compare instance variable" sid="305981126799253" type="Player">
-                                            <param id="0" name="Instance variable">Energy_attacks</param>
+                                        <condition id="-7" name="Compare instance variable" sid="912767171501150" type="Player">
+                                            <param id="0" name="Instance variable">Beam_type</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
@@ -496,5 +254,49 @@
                 </event-group>
             </sub-events>
         </event-group>
+        <comment>Purple</comment>
+        <event-block sid="393504405552329">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="809633591674837" type="Player">
+                    <param id="0" name="Instance variable">Energy_attacks</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-28" name="Set effect parameter" sid="780626427168420" type="Kamehameha_Beam">
+                    <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                    <param id="1" name="Parameter index">24</param>
+                    <param id="2" name="Value">20</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="771671634150835" type="Chargeing_Ki_Beam">
+                    <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                    <param id="1" name="Parameter index">24</param>
+                    <param id="2" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Blue</comment>
+        <event-block sid="465081152496060">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="134013319486816" type="Player">
+                    <param id="0" name="Instance variable">Energy_attacks</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-28" name="Set effect parameter" sid="207300262545518" type="Kamehameha_Beam">
+                    <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                    <param id="1" name="Parameter index">0</param>
+                    <param id="2" name="Value">20</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="271001030762428" type="Chargeing_Ki_Beam">
+                    <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                    <param id="1" name="Parameter index">0</param>
+                    <param id="2" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
