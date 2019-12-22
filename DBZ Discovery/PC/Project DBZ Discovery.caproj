@@ -758,6 +758,38 @@
                         </animation-folder>
                     </animation-folder>
                 </object-type>
+                <object-type name="HiddenCharcter" sid="855918875847871">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Goku" pingpong="0" repeatcount="1" repeatto="0" sid="148102484418541" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HiddenCharcter2" sid="665143217441660">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Goku" pingpong="0" repeatcount="1" repeatto="0" sid="134097074590514" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HiddenCharcter3" sid="930366666166357">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Goku" pingpong="0" repeatcount="1" repeatto="0" sid="519260403095568" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HiddenCharcter4" sid="628868851476506">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Goku" pingpong="0" repeatcount="1" repeatto="0" sid="184780231667755" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
             <object-folder name="Charcter_Select">
                 <object-type name="Sprite3" sid="740302665246134">
@@ -776,7 +808,7 @@
                         </animation>
                     </animation-folder>
                 </object-type>
-                <object-type name="TiledBackground4" sid="353436988297850">
+                <object-type name="Select_Background" sid="353436988297850">
                     <plugin id="TiledBg" />
                     <texture />
                 </object-type>
@@ -806,7 +838,7 @@
                         </animation-folder>
                     </animation-folder>
                 </object-type>
-                <object-type name="CharcterSelectCharcterIcons" sid="806690353437007">
+                <object-type name="Charcter_Preview" sid="806690353437007">
                     <plugin id="Sprite" />
                     <behaviors>
                         <behavior-type name="Fade" sid="296179375400457">
@@ -825,8 +857,11 @@
                                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                                 </animation>
                             </animation-folder>
-                            <animation-folder name="Teen Gohan">
+                            <animation-folder name="Gohan">
                                 <animation framecount="1" loop="0" name="TeenGohanPreview" pingpong="0" repeatcount="1" repeatto="0" sid="858676829400418" speed="5">
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                                </animation>
+                                <animation framecount="1" loop="0" name="UltimateGohan" pingpong="0" repeatcount="1" repeatto="0" sid="987894220566608" speed="5">
                                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                                 </animation>
                             </animation-folder>
@@ -839,9 +874,17 @@
                                 <animation framecount="1" loop="0" name="GokuMiddlePreview" pingpong="0" repeatcount="1" repeatto="0" sid="506935153106355" speed="5">
                                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                                 </animation>
+                                <animation framecount="1" loop="0" name="KidGokuPreview" pingpong="0" repeatcount="1" repeatto="0" sid="646719270604480" speed="5">
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                                </animation>
                             </animation-folder>
                             <animation-folder name="VegetaMiddle&amp;CellGamesVegeta">
                                 <animation framecount="1" loop="0" name="VegetaMiddleCellGamesVegeta" pingpong="0" repeatcount="1" repeatto="0" sid="704663477300634" speed="5">
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                                </animation>
+                            </animation-folder>
+                            <animation-folder name="Krillin">
+                                <animation framecount="1" loop="0" name="Krillin_Middle" pingpong="0" repeatcount="1" repeatto="0" sid="981319182498630" speed="5">
                                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                                 </animation>
                             </animation-folder>
@@ -17505,7 +17548,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="TiledBackground7" sid="695456467611241">
+        <object-type name="Banner" sid="695456467611241">
             <plugin id="TiledBg" />
             <texture />
         </object-type>
@@ -17693,6 +17736,10 @@
                 <member>Gohan_Icon</member>
                 <member>Goku_Icon</member>
                 <member>Goku_Middle_Icon</member>
+                <member>HiddenCharcter</member>
+                <member>HiddenCharcter2</member>
+                <member>HiddenCharcter3</member>
+                <member>HiddenCharcter4</member>
                 <member>IsaacBypass_Icon</member>
                 <member>Kid_Goku_Icon</member>
                 <member>Krillin_Icon</member>
@@ -17704,13 +17751,16 @@
                 <member>Vegeta_Middle_Icon</member>
                 <member>Yamcha_Middle_Icon</member>
             </members>
+            <instance-variables>
+                <instance-variable name="Charcters" sid="462593034759881" type="number" />
+            </instance-variables>
         </family>
         <family name="Charcter_Select_Guis" plugin-id="Sprite" sid="953181341550700">
             <members>
                 <member>Adult_Gohan_Icon</member>
                 <member>Cell_Icon</member>
+                <member>Charcter_Preview</member>
                 <member>CharcterIcon</member>
-                <member>CharcterSelectCharcterIcons</member>
                 <member>CharcterSelectCharcterIcons2</member>
                 <member>Earily_Kid_Goku_Icon</member>
                 <member>Frieza_Icon</member>
@@ -17718,6 +17768,10 @@
                 <member>Gohan_Icon</member>
                 <member>Goku_Icon</member>
                 <member>Goku_Middle_Icon</member>
+                <member>HiddenCharcter</member>
+                <member>HiddenCharcter2</member>
+                <member>HiddenCharcter3</member>
+                <member>HiddenCharcter4</member>
                 <member>IsaacBypass_Icon</member>
                 <member>Kid_Goku_Icon</member>
                 <member>Krillin_Icon</member>
@@ -17805,10 +17859,7 @@
                 <layout>Jungle_Map.xml</layout>
                 <layout>Desert_map.xml</layout>
             </layout-folder>
-            <layout-folder name="Fighting_Maps">
-                <layout>Gokus_House_2.xml</layout>
-                <layout>Desert_map_2.xml</layout>
-            </layout-folder>
+            <layout-folder name="VS_Maps_Beta" />
             <layout-folder name="Test_Maps">
                 <layout>AI_Test_Layout.xml</layout>
                 <layout>Test.xml</layout>
@@ -17897,7 +17948,7 @@
         <event-folder name="GameModes_Events">
             <event-sheet>Freeroaming_event.xml</event-sheet>
         </event-folder>
-        <event-sheet>Charcter_Select.xml</event-sheet>
+        <event-sheet>Charcter_Select_Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />
@@ -18018,6 +18069,7 @@
         <file name="DBZD Intro theme.ogg" />
         <file name="DBZD_Menu_Music.ogg" />
         <file name="Charcter Select.ogg" />
+        <file name="Charcter_Select.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">
