@@ -67,7 +67,7 @@
     <object-folder>
         <object-folder name="GUIs">
             <object-folder name="in_gmae_guis">
-                <object-type name="Health_Bar_2" sid="488717357762443">
+                <object-type name="Health_Bar_GUI1" sid="488717357762443">
                     <plugin id="Sprite" />
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Bar_1" pingpong="0" repeatcount="1" repeatto="0" sid="339980000061901" speed="5">
@@ -158,6 +158,38 @@
                     <plugin id="TiledBg" />
                     <instance-variables>
                         <instance-variable name="Ki_Bar" sid="473632665932071" type="number" />
+                    </instance-variables>
+                    <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
+                </object-type>
+                <object-type name="Health_Bar_GUI2" sid="630380756740722">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Bar_1" pingpong="0" repeatcount="1" repeatto="0" sid="874044257192585" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\tyler jones\Downloads\Health Bar\sprite_1.png">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Bar_2" pingpong="0" repeatcount="1" repeatto="0" sid="592427696037406" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="1">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HP_Bar_AI" sid="995805700898617">
+                    <plugin id="TiledBg" />
+                    <instance-variables>
+                        <instance-variable name="HP_Bar" sid="210158771538563" type="number" />
                     </instance-variables>
                     <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
                 </object-type>
@@ -18152,7 +18184,8 @@
         </family>
         <family name="Gui_Objects" plugin-id="Sprite" sid="469079723376249">
             <members>
-                <member>Health_Bar_2</member>
+                <member>Health_Bar_GUI1</member>
+                <member>Health_Bar_GUI2</member>
                 <member>Ki_Bar</member>
                 <member>Ki_Bar_1</member>
             </members>
@@ -18160,6 +18193,7 @@
         <family name="HP_Bars" plugin-id="TiledBg" sid="856422539187224">
             <members>
                 <member>HP_Bar</member>
+                <member>HP_Bar_AI</member>
                 <member>Ki_Bar_3</member>
                 <member>SSJ_Bar</member>
             </members>
@@ -18342,6 +18376,7 @@
                 <instance-variable name="state" sid="916428217166977" type="string" />
                 <instance-variable name="Dist" sid="175621011959856" type="number" />
                 <instance-variable name="Active" sid="804547192269659" type="boolean" />
+                <instance-variable name="Set_CPU" sid="921500902781670" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="CPU_Platform" sid="364552030205050">
@@ -18472,6 +18507,9 @@
             <event-sheet>Freeroaming_event.xml</event-sheet>
         </event-folder>
         <event-folder name="Beta_Ai">
+            <event-folder name="Latter_on_AI">
+                <event-sheet>AI_Controls_2.xml</event-sheet>
+            </event-folder>
             <event-sheet>AI_Controls.xml</event-sheet>
             <event-sheet>AI_Transformations.xml</event-sheet>
             <event-sheet>AI_Charcter_Code.xml</event-sheet>
@@ -18479,6 +18517,7 @@
             <event-sheet>AI_Flying.xml</event-sheet>
             <event-sheet>AI_Chargeing.xml</event-sheet>
             <event-sheet>AI_Special_Attacks.xml</event-sheet>
+            <event-sheet>AI_Attacking.xml</event-sheet>
         </event-folder>
         <event-sheet>Charcter_Select_Event.xml</event-sheet>
     </event-folder>

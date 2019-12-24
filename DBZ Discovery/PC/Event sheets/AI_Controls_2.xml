@@ -1,0 +1,2047 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>AI_Controls_2</name>
+    <events>
+        <event-group description="The basic Movement for the game" sid="493037202283026" title="Main Controls_AI2">
+            <sub-events>
+                <event-block sid="528652825910714">
+                    <conditions>
+                        <condition behavior="CPU_Platform" id="3" name="Is jumping" sid="538283562361732" type="CPU" />
+                        <condition id="-4" name="Trigger once while true" sid="471672688684373" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="748335667706127" type="Audio">
+                            <param id="0" name="Audio file">jumping</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-12</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="594814724460220">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Is playing" sid="412637913965547" type="Player">
+                                    <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="233938919573388" type="Player">
+                                    <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="690715207912123" type="Player">
+                                    <param id="0" name="Animation">&quot;ChargeSSJ2&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="130698730342965" type="Player">
+                                    <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="753265911995757" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="974414164062586" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="154530745793552" type="Player">
+                                    <param id="0" name="Animation">&quot;ChargeSSJ3&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="435171489303632" type="Player">
+                                    <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="611903402614835" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="439257210322111" type="Player">
+                                    <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="The Running Button in game" sid="537813087593508" title="Sprinting_AI2">
+            <sub-events>
+                <event-block sid="856681153098108">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="468712194561953" type="Player" />
+                        <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="826495954378687" type="Player" />
+                        <condition id="2" name="Key is down" sid="773871388683174" type="Keyboard">
+                            <param id="0" name="Key">16</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="327501695348376" type="Player">
+                            <param id="0" name="Instance variable">Dialog</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="909991002904410">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Key is down" sid="831900793465117" type="Keyboard">
+                                    <param id="0" name="Key">75</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="788653675716247" type="Keyboard">
+                                    <param id="0" name="Key">76</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="957676049070412" type="Keyboard">
+                                    <param id="0" name="Key">71</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="128356532145151" type="Player">
+                                    <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="476136085483081" type="Player">
+                                    <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="297421063496703" type="Player">
+                                    <param id="0" name="Animation">&quot;ChargeSSJ2&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="984231741744017" type="Player">
+                                    <param id="0" name="Animation">&quot;ChargeSSJ3&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="999044128325293" type="Player">
+                                    <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="637152053650781" type="Player">
+                                    <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="717162429063212" type="Player">
+                                    <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                        <event-block sid="936294161049454">
+                            <conditions>
+                                <condition behavior="Platform" id="0" name="Is moving" sid="762212146272376" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="727227629410663" type="Player">
+                                    <param id="0" name="Max Speed">44</param>
+                                </action>
+                                <action id="6" name="Set speed" sid="571723179131569" type="Player">
+                                    <param id="0" name="Speed">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="809109084276676">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="825461219121476" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="392351853499038" type="Player">
+                            <param id="0" name="Max Speed">32</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="666648914454427" type="Player">
+                            <param id="0" name="Speed">17</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="contains all of the events to play the charcters animations as well as the animations for the forms" sid="221733592458119" title="Charcter Animations_AI2">
+            <sub-events>
+                <event-group description="the second form animations" sid="245369576674341" title="SSJ2 Animatios3">
+                    <sub-events>
+                        <event-block sid="320794827515105">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="905338780290663" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="515318052036056" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="790614735275646" type="Player" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="367073318052712" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="717682265238482" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="335786248201599" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0.1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="125115272624931" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="647121389585660">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="376154727351771" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="333543431983324" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="359701675446190" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="458728969419088" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="444725193258906" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="119857442691185" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="257502908205011" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="608015247558831" type="Player">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="888481398797303" type="Player">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="375223123114188" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="394173649293448" type="Player">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="623192946339067" type="Player">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="559342017418551" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="267596579654080" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="242903459156622" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="598162420155731" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="226480378271394" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="660880151586905" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="962292679314566" type="Player">
+                                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="478355201991621" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="973426310570976" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="965845825111031" type="Player">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="153898841194984" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="475208256301932" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="283474834666300" type="Player">
+                                            <param id="0" name="Animation">&quot;Down_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="295240491312486" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="446430452717245" type="Player">
+                                            <param id="0" name="Animation">&quot;Down_SSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="263001092729864" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="950178075363392" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="984960543476818" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="760073085211664" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="965579020622129" type="Player">
+                                            <param id="0" name="Animation">&quot;IdleSSJ2&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="209903525521515" type="Player">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="968852975073416">
+                            <conditions>
+                                <condition behavior="Platform" id="0" name="Is moving" sid="197656561034327" type="Player" />
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="498302125278329" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="164153803794015" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="481950016025088" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="575391314345975" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="467577848157549" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0.1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="960099377404882" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="445046060488217">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="409083608029106" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="197022597704119" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="481525121010273" type="Player">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="143663507217598" type="Player">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="114407311230099" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="436100450705502" type="Player">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="893278419005440" type="Player">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="377448617208064" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="563775820492929" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="178369901093656" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="737750311449463" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="820351232890169" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="778742128170135" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="371364530740678" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="829309441241143" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="753908449829451" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="719070439900198" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="455546961633168" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="844876495613874" type="Player">
+                                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="398475839469294" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="546667604969963" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="308267277697063" type="Player">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="299089465951653" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="192656905566159" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="571659290298555" type="Player">
+                                            <param id="0" name="Animation">&quot;Down_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="420965893355502" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="245918523082022" type="Player">
+                                            <param id="0" name="Animation">&quot;Down_SSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="102409916114532" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="739399927234240" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="591151081369222" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="459192658990727" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="684092058117620" type="Player">
+                                            <param id="0" name="Animation">&quot;WalkSSJ2&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="903479968067507">
+                            <conditions>
+                                <condition behavior="Platform" id="5" name="On jump" sid="415817120658607" type="Player" />
+                                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="991625715151285" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="825587415094914" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="728510752784299" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="901624228465360" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="163939653419281" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0.1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="368875400223923" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="354467058007094">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="317444640260335" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="327326934012387" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="996952325512274" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="186291170044771" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="999392799684714" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="108085607855352" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="576187948435723" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="317283570426237" type="Player">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="470143484181878" type="Player">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="455988649952421" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="146054240029662" type="Player">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="827807933798435" type="Player">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="981221997914475" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="765044239970636" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="951868529863137" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="954937498446964" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="386405137058634" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="150803779741960" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="492164898467924" type="Player">
+                                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="472584907475590" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="398039864635382" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="508332622949754" type="Player">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="242641555223320" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="364571086189345" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="976859151085679" type="Player">
+                                            <param id="0" name="Animation">&quot;Down_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="110797198269769" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="335583826831861" type="Player">
+                                            <param id="0" name="Animation">&quot;Down_SSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="784632120920302" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="121051405155238" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="551209479385962" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="617884598235752" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="987604593507918" type="Player">
+                                            <param id="0" name="Animation">&quot;JumpSSJ2&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="888707316959852">
+                            <conditions>
+                                <condition behavior="Platform" id="6" name="On fall" sid="653951455398384" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="161982487102327" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="391261217805796" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="583481673103768" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="517275849974053" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0.1</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="614891174364014" type="Player">
+                                    <param id="0" name="Instance variable">Flying</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="816970462535097" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="13" name="Set double-jump" sid="308659562964922" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="780789587139845">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="508832145969626" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="671603483182329" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="185974979986131" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="925852237321085" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="710734661556364" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="656565137474193" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="910592241309009" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="496911319438403" type="Player">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="134430293463545" type="Player">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="972864867436706" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="899466058538002" type="Player">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="723087057797000" type="Player">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="180564537912169" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="528375409316394" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="575492041989390" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="446429089180394" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="684029392378893" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="218184019315653" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="272351894445058" type="Player">
+                                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="911048144974158" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="844856963286795" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="942490936419405" type="Player">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="353190460981644" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="925580787393849" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="898745196839715" type="Player">
+                                            <param id="0" name="Animation">&quot;Down_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="493820216688610" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="337781647672900" type="Player">
+                                            <param id="0" name="Animation">&quot;Down_SSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="971335475409821" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="140099584592855" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="578306981719962" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="968363115491987" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="233208560302242" type="Player">
+                                            <param id="0" name="Animation">&quot;FallingSSJ2&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="818511284458370">
+                            <conditions>
+                                <condition behavior="Platform" id="9" name="On landed" sid="750329282702913" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="202784201794740" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="135028578283371" type="Player" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="177693879323506" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="704911193299373" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="250658898504884" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0.1</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="885547240065373" type="Player">
+                                    <param id="0" name="Instance variable">Flying</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="987962078204827" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="13" name="Set double-jump" sid="269598426712970" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="506574492452173">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="439529730644586" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="110185898788657" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="974424852241064" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="192729351974562" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="657949269936896" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="784968100976240" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="276482634902298" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="131866882360968" type="Player">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="310938182457950" type="Player">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="560542537240151" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="433852279477587" type="Player">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="744293584520794" type="Player">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="721488176615577" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="200261699988880" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="319126899516845" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="655837617094400" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="487699899753512" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="552585849988138" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="882075601716241" type="Player">
+                                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="329610154619016" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="373098938085938" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="413958492040124" type="Player">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="848824976350804" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="861048611940873" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="320971799483838" type="Player">
+                                            <param id="0" name="Animation">&quot;Down_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="102666910661672" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="945930093664927" type="Player">
+                                            <param id="0" name="Animation">&quot;Down_SSJ2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="602305907755576" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="286649090177936" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="471269378128000" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="246081109051531" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="407244472950268" type="Player">
+                                            <param id="0" name="Animation">&quot;IdleSSJ2&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="671209090032477" type="Player">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="344332742430076" type="Audio">
+                                            <param id="0" name="Audio file">land on ground</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-12</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="the first form animations" sid="713145318113164" title="SSJ Animatios3">
+                    <sub-events>
+                        <event-block sid="395126740859455">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="797554136342272" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="870644292600333" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="673836413023291" type="Player" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="813943267005396" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="172814475850931" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="912993202006602" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="522515518632969">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="968036263258920" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="277115533614561" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="442348253207076" type="Player">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="686259587335874" type="Player">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="443645852451606" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="345163792871651" type="Player">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="433282572424676" type="Player">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="681794523937838" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="252671494702079" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="709164384948088" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="715509052280169" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="383376627770123" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="247485065310513" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="176447070022853" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="106477265094290" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="354957606973074" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="518425329996284" type="Player">
+                                            <param id="0" name="Animation">&quot;HurtSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="994211524060440" type="Player">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="975261659814236" type="Player">
+                                            <param id="0" name="Animation">&quot;DownSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="297913014398447" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="829428800031103" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="628834513293551" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="955223594374066" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="265698757127700" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="189914826700182" type="Player">
+                                            <param id="0" name="Animation">&quot;IdleSSJ1&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="304010350608442" type="Player">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="559754609045564">
+                            <conditions>
+                                <condition behavior="Platform" id="0" name="Is moving" sid="253298161840088" type="Player" />
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="725513481735479" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="759190054679591" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="559129568591742" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="135635230588392" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="312852278759672" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="738051639438075">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="736012233743971" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="585337175963761" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="788623235720948" type="Player">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="133171361506374" type="Player">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="588964395391226" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="611341927922048" type="Player">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="805846940571837" type="Player">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="491653804089565" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="979289664163872" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="541889948878679" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="931247830585398" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="251553739246373" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="511082268911418" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="348347746264489" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="301963879749682" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="116538946210115" type="Player">
+                                            <param id="0" name="Animation">&quot;HurtSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="560265917733931" type="Player">
+                                            <param id="0" name="Animation">&quot;DownSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="861923791672911" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="924736289273296" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="523874104603136" type="Player">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="442816459067754" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="814432490332184" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="595833158184028" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="727272899469610" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="239658347783726" type="Player">
+                                            <param id="0" name="Animation">&quot;WalkSSJ1&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="687859480025968">
+                            <conditions>
+                                <condition behavior="Platform" id="5" name="On jump" sid="679652100418462" type="Player" />
+                                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="571576227904762" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="621080181647753" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="483731594044790" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="217289142473974" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="459855226449469" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="638904268469798">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="840653372282607" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="871681233311699" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="959270241334973" type="Player">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="371949959696518" type="Player">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="833329975055092" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="237586919750139" type="Player">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="481594898184439" type="Player">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="381135519241443" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="799811384482067" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="210414714590389" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="380680918819895" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="958989201325267" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="276915298713774" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="559815466570138" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="485480003873608" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="528336656648396" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="866856589670229" type="Player">
+                                            <param id="0" name="Animation">&quot;HurtSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="656606393340700" type="Player">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="251209847359924" type="Player">
+                                            <param id="0" name="Animation">&quot;DownSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="768816532409484" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="175797886936620" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="693005934839680" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="470771447444768" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="461165412208177" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="229789155943409" type="Player">
+                                            <param id="0" name="Animation">&quot;JumpSSJ1&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="781658308424787">
+                            <conditions>
+                                <condition behavior="Platform" id="6" name="On fall" sid="409719294586281" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="123816535217100" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="419351913218975" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="717221347837259" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="747449355391358" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0.1</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="218120659907364" type="Player">
+                                    <param id="0" name="Instance variable">Flying</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="13" name="Set double-jump" sid="885610784437065" type="Player">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="155986544167021">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="308764106278563" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="997062356622876" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="116450409417250" type="Player">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="429566110194705" type="Player">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="544999458137995" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="384221132426664" type="Player">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="524649680481058" type="Player">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="153768267395347" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="357162097144731" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="607307233885575" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="412763537250448" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="140745566435284" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="783768854333378" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="206037698090875" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="284912586745797" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="488565479503927" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="661653555730900" type="Player">
+                                            <param id="0" name="Animation">&quot;HurtSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="464557835515205" type="Player">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="938329171499077" type="Player">
+                                            <param id="0" name="Animation">&quot;DownSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="169020300897230" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="485845281550837" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="207081954811306" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="751842823961810" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="108454546028835" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="272308257222674" type="Player">
+                                            <param id="0" name="Animation">&quot;FallingSSJ&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="390247477565119">
+                            <conditions>
+                                <condition behavior="Platform" id="9" name="On landed" sid="660247330180949" type="Player" />
+                                <condition id="-7" name="Compare instance variable" sid="406688590709383" type="Player">
+                                    <param id="0" name="Instance variable">SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="332011104086972" type="Player" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="817688017047217" type="Player">
+                                    <param id="0" name="Instance variable">Dialog</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="435644480869272" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="422609148178283" type="Player">
+                                    <param id="0" name="Instance variable">Form_limit</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0.1</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="838139406432347" type="Player">
+                                    <param id="0" name="Instance variable">Flying</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="13" name="Set double-jump" sid="127721384811732" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="447977585275681">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="571590008742432" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="649136201414083" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="294041373064333" type="Player">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="908583235318365" type="Player">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="953558317356886" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="729932874527799" type="Player">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="190195063025509" type="Player">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="416422460269078" type="Player">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="342866603614521" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="799141247957213" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="281188504225837" type="Player">
+                                            <param id="0" name="Animation">&quot;LeftPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="111032002393807" type="Player">
+                                            <param id="0" name="Animation">&quot;RightPunchSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="411183542046230" type="Player">
+                                            <param id="0" name="Animation">&quot;KickSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="990094519107368" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ2Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="959307820956781" type="Player">
+                                            <param id="0" name="Animation">&quot;SSJ3Transformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="683845615228540" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="516072569205067" type="Player">
+                                            <param id="0" name="Animation">&quot;HurtSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="621260203483619" type="Player">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="366483700906287" type="Player">
+                                            <param id="0" name="Animation">&quot;DownSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="299584071098030" type="Player">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="329232278004428" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="806937849521335" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="833617317988180" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="236979578468604" type="Player">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="386540849902205" type="Player">
+                                            <param id="0" name="Animation">&quot;IdleSSJ1&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="742401144165927" type="Player">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="975121895871964" type="Audio">
+                                            <param id="0" name="Audio file">land on ground</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-12</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="The basic animations when a player is not in a form" sid="866653022387838" title="Base Animatios3">
+                    <sub-events>
+                        <event-block sid="151218879380922">
+                            <conditions>
+                                <condition behavior="CPU_Platform" id="2" name="Is on floor" sid="192342762665645" type="CPU" />
+                                <condition id="-7" name="Compare instance variable" sid="478691932188332" type="CPU">
+                                    <param id="0" name="Instance variable">Bot_SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition behavior="CPU_Platform" id="0" inverted="1" name="Is moving" sid="839055185311320" type="CPU" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="126443763901335" type="CPU">
+                                    <param id="0" name="Instance variable">Set_CPU</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="973963598415434">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="623474704845474" type="CPU">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="138738527130319" type="CPU">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="155188578500835" type="CPU">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="469103338599728" type="CPU">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="508720374579539" type="CPU">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="499164653629548" type="CPU">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="598364796313529" type="CPU">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="488676369901362" type="CPU">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="675462744212123" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="249819837531361" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="540576463540056" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="127843385667424" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="574211418549926" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="840563539835671" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="234696852214907" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="318034646212501" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="970258610575676" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="235510751970658" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="873327219679759" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="415898752402733" type="CPU">
+                                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="498471094992302" type="CPU">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="448745444221301">
+                            <conditions>
+                                <condition behavior="CPU_Platform" id="0" name="Is moving" sid="919606576650394" type="CPU" />
+                                <condition behavior="CPU_Platform" id="2" name="Is on floor" sid="781105418913717" type="CPU" />
+                                <condition id="-7" name="Compare instance variable" sid="280559339363300" type="CPU">
+                                    <param id="0" name="Instance variable">Bot_SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="702499907931197" type="CPU">
+                                    <param id="0" name="Instance variable">Set_CPU</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="221337757331866">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="550256222398484" type="CPU">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="900640475364462" type="CPU">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="252394586170212" type="CPU">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="758790460035194" type="CPU">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="103615617094778" type="CPU">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="542868677000452" type="CPU">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="179859243957839" type="CPU">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="483245554824184" type="CPU">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="663184375491802" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="349105085039147" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="358438781216013" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="927930557328403" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="285599128009793" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="206020703505040" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="555243401643096" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="343848800347120" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="524512488708048" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="413732448395807" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="654564747914094" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="218792209752778" type="CPU">
+                                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="726902202391686">
+                            <conditions>
+                                <condition behavior="CPU_Platform" id="5" name="On jump" sid="677820998498845" type="CPU" />
+                                <condition behavior="CPU_Platform" id="2" inverted="1" name="Is on floor" sid="907504196611801" type="CPU" />
+                                <condition id="-7" name="Compare instance variable" sid="565735279520136" type="CPU">
+                                    <param id="0" name="Instance variable">Bot_SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="860396078426975" type="CPU">
+                                    <param id="0" name="Instance variable">Set_CPU</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="319881126009307">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="987749108943514" type="CPU">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="391680850659748" type="CPU">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="142291478783366" type="CPU">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="450933877458861" type="CPU">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="656175560850235" type="CPU">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="456812246049286" type="CPU">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="418362007699282" type="CPU">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="651852278315829" type="CPU">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="317202268259162" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="757338862277613" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="801691683432238" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="785830116780542" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="953678257280443" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="428629806948974" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="747170514304149" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="535289117417159" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="126282353993040" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="284701742571186" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="500042027527660" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="854907034621613" type="CPU">
+                                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="750720452448024">
+                            <conditions>
+                                <condition behavior="CPU_Platform" id="6" name="On fall" sid="977446595442882" type="CPU" />
+                                <condition id="-7" name="Compare instance variable" sid="853877361953407" type="CPU">
+                                    <param id="0" name="Instance variable">Bot_SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="703294448595858" type="CPU">
+                                    <param id="0" name="Instance variable">Set_CPU</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="CPU_Platform" id="13" name="Set double-jump" sid="966640960146772" type="CPU">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="611526675949898">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="312235718794312" type="CPU">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="604750396801639" type="CPU">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="567644275042028" type="CPU">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="944511291266961" type="CPU">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="716703553792704" type="CPU">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="569171862225654" type="CPU">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="291321580199491" type="CPU">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="469653194090029" type="CPU">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="129862390561782" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="384207432509142" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="291860272293862" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="956873273118555" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="574486594880835" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="632727729017445" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="307476383399962" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="969183425400809" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="562441164185094" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="358162501016954" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="717928892347418" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="844189698822399" type="CPU">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="707969520103473" type="CPU">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="243874328502483" type="CPU">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="223494671217539" type="CPU">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="999254139375050" type="CPU">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="809175491160204" type="CPU">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="953497789198468" type="CPU">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="900158165305687" type="CPU">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="820965370464031" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="435341127735726" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="407977310014597" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="866897467712583" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="370483798242870" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="136813929483788" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="806550153442208" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="785040676647948" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="104887609723532" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="620689100389789" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="197797778609580" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="236478672306652" type="CPU">
+                                            <param id="0" name="Animation">&quot;Falling&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="301566359301325">
+                            <conditions>
+                                <condition behavior="CPU_Platform" id="9" name="On landed" sid="724287641283246" type="CPU" />
+                                <condition id="-7" name="Compare instance variable" sid="803194090857714" type="CPU">
+                                    <param id="0" name="Instance variable">Bot_SSJ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition behavior="CPU_Platform" id="2" name="Is on floor" sid="650174036527176" type="CPU" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="716891205653741" type="CPU">
+                                    <param id="0" name="Instance variable">Set_CPU</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="CPU_Platform" id="13" name="Set double-jump" sid="822438176164954" type="CPU">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="897183724690118">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="110348757593996" type="CPU">
+                                            <param id="0" name="Animation">&quot;LeftPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="150059165854866" type="CPU">
+                                            <param id="0" name="Animation">&quot;RightPunch&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="940779850063412" type="CPU">
+                                            <param id="0" name="Animation">&quot;Kick&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="826169641893657" type="CPU">
+                                            <param id="0" name="Animation">&quot;Teleport&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="474241341765572" type="CPU">
+                                            <param id="0" name="Animation">&quot;SSJTransformation&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="759327690953824" type="CPU">
+                                            <param id="0" name="Animation">&quot;BaseForm&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="961350177618635" type="CPU">
+                                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="254953764177397" type="CPU">
+                                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="463535068458992" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="518300286401712" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttack_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="528994483487263" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="870475369229344" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="118769824118186" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_Base&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="882564009476990" type="CPU">
+                                            <param id="0" name="Animation">&quot;Hurt_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="972629830959853" type="CPU">
+                                            <param id="0" name="Animation">&quot;Down_SSJ1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="990934844078326" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="672277231760172" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ1_2&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="351741295398030" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_1&quot;</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="539130458209559" type="CPU">
+                                            <param id="0" name="Animation">&quot;HPAttackSSJ2_2&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="619721625451218" type="CPU">
+                                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="284621761865832" type="CPU">
+                                            <param id="0" name="Angle">0</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="825551218670454" type="Audio">
+                                            <param id="0" name="Audio file">land on ground</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-12</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="595290702716777" title="CPU_Movement2">
+            <sub-events>
+                <event-group description="" sid="334754982024721" title="State Machine2">
+                    <sub-events>
+                        <event-block sid="683449250115487">
+                            <conditions>
+                                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="136601931772288" type="CPU">
+                                    <param id="0" name="Object">Player</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="718600572460911" type="CPU">
+                                    <param id="0" name="Instance variable">Dist</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">32</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="180889524104687" type="CPU">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Value">&quot;Walk&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="688326754574529" title="CPU_Dist2">
+                    <sub-events>
+                        <event-block sid="998994743285693">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="792208300354946" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="558340794614671" type="CPU">
+                                    <param id="0" name="Instance variable">Dist</param>
+                                    <param id="1" name="Value">distance(CPU.X,CPU.X,Player.X,Player.X)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="134459594751241" title="CPU_Line of sight2">
+                    <sub-events>
+                        <event-block sid="784775940140036">
+                            <conditions>
+                                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="466687083268233" type="CPU">
+                                    <param id="0" name="Object">Player</param>
+                                </condition>
+                                <condition id="-2" name="Compare Y" sid="330083875519133" type="Player">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">Player.X</param>
+                                </condition>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="263017405392564" type="CPU">
+                                    <param id="0" name="Object">Player</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="LineOfSight" id="1" name="Set cone of view" sid="512065401327765" type="CPU">
+                                    <param id="0" name="Cone of view">360</param>
+                                </action>
+                                <action behavior="CPU_Platform" id="7" name="Simulate control" sid="663432059706931" type="CPU">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="656003254311009" type="CPU">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="488598052674935">
+                            <conditions>
+                                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="867140723247137" type="CPU">
+                                    <param id="0" name="Object">Player</param>
+                                </condition>
+                                <condition id="-1" name="Compare X" sid="535044494749583" type="Player">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">Player.Y</param>
+                                </condition>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="739899342146282" type="CPU">
+                                    <param id="0" name="Object">Player</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="LineOfSight" id="1" name="Set cone of view" sid="986865235105209" type="CPU">
+                                    <param id="0" name="Cone of view">360</param>
+                                </action>
+                                <action behavior="CPU_Platform" id="7" name="Simulate control" sid="408326036262465" type="CPU">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="107424950333165" type="CPU">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block sid="404431089186158">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="178587158425574" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="CPU_Platform" id="1" name="Set max speed" sid="978043725599370" type="CPU">
+                    <param id="0" name="Max Speed">32</param>
+                </action>
+                <action behavior="CPU_Platform" id="4" name="Set jump strength" sid="241992954755522" type="CPU">
+                    <param id="0" name="Jump strength">182</param>
+                </action>
+                <action behavior="CPU_Platform" id="5" name="Set gravity" sid="171059148991786" type="CPU">
+                    <param id="0" name="Gravity">413</param>
+                </action>
+                <action behavior="CPU_Platform" id="2" name="Set acceleration" sid="908279724071035" type="CPU">
+                    <param id="0" name="Acceleration">610</param>
+                </action>
+                <action behavior="CPU_Platform" id="3" name="Set deceleration" sid="444986185195656" type="CPU">
+                    <param id="0" name="Deceleration">200</param>
+                </action>
+                <action behavior="CPU_Platform" id="6" name="Set max fall speed" sid="576431418988941" type="CPU">
+                    <param id="0" name="Max fall speed">400</param>
+                </action>
+                <action behavior="CPU_Platform" id="11" name="Set enabled" sid="811737387879430" type="CPU">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
