@@ -448,6 +448,29 @@
                         </animation>
                     </animation-folder>
                 </object-type>
+                <object-type name="TutorialArrow_1" sid="727015295780795">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="536975328156284" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="TutorialArrow_2" sid="117705030740862">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="640068184483579" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
             <object-folder name="Fade Guis">
                 <object-type name="Fadein" sid="890366334567648">
@@ -613,6 +636,13 @@
                 </object-type>
                 <object-type name="Text2" sid="304313274938910">
                     <plugin id="Text" />
+                </object-type>
+                <object-type name="PageNumberFont" sid="126761817785545">
+                    <plugin id="Spritefont2" />
+                    <instance-variables>
+                        <instance-variable name="Tutorial_Numbers" sid="742264074600299" type="number" />
+                    </instance-variables>
+                    <texture />
                 </object-type>
             </object-folder>
             <object-folder name="Charcter_Icons">
@@ -18077,6 +18107,32 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Tutorial_Page" sid="120485460365905">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Tutorial_Pages" sid="730614814546468" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Tutorial_1" pingpong="0" repeatcount="1" repeatto="0" sid="592585562869872" speed="5">
+                    <frame duration="1" hotspotX="0.500548" hotspotY="0.500763" />
+                </animation>
+                <animation framecount="1" loop="0" name="Tutorial_2" pingpong="0" repeatcount="1" repeatto="0" sid="639561134287530" speed="5">
+                    <frame duration="1" hotspotX="0.500548" hotspotY="0.500763" />
+                </animation>
+                <animation framecount="1" loop="0" name="Tutorial_3" pingpong="0" repeatcount="1" repeatto="0" sid="416876353209980" speed="5">
+                    <frame duration="1" hotspotX="0.500548" hotspotY="0.500763" />
+                </animation>
+                <animation framecount="1" loop="0" name="Tutorial_4" pingpong="0" repeatcount="1" repeatto="0" sid="343626356660394" speed="5">
+                    <frame duration="1" hotspotX="0.500548" hotspotY="0.500763" />
+                </animation>
+                <animation framecount="1" loop="0" name="Tutorial_5" pingpong="0" repeatcount="1" repeatto="0" sid="266331569531143" speed="5">
+                    <frame duration="1" hotspotX="0.500548" hotspotY="0.500763" />
+                </animation>
+                <animation framecount="1" loop="0" name="Tutorial_6" pingpong="0" repeatcount="1" repeatto="0" sid="209886884516777" speed="5">
+                    <frame duration="1" hotspotX="0.500548" hotspotY="0.500763" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Player" plugin-id="Sprite" sid="705406461379555">
@@ -18154,6 +18210,7 @@
         </family>
         <family name="Spritefonts" plugin-id="Spritefont2" sid="622207034612843">
             <members>
+                <member>PageNumberFont</member>
                 <member>SpriteFont</member>
                 <member>TextFont2</member>
             </members>
@@ -18207,6 +18264,8 @@
                 <member>Push_Back_Collision</member>
                 <member>Push_Forward_Collision</member>
                 <member>Push_Up_Collision</member>
+                <member>TutorialArrow_1</member>
+                <member>TutorialArrow_2</member>
             </members>
         </family>
         <family name="Enemy" plugin-id="Sprite" sid="579347497216738">
@@ -18479,6 +18538,7 @@
                 <event-sheet>Main_Menu.xml</event-sheet>
                 <event-sheet>Main_Menu_Event.xml</event-sheet>
                 <event-sheet>Full Screen Option.xml</event-sheet>
+                <event-sheet>Tutorial_Event.xml</event-sheet>
             </event-folder>
             <event-folder name="Start_Screen">
                 <event-sheet>Start_Screen_Event.xml</event-sheet>
@@ -18622,6 +18682,9 @@
         <file name="DBZD_Menu_Music.ogg" />
         <file name="Charcter Select.ogg" />
         <file name="Charcter_Select.ogg" />
+        <file name="Super DBZ Track07.ogg" />
+        <file name="Super DBZ Track08.ogg" />
+        <file name="Super DBZ Track15.ogg" />
     </music-folder>
     <files-folder>
         <file-folder name="Icons">
