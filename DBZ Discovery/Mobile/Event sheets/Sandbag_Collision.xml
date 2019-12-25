@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Sandbag_Collision</name>
+    <events>
+        <variable constant="0" name="Hit_Counter" sid="262585320390975" static="0" type="number">0</variable>
+        <event-group description="" sid="922367262317615" title="Sandbag Collosion">
+            <sub-events>
+                <event-block sid="824824082631623">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="658290606406448" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="662995061842319" type="HittingEffect">
+                            <param id="0" name="Pin to">Sandbag</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="666466872030650" type="SmallExplisonEffect">
+                            <param id="0" name="Pin to">Sandbag</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="531869803625165">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="649303379163333" type="Sandbag">
+                            <param id="0" name="Animation">&quot;HurtLeft&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="203446503813766" type="Sandbag">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="334077362789537">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="845099191764506" type="Sandbag">
+                            <param id="0" name="Animation">&quot;HurtRight&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="581407294616091" type="Sandbag">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="522263386113091" title="Sandbag Beam Collision">
+            <sub-events>
+                <event-block sid="819918711192840">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="219209669867537" type="Beams">
+                            <param id="0" name="Object">Sandbag</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="676376752125029" type="Player" />
+                        <condition id="2" inverted="1" name="Is playing" sid="253564548126149" type="Player">
+                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="788708917102235" type="Player">
+                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="634636212365429">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="981637497939916" type="System">
+                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="181106374420343">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="200141336239009" type="Beams">
+                                            <param id="0" name="Object">Sandbag</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="622375756278977" type="Sandbag">
+                                            <param id="0" name="Vector X">-140</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="655336114445560" type="SmallExplisonEffect">
+                                            <param id="0" name="Animation">&quot;Hit&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="519035269074306" type="Sandbag">
+                                            <param id="0" name="Animation">&quot;HurtLeft&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="447245638580453" type="Audio">
+                                            <param id="0" name="Audio file">small explosion 2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-19</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="187986983894977">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="640115009565492" type="Player" />
+                        <condition id="2" inverted="1" name="Is playing" sid="320356321687867" type="Player">
+                            <param id="0" name="Animation">&quot;Charge&quot;</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="601554785023193" type="Player">
+                            <param id="0" name="Animation">&quot;ChargeSSJ1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="664691846014695">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="120626375391837" type="System">
+                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="435280427306895">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="845573069032650" type="Beams">
+                                            <param id="0" name="Object">Sandbag</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="528196204295283" type="Sandbag">
+                                            <param id="0" name="Vector X">140</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="233273602406984" type="SmallExplisonEffect">
+                                            <param id="0" name="Animation">&quot;Hit&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="263091581842231" type="Sandbag">
+                                            <param id="0" name="Animation">&quot;HurtLeft&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="454318554176540" type="Audio">
+                                            <param id="0" name="Audio file">small explosion 2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-19</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="685856235364205">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="146010182826592" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="2" name="Set acceleration" sid="591148856397715" type="Sandbag">
+                    <param id="0" name="Acceleration">310</param>
+                </action>
+                <action behavior="Platform" id="2" name="Set acceleration" sid="375716033972799" type="Sandbag">
+                    <param id="0" name="Acceleration">94</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
