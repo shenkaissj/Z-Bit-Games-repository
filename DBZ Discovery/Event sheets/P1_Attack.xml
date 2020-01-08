@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>P1_Attack</name>
+    <events>
+        <event-block sid="120532925429646">
+            <conditions>
+                <condition id="4" name="On finished" sid="630776936951799" type="P1">
+                    <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="624152514428566" type="P1">
+                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; P1.Charcters</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="781262841022019">
+            <conditions>
+                <condition id="4" name="On finished" sid="631973287788537" type="P1">
+                    <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="806026365003913" type="P1">
+                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; P1.Charcters</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="484954794368286">
+            <conditions>
+                <condition id="4" name="On finished" sid="579854556805418" type="P1">
+                    <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="778495758614019" type="P1">
+                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; P1.Charcters</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="the Basic Attack for Player" sid="326445274248569" title="P1_Attack">
+            <sub-events>
+                <event-group description="" sid="454806024131858" title="P1_Punch">
+                    <sub-events>
+                        <comment>Left_Punch</comment>
+                        <event-block sid="356495353691926">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="511201603779572" type="Keyboard">
+                                    <param id="0" name="Key">75</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="303253553845448" type="P1">
+                                    <param id="0" name="Instance variable">SSJ1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="784244143313122" type="P1" />
+                                <condition id="2" inverted="1" name="Is playing" sid="203981294761026" type="P1">
+                                    <param id="0" name="Animation">&quot;Baseform_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="799892879533630" type="P1">
+                                    <param id="0" name="Animation">&quot;SSJForm_1_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="975721383391503" type="P1">
+                                    <param id="0" name="Instance variable">NoClip</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="295693098387384" type="P1">
+                                    <param id="0" name="Instance variable">Fireing_Beam</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="966747971331591" type="P1">
+                                    <param id="0" name="Instance variable">attack</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="638042415465549" type="Keyboard">
+                                    <param id="0" name="Key">16</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="106891604041211">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="812862308517978" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="721299731576668">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="814058856981629" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="785868584019731" type="P1">
+                                                    <param id="0" name="Vector X">76</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="980773490835255" type="P1">
+                                                    <param id="0" name="Instance variable">Hit_Count</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="620648624811643">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="144973255591556" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="247676958878298" type="P1">
+                                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="307743519071476" type="P1">
+                                                            <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="480029364826707">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="434198516619845" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="233300720491112" type="P1">
+                                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="225958123770003" type="P1">
+                                                            <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="489385600442842">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="417055138249638" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="619914154531283" type="P1">
+                                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="941897762524993" type="P1">
+                                                            <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="418303037642633">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="980327173269620" type="P1">
+                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="181596169273566" type="P1">
+                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Right_Punch</comment>
+                        <event-block sid="324555511990211">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="963847667491649" type="Keyboard">
+                                    <param id="0" name="Key">75</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="422283510644311" type="P1">
+                                    <param id="0" name="Instance variable">SSJ1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" name="Is mirrored" sid="708580865289144" type="P1" />
+                                <condition id="2" inverted="1" name="Is playing" sid="688665484954879" type="P1">
+                                    <param id="0" name="Animation">&quot;Baseform_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="558327003281478" type="P1">
+                                    <param id="0" name="Animation">&quot;SSJForm_1_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="635103833748784" type="P1">
+                                    <param id="0" name="Instance variable">NoClip</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="646487690981663" type="P1">
+                                    <param id="0" name="Instance variable">Fireing_Beam</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="473880864737368" type="P1">
+                                    <param id="0" name="Instance variable">attack</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="399823429010636" type="Keyboard">
+                                    <param id="0" name="Key">16</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="448316547398667">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="726941264793710" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="334815516508202">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="900692612292708" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="479924526034741" type="P1">
+                                                    <param id="0" name="Vector X">-76</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="202806456134090" type="P1">
+                                                    <param id="0" name="Instance variable">Hit_Count</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="514442216249766">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="532806473568531" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="996302280581120" type="P1">
+                                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="841731093935815" type="P1">
+                                                            <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="286765972552256">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="904169097318135" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="444467524421694" type="P1">
+                                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="225192498884369" type="P1">
+                                                            <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="381607318508634">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="850222337730239" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="157048436179711" type="P1">
+                                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="152892872826900" type="P1">
+                                                            <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="320288586468250">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="294041686326585" type="P1">
+                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="418899040931773" type="P1">
+                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
