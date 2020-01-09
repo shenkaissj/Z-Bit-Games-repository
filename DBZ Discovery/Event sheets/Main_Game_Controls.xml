@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Main_Game_Controls</name>
     <events>
+        <include>Chacter_Code_Event</include>
+        <include>In_Game_Objects</include>
         <include>P1_Attack</include>
         <include>P1_Input_PC</include>
         <event-block sid="675316188918984">
@@ -38,6 +40,16 @@
                 <action id="-13" name="Set boolean" sid="931430729747373" type="P1">
                     <param id="0" name="Instance variable">attack</param>
                     <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="690785858000113" type="Smoke">
+                    <param id="0" name="Pin to">P1</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="-3" name="Create object" sid="541882180374401" type="System">
+                    <param id="0" name="Object to create">Smoke</param>
+                    <param id="1" name="Layer">8</param>
+                    <param id="2" name="X">P1.X</param>
+                    <param id="3" name="Y">P1.Y</param>
                 </action>
             </actions>
         </event-block>

@@ -14,6 +14,9 @@
                     <param id="0" name="Animation">&quot;Jump_&quot; &amp; P1.Charcters</param>
                     <param id="1" name="From">1</param>
                 </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="812204811492089" type="P1">
+                    <param id="0" name="Max Speed">42</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="781262841022019">
@@ -27,6 +30,9 @@
                     <param id="0" name="Animation">&quot;Jump_&quot; &amp; P1.Charcters</param>
                     <param id="1" name="From">1</param>
                 </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="111550265140507" type="P1">
+                    <param id="0" name="Max Speed">42</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="484954794368286">
@@ -39,6 +45,25 @@
                 <action id="4" name="Set animation" sid="778495758614019" type="P1">
                     <param id="0" name="Animation">&quot;Jump_&quot; &amp; P1.Charcters</param>
                     <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="763966213433597" type="P1">
+                    <param id="0" name="Max Speed">42</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="475035640183137">
+            <conditions>
+                <condition id="4" name="On finished" sid="821653354700237" type="P1">
+                    <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; P1.Charcters</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="657931369578308" type="P1">
+                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; P1.Charcters</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="1" name="Set max speed" sid="176681087175379" type="P1">
+                    <param id="0" name="Max Speed">42</param>
                 </action>
             </actions>
         </event-block>
@@ -64,9 +89,6 @@
                                 <condition id="2" inverted="1" name="Is playing" sid="799892879533630" type="P1">
                                     <param id="0" name="Animation">&quot;SSJForm_1_&quot; &amp; P1.Charcters</param>
                                 </condition>
-                                <condition id="2" inverted="1" name="Is playing" sid="883422959830401" type="P1">
-                                    <param id="0" name="Animation">&quot;Run_&quot; &amp; P1.Charcters</param>
-                                </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="975721383391503" type="P1">
                                     <param id="0" name="Instance variable">NoClip</param>
                                 </condition>
@@ -76,8 +98,8 @@
                                 <condition id="-8" name="Is boolean instance variable set" sid="966747971331591" type="P1">
                                     <param id="0" name="Instance variable">attack</param>
                                 </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="894812140645136" type="P1">
-                                    <param id="0" name="Instance variable">Run</param>
+                                <condition id="2" inverted="1" name="Key is down" sid="226729360155020" type="Keyboard">
+                                    <param id="0" name="Key">76</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -94,6 +116,9 @@
                                             <conditions>
                                                 <condition id="-6" name="Every X seconds" sid="814058856981629" type="System">
                                                     <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="883422959830401" type="P1">
+                                                    <param id="0" name="Animation">&quot;Run_&quot; &amp; P1.Charcters</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -124,6 +149,15 @@
                                                             <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
                                                             <param id="1" name="From">1</param>
                                                         </action>
+                                                        <action id="0" name="Play" sid="223084492541967" type="Audio">
+                                                            <param id="0" name="Audio file">kick2</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="182198578101774" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <event-block sid="480029364826707">
@@ -143,6 +177,15 @@
                                                         <action id="4" name="Set animation" sid="225958123770003" type="P1">
                                                             <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
                                                             <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="470244704780209" type="Audio">
+                                                            <param id="0" name="Audio file">kick2</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="390299757041130" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -164,6 +207,44 @@
                                                             <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
                                                             <param id="1" name="From">1</param>
                                                         </action>
+                                                        <action id="0" name="Play" sid="232425821070921" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="680132319072460" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="903851538399038">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="773850383695225" type="P1">
+                                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="889340449924742" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="230189619381283" type="P1">
+                                                            <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="212847787232812" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="568890972489718" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
@@ -172,10 +253,10 @@
                                 </event-block>
                                 <event-block sid="418303037642633">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="980327173269620" type="P1">
+                                        <condition id="-7" name="Compare instance variable" sid="264514858233504" type="P1">
                                             <param id="0" name="Instance variable">Hit_Count</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">3</param>
+                                            <param id="2" name="Value">4</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -205,9 +286,6 @@
                                 <condition id="2" inverted="1" name="Is playing" sid="558327003281478" type="P1">
                                     <param id="0" name="Animation">&quot;SSJForm_1_&quot; &amp; P1.Charcters</param>
                                 </condition>
-                                <condition id="2" inverted="1" name="Is playing" sid="770944350060325" type="P1">
-                                    <param id="0" name="Animation">&quot;Run_&quot; &amp; P1.Charcters</param>
-                                </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="635103833748784" type="P1">
                                     <param id="0" name="Instance variable">NoClip</param>
                                 </condition>
@@ -217,8 +295,8 @@
                                 <condition id="-8" name="Is boolean instance variable set" sid="473880864737368" type="P1">
                                     <param id="0" name="Instance variable">attack</param>
                                 </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="701971846057388" type="P1">
-                                    <param id="0" name="Instance variable">Run</param>
+                                <condition id="2" inverted="1" name="Key is down" sid="544329619625143" type="Keyboard">
+                                    <param id="0" name="Key">76</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -235,6 +313,9 @@
                                             <conditions>
                                                 <condition id="-6" name="Every X seconds" sid="900692612292708" type="System">
                                                     <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="770944350060325" type="P1">
+                                                    <param id="0" name="Animation">&quot;Run_&quot; &amp; P1.Charcters</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -265,6 +346,15 @@
                                                             <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
                                                             <param id="1" name="From">1</param>
                                                         </action>
+                                                        <action id="0" name="Play" sid="142681074657302" type="Audio">
+                                                            <param id="0" name="Audio file">kick2</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="674567691822412" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <event-block sid="286765972552256">
@@ -285,25 +375,72 @@
                                                             <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
                                                             <param id="1" name="From">1</param>
                                                         </action>
+                                                        <action id="0" name="Play" sid="113000416565365" type="Audio">
+                                                            <param id="0" name="Audio file">kick2</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="776371866397324" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                                 <event-block sid="381607318508634">
                                                     <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="850222337730239" type="P1">
-                                                            <param id="0" name="Instance variable">SSJ1</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">0</param>
-                                                        </condition>
                                                         <condition id="-7" name="Compare instance variable" sid="157048436179711" type="P1">
                                                             <param id="0" name="Instance variable">Hit_Count</param>
                                                             <param id="1" name="Comparison">0</param>
                                                             <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="850222337730239" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
                                                         <action id="4" name="Set animation" sid="152892872826900" type="P1">
                                                             <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
                                                             <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="303686416081376" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="439119560048304" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="125613533493857">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="643541696691858" type="P1">
+                                                            <param id="0" name="Instance variable">Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="736902825220466" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="858226029581520" type="P1">
+                                                            <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="529086375204051" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="164565806148930" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -313,15 +450,239 @@
                                 </event-block>
                                 <event-block sid="320288586468250">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="294041686326585" type="P1">
+                                        <condition id="-7" name="Compare instance variable" sid="567901257781322" type="P1">
                                             <param id="0" name="Instance variable">Hit_Count</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">3</param>
+                                            <param id="2" name="Value">4</param>
                                         </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-10" name="Set value" sid="418899040931773" type="P1">
                                             <param id="0" name="Instance variable">Hit_Count</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="110549008670157" title="P1_Strong_Punch">
+                    <sub-events>
+                        <comment>Strong Left_Punch</comment>
+                        <event-block sid="194177508929542">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="778455906638741" type="Keyboard">
+                                    <param id="0" name="Key">76</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="748317385451487" type="P1">
+                                    <param id="0" name="Instance variable">SSJ1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="866250220039915" type="P1" />
+                                <condition id="2" inverted="1" name="Is playing" sid="722958636116376" type="P1">
+                                    <param id="0" name="Animation">&quot;Baseform_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="452679894557878" type="P1">
+                                    <param id="0" name="Animation">&quot;SSJForm_1_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="102913928647029" type="P1">
+                                    <param id="0" name="Instance variable">NoClip</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="341139676855420" type="P1">
+                                    <param id="0" name="Instance variable">Fireing_Beam</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="626955987375996" type="P1">
+                                    <param id="0" name="Instance variable">attack</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="573295225881309" type="Keyboard">
+                                    <param id="0" name="Key">75</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="341463485153893">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="488334203620905" type="System">
+                                            <param id="0" name="Interval (seconds)">1.4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="603869073486791">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="442626569307592" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.2</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="469388028757402" type="P1">
+                                                    <param id="0" name="Animation">&quot;Run_&quot; &amp; P1.Charcters</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="617810167457269" type="P1">
+                                                    <param id="0" name="Vector X">76</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="500823087457699" type="P1">
+                                                    <param id="0" name="Instance variable">Strong_Hit_Count</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="675320503368883">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="429112049443579" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="516418954574606" type="P1">
+                                                            <param id="0" name="Instance variable">Strong_Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="965430948809510" type="P1">
+                                                            <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="808739539112314" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="800968184651538" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="589585063693883">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="558122276433088" type="P1">
+                                            <param id="0" name="Instance variable">Strong_Hit_Count</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="547888777082896" type="P1">
+                                            <param id="0" name="Instance variable">Strong_Hit_Count</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Strong_Right_Punch</comment>
+                        <event-block sid="182195526794812">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="417594520611974" type="Keyboard">
+                                    <param id="0" name="Key">76</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="605646362027226" type="P1">
+                                    <param id="0" name="Instance variable">SSJ1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" name="Is mirrored" sid="913892316201575" type="P1" />
+                                <condition id="2" inverted="1" name="Is playing" sid="686706573574179" type="P1">
+                                    <param id="0" name="Animation">&quot;Baseform_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="365076327442561" type="P1">
+                                    <param id="0" name="Animation">&quot;SSJForm_1_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="342716786851512" type="P1">
+                                    <param id="0" name="Instance variable">NoClip</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="255445889176274" type="P1">
+                                    <param id="0" name="Instance variable">Fireing_Beam</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="515882497703641" type="P1">
+                                    <param id="0" name="Instance variable">attack</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="888819190207514" type="Keyboard">
+                                    <param id="0" name="Key">75</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="169932591231568">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="690298584022882" type="System">
+                                            <param id="0" name="Interval (seconds)">1.4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="189211370103717">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="894020343661323" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.2</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="568801703500570" type="P1">
+                                                    <param id="0" name="Animation">&quot;Run_&quot; &amp; P1.Charcters</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="920572089827771" type="P1">
+                                                    <param id="0" name="Vector X">-76</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="546215926677386" type="P1">
+                                                    <param id="0" name="Instance variable">Strong_Hit_Count</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="509818946979313">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="830454080982428" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="266911386162406" type="P1">
+                                                            <param id="0" name="Instance variable">Strong_Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="591339834404088" type="P1">
+                                                            <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="943205548917896" type="Audio">
+                                                            <param id="0" name="Audio file">kick1</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="414995774785000" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="683913715595619">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="672765654992070" type="P1">
+                                            <param id="0" name="Instance variable">Strong_Hit_Count</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="359490057978360" type="P1">
+                                            <param id="0" name="Instance variable">Strong_Hit_Count</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
                                     </actions>
