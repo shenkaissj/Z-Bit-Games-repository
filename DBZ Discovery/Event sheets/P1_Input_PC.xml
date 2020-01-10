@@ -325,7 +325,7 @@
                             <sub-events>
                                 <event-block sid="670349210281234">
                                     <conditions>
-                                        <condition behavior="Platform" id="6" name="On fall" sid="991170650034251" type="P1" />
+                                        <condition behavior="Platform" id="4" name="Is falling" sid="991170650034251" type="P1" />
                                         <condition id="-7" name="Compare instance variable" sid="905338372918766" type="P1">
                                             <param id="0" name="Instance variable">SSJ1</param>
                                             <param id="1" name="Comparison">0</param>
@@ -419,7 +419,6 @@
                         </event-block>
                         <event-block sid="308462882974756">
                             <conditions>
-                                <condition id="-22" name="Else" sid="535803672091452" type="System" />
                                 <condition behavior="Platform" id="0" name="Is moving" sid="632636225849249" type="P1" />
                                 <condition behavior="Platform" id="2" name="Is on floor" sid="276243850014014" type="P1" />
                                 <condition id="2" inverted="1" name="Is playing" sid="260210070785615" type="P1">
@@ -440,19 +439,45 @@
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action behavior="Platform" id="1" name="Set max speed" sid="565309113657169" type="P1">
-                                    <param id="0" name="Max Speed">42</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="585077400699768" type="P1">
-                                    <param id="0" name="Animation">&quot;Walk_&quot; &amp; P1.Charcters</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action id="-13" name="Set boolean" sid="937720374322803" type="P1">
-                                    <param id="0" name="Instance variable">Run</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="768770571251081">
+                                    <conditions>
+                                        <condition behavior="Platform" id="0" name="Is moving" sid="287100448136122" type="P1" />
+                                        <condition behavior="Platform" id="2" name="Is on floor" sid="410877985372942" type="P1" />
+                                        <condition id="2" inverted="1" name="Is playing" sid="790356679213288" type="P1">
+                                            <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="975046134296304" type="P1">
+                                            <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="181683625597657" type="P1">
+                                            <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="496549262213741" type="P1">
+                                            <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="442615995729706" type="P1">
+                                            <param id="0" name="Instance variable">SSJ1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="1" name="Set max speed" sid="259641177583782" type="P1">
+                                            <param id="0" name="Max Speed">42</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="374702259136777" type="P1">
+                                            <param id="0" name="Animation">&quot;Walk_&quot; &amp; P1.Charcters</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="107778877721189" type="P1">
+                                            <param id="0" name="Instance variable">Run</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <comment>Running Dust Animation</comment>
                         <event-block sid="531846833970321">
