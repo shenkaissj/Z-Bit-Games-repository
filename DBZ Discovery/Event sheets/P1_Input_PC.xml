@@ -175,6 +175,12 @@
                                                 <condition id="2" inverted="1" name="Is playing" sid="374563210172743" type="P1">
                                                     <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; P1.Charcters</param>
                                                 </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="407397507548979" type="P1">
+                                                    <param id="0" name="Animation">&quot;Duck_&quot; &amp; P1.Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="632307438281316" type="P1">
+                                                    <param id="0" name="Animation">&quot;Rise_&quot; &amp; P1.Charcters</param>
+                                                </condition>
                                             </conditions>
                                             <actions>
                                                 <action id="4" name="Set animation" sid="323231846349935" type="P1">
@@ -217,6 +223,12 @@
                                                 </condition>
                                                 <condition id="2" inverted="1" name="Is playing" sid="848694741155925" type="P1">
                                                     <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; P1.Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="750915140499665" type="P1">
+                                                    <param id="0" name="Animation">&quot;Duck_&quot; &amp; P1.Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="881551518968090" type="P1">
+                                                    <param id="0" name="Animation">&quot;Rise_&quot; &amp; P1.Charcters</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -509,6 +521,113 @@
             </conditions>
             <actions>
                 <action id="-26" name="Restart layout" sid="105041638659016" type="System" />
+            </actions>
+        </event-block>
+        <event-group description="the player gets down" sid="217855209246180" title="Ducking">
+            <sub-events>
+                <event-group description="the run button" sid="492304210373957" title="P1_Duck_Base">
+                    <sub-events>
+                        <event-block sid="654775946250986">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="122556967003678" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="685119070056233" type="P1" />
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="932235045490847" type="P1" />
+                                <condition behavior="Platform" id="3" inverted="1" name="Is jumping" sid="944681242193292" type="P1" />
+                                <condition id="2" inverted="1" name="Is playing" sid="430851625890754" type="P1">
+                                    <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="386164736352794" type="P1">
+                                    <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="191209819312749" type="P1">
+                                    <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="875799665156515" type="P1">
+                                    <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="484731115226320" type="P1">
+                                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="107198780469496" type="P1">
+                                    <param id="0" name="Instance variable">SSJ1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="573747330455717" type="P1">
+                                    <param id="0" name="Input">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="460363271728176" type="P1">
+                                    <param id="0" name="Animation">&quot;Duck_&quot; &amp; P1.Charcters</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="919358689813497" type="P1">
+                                    <param id="0" name="Instance variable">Duck</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="524269554012838">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="117979276906068" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="285269019178541" type="P1" />
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="655684202471039" type="P1" />
+                                <condition behavior="Platform" id="3" inverted="1" name="Is jumping" sid="374069807548104" type="P1" />
+                                <condition id="2" inverted="1" name="Is playing" sid="766234976375158" type="P1">
+                                    <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="529431631678592" type="P1">
+                                    <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="921017836066144" type="P1">
+                                    <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="758164672847725" type="P1">
+                                    <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="970188166117818" type="P1">
+                                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="309296481910283" type="P1">
+                                    <param id="0" name="Instance variable">SSJ1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="904199973586704" type="P1">
+                                    <param id="0" name="Animation">&quot;Rise_&quot; &amp; P1.Charcters</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="375244674971648" type="P1">
+                                    <param id="0" name="Input">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="783933487538813" type="P1">
+                                    <param id="0" name="Instance variable">Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block sid="617833568615030">
+            <conditions>
+                <condition id="4" name="On finished" sid="921338910579378" type="P1">
+                    <param id="0" name="Animation">&quot;Rise_&quot; &amp; P1.Charcters</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="187024081899435" type="P1">
+                    <param id="0" name="Animation">&quot;Idle_&quot; &amp; P1.Charcters</param>
+                    <param id="1" name="From">1</param>
+                </action>
             </actions>
         </event-block>
     </events>
