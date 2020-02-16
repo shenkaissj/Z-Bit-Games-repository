@@ -46,6 +46,19 @@
         <event-group description="the main chargeing event for the game" sid="793037665505263" title="Chargeing the main Chargeing Event">
             <sub-events>
                 <event-group description="" sid="134942855424606" title="Aura_Animation" />
+                <event-block sid="581368211394557">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="373679021109781" type="Startup_Aura">
+                            <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="714378489624749" type="Aura">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="692980513819416" type="Startup_Aura" />
+                    </actions>
+                </event-block>
                 <event-group description="" sid="498152196389412" title="Base Charging">
                     <sub-events>
                         <event-block sid="663775192933295">
@@ -78,9 +91,6 @@
                                 <action id="-3" name="Set position" sid="645855386890073" type="Aura">
                                     <param id="0" name="X">P1.X</param>
                                     <param id="1" name="Y">P1.Y</param>
-                                </action>
-                                <action id="-15" name="Set visible" sid="714378489624749" type="Aura">
-                                    <param id="0" name="Visibility">1</param>
                                 </action>
                                 <action behavior="Platform" id="0" name="Set ignoring input" sid="275909514060541" type="P1">
                                     <param id="0" name="Input">1</param>
@@ -130,10 +140,21 @@
                                 <condition id="0" name="On key pressed" sid="175641979694947" type="Keyboard">
                                     <param id="0" name="Key">88</param>
                                 </condition>
+                                <condition id="-7" name="Compare instance variable" sid="823958527896501" type="P1">
+                                    <param id="0" name="Instance variable">Ki</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-3" name="Create object" sid="552568123394003" type="System">
                                     <param id="0" name="Object to create">Swoosh_Effect</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">P1.X</param>
+                                    <param id="3" name="Y">P1.Y</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="387574338239479" type="System">
+                                    <param id="0" name="Object to create">Startup_Aura</param>
                                     <param id="1" name="Layer">9</param>
                                     <param id="2" name="X">P1.X</param>
                                     <param id="3" name="Y">P1.Y</param>
@@ -200,6 +221,7 @@
                                     <param id="1" name="Value">0</param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="872789829912935" type="Swoosh_Effect" />
+                                <action id="-9" name="Destroy" sid="112507513160787" type="Startup_Aura" />
                             </actions>
                             <sub-events>
                                 <event-block sid="676364148096500">
