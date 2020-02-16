@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>P1_Ki_Bar_Event</name>
+    <events>
+        <event-block sid="762449185094349">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="920549961177410" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="846140487416054" type="Ki_Bar_3">
+                    <param id="0" name="Width">(Self.Ki_Bar + (P1.Ki - P1.Ki_Max)*(Self.Ki_Bar / P1.Ki_Max))</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="281048925327817">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="681985884966691" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="642477865935477" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="826449171974499">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="494078677590015" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="586711757353794" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="the main chargeing event for the game" sid="793037665505263" title="Chargeing the main Chargeing Event">
+            <sub-events>
+                <event-group description="" sid="134942855424606" title="Aura_Animation">
+                    <sub-events>
+                        <event-block sid="340242610841961">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="984867922883687" type="Aura">
+                                    <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="602451427667605" type="Aura">
+                                    <param id="0" name="Animation">&quot;Charge_Loop&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="498152196389412" title="Base Charging">
+                    <sub-events>
+                        <event-block sid="663775192933295">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="310033211102214" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="851713372123159" type="P1">
+                                    <param id="0" name="Instance variable">Ki</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="700297690804329" type="P1" />
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="736197052378946" type="P1" />
+                                <condition id="-7" name="Compare instance variable" sid="903023091083941" type="P1">
+                                    <param id="0" name="Instance variable">SSJ1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="637194653077115" type="P1">
+                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; P1.Charcters</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="951143936417424" type="P1">
+                                    <param id="0" name="Instance variable">Ki</param>
+                                    <param id="1" name="Value">0.20</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="645855386890073" type="Aura">
+                                    <param id="0" name="X">P1.X</param>
+                                    <param id="1" name="Y">P1.Y</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="714378489624749" type="Aura">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="275909514060541" type="P1">
+                                    <param id="0" name="Input">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="301008464879567" type="P1">
+                                    <param id="0" name="Instance variable">Chargeing</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="419785686045051" type="Aura">
+                                    <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="373153454351948">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="711381266509228" type="P1">
+                                            <param id="0" name="Animation">&quot;Run_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="295284509119109" type="P1">
+                                            <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="266304500060859" type="P1">
+                                            <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="769113128891800" type="P1">
+                                            <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="788181370531664" type="P1">
+                                            <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="154864332487305" type="P1">
+                                            <param id="0" name="Animation">&quot;Duck_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="498909593532166" type="P1">
+                                            <param id="0" name="Animation">&quot;Rise_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="616779688131465">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="161376980009830" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="843769784292408" type="Audio">
+                                            <param id="0" name="Audio file">ki chargeing sound</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-85</param>
+                                            <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="604117079271873">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="865860301630704" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="874372408975995" type="P1" />
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="222036940068236" type="P1" />
+                                <condition id="-7" name="Compare instance variable" sid="197176213619450" type="P1">
+                                    <param id="0" name="Instance variable">SSJ1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="346135619282649" type="P1">
+                                    <param id="0" name="Animation">&quot;Idle_&quot; &amp; P1.Charcters</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="6" name="Stop" sid="893440288376124" type="Audio">
+                                    <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="534873027207684" type="Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="319565849952756" type="P1">
+                                    <param id="0" name="Input">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="450530711074251" type="P1">
+                                    <param id="0" name="Instance variable">Chargeing</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="676364148096500">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="214738664556210" type="P1">
+                                            <param id="0" name="Animation">&quot;Run_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="808086710679498" type="P1">
+                                            <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="189310051845518" type="P1">
+                                            <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="910311672042577" type="P1">
+                                            <param id="0" name="Animation">&quot;Kick_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="529015517690099" type="P1">
+                                            <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="209120112961734" type="P1">
+                                            <param id="0" name="Animation">&quot;Duck_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="950139413256107" type="P1">
+                                            <param id="0" name="Animation">&quot;Rise_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block sid="845776684986184">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="244999520083655" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="736570085046113" type="Aura">
+                    <param id="0" name="Opacity">30</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

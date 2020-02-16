@@ -24,6 +24,7 @@
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
@@ -436,6 +437,7 @@
                         <instance-variable name="lookaty" sid="319167820633200" type="number" />
                         <instance-variable name="Hp" sid="146552625466413" type="number" />
                         <instance-variable name="Ki" sid="471313511235392" type="number" />
+                        <instance-variable name="Ki_Max" sid="534813455983061" type="number" />
                         <instance-variable name="kills" sid="675171469450923" type="number" />
                         <instance-variable name="deaths" sid="724999999960149" type="number" />
                         <instance-variable name="SSJ1" sid="851391895611256" type="number" />
@@ -459,6 +461,7 @@
                         <instance-variable name="Run" sid="845897084262317" type="boolean" />
                         <instance-variable name="Form_Limit" sid="172730055539490" type="number" />
                         <instance-variable name="Duck" sid="508922476180630" type="boolean" />
+                        <instance-variable name="Chargeing" sid="624359162526007" type="boolean" />
                     </instance-variables>
                     <behaviors>
                         <behavior-type name="Timer" sid="435835945874937">
@@ -469,6 +472,12 @@
                         </behavior-type>
                         <behavior-type name="ScrollTo" sid="480206396307327">
                             <behavior id="scrollto" />
+                        </behavior-type>
+                        <behavior-type name="8Direction" sid="601767170139775">
+                            <behavior id="EightDir" />
+                        </behavior-type>
+                        <behavior-type name="Flying" sid="171595288475681">
+                            <behavior id="EightDir" />
                         </behavior-type>
                     </behaviors>
                     <animation-folder>
@@ -3337,6 +3346,11 @@
         </object-type>
         <object-type name="Aura" sid="537162107317446">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="447251519574927">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
             <effects>
                 <effect-type name="AdjustHSL">
                     <effect id="hsladjust" />
@@ -3383,6 +3397,7 @@
         <layout>Lighting_Test.xml</layout>
         <layout>RRArmy_Ship.xml</layout>
         <layout>Objects.xml</layout>
+        <layout>Opening_Layout.xml</layout>
     </layout-folder>
     <event-folder>
         <event-folder name="Player_Events">
@@ -3394,19 +3409,22 @@
                 <event-folder name="P1_Controls_PC">
                     <event-folder name="P1_Events_PC">
                         <event-folder name="P1_Bars">
-                            <event-folder name="Flying_Bar" />
-                            <event-folder name="HP_Bar">
+                            <event-folder name="P1_Flying_Bar">
+                                <event-sheet>P1_Flying_Bar_Event.xml</event-sheet>
+                            </event-folder>
+                            <event-folder name="P1_HP_Bar">
                                 <event-sheet>P1_HP.xml</event-sheet>
                             </event-folder>
-                            <event-folder name="Ki_Bar" />
-                            <event-folder name="SSJ_Bar" />
+                            <event-folder name="P1_Ki_Bar">
+                                <event-sheet>P1_Ki_Bar_Event.xml</event-sheet>
+                            </event-folder>
+                            <event-folder name="P1_SSJ_Bar">
+                                <event-sheet>P1_SSJ_Bar_Event.xml</event-sheet>
+                            </event-folder>
                         </event-folder>
                         <event-folder name="Main_P1_Inputs" />
                         <event-folder name="P1_Supers">
                             <event-sheet>P1_Super_Attacks.xml</event-sheet>
-                        </event-folder>
-                        <event-folder name="P1_Chargeing">
-                            <event-sheet>P1_Chargeing.xml</event-sheet>
                         </event-folder>
                         <event-folder name="Attacks">
                             <event-sheet>P1_Attack.xml</event-sheet>
@@ -3417,8 +3435,15 @@
                         <event-folder name="Sprinting">
                             <event-sheet>P1_Sprinting_Button.xml</event-sheet>
                         </event-folder>
+                        <event-folder name="P1_SSJ">
+                            <event-sheet>P1_SuperSayian.xml</event-sheet>
+                        </event-folder>
+                        <event-sheet>P1_PC_Debug.xml</event-sheet>
                     </event-folder>
                 </event-folder>
+            </event-folder>
+            <event-folder name="Mobile_Controls">
+                <event-folder name="P1_Mobile_Events" />
             </event-folder>
             <event-sheet>In_Game_Objects.xml</event-sheet>
             <event-sheet>Debug.xml</event-sheet>
@@ -3430,6 +3455,7 @@
             </event-folder>
         </event-folder>
         <event-sheet>Freeroam_Game_Controls.xml</event-sheet>
+        <event-sheet>Opening_event_sheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />
@@ -3479,6 +3505,7 @@
             <file name="land.ogg" />
             <file name="jump.ogg" />
             <file name="jumping.ogg" />
+            <file name="ki chargeing sound.ogg" />
         </sound-folder>
     </sounds-folder>
     <music-folder />
