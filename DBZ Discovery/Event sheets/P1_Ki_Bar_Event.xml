@@ -45,23 +45,7 @@
         </event-block>
         <event-group description="the main chargeing event for the game" sid="793037665505263" title="Chargeing the main Chargeing Event">
             <sub-events>
-                <event-group description="" sid="134942855424606" title="Aura_Animation">
-                    <sub-events>
-                        <event-block sid="340242610841961">
-                            <conditions>
-                                <condition id="4" name="On finished" sid="984867922883687" type="Aura">
-                                    <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="602451427667605" type="Aura">
-                                    <param id="0" name="Animation">&quot;Charge_Loop&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
+                <event-group description="" sid="134942855424606" title="Aura_Animation" />
                 <event-group description="" sid="498152196389412" title="Base Charging">
                     <sub-events>
                         <event-block sid="663775192933295">
@@ -105,9 +89,11 @@
                                     <param id="0" name="Instance variable">Chargeing</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="4" name="Set animation" sid="419785686045051" type="Aura">
-                                    <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
-                                    <param id="1" name="From">1</param>
+                                <action id="0" name="Play" sid="843769784292408" type="Audio">
+                                    <param id="0" name="Audio file">ki chargeing sound</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-85</param>
+                                    <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -137,19 +123,6 @@
                                     </conditions>
                                     <actions />
                                 </event-block>
-                                <event-block sid="616779688131465">
-                                    <conditions>
-                                        <condition id="-4" name="Trigger once while true" sid="161376980009830" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Play" sid="843769784292408" type="Audio">
-                                            <param id="0" name="Audio file">ki chargeing sound</param>
-                                            <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">-85</param>
-                                            <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
                             </sub-events>
                         </event-block>
                         <event-block sid="604117079271873">
@@ -177,7 +150,7 @@
                                     <param id="0" name="Visibility">0</param>
                                 </action>
                                 <action behavior="Platform" id="0" name="Set ignoring input" sid="319565849952756" type="P1">
-                                    <param id="0" name="Input">1</param>
+                                    <param id="0" name="Input">0</param>
                                 </action>
                                 <action id="-13" name="Set boolean" sid="450530711074251" type="P1">
                                     <param id="0" name="Instance variable">Chargeing</param>
