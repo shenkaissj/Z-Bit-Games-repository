@@ -45,20 +45,29 @@
         </event-block>
         <event-group description="the main chargeing event for the game" sid="793037665505263" title="Chargeing the main Chargeing Event">
             <sub-events>
-                <event-group description="" sid="134942855424606" title="Aura_Animation" />
-                <event-block sid="581368211394557">
-                    <conditions>
-                        <condition id="4" name="On finished" sid="373679021109781" type="Startup_Aura">
-                            <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="714378489624749" type="Aura">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="692980513819416" type="Startup_Aura" />
-                    </actions>
-                </event-block>
+                <event-group description="" sid="134942855424606" title="Aura_Animation">
+                    <sub-events>
+                        <event-block sid="581368211394557">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="373679021109781" type="Startup_Aura">
+                                    <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="714378489624749" type="Aura">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="692980513819416" type="Startup_Aura" />
+                                <action id="0" name="Play" sid="843769784292408" type="Audio">
+                                    <param id="0" name="Audio file">ki chargeing sound</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <event-group description="" sid="498152196389412" title="Base Charging">
                     <sub-events>
                         <event-block sid="663775192933295">
@@ -71,22 +80,17 @@
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Value">100</param>
                                 </condition>
-                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="700297690804329" type="P1" />
-                                <condition behavior="Platform" id="2" name="Is on floor" sid="736197052378946" type="P1" />
                                 <condition id="-7" name="Compare instance variable" sid="903023091083941" type="P1">
                                     <param id="0" name="Instance variable">SSJ1</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="989340408788442" type="P1" />
                             </conditions>
                             <actions>
                                 <action id="4" name="Set animation" sid="637194653077115" type="P1">
                                     <param id="0" name="Animation">&quot;Charge_&quot; &amp; P1.Charcters</param>
                                     <param id="1" name="From">1</param>
-                                </action>
-                                <action id="-11" name="Add to" sid="951143936417424" type="P1">
-                                    <param id="0" name="Instance variable">Ki</param>
-                                    <param id="1" name="Value">0.20</param>
                                 </action>
                                 <action id="-3" name="Set position" sid="645855386890073" type="Aura">
                                     <param id="0" name="X">P1.X</param>
@@ -99,11 +103,9 @@
                                     <param id="0" name="Instance variable">Chargeing</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="0" name="Play" sid="843769784292408" type="Audio">
-                                    <param id="0" name="Audio file">ki chargeing sound</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-85</param>
-                                    <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
+                                <action id="-11" name="Add to" sid="225969008073257" type="P1">
+                                    <param id="0" name="Instance variable">Ki</param>
+                                    <param id="1" name="Value">0.2</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -137,7 +139,7 @@
                         </event-block>
                         <event-block sid="849545699895667">
                             <conditions>
-                                <condition id="0" name="On key pressed" sid="175641979694947" type="Keyboard">
+                                <condition id="2" name="Key is down" sid="332122453631460" type="Keyboard">
                                     <param id="0" name="Key">88</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="823958527896501" type="P1">
@@ -145,6 +147,8 @@
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Value">100</param>
                                 </condition>
+                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="483164095627666" type="P1" />
+                                <condition id="-4" name="Trigger once while true" sid="710205257339060" type="System" />
                             </conditions>
                             <actions>
                                 <action id="-3" name="Create object" sid="552568123394003" type="System">
@@ -194,8 +198,6 @@
                                 <condition id="3" name="On key released" sid="865860301630704" type="Keyboard">
                                     <param id="0" name="Key">88</param>
                                 </condition>
-                                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="874372408975995" type="P1" />
-                                <condition behavior="Platform" id="2" name="Is on floor" sid="222036940068236" type="P1" />
                                 <condition id="-7" name="Compare instance variable" sid="197176213619450" type="P1">
                                     <param id="0" name="Instance variable">SSJ1</param>
                                     <param id="1" name="Comparison">0</param>
