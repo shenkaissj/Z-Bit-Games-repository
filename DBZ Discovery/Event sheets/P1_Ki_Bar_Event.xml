@@ -58,11 +58,25 @@
                                     <param id="0" name="Visibility">1</param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="692980513819416" type="Startup_Aura" />
-                                <action id="0" name="Play" sid="843769784292408" type="Audio">
+                            </actions>
+                        </event-block>
+                        <event-block sid="485090455187519">
+                            <conditions>
+                                <condition id="-9" name="Is visible" sid="772599195154982" type="Aura" />
+                                <condition id="-4" name="Trigger once while true" sid="331965865993560" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="223613396272005" type="Audio">
                                     <param id="0" name="Audio file">ki chargeing sound</param>
                                     <param id="2" name="Loop">1</param>
                                     <param id="3" name="Volume">-25</param>
                                     <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="552568123394003" type="System">
+                                    <param id="0" name="Object to create">Swoosh_Effect</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">P1.X</param>
+                                    <param id="3" name="Y">P1.Y</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -105,7 +119,7 @@
                                 </action>
                                 <action id="-11" name="Add to" sid="225969008073257" type="P1">
                                     <param id="0" name="Instance variable">Ki</param>
-                                    <param id="1" name="Value">0.2</param>
+                                    <param id="1" name="Value">0.130</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -151,12 +165,6 @@
                                 <condition id="-4" name="Trigger once while true" sid="710205257339060" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="552568123394003" type="System">
-                                    <param id="0" name="Object to create">Swoosh_Effect</param>
-                                    <param id="1" name="Layer">9</param>
-                                    <param id="2" name="X">P1.X</param>
-                                    <param id="3" name="Y">P1.Y</param>
-                                </action>
                                 <action id="-3" name="Create object" sid="387574338239479" type="System">
                                     <param id="0" name="Object to create">Startup_Aura</param>
                                     <param id="1" name="Layer">9</param>
@@ -265,6 +273,169 @@
             <actions>
                 <action id="-16" name="Set opacity" sid="736570085046113" type="Aura">
                     <param id="0" name="Opacity">30</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="667403026535107">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="145673020504163" type="P1">
+                    <param id="0" name="Instance variable">Super_Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="740448926324665" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="353241666931059" type="P1">
+                    <param id="0" name="Instance variable">Super_Count</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="410576564952883" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="210071543360380" type="Ki_Bar">
+                    <param id="0" name="Animation">&quot;Counter_1_Flash&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Play" sid="329531184803358" type="Audio">
+                    <param id="0" name="Audio file">Super Counter SFX</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-25</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="976189011404561">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="533018366210581" type="P1">
+                    <param id="0" name="Instance variable">Super_Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="484328295719876" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="957065024798145" type="P1">
+                    <param id="0" name="Instance variable">Super_Count</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="317431118154779" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="508317604644909" type="Ki_Bar">
+                    <param id="0" name="Animation">&quot;Counter_2_Flash&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Play" sid="343987137317596" type="Audio">
+                    <param id="0" name="Audio file">Super Counter SFX</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-25</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="180462267998123">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="722918117419795" type="P1">
+                    <param id="0" name="Instance variable">Super_Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="411884812855168" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="835280662155951" type="P1">
+                    <param id="0" name="Instance variable">Super_Count</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="892215211802117" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="549640816538802" type="Ki_Bar">
+                    <param id="0" name="Animation">&quot;Counter_3_Flash&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Play" sid="409908813275882" type="Audio">
+                    <param id="0" name="Audio file">Super Counter SFX</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-25</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="435900726847849">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="817942686311011" type="P1">
+                    <param id="0" name="Instance variable">Super_Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="423131329531369" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="123728113222794" type="P1">
+                    <param id="0" name="Instance variable">Super_Count</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="951675856939959" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="992624113866408" type="Ki_Bar">
+                    <param id="0" name="Animation">&quot;Counter_4_Flash&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Play" sid="263253643765634" type="Audio">
+                    <param id="0" name="Audio file">Super Counter SFX</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-25</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="897826333142899">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="490765870774356" type="P1">
+                    <param id="0" name="Instance variable">Super_Count</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="416017971942871" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="121040632533316" type="P1">
+                    <param id="0" name="Instance variable">Super_Count</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="386674104684792" type="P1">
+                    <param id="0" name="Instance variable">Ki</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set text" sid="407285873805417" type="Super_Counter">
+                    <param id="0" name="Text">&quot;MAX&quot;</param>
                 </action>
             </actions>
         </event-block>
