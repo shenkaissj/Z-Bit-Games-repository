@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>P1_KiBlast</name>
+    <events>
+        <event-group description="the Basic Attack for Player" sid="849618354491375" title="P1_Ki_Blast">
+            <sub-events>
+                <event-group description="" sid="422776583983085" title="P1_Punch2">
+                    <sub-events>
+                        <comment>Left_Punch</comment>
+                        <event-block sid="616986347523001">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="825621359957286" type="Keyboard">
+                                    <param id="0" name="Key">75</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="792927777827284" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="345683147312381" type="P1">
+                                    <param id="0" name="Instance variable">SSJ1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="404866729330974" type="P1" />
+                                <condition id="2" inverted="1" name="Is playing" sid="938674104321887" type="P1">
+                                    <param id="0" name="Animation">&quot;Baseform_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="492621452278008" type="P1">
+                                    <param id="0" name="Animation">&quot;SSJForm_1_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="239678181865043" type="P1">
+                                    <param id="0" name="Instance variable">NoClip</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="522709491610333" type="P1">
+                                    <param id="0" name="Instance variable">Fireing_Beam</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="950368747879994" type="P1">
+                                    <param id="0" name="Instance variable">attack</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="337268772322427" type="P1">
+                                    <param id="0" name="Instance variable">Duck</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="919160323712453" type="Keyboard">
+                                    <param id="0" name="Key">76</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="389315617523972" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="490932610695543">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="517118915311229" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="407798577018809" type="P1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="255591692786274">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="261956814812638" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="800758570476717" type="P1">
+                                                    <param id="0" name="Vector X">76</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="812706873379951" type="P1">
+                                                    <param id="0" name="Instance variable">Ki_Blast_Count</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="634215752960680" type="P1">
+                                                    <param id="0" name="Instance variable">Run</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="167275252303540">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="721145177343658" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="103702126048675" type="P1">
+                                                            <param id="0" name="Instance variable">Ki_Blast_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="128330665661671" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="587716628641225" type="Audio">
+                                                            <param id="0" name="Audio file">kick2</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="970681947767764" type="P1">
+                                                            <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="122254664979728" type="P1">
+                                                            <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="232237767295489">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="633263275739078" type="P1">
+                                            <param id="0" name="Instance variable">Ki_Blast_Count</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="459297524034951" type="P1">
+                                            <param id="0" name="Instance variable">Ki_Blast_Count</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Right_Punch</comment>
+                        <event-block sid="298920510568180">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="210476039297337" type="Keyboard">
+                                    <param id="0" name="Key">75</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="930666498663380" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="205701936488154" type="P1">
+                                    <param id="0" name="Instance variable">SSJ1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="7" name="Is mirrored" sid="517396113240765" type="P1" />
+                                <condition id="2" inverted="1" name="Is playing" sid="747840965544615" type="P1">
+                                    <param id="0" name="Animation">&quot;Baseform_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="517989160944173" type="P1">
+                                    <param id="0" name="Animation">&quot;SSJForm_1_&quot; &amp; P1.Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="273878366727387" type="P1">
+                                    <param id="0" name="Instance variable">NoClip</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="539149643872445" type="P1">
+                                    <param id="0" name="Instance variable">Fireing_Beam</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="354596233453980" type="P1">
+                                    <param id="0" name="Instance variable">attack</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="140116159479716" type="P1">
+                                    <param id="0" name="Instance variable">Duck</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="596137264779230" type="Keyboard">
+                                    <param id="0" name="Key">76</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="495479008183348" type="Keyboard">
+                                    <param id="0" name="Key">88</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="715122397521665">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="653478150937476" type="System">
+                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="541530149966483" type="P1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; P1.Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="671383885277869">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="313545102159173" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="8" name="Set vector X" sid="954959183362164" type="P1">
+                                                    <param id="0" name="Vector X">-76</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="773338807096483" type="P1">
+                                                    <param id="0" name="Instance variable">Ki_Blast_Count</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="660271406947984" type="P1">
+                                                    <param id="0" name="Instance variable">Run</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="553622142146024">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="796574562723959" type="P1">
+                                                            <param id="0" name="Instance variable">SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="983185348876872" type="P1">
+                                                            <param id="0" name="Instance variable">Ki_Blast_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="304867672638149" type="P1">
+                                                            <param id="0" name="Max Speed">23</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="583367873278308" type="Audio">
+                                                            <param id="0" name="Audio file">kick2</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="391332135692289" type="P1">
+                                                            <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="929890191157750" type="P1">
+                                                            <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; P1.Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="631699732191578">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="490222590631258" type="P1">
+                                            <param id="0" name="Instance variable">Ki_Blast_Count</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="874821245716218" type="P1">
+                                            <param id="0" name="Instance variable">Ki_Blast_Count</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

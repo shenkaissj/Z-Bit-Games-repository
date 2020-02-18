@@ -24,6 +24,7 @@
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
@@ -464,6 +465,7 @@
                         <instance-variable name="Duck" sid="508922476180630" type="boolean" />
                         <instance-variable name="Chargeing" sid="624359162526007" type="boolean" />
                         <instance-variable name="Super_Count" sid="879839818616475" type="number" />
+                        <instance-variable name="Ki_Blast_Count" sid="588587391297732" type="number" />
                     </instance-variables>
                     <behaviors>
                         <behavior-type name="Timer" sid="435835945874937">
@@ -3588,6 +3590,19 @@
                 </effect-type>
             </effects>
         </object-type>
+        <object-type name="Ki_Blast" sid="906970520692005">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="532269481084325">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="622502033444008" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Android_Buttons" plugin-id="Sprite" sid="111396605850099">
@@ -3643,6 +3658,7 @@
                         </event-folder>
                         <event-folder name="P1_Attacks">
                             <event-sheet>P1_Attack.xml</event-sheet>
+                            <event-sheet>P1_KiBlast.xml</event-sheet>
                         </event-folder>
                         <event-folder name="P1_Input_PC">
                             <event-sheet>P1_Input_PC.xml</event-sheet>
