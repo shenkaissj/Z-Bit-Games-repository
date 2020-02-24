@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Freeroam_Game_Controls</name>
     <events>
+        <include>Sandbag_Event</include>
         <include>P1_Collision</include>
         <include>RR_Army_Soldier</include>
         <event-block sid="675316188918984">
@@ -62,9 +63,6 @@
                 <action behavior="8Direction" id="8" name="Set enabled" sid="204049928062168" type="P1">
                     <param id="0" name="State">0</param>
                 </action>
-                <action behavior="Flying" id="8" name="Set enabled" sid="774340125430482" type="P1">
-                    <param id="0" name="State">0</param>
-                </action>
                 <action id="-10" name="Set value" sid="727930538902105" type="P1">
                     <param id="0" name="Instance variable">Ki</param>
                     <param id="1" name="Value">10</param>
@@ -121,7 +119,12 @@
                         <include>P1_HP</include>
                     </sub-events>
                 </event-group>
-                <event-group description="the animations fo rplayers" sid="611113567069405" title="P1_Animations">
+                <event-group description="The Flying Event for Player 1" sid="585850562032240" title="P1_Flying">
+                    <sub-events>
+                        <include>P1_Fly</include>
+                    </sub-events>
+                </event-group>
+                <event-group description="the animations for player 1" sid="611113567069405" title="P1_Animations">
                     <sub-events>
                         <include>Player&amp;CPU_Animations</include>
                     </sub-events>
