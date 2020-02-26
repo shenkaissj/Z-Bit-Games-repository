@@ -437,7 +437,7 @@
                             </tile>
                         </tiles>
                     </object-type>
-                    <object-type name="Water_Sprite" sid="247688973817689">
+                    <object-type name="Water_Sprite_1" sid="247688973817689">
                         <plugin id="Sprite" />
                         <animation-folder>
                             <animation framecount="3" loop="1" name="Water_Animation" pingpong="0" repeatcount="1" repeatto="0" sid="979215975413807" speed="7">
@@ -446,6 +446,15 @@
                                 <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\mario\OneDrive\Desktop\Water Animation\sprite_2.png" />
                             </animation>
                         </animation-folder>
+                    </object-type>
+                    <object-type name="Eart_Tileset" sid="109273741640747">
+                        <plugin id="Tilemap" />
+                        <texture />
+                        <tiles />
+                    </object-type>
+                    <object-type name="Water_Sprite_2" sid="167135331252017">
+                        <plugin id="TiledBg" />
+                        <texture />
                     </object-type>
                 </object-folder>
                 <object-type name="TiledBackground" sid="3206956448522659">
@@ -3130,6 +3139,31 @@
             </object-folder>
         </object-folder>
         <object-folder name="Collision_Objects">
+            <object-folder name="Floor_Collisions">
+                <object-type name="Collision_Tiles" sid="785513558416321">
+                    <plugin id="Tilemap" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="779642882231918">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture original-source="C:\Users\mario\OneDrive\Desktop\dragonball-z-discovery-beta app\assets\images\soilidcollisiontilemap.png" />
+                    <tiles>
+                        <tile id="1">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </tile>
+                    </tiles>
+                </object-type>
+                <object-type name="JumpThrough_Collision_Tiles" sid="653502252929695">
+                    <plugin id="Tilemap" />
+                    <texture original-source="C:\Users\mario\OneDrive\Desktop\dragonball-z-discovery-beta app\assets\images\jumpthroughcollisiontilemap.png" />
+                    <tiles />
+                </object-type>
+            </object-folder>
             <object-type name="NoAttacking_or_Ki_Collision" sid="728909908939034">
                 <plugin id="Sprite" />
                 <animation-folder>
@@ -3399,6 +3433,38 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Earth_Sky" sid="405069594741924">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite2" sid="864622729992542">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="441154946147230" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground2" sid="463676836466909">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite3" sid="406510141960703">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="747033978731874" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="679227952680388">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="294511834669465" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Android_Buttons" plugin-id="Sprite" sid="111396605850099">
@@ -3434,6 +3500,7 @@
     </families>
     <layout-folder>
         <layout>Test_Layout.xml</layout>
+        <layout>Earth_Map_DB_Era.xml</layout>
         <layout>Lighting_Test.xml</layout>
         <layout>RRArmy_Ship.xml</layout>
         <layout>Objects.xml</layout>
