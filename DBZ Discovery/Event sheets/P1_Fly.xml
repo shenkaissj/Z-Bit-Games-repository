@@ -3,71 +3,147 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>P1_Fly</name>
     <events>
-        <event-block sid="268458863537220">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="546659901400044" type="Keyboard">
-                    <param id="0" name="Key">87</param>
-                </condition>
-                <condition behavior="Platform" id="3" name="Is jumping" sid="391190880537322" type="P1" />
-                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="195918733449042" type="P1" />
-                <condition id="-7" inverted="1" name="Compare instance variable" sid="322645909120073" type="P1">
-                    <param id="0" name="Instance variable">Fly_Counter</param>
-                    <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">2</param>
-                </condition>
-                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="329529496103147" type="P1">
-                    <param id="0" name="Instance variable">Fly</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-11" name="Add to" sid="226392629093315" type="P1">
-                    <param id="0" name="Instance variable">Fly_Counter</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="458512836421238">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="213684471167132" type="P1">
-                    <param id="0" name="Instance variable">Fly_Counter</param>
-                    <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">2</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="8Direction" id="8" name="Set enabled" sid="221311861612629" type="P1">
-                    <param id="0" name="State">1</param>
-                </action>
-                <action behavior="Platform" id="11" name="Set enabled" sid="487242652902384" type="P1">
-                    <param id="0" name="State">0</param>
-                </action>
-                <action id="-13" name="Set boolean" sid="444289277145655" type="P1">
-                    <param id="0" name="Instance variable">Fly</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action id="-10" name="Set value" sid="998274567163281" type="P1">
-                    <param id="0" name="Instance variable">Fly_Counter</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="975676444933423">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="894216571756953" type="System">
-                    <param id="0" name="Interval (seconds)">0.5</param>
-                </condition>
-                <condition id="-7" name="Compare instance variable" sid="283141697220124" type="P1">
-                    <param id="0" name="Instance variable">Fly_Counter</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="576140705387531" type="P1">
-                    <param id="0" name="Instance variable">Fly_Counter</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="365948528320602" title="Fly_Enabled">
+            <sub-events>
+                <event-block sid="268458863537220">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="546659901400044" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="391190880537322" type="P1" />
+                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="195918733449042" type="P1" />
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="322645909120073" type="P1">
+                            <param id="0" name="Instance variable">Fly_Counter</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="329529496103147" type="P1">
+                            <param id="0" name="Instance variable">Fly</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="226392629093315" type="P1">
+                            <param id="0" name="Instance variable">Fly_Counter</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="458512836421238">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="213684471167132" type="P1">
+                            <param id="0" name="Instance variable">Fly_Counter</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="8" name="Set enabled" sid="221311861612629" type="P1">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="487242652902384" type="P1">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="444289277145655" type="P1">
+                            <param id="0" name="Instance variable">Fly</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="998274567163281" type="P1">
+                            <param id="0" name="Instance variable">Fly_Counter</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="975676444933423">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="894216571756953" type="System">
+                            <param id="0" name="Interval (seconds)">0.5</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="283141697220124" type="P1">
+                            <param id="0" name="Instance variable">Fly_Counter</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="576140705387531" type="P1">
+                            <param id="0" name="Instance variable">Fly_Counter</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="452791365708587" title="Fly_Disable">
+            <sub-events>
+                <event-block sid="153370959574024">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="454768894861780" type="Keyboard">
+                            <param id="0" name="Key">83</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="160858491267599" type="P1">
+                            <param id="0" name="Instance variable">Unfly_Counter</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="277172486218986" type="P1">
+                            <param id="0" name="Instance variable">Fly</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="105942283418663" type="P1">
+                            <param id="0" name="Instance variable">Unfly_Counter</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="178937896137125" type="P1">
+                            <param id="0" name="Animation">&quot;Falling_&quot; &amp; P1.Charcters</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="976654788983255">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="134829918224669" type="P1">
+                            <param id="0" name="Instance variable">Unfly_Counter</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="8" name="Set enabled" sid="295054526986805" type="P1">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="739460800948669" type="P1">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="651290682374553" type="P1">
+                            <param id="0" name="Instance variable">Fly</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="973292712791387" type="P1">
+                            <param id="0" name="Instance variable">Unfly_Counter</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="103941406178020">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="872674502831686" type="System">
+                            <param id="0" name="Interval (seconds)">0.5</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="283452163081958" type="P1">
+                            <param id="0" name="Instance variable">Unfly_Counter</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="422889909731520" type="P1">
+                            <param id="0" name="Instance variable">Unfly_Counter</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
