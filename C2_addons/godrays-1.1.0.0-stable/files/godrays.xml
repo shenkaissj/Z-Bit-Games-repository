@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<c2effect>
+	<!-- About -->
+	<id>Mikal_GodRays</id>			<!-- Never change the ID.  Change the name instead -->
+	<name>GodRays</name>
+	<category>Blend</category>
+	<description>GodRays</description>
+	<author>Mikal</author>
+	
+	<!-- Settings -->
+	
+	<!-- Extend the bounding box for effect processing by a number of pixels to show the edges
+		 of effects which go beyond the object edges, e.g. blur and warp. -->
+	<extend-box-horizontal>0</extend-box-horizontal>
+	<extend-box-vertical>0</extend-box-vertical>
+	
+	<!-- Set to true if the background is sampled (samplerBack is referenced at all in the shader) -->
+	<blends-background>true</blends-background>
+	
+	<!-- Set to true if the background is not sampled at 1:1 with the foreground (e.g. the
+		 background texture co-ordinates are modified in some way by the shader, as done
+		 by Glass and Lens) -->
+	<cross-sampling>false</cross-sampling>
+	
+	<!-- Set to true if the shader does not modify the opaque areas of the foreground. In other words
+		 any opaque pixels in the original image are output in the same position and still fully opaque.
+		 This is used to optimise the front-to-back renderer's depth pass, since it can still write depth
+		 and skip overdraw for any objects using only shaders which preserve opaqueness. -->
+	<preserves-opaqueness>false</preserves-opaqueness>
+	
+	<!-- Set to true if the effect changes over time, e.g. Noise or Warp effects. -->
+	<animated>false</animated>
+	
+	<!-- Parameters -->
+	<parameters>
+		<param>
+			<name>decay</name>
+			<description>decay</description>
+			<type>float</type>
+			<initial>0.96815</initial>
+			<uniform>decay</uniform>
+		</param>
+		<param>
+			<name>exposure</name>
+			<description>exposure</description>
+			<type>float</type>
+			<initial>0.2</initial>
+			<uniform>exposure</uniform>
+		</param>
+		<param>
+			<name>density</name>
+			<description>density</description>
+			<type>float</type>
+			<initial>0.926</initial>
+			<uniform>density</uniform>
+		</param>
+		<param>
+			<name>weight</name>
+			<description>weight</description>
+			<type>float</type>
+			<initial>0.58767</initial>
+			<uniform>weight</uniform>
+		</param>
+		<param>
+			<name>light-0-x</name>
+			<description>light0X</description>
+			<type>float</type>
+			<initial>0</initial>
+			<uniform>light0X</uniform>
+		</param>
+		<param>
+			<name>light-0-y</name>
+			<description>light0Y</description>
+			<type>float</type>
+			<initial>0</initial>
+			<uniform>light0Y</uniform>
+		</param>
+		<param>
+			<name>spread</name>
+			<description>spread</description>
+			<type>float</type>
+			<initial>1.0</initial>
+			<uniform>spread</uniform>
+		</param>
+	</parameters>
+	
+</c2effect>
