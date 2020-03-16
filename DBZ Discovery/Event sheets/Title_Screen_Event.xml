@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Title_Screen_Event</name>
+    <events>
+        <variable constant="0" name="BG_Speed" sid="978638724926559" static="0" type="number">30</variable>
+        <event-block sid="563716962344602">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="927925496006406" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="413743439175113" type="Flying_Aura">
+                    <param id="0" name="Pin to">Intro_Goku_Sprite</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="107163120956693">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="936503116913570" type="System" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="847713372138043" type="BG_Sky">
+                    <param id="0" name="X">BG_Sky.X - BG_Speed * dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="601278427890375">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="112503797177749" type="BG_Sky">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="723658203630322" type="BG_Sky">
+                    <param id="0" name="X">420</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="975809055394786">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="557945803807978" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="322704905092287" type="Audio">
+                    <param id="0" name="Audio file">Mystical Adventure (Title Screen)</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-8</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
