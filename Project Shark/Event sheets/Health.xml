@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Health</name>
+    <events>
+        <event-block sid="201861397155723">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="375989406199213" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="374733339106769" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="930075882532943" type="Player">
+                    <param id="0" name="Vector Y">-300</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="112514897197097">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="335520195505134" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="593769029149292" type="Player">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="468852816681561" type="Player">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action behavior="ScrollTo" id="1" name="Set enabled" sid="440864268101375" type="Player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="ScrollTo" id="1" name="Set enabled" sid="554157468234468" type="Camera">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="575764337279159" type="Player">
+                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Flash" id="1" name="Stop flashing" sid="222170527696081" type="Player" />
+                <action id="-16" name="Wait" sid="598540323809816" type="System">
+                    <param id="0" name="Seconds">2.1</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="792563725230237" type="Black_Fade_In" />
+                <action id="-15" name="Set visible" sid="823466759110107" type="Black_Fade_In">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="721191297947984" type="System">
+                    <param id="0" name="Seconds">1.1</param>
+                </action>
+                <action behavior="Fade" id="0" name="Restart fade" sid="184384609454607" type="Black_Fade_Out" />
+                <action id="-15" name="Set visible" sid="847831931726125" type="Black_Fade_In">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="951724907746335" type="System" />
+                <action id="-12" name="Subtract from" sid="244787639007659" type="Player">
+                    <param id="0" name="Instance variable">Coin</param>
+                    <param id="1" name="Value">999999999</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="729681168269565">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="911924373038000" type="Player">
+                    <param id="0" name="Object">HP_Damage</param>
+                </condition>
+                <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="157310514715598" type="Player" />
+                <condition id="-7" inverted="1" name="Compare instance variable" sid="572923534636271" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="7" name="Is mirrored" sid="495531309135875" type="Player" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="641946132709827" type="Player">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="855595276861627" type="Player">
+                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="879809887884141" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="854080603174241" type="Player">
+                    <param id="0" name="Vector Y">-200</param>
+                </action>
+                <action behavior="Platform" id="8" name="Set vector X" sid="204806065352843" type="Player">
+                    <param id="0" name="Vector X">300</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="972602894539640" type="Player">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">2.3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="790062645373170">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="411730354262477" type="Player">
+                    <param id="0" name="Object">HP_Damage</param>
+                </condition>
+                <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="717038182948526" type="Player" />
+                <condition id="-7" inverted="1" name="Compare instance variable" sid="535319543737784" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="7" inverted="1" name="Is mirrored" sid="911262763241069" type="Player" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="711681531293945" type="Player">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="653398910620070" type="Player">
+                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="690310411838133" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="697065604397127" type="Player">
+                    <param id="0" name="Vector Y">-200</param>
+                </action>
+                <action behavior="Platform" id="8" name="Set vector X" sid="867754113041573" type="Player">
+                    <param id="0" name="Vector X">-300</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="926683481590685" type="Player">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">2.3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="977577138503822">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="201996784574953" type="Player">
+                    <param id="0" name="Object">HP_Drain</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="880806858634258" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Camera</name>
+    <events>
+        <event-group description="" sid="290680146340432" title="Camera">
+            <sub-events>
+                <variable constant="0" name="CameraSpeed" sid="378956749685128" static="0" type="number">0.09</variable>
+                <variable constant="0" name="LookAhead" sid="292282707022143" static="0" type="number">50</variable>
+                <variable constant="0" name="CameraHight" sid="571222597482884" static="0" type="number">10</variable>
+                <event-block sid="813517506751926">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="158598312247551" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="606933225543694">
+                            <conditions>
+                                <condition id="7" name="Is mirrored" sid="320964947915308" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="945117050911368" type="Camera">
+                                    <param id="0" name="X">lerp(Self.X, Player.X -CameraHight, CameraSpeed)</param>
+                                    <param id="1" name="Y">lerp(Self.Y, Player.Y -CameraHight, CameraSpeed)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="854254927712656">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Is mirrored" sid="431665515000875" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="514657019618948" type="Camera">
+                                    <param id="0" name="X">lerp(Self.X, Player.X -CameraHight, CameraSpeed)</param>
+                                    <param id="1" name="Y">lerp(Self.Y, Player.Y -CameraHight, CameraSpeed)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
