@@ -172,7 +172,7 @@
                             <param id="0" name="Animation">&quot;Idle&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                        <action id="4" name="Set animation" sid="113478152668009" type="Hit_Effect">
+                        <action id="4" name="Set animation" sid="508632259151026" type="Explosion_Effect">
                             <param id="0" name="Animation">&quot;No_Hit&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
@@ -184,11 +184,18 @@
             <sub-events>
                 <event-block sid="534917007674399">
                     <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="317566506898692" type="Ki_Blast">
+                        <condition id="0" name="On collision with another object" sid="317566506898692" type="Ki_Blast">
                             <param id="0" name="Object">RR_Soldier_NPC</param>
                         </condition>
                         <condition id="7" inverted="1" name="Is mirrored" sid="852491472815689" type="Player" />
-                        <condition id="-4" name="Trigger once while true" sid="172600035011321" type="System" />
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="270297404897263" type="RR_Soldier_NPC">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="414495094245845" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Defeated_2&quot;</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Play" sid="544958817908879" type="Audio">
@@ -215,15 +222,23 @@
                             <param id="0" name="Instance variable">health</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-9" name="Destroy" sid="571992945124798" type="Ki_Blast" />
                     </actions>
                 </event-block>
                 <event-block sid="524918090535729">
                     <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="941847251834146" type="Ki_Blast">
+                        <condition id="0" name="On collision with another object" sid="826721278762509" type="Ki_Blast">
                             <param id="0" name="Object">RR_Soldier_NPC</param>
                         </condition>
                         <condition id="7" name="Is mirrored" sid="416754723457199" type="Player" />
-                        <condition id="-4" name="Trigger once while true" sid="678601084431565" type="System" />
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="951079785182989" type="RR_Soldier_NPC">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="189239441717022" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Defeated_2&quot;</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Play" sid="528776064864477" type="Audio">
@@ -250,6 +265,7 @@
                             <param id="0" name="Instance variable">health</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-9" name="Destroy" sid="917021654745677" type="Ki_Blast" />
                     </actions>
                 </event-block>
             </sub-events>
