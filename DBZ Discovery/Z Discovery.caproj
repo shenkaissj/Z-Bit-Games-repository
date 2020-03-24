@@ -28,6 +28,7 @@
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
@@ -233,18 +234,7 @@
                 </object-type>
             </object-folder>
             <object-folder name="Health&amp;Ki_Bar_GUI">
-                <object-type name="Health_Bar_GUI1" sid="199794240777327">
-                    <plugin id="Sprite" />
-                    <animation-folder>
-                        <animation framecount="1" loop="0" name="Bar_1" pingpong="0" repeatcount="1" repeatto="0" sid="460262695744090" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" original-source="C:\Users\tyler jones\Downloads\Health Bar\sprite_1.png" />
-                        </animation>
-                        <animation framecount="1" loop="0" name="Bar_2" pingpong="0" repeatcount="1" repeatto="0" sid="316605158879449" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                        </animation>
-                    </animation-folder>
-                </object-type>
-                <object-type name="HP_Bar" sid="963518409384052">
+                <object-type name="P1_HP_Bar1" sid="963518409384052">
                     <plugin id="TiledBg" />
                     <instance-variables>
                         <instance-variable name="HP_Bar" sid="424217041395721" type="number" />
@@ -336,14 +326,14 @@
                         </animation-folder>
                     </animation-folder>
                 </object-type>
-                <object-type name="Ki_Bar_3" sid="290815159177651">
+                <object-type name="P1_Ki_Bar1" sid="290815159177651">
                     <plugin id="TiledBg" />
                     <instance-variables>
                         <instance-variable name="Ki_Bar" sid="833081460937849" type="number" />
                     </instance-variables>
                     <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
                 </object-type>
-                <object-type name="SSJ_Bar" sid="522351616552970">
+                <object-type name="P1_SSJ_Bar1" sid="522351616552970">
                     <plugin id="TiledBg" />
                     <instance-variables>
                         <instance-variable name="Ki_Bar" sid="742201824790873" type="number" />
@@ -899,7 +889,6 @@
                             <instance-variable name="health" sid="245025627984238" type="number" />
                             <instance-variable name="kills" sid="982993603761842" type="number" />
                             <instance-variable name="deaths" sid="354416019314912" type="number" />
-                            <instance-variable name="SSJ1" sid="115789017563210" type="number" />
                             <instance-variable name="attack" sid="923233109711362" type="boolean" />
                             <instance-variable name="combo" sid="330676760229019" type="number" />
                             <instance-variable name="combo_max" sid="470168965517711" type="number" />
@@ -916,68 +905,15 @@
                             <behavior-type name="Platform" sid="824862744144276">
                                 <behavior id="Platform" />
                             </behavior-type>
+                            <behavior-type name="LineOfSight" sid="637260046664743">
+                                <behavior id="LOS" />
+                            </behavior-type>
                         </behaviors>
                         <animation-folder>
                             <animation-folder name="Goku">
                                 <animation-folder name="Goku Sprite">
                                     <animation-folder name="Base">
                                         <animation framecount="1" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="641043336582534" speed="5">
-                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
-                                                <image-point name="Imagepoint 1" x="0.526316" y="0" />
-                                                <collision-poly>
-                                                    <point x="0.157895" y="0" />
-                                                    <point x="0.894737" y="0" />
-                                                    <point x="0.894737" y="1" />
-                                                    <point x="0.157895" y="1" />
-                                                </collision-poly>
-                                            </frame>
-                                        </animation>
-                                        <animation framecount="6" loop="0" name="Socked" pingpong="0" repeatcount="2" repeatto="3" sid="557779391052737" speed="16">
-                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
-                                                <image-point name="Imagepoint 1" x="0.526316" y="0" />
-                                                <collision-poly>
-                                                    <point x="0.157895" y="0" />
-                                                    <point x="0.894737" y="0" />
-                                                    <point x="0.894737" y="1" />
-                                                    <point x="0.157895" y="1" />
-                                                </collision-poly>
-                                            </frame>
-                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
-                                                <image-point name="Imagepoint 1" x="0.526316" y="0" />
-                                                <collision-poly>
-                                                    <point x="0.157895" y="0" />
-                                                    <point x="0.894737" y="0" />
-                                                    <point x="0.894737" y="1" />
-                                                    <point x="0.157895" y="1" />
-                                                </collision-poly>
-                                            </frame>
-                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
-                                                <image-point name="Imagepoint 1" x="0.526316" y="0" />
-                                                <collision-poly>
-                                                    <point x="0.157895" y="0" />
-                                                    <point x="0.894737" y="0" />
-                                                    <point x="0.894737" y="1" />
-                                                    <point x="0.157895" y="1" />
-                                                </collision-poly>
-                                            </frame>
-                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
-                                                <image-point name="Imagepoint 1" x="0.526316" y="0" />
-                                                <collision-poly>
-                                                    <point x="0.157895" y="0" />
-                                                    <point x="0.894737" y="0" />
-                                                    <point x="0.894737" y="1" />
-                                                    <point x="0.157895" y="1" />
-                                                </collision-poly>
-                                            </frame>
-                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
-                                                <image-point name="Imagepoint 1" x="0.526316" y="0" />
-                                                <collision-poly>
-                                                    <point x="0.157895" y="0" />
-                                                    <point x="0.894737" y="0" />
-                                                    <point x="0.894737" y="1" />
-                                                    <point x="0.157895" y="1" />
-                                                </collision-poly>
-                                            </frame>
                                             <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
                                                 <image-point name="Imagepoint 1" x="0.526316" y="0" />
                                                 <collision-poly>
@@ -999,7 +935,25 @@
                                                 </collision-poly>
                                             </frame>
                                         </animation>
-                                        <animation framecount="3" loop="0" name="Fireing" pingpong="0" repeatcount="1" repeatto="0" sid="268734337903293" speed="10">
+                                        <animation framecount="5" loop="0" name="Fireing" pingpong="0" repeatcount="1" repeatto="0" sid="268734337903293" speed="20">
+                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                <image-point name="Imagepoint 1" x="0.526316" y="0" />
+                                                <collision-poly>
+                                                    <point x="0.157895" y="0" />
+                                                    <point x="0.894737" y="0" />
+                                                    <point x="0.894737" y="1" />
+                                                    <point x="0.157895" y="1" />
+                                                </collision-poly>
+                                            </frame>
+                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                <image-point name="Imagepoint 1" x="0.526316" y="0" />
+                                                <collision-poly>
+                                                    <point x="0.157895" y="0" />
+                                                    <point x="0.894737" y="0" />
+                                                    <point x="0.894737" y="1" />
+                                                    <point x="0.157895" y="1" />
+                                                </collision-poly>
+                                            </frame>
                                             <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
                                                 <image-point name="Imagepoint 1" x="0.526316" y="0" />
                                                 <collision-poly>
@@ -1039,7 +993,18 @@
                                                 </collision-poly>
                                             </frame>
                                         </animation>
-                                        <animation framecount="1" loop="0" name="Defeated" pingpong="0" repeatcount="1" repeatto="0" sid="647329508981330" speed="7">
+                                        <animation framecount="1" loop="0" name="Defeated_1" pingpong="0" repeatcount="1" repeatto="0" sid="647329508981330" speed="7">
+                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                <image-point name="Imagepoint 1" x="0.526316" y="0" />
+                                                <collision-poly>
+                                                    <point x="0.157895" y="0" />
+                                                    <point x="0.894737" y="0" />
+                                                    <point x="0.894737" y="1" />
+                                                    <point x="0.157895" y="1" />
+                                                </collision-poly>
+                                            </frame>
+                                        </animation>
+                                        <animation framecount="1" loop="0" name="Defeated_2" pingpong="0" repeatcount="1" repeatto="0" sid="961683656097866" speed="7">
                                             <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
                                                 <image-point name="Imagepoint 1" x="0.526316" y="0" />
                                                 <collision-poly>
@@ -1156,17 +1121,6 @@
                                     </animation-folder>
                                 </animation-folder>
                             </animation-folder>
-                            <animation framecount="1" loop="0" name="Teleport" pingpong="0" repeatcount="1" repeatto="0" sid="719236224977765" speed="90">
-                                <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
-                                    <image-point name="Imagepoint 1" x="0.526316" y="0" />
-                                    <collision-poly>
-                                        <point x="0.157895" y="0" />
-                                        <point x="0.894737" y="0" />
-                                        <point x="0.894737" y="1" />
-                                        <point x="0.157895" y="1" />
-                                    </collision-poly>
-                                </frame>
-                            </animation>
                         </animation-folder>
                     </object-type>
                 </object-folder>
@@ -4694,6 +4648,28 @@
                         </animation>
                     </animation-folder>
                 </object-type>
+                <object-type name="Explosion_Effect" sid="995566962279324">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="640000313241790">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="No_Hit" pingpong="0" repeatcount="1" repeatto="0" sid="202153821921730" speed="20">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="7" loop="0" name="Explosion_Hit" pingpong="0" repeatcount="1" repeatto="0" sid="631683420927250" speed="17">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
         </object-folder>
         <object-type name="Sprite" sid="655980538531533">
@@ -4889,6 +4865,102 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="P1_HP_Bar_1" sid="859888355208088">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation-folder name="HP_Bar_Engry Number">
+                    <animation framecount="1" loop="0" name="EnergyLVL_0" pingpong="0" repeatcount="1" repeatto="0" sid="777028563307190" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="EnergyLVL_1" pingpong="0" repeatcount="1" repeatto="0" sid="756420626564329" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="EnergyLVL_2" pingpong="0" repeatcount="1" repeatto="0" sid="762663737484907" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="EnergyLVL_3" pingpong="0" repeatcount="1" repeatto="0" sid="556343833165722" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="EnergyLVL_4" pingpong="0" repeatcount="1" repeatto="0" sid="440530181195030" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="EnergyLVL_MAX" pingpong="0" repeatcount="1" repeatto="0" sid="357196980250378" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </animation-folder>
+        </object-type>
+        <object-type name="P1_Icon" sid="944372092711344">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation-folder name="Goku">
+                    <animation framecount="1" loop="0" name="Goku_Icon" pingpong="0" repeatcount="1" repeatto="0" sid="395329229064328" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+                <animation-folder name="Piccolo">
+                    <animation framecount="1" loop="0" name="Piccolo_Icon" pingpong="0" repeatcount="1" repeatto="0" sid="119054656991326" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </animation-folder>
+        </object-type>
+        <object-type name="P1_HP_Bar2" sid="822715152849969">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="Hp_Bar" sid="253583864114687" type="number" />
+            </instance-variables>
+            <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
+        </object-type>
+        <object-type name="P1_HP_Bar3" sid="830576287801909">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="Hp_Bar" sid="161815923489576" type="number" />
+            </instance-variables>
+            <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
+        </object-type>
+        <object-type name="P1_HP_Bar5" sid="990900767433863">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="Hp_Bar" sid="784931610100276" type="number" />
+            </instance-variables>
+            <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
+        </object-type>
+        <object-type name="P1_HP_Bar4" sid="662328927221025">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="Hp_Bar" sid="127384334070124" type="number" />
+            </instance-variables>
+            <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
+        </object-type>
+        <object-type name="P1_Ki_Bar4" sid="372192475232375">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="Ki_Bar" sid="279647844070109" type="number" />
+            </instance-variables>
+            <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
+        </object-type>
+        <object-type name="P1_Ki_Bar5" sid="159332246477457">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="Ki_Bar" sid="456819786803404" type="number" />
+            </instance-variables>
+            <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
+        </object-type>
+        <object-type name="P1_Ki_Bar3" sid="263075511300317">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="Ki_Bar" sid="451483959687400" type="number" />
+            </instance-variables>
+            <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
+        </object-type>
+        <object-type name="P1_Ki_Bar2" sid="970759699004028">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="Ki_Bar" sid="430952836528010" type="number" />
+            </instance-variables>
+            <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Android_Buttons" plugin-id="Sprite" sid="111396605850099">
@@ -4912,15 +4984,14 @@
         </family>
         <family name="Gui_Ki_and_Hp_Bar" plugin-id="Sprite" sid="850087736103421">
             <members>
-                <member>Health_Bar_GUI1</member>
                 <member>Ki_Bar</member>
             </members>
         </family>
         <family name="Ki_and_Hp_Bars" plugin-id="TiledBg" sid="155487045998673">
             <members>
-                <member>HP_Bar</member>
-                <member>Ki_Bar_3</member>
-                <member>SSJ_Bar</member>
+                <member>P1_HP_Bar1</member>
+                <member>P1_Ki_Bar1</member>
+                <member>P1_SSJ_Bar1</member>
             </members>
         </family>
         <family name="Mobile_Controls" plugin-id="Sprite" sid="225661923657207">
@@ -5121,6 +5192,9 @@
             <file name="ki chargeing sound.ogg" />
             <file name="dash1.ogg" />
             <file name="defeated.ogg" />
+            <file name="kiplosion.ogg" />
+            <file name="small explosion 2.ogg" />
+            <file name="small explosion.ogg" />
         </sound-folder>
         <sound-folder name="GUI_SFX">
             <file name="Super Counter SFX.ogg" />
