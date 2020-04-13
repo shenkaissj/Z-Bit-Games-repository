@@ -3,8 +3,56 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>P1_SuperMoves</name>
     <events>
+        <comment>Super_Bar_Instance_Varible</comment>
+        <comment>the instincevaribles for the players super move bar</comment>
+        <variable constant="0" name="P1_Super" sid="492021115756097" static="0" type="number">0</variable>
+        <variable constant="0" name="P1_Super_Max" sid="803036869329160" static="0" type="number">100</variable>
         <event-group description="The basic super moves for the player" sid="268520818089188" title="P1_Super_Moves">
             <sub-events>
+                <event-group description="this is for the player to charge up there super attack" sid="781255434946958" title="P1_Super_Attack_Bar">
+                    <sub-events>
+                        <event-block sid="732545447243885">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="274649178501061" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="868629375380240" type="P1_Super_Bar">
+                                    <param id="0" name="Width">(Self.InitialWidth + (P1_Super - P1_Super_Max)*(Self.InitialWidth / P1_Super_Max))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="989615569092405">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="815248964922838" type="System">
+                                    <param id="0" name="Variable">P1_Super</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="931092322524582" type="System">
+                                    <param id="0" name="Variable">P1_Super</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="730888650968687">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="941318714588559" type="System">
+                                    <param id="0" name="Variable">P1_Super</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="129792702420545" type="System">
+                                    <param id="0" name="Variable">P1_Super</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <event-group description="When the player is chargeing the beam" sid="514852718241868" title="P1_ChargeBeam_Kame">
                     <sub-events>
                         <event-group description="For when the beam animation plays in game" sid="778950669877097" title="P1_Starting_Beam_Low_Animation">
@@ -942,50 +990,6 @@
                             </actions>
                         </event-block>
                     </sub-events>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="this is for the player to charge up there super attack" sid="781255434946958" title="Super_Attack_Bar">
-            <sub-events>
-                <event-block sid="732545447243885">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="274649178501061" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-5" name="Set width" sid="868629375380240" type="P1_Super_Bar">
-                            <param id="0" name="Width">(Self.Super_Bar + (Player.Super - Player.Super_Max)*(Self.Super_Bar / Player.Super_Max))</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="989615569092405">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="815248964922838" type="Player">
-                            <param id="0" name="Instance variable">Super</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">100</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="462084096561829" type="Player">
-                            <param id="0" name="Instance variable">Super</param>
-                            <param id="1" name="Value">100</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="730888650968687">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="536631333293961" type="Player">
-                            <param id="0" name="Instance variable">Super</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="129792702420545" type="Player">
-                            <param id="0" name="Instance variable">Super</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
