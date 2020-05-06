@@ -3,28 +3,14 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>P1_Ki_Bar_Event</name>
     <events>
-        <event-group description="the main events for player 1" sid="925083826209290" title="P1_Ki_Event">
-            <sub-events>
-                <event-group description="the main event for the player ki" sid="146436084928562" title="P1_KiBar_Event">
-                    <sub-events>
-                        <variable constant="0" name="P1_Ki_5" sid="460443840896382" static="0" type="number">0</variable>
-                        <variable constant="0" name="P1_Ki_4" sid="537571125572959" static="0" type="number">0</variable>
-                        <variable constant="0" name="P1_Ki_3" sid="173903539400723" static="0" type="number">0</variable>
-                        <variable constant="0" name="P1_Ki_2" sid="937514035794225" static="0" type="number">0</variable>
-                        <variable constant="0" name="P1_Ki_1" sid="350845894638391" static="0" type="number">0</variable>
-                    </sub-events>
-                </event-group>
-                <event-group description="the Max Ki event for the player 1" sid="184338502762838" title="P1_KiBar_Max">
-                    <sub-events>
-                        <variable constant="0" name="P1_Ki_5_Max" sid="127826656681371" static="0" type="number">100</variable>
-                        <variable constant="0" name="P1_Ki_4_Max" sid="746115885271642" static="0" type="number">100</variable>
-                        <variable constant="0" name="P1_Ki_3_Max" sid="744253914705467" static="0" type="number">100</variable>
-                        <variable constant="0" name="P1_Ki_2_Max" sid="229399367646924" static="0" type="number">100</variable>
-                        <variable constant="0" name="P1_Ki_1_Max" sid="245443064039745" static="0" type="number">100</variable>
-                    </sub-events>
-                </event-group>
-            </sub-events>
-        </event-group>
+        <comment>P1_KiBar_Event:the main events for the player 1 Ki</comment>
+        <variable constant="0" name="P1_Ki_3" sid="173903539400723" static="0" type="number">0</variable>
+        <variable constant="0" name="P1_Ki_2" sid="937514035794225" static="0" type="number">0</variable>
+        <variable constant="0" name="P1_Ki_1" sid="350845894638391" static="0" type="number">0</variable>
+        <comment>P1_KiBar_Max:the Max Ki event for player 1</comment>
+        <variable constant="0" name="P1_Ki_3_Max" sid="744253914705467" static="0" type="number">100</variable>
+        <variable constant="0" name="P1_Ki_2_Max" sid="229399367646924" static="0" type="number">100</variable>
+        <variable constant="0" name="P1_Ki_1_Max" sid="245443064039745" static="0" type="number">100</variable>
         <event-group description="the main chargeing event for the game" sid="793037665505263" title="P1_Chargeing the main Chargeing Event">
             <sub-events>
                 <event-group description="" sid="422403248354713" title="Animated_Aura_Bits">
@@ -71,37 +57,37 @@
                                 <condition id="-1" name="Every tick" sid="920549961177410" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-5" name="Set width" sid="846140487416054" type="P1_Ki_Bar1">
-                                    <param id="0" name="Width">(Self.Ki_Bar + (Player.Ki - Player.Ki_Max)*(Self.Ki_Bar / Player.Ki_Max))</param>
+                                <action id="-5" name="Set width" sid="782279833514588" type="P1_Ki_Bar1">
+                                    <param id="0" name="Width">(Self.Ki_Bar + (Player.P1_Ki - Player.P1_Ki_Max)*(Self.Ki_Bar / Player.P1_Ki_Max))</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="281048925327817">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="681985884966691" type="Player">
-                                    <param id="0" name="Instance variable">Ki</param>
+                                    <param id="0" name="Instance variable">P1_Ki</param>
                                     <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Value">100</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="642477865935477" type="Player">
-                                    <param id="0" name="Instance variable">Ki</param>
+                                <action id="-10" name="Set value" sid="723490518971352" type="Player">
+                                    <param id="0" name="Instance variable">P1_Ki</param>
                                     <param id="1" name="Value">100</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="826449171974499">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="494078677590015" type="Player">
-                                    <param id="0" name="Instance variable">Ki</param>
+                                <condition id="-7" name="Compare instance variable" sid="681172603689668" type="Player">
+                                    <param id="0" name="Instance variable">P1_Ki</param>
                                     <param id="1" name="Comparison">2</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="586711757353794" type="Player">
-                                    <param id="0" name="Instance variable">Ki</param>
+                                <action id="-10" name="Set value" sid="828547089806604" type="Player">
+                                    <param id="0" name="Instance variable">P1_Ki</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
@@ -118,8 +104,8 @@
                                         <condition id="2" name="Key is down" sid="310033211102214" type="Keyboard">
                                             <param id="0" name="Key">88</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="851713372123159" type="Player">
-                                            <param id="0" name="Instance variable">Ki</param>
+                                        <condition id="-7" name="Compare instance variable" sid="102597543285995" type="Player">
+                                            <param id="0" name="Instance variable">P1_Ki</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Value">100</param>
                                         </condition>
@@ -132,6 +118,15 @@
                                         <condition behavior="Platform" id="2" name="Is on floor" sid="175854587242997" type="Player" />
                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="605811136787476" type="Player">
                                             <param id="0" name="Instance variable">Fly</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="377210911150562" type="Player">
+                                            <param id="0" name="Animation">&quot;Super_2_&quot; &amp; Player.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="384555665447533" type="Player">
+                                            <param id="0" name="Animation">&quot;Super_1_&quot; &amp; Player.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Key is down" sid="375878522246978" type="Keyboard">
+                                            <param id="0" name="Key">76</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -192,8 +187,8 @@
                                         <condition id="2" name="Key is down" sid="887524266239963" type="Keyboard">
                                             <param id="0" name="Key">88</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="990438973102452" type="Player">
-                                            <param id="0" name="Instance variable">Ki</param>
+                                        <condition id="-7" name="Compare instance variable" sid="996606710300855" type="Player">
+                                            <param id="0" name="Instance variable">P1_Ki</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Value">100</param>
                                         </condition>
@@ -207,10 +202,22 @@
                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="253422573015909" type="Player">
                                             <param id="0" name="Instance variable">Fly</param>
                                         </condition>
+                                        <condition id="2" inverted="1" name="Key is down" sid="565781724473972" type="Keyboard">
+                                            <param id="0" name="Key">76</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="382948254727965" type="Player">
+                                            <param id="0" name="Animation">&quot;Super_2_&quot; &amp; Player.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="392822264402472" type="Player">
+                                            <param id="0" name="Animation">&quot;Super_1_&quot; &amp; Player.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Key is down" sid="754446825033871" type="Keyboard">
+                                            <param id="0" name="Key">76</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="-11" name="Add to" sid="577365932027144" type="Player">
-                                            <param id="0" name="Instance variable">Ki</param>
+                                            <param id="0" name="Instance variable">P1_Ki</param>
                                             <param id="1" name="Value">0.309</param>
                                         </action>
                                     </actions>
@@ -254,8 +261,8 @@
                                         <condition id="2" name="Key is down" sid="332122453631460" type="Keyboard">
                                             <param id="0" name="Key">88</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="823958527896501" type="Player">
-                                            <param id="0" name="Instance variable">Ki</param>
+                                        <condition id="-7" name="Compare instance variable" sid="980617465314706" type="Player">
+                                            <param id="0" name="Instance variable">P1_Ki</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Value">100</param>
                                         </condition>
@@ -264,6 +271,15 @@
                                         <condition id="-4" name="Trigger once while true" sid="710205257339060" type="System" />
                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="620089718518000" type="Player">
                                             <param id="0" name="Instance variable">Fly</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="665581865690736" type="Player">
+                                            <param id="0" name="Animation">&quot;Super_2_&quot; &amp; Player.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="323668287813166" type="Player">
+                                            <param id="0" name="Animation">&quot;Super_1_&quot; &amp; Player.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Key is down" sid="801019454522704" type="Keyboard">
+                                            <param id="0" name="Key">76</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -318,6 +334,15 @@
                                             <param id="0" name="Instance variable">SSJ1</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="999412727469575" type="Player">
+                                            <param id="0" name="Animation">&quot;Super_2_&quot; &amp; Player.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="537807962591495" type="Player">
+                                            <param id="0" name="Animation">&quot;Super_1_&quot; &amp; Player.Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Key is down" sid="564571344499004" type="Keyboard">
+                                            <param id="0" name="Key">76</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -385,7 +410,7 @@
                                             <param id="0" name="Object">Charge_Button</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="889699747134077" type="Player">
-                                            <param id="0" name="Instance variable">Ki</param>
+                                            <param id="0" name="Instance variable">P1_Ki</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Value">100</param>
                                         </condition>
@@ -457,7 +482,7 @@
                                         </condition>
                                         <condition id="-9" name="Is visible" sid="285753883670595" type="Aura" />
                                         <condition id="-7" name="Compare instance variable" sid="152968259117254" type="Player">
-                                            <param id="0" name="Instance variable">Ki</param>
+                                            <param id="0" name="Instance variable">P1_Ki</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Value">100</param>
                                         </condition>
@@ -478,7 +503,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-11" name="Add to" sid="510267435742387" type="Player">
-                                            <param id="0" name="Instance variable">Ki</param>
+                                            <param id="0" name="Instance variable">P1_Ki</param>
                                             <param id="1" name="Value">0.309</param>
                                         </action>
                                     </actions>
@@ -517,7 +542,7 @@
                                             <param id="0" name="Object">Charge_Button</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="568079613894535" type="Player">
-                                            <param id="0" name="Instance variable">Ki</param>
+                                            <param id="0" name="Instance variable">P1_Ki</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Value">100</param>
                                         </condition>
@@ -664,7 +689,7 @@
                 <event-block sid="319269416208477">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="480888825557271" type="Player">
-                            <param id="0" name="Instance variable">Ki</param>
+                            <param id="0" name="Instance variable">P1_Ki</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
                         </condition>

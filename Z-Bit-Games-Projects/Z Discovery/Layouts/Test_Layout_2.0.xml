@@ -243,8 +243,8 @@
                     <instance-variables>
                         <peerid>0</peerid>
                         <Hp>100</Hp>
-                        <Ki>100</Ki>
-                        <Ki_Max>100</Ki_Max>
+                        <P1_Ki>100</P1_Ki>
+                        <P1_Ki_Max>100</P1_Ki_Max>
                         <SSJ1>0</SSJ1>
                         <kills>0</kills>
                         <deaths>0</deaths>
@@ -287,6 +287,7 @@
                         <Super>20</Super>
                         <Super_Max>0</Super_Max>
                         <P1_Beam_Ready>false</P1_Beam_Ready>
+                        <P1_Beam_State>true</P1_Beam_State>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Timer" />
@@ -2114,74 +2115,6 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Ki_Bar" uid="1328">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>48</x>
-                        <y>168</y>
-                        <z>0</z>
-                        <width>90</width>
-                        <height>30</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="P1_HP_Bar1" uid="1330">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <instance-variables>
-                        <HP_Bar>68.969</HP_Bar>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>18.033014297</x>
-                        <y>27.009393692</y>
-                        <z>0</z>
-                        <width>21.972000122</width>
-                        <height>2.964999914</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="P1_Ki_Bar1" uid="1331">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <instance-variables>
-                        <Ki_Bar>21.972</Ki_Bar>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>18.00758934</x>
-                        <y>34.023262024</y>
-                        <z>0.00000006</z>
-                        <width>21.972000122</width>
-                        <height>2.964999914</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="P1_SSJ_Bar1" uid="1332">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -2205,10 +2138,127 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="SpriteFont" uid="104">
+                    <properties>
+                        <character-width>8</character-width>
+                        <character-height>12</character-height>
+                        <character-set>!&quot;#$%&amp;&apos;()*+,-_/0123456789:;&lt;=&gt;?@ABCDEFGHIJKLMNOPQRSTUVWXYX[\]^_`abcdefghijklmnopqrstuvwxyz{|}~</character-set>
+                        <text>Player</text>
+                        <scale>1</scale>
+                        <initial-visibility>Visible</initial-visibility>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <character-spacing>0</character-spacing>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>43.112686157</x>
+                        <y>26.654037476</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="P1_HP_Bar_1" uid="8">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>48.097366333</x>
+                        <y>12.354352951</y>
+                        <z>0</z>
+                        <width>96</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
         <layer name="Gui2" sid="661605063595095">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="P1_HP_Bar1" uid="1330">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <instance-variables>
+                        <HP_Bar>68.969</HP_Bar>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>6.121281147</x>
+                        <y>5.360530853</y>
+                        <z>0</z>
+                        <width>79.973220825</width>
+                        <height>2.964999914</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="P1_Ki_Bar1" uid="1331">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <instance-variables>
+                        <Ki_Bar>67.991</Ki_Bar>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>23.499000549</x>
+                        <y>167</y>
+                        <z>0.00000006</z>
+                        <width>67.990516663</width>
+                        <height>2.964999914</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="Gui3" sid="752052112374449">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -2270,117 +2320,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="P1_Ki_Bar3" uid="64">
-                    <properties>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <instance-variables>
-                        <Ki_Bar>21.972</Ki_Bar>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>8</x>
-                        <y>80</y>
-                        <z>0</z>
-                        <width>21.972000122</width>
-                        <height>2.964999914</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="P1_Ki_Bar4" uid="65">
-                    <properties>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <instance-variables>
-                        <Ki_Bar>21.972</Ki_Bar>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>8</x>
-                        <y>72</y>
-                        <z>0</z>
-                        <width>21.972000122</width>
-                        <height>2.964999914</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="P1_Ki_Bar5" uid="66">
-                    <properties>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <instance-variables>
-                        <Ki_Bar>21.972</Ki_Bar>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>32</x>
-                        <y>72</y>
-                        <z>0</z>
-                        <width>21.972000122</width>
-                        <height>2.964999914</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-            </instances>
-            <effects />
-        </layer>
-        <layer name="Gui3" sid="752052112374449">
-            <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
-            <transparent>1</transparent>
-            <parallax>
-                <x>0</x>
-                <y>0</y>
-            </parallax>
-            <zoom-rate>1</zoom-rate>
-            <opacity>1</opacity>
-            <force-own-texture>0</force-own-texture>
-            <global>0</global>
-            <use-render-cells>0</use-render-cells>
-            <blend-mode>0</blend-mode>
-            <effect-fallback>0</effect-fallback>
-            <instances>
-                <instance type="P1_HP_Bar3" uid="54">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <instance-variables>
-                        <Hp_Bar>21.972</Hp_Bar>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>8</x>
-                        <y>56</y>
-                        <z>0</z>
-                        <width>21.972000122</width>
-                        <height>2.964999914</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
             </instances>
             <effects />
         </layer>
@@ -2426,7 +2365,30 @@
                         <opacity>0.600000024</opacity>
                     </world>
                 </instance>
-                <instance type="P1_HP_Bar4" uid="55">
+                <instance type="P1_Ki_Bar3" uid="64">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <instance-variables>
+                        <Ki_Bar>21.972</Ki_Bar>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>8</x>
+                        <y>80</y>
+                        <z>0</z>
+                        <width>21.972000122</width>
+                        <height>2.964999914</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="P1_HP_Bar3" uid="54">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
@@ -2438,7 +2400,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>8</x>
-                        <y>48</y>
+                        <y>56</y>
                         <z>0</z>
                         <width>21.972000122</width>
                         <height>2.964999914</height>
@@ -2468,7 +2430,30 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="P1_HP_Bar5" uid="59">
+                <instance type="P1_Ki_Bar4" uid="65">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <instance-variables>
+                        <Ki_Bar>21.972</Ki_Bar>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>8</x>
+                        <y>72</y>
+                        <z>0</z>
+                        <width>21.972000122</width>
+                        <height>2.964999914</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="P1_HP_Bar4" uid="55">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
@@ -2479,7 +2464,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>32</x>
+                        <x>8</x>
                         <y>48</y>
                         <z>0</z>
                         <width>21.972000122</width>
@@ -2510,41 +2495,42 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="P1_Icon" uid="22">
+                <instance type="P1_Ki_Bar5" uid="66">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
                     </properties>
+                    <instance-variables>
+                        <Ki_Bar>21.972</Ki_Bar>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>32</x>
-                        <y>24</y>
+                        <y>72</y>
                         <z>0</z>
-                        <width>70</width>
-                        <height>42</height>
+                        <width>21.972000122</width>
+                        <height>2.964999914</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="P1_Super_Bar" uid="103">
+                <instance type="P1_HP_Bar5" uid="59">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
                     </properties>
                     <instance-variables>
-                        <InitialWidth>21.972</InitialWidth>
+                        <Hp_Bar>21.972</Hp_Bar>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>18.042589188</x>
-                        <y>34.035381317</y>
+                        <x>32</x>
+                        <y>48</y>
                         <z>0</z>
                         <width>21.972000122</width>
                         <height>2.964999914</height>
@@ -2574,7 +2560,49 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="P1_HP_Bar_1" uid="8">
+                <instance type="P1_Super_Bar" uid="103">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <instance-variables>
+                        <InitialWidth>67.991</InitialWidth>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>23.499000549</x>
+                        <y>167</y>
+                        <z>0</z>
+                        <width>67.990997314</width>
+                        <height>2.964999914</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="Gui8" sid="611445187441373">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="Ki_Bar" uid="1328">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -2584,11 +2612,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>32</x>
-                        <y>24</y>
+                        <x>52.488517761</x>
+                        <y>168</y>
                         <z>0</z>
-                        <width>70</width>
-                        <height>42</height>
+                        <width>96</width>
+                        <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -2754,8 +2782,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>17.227264404</x>
-                        <y>163.47479248</y>
+                        <x>17.901702881</x>
+                        <y>143.578308105</y>
                         <z>0</z>
                         <width>30.983999252</width>
                         <height>30.983999252</height>
@@ -2780,8 +2808,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>56.749492645</x>
-                        <y>163.032272339</y>
+                        <x>57.423931122</x>
+                        <y>143.135787964</y>
                         <z>0</z>
                         <width>30.983999252</width>
                         <height>30.983999252</height>
