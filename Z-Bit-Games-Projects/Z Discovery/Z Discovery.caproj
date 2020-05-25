@@ -5016,7 +5016,7 @@
         </object-folder>
         <object-folder name="Sprite_Effects">
             <object-folder name="Beams&amp;Ki_Blast">
-                <object-type name="Kamehameha_Sprite_1" sid="291476122377345">
+                <object-type name="P1_Kamehameha_Sprite_1" sid="291476122377345">
                     <plugin id="Sprite" />
                     <behaviors>
                         <behavior-type name="Bullet" sid="657851558280660">
@@ -5029,7 +5029,7 @@
                         </animation>
                     </animation-folder>
                 </object-type>
-                <object-type name="Kamehameha_Sprite_3" sid="583222125917426">
+                <object-type name="P1_Kamehameha_Sprite_3" sid="583222125917426">
                     <plugin id="Sprite" />
                     <animation-folder>
                         <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="159300326391983" speed="21">
@@ -5037,7 +5037,7 @@
                         </animation>
                     </animation-folder>
                 </object-type>
-                <object-type name="Ki_Blast" sid="906970520692005">
+                <object-type name="P1_Ki_Blast" sid="906970520692005">
                     <plugin id="Sprite" />
                     <behaviors>
                         <behavior-type name="Bullet" sid="532269481084325">
@@ -5050,18 +5050,55 @@
                         </animation>
                     </animation-folder>
                 </object-type>
-                <object-type name="Kamehameha_Sprite_2" sid="623578926048437">
+                <object-type name="P1_Kamehameha_Sprite_2" sid="623578926048437">
                     <plugin id="TiledBg" />
                     <texture />
                 </object-type>
-                <object-type name="Kamehameha_Charge" sid="260271831156546">
+                <object-type name="P1_Kamehameha_Charge" sid="260271831156546">
                     <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="739108204218855">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
                     <animation-folder>
-                        <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="989908125793090" speed="20">
-                            <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
-                            <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
-                            <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
-                        </animation>
+                        <animation-folder name="Low_Kame">
+                            <animation framecount="2" loop="1" name="Low_Kame" pingpong="0" repeatcount="1" repeatto="0" sid="585673486172153" speed="20">
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                            </animation>
+                            <animation framecount="5" loop="0" name="Low_Kame_Start_up" pingpong="0" repeatcount="1" repeatto="0" sid="478307031262363" speed="20">
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                            </animation>
+                        </animation-folder>
+                        <animation-folder name="Mid_Kame">
+                            <animation framecount="2" loop="1" name="Mid_Kame" pingpong="0" repeatcount="1" repeatto="0" sid="787138024074396" speed="20">
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                            </animation>
+                            <animation framecount="4" loop="0" name="Mid_Kame_Start_up" pingpong="0" repeatcount="1" repeatto="0" sid="185556655058162" speed="20">
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                            </animation>
+                        </animation-folder>
+                        <animation-folder name="Full_Kame">
+                            <animation framecount="2" loop="1" name="Full_Kame" pingpong="0" repeatcount="1" repeatto="0" sid="989908125793090" speed="20">
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                            </animation>
+                            <animation framecount="4" loop="0" name="Full_Kame_Start_up" pingpong="0" repeatcount="1" repeatto="0" sid="763421110697374" speed="20">
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                            </animation>
+                        </animation-folder>
                     </animation-folder>
                 </object-type>
             </object-folder>
@@ -5678,31 +5715,40 @@
         <global-instance type="Browser" uid="7" />
     </global-instances>
     <sounds-folder>
-        <sound-folder name="Attacking_SFXs">
-            <file name="Attack1.ogg" />
-            <file name="Attack2.ogg" />
-            <file name="Attack3.ogg" />
-            <file name="Attack4.ogg" />
-            <file name="Attack5.ogg" />
-            <file name="hit1.ogg" />
-            <file name="hit2.ogg" />
-            <file name="hit3.ogg" />
-            <file name="kick1.ogg" />
-            <file name="kick2.ogg" />
-            <file name="ki_attack_charge.ogg" />
-            <file name="ki_aura.ogg" />
-            <file name="kiblast.ogg" />
-            <file name="beam sfx.ogg" />
-        </sound-folder>
         <sound-folder name="Player_SFXs">
+            <sound-folder name="Ki_SFX">
+                <sound-folder name="Beam_SFX">
+                    <file name="Full_Kame_Fire.ogg" />
+                    <file name="Kame_Charge_High.ogg" />
+                    <file name="Kame_Charge_Low.ogg" />
+                    <file name="Kame_Charge_Mid.ogg" />
+                    <file name="Mid_Kame_Fire.ogg" />
+                </sound-folder>
+                <file name="kiblast.ogg" />
+                <file name="ki_aura.ogg" />
+                <file name="ki_attack_charge.ogg" />
+                <file name="beam sfx.ogg" />
+                <file name="ki chargeing sound.ogg" />
+                <file name="kiplosion.ogg" />
+            </sound-folder>
+            <sound-folder name="Attacking_SFXs">
+                <file name="Attack1.ogg" />
+                <file name="Attack2.ogg" />
+                <file name="Attack3.ogg" />
+                <file name="Attack4.ogg" />
+                <file name="Attack5.ogg" />
+                <file name="hit1.ogg" />
+                <file name="hit2.ogg" />
+                <file name="hit3.ogg" />
+                <file name="kick1.ogg" />
+                <file name="kick2.ogg" />
+            </sound-folder>
             <file name="land on ground.ogg" />
             <file name="land.ogg" />
             <file name="jump.ogg" />
             <file name="jumping.ogg" />
-            <file name="ki chargeing sound.ogg" />
             <file name="dash1.ogg" />
             <file name="defeated.ogg" />
-            <file name="kiplosion.ogg" />
             <file name="small explosion 2.ogg" />
             <file name="small explosion.ogg" />
         </sound-folder>
