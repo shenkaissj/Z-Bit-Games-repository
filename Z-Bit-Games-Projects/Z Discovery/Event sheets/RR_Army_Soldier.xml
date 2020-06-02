@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>RR_Army_Soldier</name>
+    <events>
+        <event-group description="the event for the start of layout" sid="156161271002810" title="RR_Soldier_Start of Layout">
+            <sub-events>
+                <event-block sid="279070770110318">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="729816796306930" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="5" name="Set gravity" sid="803656653623609" type="RR_Soldier_NPC">
+                            <param id="0" name="Gravity">413</param>
+                        </action>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="327670000229088" type="RR_Soldier_NPC">
+                            <param id="0" name="Acceleration">305</param>
+                        </action>
+                        <action behavior="Platform" id="3" name="Set deceleration" sid="592754677853591" type="RR_Soldier_NPC">
+                            <param id="0" name="Deceleration">100</param>
+                        </action>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="456264406934262" type="RR_Soldier_NPC">
+                            <param id="0" name="Jump strength">184</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="448844755379979" type="RR_Soldier_NPC">
+                            <param id="0" name="Max Speed">36</param>
+                        </action>
+                        <action behavior="Platform" id="6" name="Set max fall speed" sid="637881992426500" type="RR_Soldier_NPC">
+                            <param id="0" name="Max fall speed">520</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="557096874158335" type="RR_Soldier_NPC">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="575803388360840" type="System">
+                            <param id="0" name="Object to create">Hit_Effect</param>
+                            <param id="1" name="Layer">9</param>
+                            <param id="2" name="X">RR_Soldier_NPC.X</param>
+                            <param id="3" name="Y">RR_Soldier_NPC.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="372468005815207" type="Hit_Effect">
+                            <param id="0" name="Pin to">RR_Soldier_NPC</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="539091016568964" type="System">
+                            <param id="0" name="Object to create">Explosion_Effect</param>
+                            <param id="1" name="Layer">9</param>
+                            <param id="2" name="X">RR_Soldier_NPC.X</param>
+                            <param id="3" name="Y">RR_Soldier_NPC.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="944197773714493" type="Explosion_Effect">
+                            <param id="0" name="Pin to">RR_Soldier_NPC</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="330707092261391" type="RR_Soldier_NPC">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="762185094538230">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="383466928993785" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" inverted="1" name="Compare instance variable" sid="345234592467624" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="603896920624741" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Defeated_2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="243175895818794" type="System">
+                    <param id="0" name="Seconds">1.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="693195850740114" type="RR_Soldier_NPC" />
+            </actions>
+        </event-block>
+        <event-block sid="917222884631221">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="909864852363733" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" inverted="1" name="Compare instance variable" sid="122938589621535" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="981633691645656" type="RR_Soldier_NPC" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="490363933402902" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Defeated_2&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="275883048063914">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="587107486886525" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-7" inverted="1" name="Compare instance variable" sid="421170581833832" type="RR_Soldier_NPC">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">4</param>
+                </condition>
+                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="559106457090049" type="RR_Soldier_NPC" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="655201024373565" type="RR_Soldier_NPC">
+                    <param id="0" name="Animation">&quot;Defeated_1&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="the main collisions for the sandbag" sid="159313302930043" title="Sandbag_Collisions2">
+            <sub-events>
+                <event-block sid="779088667143065">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="181424401559084" type="Hit_Effect">
+                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="264456351613819" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="954894424107096" type="Hit_Effect">
+                            <param id="0" name="Animation">&quot;No_Hit&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="919859938592198">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="819227694215312" type="Hit_Effect">
+                            <param id="0" name="Animation">&quot;Strong_Hit_Effect&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="869984339088199" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="781820989269012" type="Hit_Effect">
+                            <param id="0" name="Animation">&quot;No_Hit&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="737746614285814">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="274666689262299" type="Explosion_Effect">
+                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="457801115372006" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="508632259151026" type="Explosion_Effect">
+                            <param id="0" name="Animation">&quot;No_Hit&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="the Ki_Blast Collition for the RR Soldier NPC" sid="136712708302656" title="RR_Soldier_Ki_Blast_Explosion">
+            <sub-events>
+                <event-block sid="534917007674399">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="317566506898692" type="P1_Ki_Blast">
+                            <param id="0" name="Object">RR_Soldier_NPC</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="852491472815689" type="Player" />
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="270297404897263" type="RR_Soldier_NPC">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="414495094245845" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Defeated_2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="544958817908879" type="Audio">
+                            <param id="0" name="Audio file">kiplosion</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-25</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="800512631990276" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="832730805972863" type="RR_Soldier_NPC">
+                            <param id="0" name="Vector X">142</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="647309860545640" type="Explosion_Effect">
+                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="723629721649409" type="RR_Soldier_NPC">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="297250514585083" type="RR_Soldier_NPC">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="571992945124798" type="P1_Ki_Blast" />
+                    </actions>
+                </event-block>
+                <event-block sid="524918090535729">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="826721278762509" type="P1_Ki_Blast">
+                            <param id="0" name="Object">RR_Soldier_NPC</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="416754723457199" type="Player" />
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="951079785182989" type="RR_Soldier_NPC">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="189239441717022" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Defeated_2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="528776064864477" type="Audio">
+                            <param id="0" name="Audio file">kiplosion</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-25</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="412305242488552" type="RR_Soldier_NPC">
+                            <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="436968819811998" type="RR_Soldier_NPC">
+                            <param id="0" name="Vector X">-142</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="940888937995111" type="Explosion_Effect">
+                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="152965889214623" type="RR_Soldier_NPC">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="890225413844540" type="RR_Soldier_NPC">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="917021654745677" type="P1_Ki_Blast" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Sandbag_Event</name>
+    <events>
+        <variable constant="0" name="Sandbag_Hit_Counter" sid="939770186113573" static="0" type="number">0</variable>
+        <event-group description="the main collisions for the sandbag" sid="274873992376064" title="Sandbag_Collisions">
+            <sub-events>
+                <event-block sid="774791254675893">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="782816391259235" type="Hit_Effect">
+                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="625461960032703" type="Sandbag">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="703910161152379" type="Hit_Effect">
+                            <param id="0" name="Animation">&quot;No_Hit&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="868324671126393">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="227832931405661" type="Hit_Effect">
+                            <param id="0" name="Animation">&quot;Strong_Hit_Effect&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="632151577932682" type="Sandbag">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="440315113331439" type="Hit_Effect">
+                            <param id="0" name="Animation">&quot;No_Hit&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="623735959002455">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="607557510486024" type="Explosion_Effect">
+                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="695773714233184" type="Sandbag">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="117228370415562" type="Explosion_Effect">
+                            <param id="0" name="Animation">&quot;No_Hit&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="the Ki_Blast Collition for the Sandbag" sid="284403065251994" title="Sandbag_Ki_Blast_Explosion2">
+            <sub-events>
+                <event-block sid="648293775685185">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="391647829702687" type="P1_Ki_Blast">
+                            <param id="0" name="Object">Sandbag</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="630984760384228" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="459791882586379" type="Audio">
+                            <param id="0" name="Audio file">kiplosion</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-25</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="171483976461502" type="Explosion_Effect">
+                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="169447810978951" type="Sandbag">
+                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="365253580554952" type="Sandbag">
+                            <param id="0" name="Vector X">142</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="327066499641911" type="Sandbag">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="495976030403175" type="P1_Ki_Blast" />
+                    </actions>
+                </event-block>
+                <event-block sid="983592251591572">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="138757610756806" type="P1_Ki_Blast">
+                            <param id="0" name="Object">Sandbag</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="671946598612960" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="542203755581087" type="Audio">
+                            <param id="0" name="Audio file">kiplosion</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-25</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="671528367536055" type="Explosion_Effect">
+                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="306795094983039" type="Sandbag">
+                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="105801787536907" type="Sandbag">
+                            <param id="0" name="Vector X">-142</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="879119369062172" type="Sandbag">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="809390763803109" type="P1_Ki_Blast" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
