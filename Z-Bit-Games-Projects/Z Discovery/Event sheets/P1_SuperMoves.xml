@@ -47,6 +47,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Beam_Mid</comment>
         <event-block sid="398373467299385">
             <conditions>
                 <condition id="3" name="On key released" sid="534752749967807" type="Keyboard">
@@ -129,6 +130,11 @@
                             <param id="1" name="Layer">11</param>
                             <param id="2" name="Image point">0</param>
                         </action>
+                        <action id="0" name="Spawn another object" sid="682658059438746" type="P1_Kamehameha_Sprite_3">
+                            <param id="0" name="Object">P1_Kamehameha_Sprite_2</param>
+                            <param id="1" name="Layer">11</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
                         <action id="-11" name="Subtract from" sid="169307217730168" type="System">
                             <param id="0" name="Variable">P1_Ki_1</param>
                             <param id="1" name="Value">25</param>
@@ -144,6 +150,7 @@
                         </action>
                         <action id="-9" name="Destroy" sid="185066003034143" type="P1_Kamehameha_Sprite_3" />
                         <action id="-9" name="Destroy" sid="997738432620035" type="P1_Kamehameha_Sprite_1" />
+                        <action id="-9" name="Destroy" sid="566533248976495" type="P1_Kamehameha_Sprite_2" />
                         <action behavior="Platform" id="0" name="Set ignoring input" sid="185042367189307" type="Player">
                             <param id="0" name="Input">0</param>
                         </action>
@@ -159,6 +166,7 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>Beam_1</comment>
         <event-block sid="598644042959704">
             <conditions>
                 <condition id="2" name="Key is down" sid="417714127682313" type="Keyboard">
@@ -229,7 +237,7 @@
                             <param id="3" name="Y">Player.Y</param>
                         </action>
                         <action id="0" name="Play" sid="987083152847639" type="Audio">
-                            <param id="0" name="Audio file">Kame_Charge_High</param>
+                            <param id="0" name="Audio file">Kame_Charge_Low</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">-12</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
@@ -252,6 +260,87 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>Beam_2</comment>
+        <event-block sid="975224555205598">
+            <conditions>
+                <condition id="2" name="Key is down" sid="435475531621329" type="Keyboard">
+                    <param id="0" name="Key">70</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="799203937159416" type="Player">
+                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="612338812707580" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="789878120980838">
+                    <conditions>
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="825384082128542" type="Player" />
+                        <condition id="-14" name="Compare variable" sid="113412446522849" type="System">
+                            <param id="0" name="Variable">P1_Energy_Attack</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="754424665360254" type="Keyboard">
+                            <param id="0" name="Key">90</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="397022925403270" type="Keyboard">
+                            <param id="0" name="Key">71</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="109462906914108" type="Keyboard">
+                            <param id="0" name="Key">75</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="833915801800625" type="Keyboard">
+                            <param id="0" name="Key">76</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="201607530721881" type="Player">
+                            <param id="0" name="Object">NoKiblastCollision</param>
+                        </condition>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="459738930591703" type="System">
+                            <param id="0" name="Variable">P1_Ki_1</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="693062869625406" type="Player">
+                            <param id="0" name="Animation">&quot;Baseform_&quot; &amp; Player.P1_Charcters</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="569551369770782" type="Player">
+                            <param id="0" name="Animation">&quot;SSJ1_Transformation_1_&quot; &amp; Player.P1_Charcters</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Is visible" sid="641369780635506" type="Aura" />
+                        <condition id="-14" name="Compare variable" sid="459043835465749" type="System">
+                            <param id="0" name="Variable">P1_Ki_1</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">50</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="551395842239285" type="Player">
+                            <param id="0" name="Instance variable">P1_Beam_State</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="429251628155337" type="Player">
+                            <param id="0" name="Instance variable">P1_Beam_State</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="247558632265462" type="Player">
+                            <param id="0" name="Input">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="462097634464299" type="Audio">
+                            <param id="0" name="Audio file">Kame_Charge_Mid</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-12</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="988914252334938" type="P1_Kamehameha_Charge">
+                            <param id="0" name="Animation">&quot;Mid_Kame_Start_up&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
         <event-block sid="170665450365016">
             <conditions>
                 <condition id="-18" name="On created" sid="962040907040095" type="P1_Kamehameha_Sprite_1" />
@@ -268,23 +357,8 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="7" name="Set mirrored" sid="530263431060703" type="P1_Kamehameha_Sprite_1">
-                            <param id="0" name="State">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="414731651316533">
-                    <conditions>
-                        <condition id="7" inverted="1" name="Is mirrored" sid="361002623184941" type="Player" />
-                        <condition id="-14" name="Compare variable" sid="252983723555273" type="System">
-                            <param id="0" name="Variable">P1_Energy_Attack</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="7" name="Set mirrored" sid="939233291294523" type="P1_Kamehameha_Sprite_1">
-                            <param id="0" name="State">1</param>
+                        <action id="-8" name="Set angle" sid="826164006823540" type="P1_Kamehameha_Sprite_1">
+                            <param id="0" name="Angle">180</param>
                         </action>
                     </actions>
                 </event-block>
@@ -327,6 +401,70 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="552067587198935">
+            <conditions>
+                <condition id="-18" name="On created" sid="785387671746522" type="P1_Kamehameha_Charge" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="326930924848684">
+                    <conditions>
+                        <condition id="7" name="Is mirrored" sid="468396213146152" type="Player" />
+                        <condition id="-14" name="Compare variable" sid="767440296322436" type="System">
+                            <param id="0" name="Variable">P1_Energy_Attack</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="944660889006499" type="P1_Kamehameha_Charge">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="255463720799064">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="118619296457942" type="Player" />
+                        <condition id="-14" name="Compare variable" sid="102982182101210" type="System">
+                            <param id="0" name="Variable">P1_Energy_Attack</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="110336670566624" type="P1_Kamehameha_Charge">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="382006766260073">
+            <conditions>
+                <condition id="4" name="On finished" sid="421779165128718" type="P1_Kamehameha_Charge">
+                    <param id="0" name="Animation">&quot;Mid_Kame_Start_up&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="137165404925851" type="P1_Kamehameha_Charge">
+                    <param id="0" name="Animation">&quot;Mid_Kame&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="248949258667415">
+            <conditions>
+                <condition id="4" name="On finished" sid="931848571855074" type="P1_Kamehameha_Charge">
+                    <param id="0" name="Animation">&quot;Full_Kame_Start_up&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="885146938614551" type="P1_Kamehameha_Charge">
+                    <param id="0" name="Animation">&quot;Full_Kame&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
