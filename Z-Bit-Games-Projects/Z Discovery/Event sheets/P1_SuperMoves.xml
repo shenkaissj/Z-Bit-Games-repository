@@ -46,7 +46,7 @@
                     <param id="0" name="Instance variable">P1_Beam_State</param>
                     <param id="1" name="Value">0</param>
                 </action>
-                <action behavior="Pin" id="0" name="Pin to object" sid="951376524236545" type="P1_Kame_3">
+                <action behavior="Pin" id="0" name="Pin to object" sid="445259659551091" type="9patch">
                     <param id="0" name="Pin to">Player</param>
                     <param id="1" name="Mode">0</param>
                 </action>
@@ -89,18 +89,6 @@
                 <condition id="0" name="On key pressed" sid="534752749967807" type="Keyboard">
                     <param id="0" name="Key">70</param>
                 </condition>
-                <condition id="2" inverted="1" name="Key is down" sid="788072890053072" type="Keyboard">
-                    <param id="0" name="Key">90</param>
-                </condition>
-                <condition id="2" inverted="1" name="Key is down" sid="699751886299556" type="Keyboard">
-                    <param id="0" name="Key">71</param>
-                </condition>
-                <condition id="2" inverted="1" name="Key is down" sid="929382731034861" type="Keyboard">
-                    <param id="0" name="Key">75</param>
-                </condition>
-                <condition id="2" inverted="1" name="Key is down" sid="599044003113861" type="Keyboard">
-                    <param id="0" name="Key">76</param>
-                </condition>
                 <condition id="-7" name="Compare instance variable" sid="993255465515049" type="Player">
                     <param id="0" name="Instance variable">P1_SSJ1</param>
                     <param id="1" name="Comparison">0</param>
@@ -129,6 +117,18 @@
             <sub-events>
                 <event-block sid="169540868330625">
                     <conditions>
+                        <condition id="2" inverted="1" name="Key is down" sid="788072890053072" type="Keyboard">
+                            <param id="0" name="Key">90</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="699751886299556" type="Keyboard">
+                            <param id="0" name="Key">71</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="929382731034861" type="Keyboard">
+                            <param id="0" name="Key">75</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Key is down" sid="599044003113861" type="Keyboard">
+                            <param id="0" name="Key">76</param>
+                        </condition>
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="331316773936161" type="Player">
                             <param id="0" name="Instance variable">P1_Beam_State</param>
                         </condition>
@@ -199,13 +199,17 @@
                             <param id="0" name="Instance variable">P1_Beam_Particles</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="0" name="Spawn another object" sid="985247959905480" type="Player">
-                            <param id="0" name="Object">9patch</param>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="190837426965017" type="9patch">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="388168203441130" type="Player">
+                            <param id="0" name="Object">P1_Kame_1</param>
                             <param id="1" name="Layer">12</param>
                             <param id="2" name="Image point">0</param>
                         </action>
-                        <action id="0" name="Spawn another object" sid="682658059438746" type="P1_Kame_1">
-                            <param id="0" name="Object">Sprite10</param>
+                        <action id="0" name="Spawn another object" sid="985247959905480" type="Player">
+                            <param id="0" name="Object">9patch</param>
                             <param id="1" name="Layer">11</param>
                             <param id="2" name="Image point">0</param>
                         </action>
@@ -223,7 +227,7 @@
                             <param id="0" name="Seconds">2</param>
                         </action>
                         <action behavior="Fade" id="1" name="Start fade" sid="997738432620035" type="P1_Kame_1" />
-                        <action behavior="Fade" id="1" name="Start fade" sid="566533248976495" type="Sprite10" />
+                        <action behavior="Fade" id="1" name="Start fade" sid="566533248976495" type="9patch" />
                         <action behavior="Platform" id="0" name="Set ignoring input" sid="185042367189307" type="Player">
                             <param id="0" name="Input">0</param>
                         </action>
@@ -241,9 +245,8 @@
                         <action id="-16" name="Wait" sid="553736045779148" type="System">
                             <param id="0" name="Seconds">1</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="839388800794274" type="P1_Kame_3" />
                         <action id="-9" name="Destroy" sid="921622033060237" type="P1_Kame_1" />
-                        <action id="-9" name="Destroy" sid="288416684054221" type="Sprite10" />
+                        <action id="-9" name="Destroy" sid="288416684054221" type="9patch" />
                         <action id="-13" name="Set boolean" sid="331523659633565" type="Player">
                             <param id="0" name="Instance variable">P1_Beam_Particles</param>
                             <param id="1" name="Value">0</param>
@@ -255,12 +258,15 @@
         <event-group description="this event is for the players super meter" sid="812901205074241" title="P1_Super_Meter" />
         <event-block sid="745635309225155">
             <conditions>
-                <condition id="-18" name="On created" sid="908121417781277" type="P1_Kame_3" />
+                <condition id="-18" name="On created" sid="908121417781277" type="9patch" />
             </conditions>
             <actions>
-                <action behavior="Pin" id="0" name="Pin to object" sid="442094594588158" type="P1_Kame_3">
+                <action behavior="Pin" id="0" name="Pin to object" sid="442094594588158" type="9patch">
                     <param id="0" name="Pin to">Player</param>
                     <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-2" name="Set Y" sid="306475266870120" type="9patch">
+                    <param id="0" name="Y">20</param>
                 </action>
             </actions>
         </event-block>
@@ -291,7 +297,7 @@
                 </event-block>
                 <event-block sid="898297287146622">
                     <conditions>
-                        <condition id="-18" name="On created" sid="893302808518619" type="P1_Kame_3" />
+                        <condition id="-18" name="On created" sid="893302808518619" type="9patch" />
                     </conditions>
                     <actions />
                     <sub-events>
@@ -305,23 +311,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="7" name="Set mirrored" sid="231584663543627" type="P1_Kame_3">
-                                    <param id="0" name="State">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="263569127379328">
-                            <conditions>
-                                <condition id="7" inverted="1" name="Is mirrored" sid="334333392851958" type="Player" />
-                                <condition id="-14" name="Compare variable" sid="882621583149758" type="System">
-                                    <param id="0" name="Variable">P1_Energy_Attack</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="7" name="Set mirrored" sid="568558824153557" type="P1_Kame_3">
-                                    <param id="0" name="State">1</param>
+                                <action id="-23" name="Move at angle" sid="231584663543627" type="9patch">
+                                    <param id="0" name="Angle">180</param>
+                                    <param id="1" name="Distance">1</param>
                                 </action>
                             </actions>
                         </event-block>
