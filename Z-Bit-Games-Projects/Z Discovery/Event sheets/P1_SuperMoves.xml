@@ -199,10 +199,6 @@
                             <param id="0" name="Instance variable">P1_Beam_Particles</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action behavior="Pin" id="0" name="Pin to object" sid="190837426965017" type="9patch">
-                            <param id="0" name="Pin to">Player</param>
-                            <param id="1" name="Mode">0</param>
-                        </action>
                         <action id="0" name="Spawn another object" sid="388168203441130" type="Player">
                             <param id="0" name="Object">P1_Kame_1</param>
                             <param id="1" name="Layer">12</param>
@@ -211,7 +207,10 @@
                         <action id="0" name="Spawn another object" sid="985247959905480" type="Player">
                             <param id="0" name="Object">9patch</param>
                             <param id="1" name="Layer">11</param>
-                            <param id="2" name="Image point">0</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="140565654156369" type="Player">
+                            <param id="0" name="Vector X">-25</param>
                         </action>
                         <action id="-11" name="Subtract from" sid="169307217730168" type="System">
                             <param id="0" name="Variable">P1_Ki_1</param>
@@ -222,6 +221,13 @@
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">-12</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="574289529455941" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="892119990896473" type="9patch">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">0</param>
                         </action>
                         <action id="-16" name="Wait" sid="498921134638288" type="System">
                             <param id="0" name="Seconds">2</param>
@@ -254,18 +260,6 @@
                     </actions>
                 </event-block>
             </sub-events>
-        </event-block>
-        <event-group description="this event is for the players super meter" sid="812901205074241" title="P1_Super_Meter" />
-        <event-block sid="745635309225155">
-            <conditions>
-                <condition id="-18" name="On created" sid="908121417781277" type="9patch" />
-            </conditions>
-            <actions>
-                <action behavior="Pin" id="0" name="Pin to object" sid="442094594588158" type="9patch">
-                    <param id="0" name="Pin to">Player</param>
-                    <param id="1" name="Mode">0</param>
-                </action>
-            </actions>
         </event-block>
         <event-group description="when the beams are created" sid="931125614761719" title="Beams on created">
             <sub-events>
@@ -345,5 +339,6 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="this event is for the players super meter" sid="812901205074241" title="P1_Super_Meter" />
     </events>
 </c2eventsheet>
