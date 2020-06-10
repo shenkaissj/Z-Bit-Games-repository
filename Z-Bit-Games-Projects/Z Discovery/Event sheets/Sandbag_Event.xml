@@ -4,6 +4,25 @@
     <name>Sandbag_Event</name>
     <events>
         <variable constant="0" name="Sandbag_Hit_Counter" sid="939770186113573" static="0" type="number">0</variable>
+        <event-block sid="220988753657218">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="871149004081604" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="6" name="Set max fall speed" sid="376249391354888" type="Sandbag">
+                    <param id="0" name="Max fall speed">520</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="481557805428027" type="Sandbag">
+                    <param id="0" name="Gravity">413</param>
+                </action>
+                <action behavior="Platform" id="2" name="Set acceleration" sid="904742536514686" type="Sandbag">
+                    <param id="0" name="Acceleration">1500</param>
+                </action>
+                <action behavior="Platform" id="3" name="Set deceleration" sid="156605283451191" type="Sandbag">
+                    <param id="0" name="Deceleration">1500</param>
+                </action>
+            </actions>
+        </event-block>
         <event-group description="this event is for the sandbag when people need to either train or pratice combos" sid="540475421220904" title="Sandbag_Event">
             <sub-events>
                 <event-group description="the main collisions for the sandbag" sid="274873992376064" title="Sandbag_Collisions">
@@ -12,6 +31,9 @@
                             <conditions>
                                 <condition id="4" name="On finished" sid="782816391259235" type="Hit_Effect">
                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="132217368133113" type="Sandbag">
+                                    <param id="0" name="Instance variable">Knockout_State</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -30,6 +52,9 @@
                                 <condition id="4" name="On finished" sid="227832931405661" type="Hit_Effect">
                                     <param id="0" name="Animation">&quot;Strong_Hit_Effect&quot;</param>
                                 </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="597279512265710" type="Sandbag">
+                                    <param id="0" name="Instance variable">Knockout_State</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="4" name="Set animation" sid="632151577932682" type="Sandbag">
@@ -47,6 +72,9 @@
                                 <condition id="4" name="On finished" sid="607557510486024" type="Explosion_Effect">
                                     <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
                                 </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="963046420991138" type="Sandbag">
+                                    <param id="0" name="Instance variable">Knockout_State</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="4" name="Set animation" sid="695773714233184" type="Sandbag">
@@ -55,6 +83,72 @@
                                 </action>
                                 <action id="4" name="Set animation" sid="117228370415562" type="Explosion_Effect">
                                     <param id="0" name="Animation">&quot;No_Hit&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="103857922217248">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="196632218653344" type="Hit_Effect">
+                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="455582832651890" type="Sandbag">
+                                    <param id="0" name="Instance variable">Knockout_State</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="218994334834692" type="Sandbag">
+                                    <param id="0" name="Acceleration">350</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="356715086414888" type="Sandbag">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="591209540090041" type="Sandbag">
+                                    <param id="0" name="Animation">&quot;Down&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="531352511533848">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="849937016375394" type="Hit_Effect">
+                                    <param id="0" name="Animation">&quot;Strong_Hit_Effect&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="253197562812281" type="Sandbag">
+                                    <param id="0" name="Instance variable">Knockout_State</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="201552238251283" type="Sandbag">
+                                    <param id="0" name="Acceleration">350</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="448792310899354" type="Sandbag">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="970095756917645" type="Sandbag">
+                                    <param id="0" name="Animation">&quot;Down&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="553963096578938">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="351765119874598" type="Explosion_Effect">
+                                    <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="274891064292617" type="Sandbag">
+                                    <param id="0" name="Instance variable">Knockout_State</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="361487901116032" type="Sandbag">
+                                    <param id="0" name="Acceleration">350</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="870713407104598" type="Sandbag">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="830682927023105" type="Sandbag">
+                                    <param id="0" name="Animation">&quot;Down&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
                             </actions>
@@ -69,6 +163,9 @@
                                     <param id="0" name="Object">Sandbag</param>
                                 </condition>
                                 <condition id="7" inverted="1" name="Is mirrored" sid="630984760384228" type="Player" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="224718476129601" type="Sandbag">
+                                    <param id="0" name="Instance variable">Knockout_State</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="459791882586379" type="Audio">
@@ -100,6 +197,9 @@
                                     <param id="0" name="Object">Sandbag</param>
                                 </condition>
                                 <condition id="7" name="Is mirrored" sid="671946598612960" type="Player" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="406101193701492" type="Sandbag">
+                                    <param id="0" name="Instance variable">Knockout_State</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="542203755581087" type="Audio">
@@ -135,6 +235,9 @@
                                     <param id="0" name="Object">P1_Beam_Right</param>
                                 </condition>
                                 <condition id="7" inverted="1" name="Is mirrored" sid="732344988175991" type="Player" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="927735805043372" type="Player">
+                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -168,7 +271,7 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                                 <action behavior="Platform" id="8" name="Set vector X" sid="694040921201433" type="Sandbag">
-                                                    <param id="0" name="Vector X">124</param>
+                                                    <param id="0" name="Vector X">98</param>
                                                 </action>
                                                 <action id="7" name="Set mirrored" sid="300516249346296" type="Sandbag">
                                                     <param id="0" name="State">0</param>
@@ -182,6 +285,12 @@
                         <event-block sid="340901256493596">
                             <conditions>
                                 <condition behavior="Fade" id="0" name="On fade-out finished" sid="593067686968038" type="P1_Beam_Right" />
+                                <condition id="1" name="Is overlapping another object" sid="650183931110236" type="Sandbag">
+                                    <param id="0" name="Object">P1_Beam_Right</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="192206128591390" type="Player">
+                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="425852352646197" type="Audio">
@@ -210,6 +319,10 @@
                                 <action id="7" name="Set mirrored" sid="457567668034446" type="Sandbag">
                                     <param id="0" name="State">0</param>
                                 </action>
+                                <action id="-13" name="Set boolean" sid="416890233665005" type="Sandbag">
+                                    <param id="0" name="Instance variable">Knockout_State</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="828080028855305">
@@ -218,6 +331,9 @@
                                     <param id="0" name="Object">P1_Beam_Left</param>
                                 </condition>
                                 <condition id="7" name="Is mirrored" sid="304862857779047" type="Player" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="346682792340041" type="Player">
+                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -251,7 +367,7 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                                 <action behavior="Platform" id="8" name="Set vector X" sid="299037970713643" type="Sandbag">
-                                                    <param id="0" name="Vector X">-124</param>
+                                                    <param id="0" name="Vector X">-98</param>
                                                 </action>
                                                 <action id="7" name="Set mirrored" sid="603047810239924" type="Sandbag">
                                                     <param id="0" name="State">1</param>
@@ -265,6 +381,12 @@
                         <event-block sid="259172355806833">
                             <conditions>
                                 <condition behavior="Fade" id="0" name="On fade-out finished" sid="975817675581583" type="P1_Beam_Left" />
+                                <condition id="1" name="Is overlapping another object" sid="956177850252565" type="Sandbag">
+                                    <param id="0" name="Object">P1_Beam_Right</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="668941620362412" type="Player">
+                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="639462777994364" type="Audio">
@@ -293,10 +415,156 @@
                                 <action id="7" name="Set mirrored" sid="785871506770643" type="Sandbag">
                                     <param id="0" name="State">0</param>
                                 </action>
+                                <action id="-13" name="Set boolean" sid="974653749650638" type="Sandbag">
+                                    <param id="0" name="Instance variable">Knockout_State</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="112714794634774" title="Sandbag_Knockout">
+            <sub-events>
+                <event-block sid="185252099383726">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="398486690452453" type="Sandbag">
+                            <param id="0" name="Instance variable">Knockout_State</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="969267923197548" type="Player" />
+                        <condition id="-4" name="Trigger once while true" sid="723385149635697" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="377498066922076" type="Sandbag">
+                            <param id="0" name="Vector X">-132</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="865143769170738" type="Sandbag">
+                            <param id="0" name="Vector Y">-143</param>
+                        </action>
+                        <action behavior="Platform" id="5" name="Set gravity" sid="751473760100750" type="Sandbag">
+                            <param id="0" name="Gravity">413</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="975451779052507" type="Sandbag">
+                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="233175538708203" type="Sandbag">
+                            <param id="0" name="Acceleration">350</param>
+                        </action>
+                        <action behavior="Platform" id="3" name="Set deceleration" sid="207406652068921" type="Sandbag">
+                            <param id="0" name="Deceleration">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="786979619855477">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="950339173399261" type="Sandbag">
+                            <param id="0" name="Instance variable">Knockout_State</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="361163575816237" type="Player" />
+                        <condition id="-4" name="Trigger once while true" sid="875548284397425" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="915461757562515" type="Sandbag">
+                            <param id="0" name="Vector X">132</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="488713449393168" type="Sandbag">
+                            <param id="0" name="Vector Y">-143</param>
+                        </action>
+                        <action behavior="Platform" id="5" name="Set gravity" sid="841723359380438" type="Sandbag">
+                            <param id="0" name="Gravity">413</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="982261692976077" type="Sandbag">
+                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="843913024526925" type="Sandbag">
+                            <param id="0" name="Acceleration">350</param>
+                        </action>
+                        <action behavior="Platform" id="3" name="Set deceleration" sid="281664321814673" type="Sandbag">
+                            <param id="0" name="Deceleration">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="445727385420875">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="340674793551059" type="Sandbag" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="682503566131622" type="Sandbag">
+                            <param id="0" name="Instance variable">Knockout_State</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="766976590822953" type="Sandbag">
+                            <param id="0" name="Animation">&quot;Down&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="550902535048996" type="System">
+                            <param id="0" name="Seconds">1.1</param>
+                        </action>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="592650118434603" type="Sandbag">
+                            <param id="0" name="Acceleration">150</param>
+                        </action>
+                        <action behavior="Platform" id="3" name="Set deceleration" sid="359324651116021" type="Sandbag">
+                            <param id="0" name="Deceleration">1500</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="203097409731707" type="Sandbag">
+                            <param id="0" name="Instance variable">Knockout_State</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="841793083672232">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="844058922941134" type="Keyboard">
+                            <param id="0" name="Key">78</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="106577667562177" type="Sandbag">
+                            <param id="0" name="Instance variable">Knockout_State</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="769899538129025">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="828570332759700" type="Keyboard">
+                            <param id="0" name="Key">77</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="970891013607452" type="Sandbag">
+                            <param id="0" name="Instance variable">Knockout_State</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="827127276087333">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="540174374133792" type="Sandbag" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="390640285536747" type="Sandbag">
+                            <param id="0" name="Instance variable">Knockout_State</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="973979176458893" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="548266148305456" type="Sandbag">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="131981500563015" type="Hit_Effect">
+                            <param id="0" name="Animation">&quot;No_Hit&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="388586462550118" type="Sandbag">
+                            <param id="0" name="Acceleration">1500</param>
+                        </action>
+                        <action behavior="Platform" id="3" name="Set deceleration" sid="355708352106671" type="Sandbag">
+                            <param id="0" name="Deceleration">1500</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
     </events>
