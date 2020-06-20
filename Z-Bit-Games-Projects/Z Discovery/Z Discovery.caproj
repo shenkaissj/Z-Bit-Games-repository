@@ -48,14 +48,15 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>320</width>
-        <height>180</height>
+        <width>272</width>
+        <height>160</height>
     </window-size>
     <pixel-rounding>1</pixel-rounding>
     <preview-effects>1</preview-effects>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">No</prop>
+        <prop name="Downscaling">Medium quality</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
@@ -1606,7 +1607,6 @@
                         <instance-variable name="P1_Charcters" sid="126957805438195" type="string" />
                         <instance-variable name="P1_Fireing_Beam" sid="649378389840263" type="boolean" />
                         <instance-variable name="P1_Blocking" sid="496658721093382" type="boolean" />
-                        <instance-variable name="P1_Charge" sid="991224174175965" type="boolean" />
                         <instance-variable name="P1_NoClip" sid="162014375329095" type="boolean" />
                         <instance-variable name="P1_Run" sid="845897084262317" type="boolean" />
                         <instance-variable name="P1_Form_Limit" sid="172730055539490" type="number" />
@@ -1636,6 +1636,7 @@
                         <instance-variable name="P1_Beam_Particles" sid="883635659910872" type="boolean" />
                         <instance-variable name="P1_Super_Count" sid="879839818616475" type="number" />
                         <instance-variable name="P1_Player_Icon" sid="949919945635736" type="string" />
+                        <instance-variable name="P1_Charge_Ki" sid="588318889925283" type="boolean" />
                     </instance-variables>
                     <behaviors>
                         <behavior-type name="Timer" sid="435835945874937">
@@ -3718,32 +3719,6 @@
                                                     </animation>
                                                 </animation-folder>
                                                 <animation-folder name="Others_SSJ1">
-                                                    <animation framecount="3" loop="0" name="Falling_SSJ1_GKU1" pingpong="0" repeatcount="1" repeatto="0" sid="297889329875051" speed="19">
-                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\SSJ Goku Sprite\sprite_19.png">
-                                                            <collision-poly>
-                                                                <point x="0.3125" y="0" />
-                                                                <point x="0.743421" y="0" />
-                                                                <point x="0.746711" y="1" />
-                                                                <point x="0.31579" y="1" />
-                                                            </collision-poly>
-                                                        </frame>
-                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\SSJ Goku Sprite\sprite_18.png">
-                                                            <collision-poly>
-                                                                <point x="0.3125" y="0" />
-                                                                <point x="0.743421" y="0" />
-                                                                <point x="0.746711" y="1" />
-                                                                <point x="0.31579" y="1" />
-                                                            </collision-poly>
-                                                        </frame>
-                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\SSJ Goku Sprite\sprite_17.png">
-                                                            <collision-poly>
-                                                                <point x="0.3125" y="0" />
-                                                                <point x="0.743421" y="0" />
-                                                                <point x="0.746711" y="1" />
-                                                                <point x="0.31579" y="1" />
-                                                            </collision-poly>
-                                                        </frame>
-                                                    </animation>
                                                     <animation framecount="4" loop="1" name="Charge_SSJ1_GKU1" pingpong="0" repeatcount="0" repeatto="0" sid="944840976370841" speed="17">
                                                         <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\SSJ Goku Sprite\sprite_33.png">
                                                             <collision-poly>
@@ -3770,6 +3745,32 @@
                                                             </collision-poly>
                                                         </frame>
                                                         <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\SSJ Goku Sprite\sprite_35.png">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="3" loop="0" name="Falling_SSJ1_GKU1" pingpong="0" repeatcount="1" repeatto="0" sid="297889329875051" speed="19">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\SSJ Goku Sprite\sprite_19.png">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\SSJ Goku Sprite\sprite_18.png">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\SSJ Goku Sprite\sprite_17.png">
                                                             <collision-poly>
                                                                 <point x="0.3125" y="0" />
                                                                 <point x="0.743421" y="0" />
@@ -4546,6 +4547,24 @@
                                                             </collision-poly>
                                                         </frame>
                                                     </animation>
+                                                    <animation framecount="2" loop="1" name="Teleport_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="665100115661813" speed="50">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
                                                 </animation-folder>
                                                 <animation-folder name="HP_Damage">
                                                     <animation framecount="2" loop="0" name="Hurt1_VEGMid1" pingpong="0" repeatcount="0" repeatto="0" sid="732907133851958" speed="14">
@@ -4839,14 +4858,650 @@
                                                 </animation-folder>
                                             </animation-folder>
                                             <animation-folder name="VegetaMiddleSSJ1_Skin1">
-                                                <animation-folder name="Idle_SSJ1" />
-                                                <animation-folder name="Movement_SSJ1" />
-                                                <animation-folder name="Jumping_SSJ1" />
-                                                <animation-folder name="Attacking_SSJ1" />
-                                                <animation-folder name="Others_SSJ1" />
-                                                <animation-folder name="HP_Damage_SSJ1" />
-                                                <animation-folder name="Duck_SSJ1" />
-                                                <animation-folder name="Super_SSJ1" />
+                                                <animation-folder name="Idle_SSJ1">
+                                                    <animation framecount="1" loop="0" name="IdleSSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="236777621463833" speed="5">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\SSJ Vegeta Sprite sheet\sprite_00.png">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                </animation-folder>
+                                                <animation-folder name="Movement_SSJ1">
+                                                    <animation framecount="10" loop="1" name="WalkSSJ1_VGEMid1" pingpong="0" repeatcount="1" repeatto="0" sid="434539512039998" speed="19">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="1" loop="0" name="FlyForwardSSJ1_VEGMid1" pingpong="0" repeatcount="0" repeatto="0" sid="385246350135015" speed="16">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="6" loop="1" name="RunSSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="226899793287957" speed="17">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="1" loop="0" name="FlyBackSSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="650951121803986" speed="5">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                </animation-folder>
+                                                <animation-folder name="Jumping_SSJ1">
+                                                    <animation framecount="3" loop="0" name="JumpSSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="259937763292218" speed="19">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                </animation-folder>
+                                                <animation-folder name="Attacking_SSJ1">
+                                                    <animation framecount="3" loop="0" name="Attack1_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="448111144445928" speed="17">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="3" loop="0" name="Attack2_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="566927298063226" speed="17">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="3" loop="0" name="Attack3_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="257749585029317" speed="17">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="2" loop="0" name="Attack4_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="198752283080387" speed="17">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="3" loop="0" name="Attack5_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="823923029151233" speed="17">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="6" loop="1" name="RapidAttack_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="970776325373825" speed="17">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                </animation-folder>
+                                                <animation-folder name="Others_SSJ1">
+                                                    <animation framecount="4" loop="1" name="Charge_SSJ1_VEGMid1" pingpong="0" repeatcount="0" repeatto="0" sid="292380644596300" speed="17">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="3" loop="0" name="Falling_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="681357055160958" speed="19">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="1" loop="0" name="Guard_NoHit_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="526177757743087" speed="19">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="2" loop="0" name="Guard_Hit_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="456344158332175" speed="10">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="2" loop="1" name="Teleport_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="467007420552593" speed="50">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                </animation-folder>
+                                                <animation-folder name="HP_Damage_SSJ1">
+                                                    <animation framecount="2" loop="1" name="Hurt1_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="474669714537473" speed="14">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="2" loop="1" name="Hurt2_SSJ1_VEGMid1" pingpong="0" repeatcount="5" repeatto="0" sid="367286714296958" speed="14">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="1" loop="1" name="Down_SSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="279142616179049" speed="16">
+                                                        <frame duration="1" hotspotX="0.473684" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="1" loop="0" name="Damaged_SSJ1_VEGMid1" pingpong="0" repeatcount="0" repeatto="0" sid="428414682156711" speed="14">
+                                                        <frame duration="1" hotspotX="0.473684" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                </animation-folder>
+                                                <animation-folder name="Duck_SSJ1">
+                                                    <animation framecount="2" loop="0" name="DuckSSJ1_VEGMid1" pingpong="0" repeatcount="0" repeatto="0" sid="349279793401388" speed="19">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="2" loop="0" name="RiseSSJ1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="175461332052295" speed="19">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                </animation-folder>
+                                                <animation-folder name="Super_SSJ1">
+                                                    <animation framecount="3" loop="0" name="SuperSSJ1_1_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="105648292796267" speed="10">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="2" loop="1" name="SuperSSJ1_Loop_VEGMid1" pingpong="0" repeatcount="1" repeatto="0" sid="109648464966102" speed="15">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                    <animation framecount="3" loop="1" name="SuperSSJ1_2_VEGMid1" pingpong="0" repeatcount="1" repeatto="1" sid="864375294682473" speed="20">
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                            <collision-poly>
+                                                                <point x="0.3125" y="0" />
+                                                                <point x="0.743421" y="0" />
+                                                                <point x="0.746711" y="1" />
+                                                                <point x="0.31579" y="1" />
+                                                            </collision-poly>
+                                                        </frame>
+                                                    </animation>
+                                                </animation-folder>
                                                 <animation-folder name="Transform_SSJ1" />
                                             </animation-folder>
                                         </animation-folder>
@@ -6568,7 +7223,7 @@
                 </object-type>
             </object-folder>
             <object-folder name="Auras">
-                <object-type name="Aura" sid="537162107317446">
+                <object-type name="P1_Aura" sid="537162107317446">
                     <plugin id="Sprite" />
                     <behaviors>
                         <behavior-type name="Pin" sid="447251519574927">
@@ -7357,7 +8012,7 @@
                             <event-sheet>P1_HP.xml</event-sheet>
                         </event-folder>
                         <event-folder name="P1_Ki_Bar">
-                            <event-sheet>P1_Ki_Bar&amp;Chargeing_Event.xml</event-sheet>
+                            <event-sheet>P1_Ki_Chargeing_Event.xml</event-sheet>
                         </event-folder>
                         <event-folder name="P1_SSJ_Bar">
                             <event-sheet>P1_SSJ_Bar_Event.xml</event-sheet>
