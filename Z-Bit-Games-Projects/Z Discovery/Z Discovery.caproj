@@ -458,8 +458,7 @@
                 <object-type name="Camera" sid="578645879921779">
                     <plugin id="Sprite" />
                     <instance-variables>
-                        <instance-variable name="Camera_On" sid="618888566639795" type="boolean" />
-                        <instance-variable name="Camera_Off" sid="449511712110867" type="boolean" />
+                        <instance-variable name="Camera" sid="618888566639795" type="boolean" />
                     </instance-variables>
                     <behaviors>
                         <behavior-type name="ScrollTo" sid="867428348307006">
@@ -892,11 +891,6 @@
                             </animation>
                         </animation-folder>
                     </object-type>
-                    <object-type name="Earth_Tileset" sid="109273741640747">
-                        <plugin id="Tilemap" />
-                        <texture />
-                        <tiles />
-                    </object-type>
                     <object-type name="Water_Sprite_2" sid="167135331252017">
                         <plugin id="TiledBg" />
                         <texture />
@@ -981,6 +975,24 @@
                         </animation-folder>
                     </object-type>
                 </object-folder>
+                <object-folder name="Kais_World_OBJ,s">
+                    <object-type name="Tree_2" sid="392559971893020">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="391222817270545" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.53125" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="Kais_World_Rock" sid="864667917262653">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="182267746310536" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5625" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                </object-folder>
                 <object-type name="TiledBackground" sid="3206956448522659">
                     <plugin id="TiledBg" />
                     <behaviors>
@@ -990,7 +1002,30 @@
                     </behaviors>
                     <texture />
                 </object-type>
+                <object-type name="Main_Tileset" sid="109273741640747">
+                    <plugin id="Tilemap" />
+                    <texture />
+                    <tiles />
+                </object-type>
             </object-folder>
+            <object-type name="Falling_Leaf_Effect" sid="566588192036900">
+                <plugin id="Particles" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="305245398176581">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+            <object-type name="Falling_Kai_Leaf_Effect" sid="659021368375228">
+                <plugin id="Particles" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="822797288299364">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
         </object-folder>
         <object-folder name="InGame_Collisions">
             <object-folder name="Collision_Objects">
@@ -1014,87 +1049,83 @@
                             </tile>
                             <tile id="1">
                                 <collision-poly>
-                                    <point x="1" y="0.701172" />
+                                    <point x="1" y="0.712891" />
+                                    <point x="1" y="1" />
+                                    <point x="0.453125" y="1" />
+                                </collision-poly>
+                            </tile>
+                            <tile id="2">
+                                <collision-poly>
+                                    <point x="0" y="0.710938" />
+                                    <point x="1" y="0.25" />
                                     <point x="1" y="1" />
                                     <point x="0" y="1" />
-                                    <point x="0.874024" y="0.748047" />
                                 </collision-poly>
                             </tile>
                             <tile id="3">
                                 <collision-poly>
-                                    <point x="0" y="0.316406" />
-                                    <point x="1" y="0.316406" />
+                                    <point x="0" y="0.25293" />
+                                    <point x="1" y="0.251953" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </tile>
+                            <tile id="4">
+                                <collision-poly>
+                                    <point x="0" y="0.253906" />
+                                    <point x="0.457031" y="0" />
+                                    <point x="1" y="0" />
                                     <point x="1" y="1" />
                                     <point x="0" y="1" />
                                 </collision-poly>
                             </tile>
                         </tiles>
                     </object-type>
-                    <object-type name="JumpThroughCollisionTilemap" sid="760070682056790">
+                    <object-type name="JumpThroughCollisionTilemap" sid="315259328582257">
                         <plugin id="Tilemap" />
                         <behaviors>
-                            <behavior-type name="Jumpthru" sid="522468345509014">
+                            <behavior-type name="Jumpthru" sid="613400149121953">
                                 <behavior id="jumpthru" />
                             </behavior-type>
                         </behaviors>
-                        <texture />
+                        <texture original-source="C:\Users\mario\OneDrive\Desktop\dragonball-z-discovery-beta app\assets\images\soilidcollisiontilemap.png" />
                         <tiles>
                             <tile id="0">
                                 <collision-poly>
-                                    <point x="0" y="0.308594" />
-                                    <point x="1" y="0.308594" />
+                                    <point x="0" y="0.3125" />
+                                    <point x="1" y="0.3125" />
                                     <point x="1" y="1" />
                                     <point x="0" y="1" />
                                 </collision-poly>
                             </tile>
                             <tile id="1">
                                 <collision-poly>
-                                    <point x="1" y="0.189375" />
+                                    <point x="1" y="0.712891" />
                                     <point x="1" y="1" />
-                                    <point x="0" y="1" />
-                                    <point x="0.75293" y="0.189414" />
+                                    <point x="0.453125" y="1" />
                                 </collision-poly>
                             </tile>
-                            <tile id="10">
+                            <tile id="2">
                                 <collision-poly>
+                                    <point x="0" y="0.710938" />
+                                    <point x="1" y="0.25" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </tile>
+                            <tile id="3">
+                                <collision-poly>
+                                    <point x="0" y="0.250976" />
+                                    <point x="1" y="0.25" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </tile>
+                            <tile id="4">
+                                <collision-poly>
+                                    <point x="0" y="0.25" />
+                                    <point x="0.457031" y="0" />
                                     <point x="1" y="0" />
-                                    <point x="1" y="1" />
-                                    <point x="0" y="1" />
-                                </collision-poly>
-                            </tile>
-                            <tile id="11">
-                                <collision-poly>
-                                    <point x="0" y="0" />
-                                    <point x="1" y="1" />
-                                    <point x="0" y="1" />
-                                </collision-poly>
-                            </tile>
-                            <tile id="26">
-                                <collision-poly>
-                                    <point x="0" y="0.476563" />
-                                    <point x="1" y="1" />
-                                    <point x="0" y="1" />
-                                </collision-poly>
-                            </tile>
-                            <tile id="27">
-                                <collision-poly>
-                                    <point x="1" y="0.476563" />
-                                    <point x="1" y="1" />
-                                    <point x="0" y="1" />
-                                </collision-poly>
-                            </tile>
-                            <tile id="31">
-                                <collision-poly>
-                                    <point x="0" y="0.478672" />
-                                    <point x="1" y="0" />
-                                    <point x="1" y="1" />
-                                    <point x="0" y="1" />
-                                </collision-poly>
-                            </tile>
-                            <tile id="32">
-                                <collision-poly>
-                                    <point x="0" y="0" />
-                                    <point x="1" y="0.474766" />
                                     <point x="1" y="1" />
                                     <point x="0" y="1" />
                                 </collision-poly>
@@ -7078,7 +7109,7 @@
                     </effects>
                     <texture />
                 </object-type>
-                <object-type name="P1_Galic_Right" sid="411505447360023">
+                <object-type name="P1_Galick_Right" sid="411505447360023">
                     <plugin id="NinePatch" />
                     <behaviors>
                         <behavior-type name="Pin" sid="610382550731232">
@@ -7095,7 +7126,7 @@
                     </effects>
                     <texture />
                 </object-type>
-                <object-type name="P1_Galic_Left" sid="771477314758076">
+                <object-type name="P1_Galick_Left" sid="771477314758076">
                     <plugin id="NinePatch" />
                     <behaviors>
                         <behavior-type name="Pin" sid="571515459971761">
@@ -7177,13 +7208,12 @@
                     </behaviors>
                     <animation-folder>
                         <animation-folder name="Full_Kame">
-                            <animation framecount="2" loop="1" name="Full_Kame" pingpong="0" repeatcount="1" repeatto="0" sid="410727765745272" speed="20">
+                            <animation framecount="3" loop="0" name="Full_Galick_Start_up" pingpong="0" repeatcount="1" repeatto="0" sid="454619812006477" speed="20">
+                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
                                 <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
                                 <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
                             </animation>
-                            <animation framecount="4" loop="0" name="Full_Kame_Start_up" pingpong="0" repeatcount="1" repeatto="0" sid="454619812006477" speed="20">
-                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
-                                <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
+                            <animation framecount="2" loop="1" name="Full_Galick" pingpong="0" repeatcount="1" repeatto="0" sid="410727765745272" speed="20">
                                 <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
                                 <frame duration="1" hotspotX="0.75" hotspotY="0.1875" />
                             </animation>
@@ -7382,6 +7412,30 @@
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                         <animation framecount="7" loop="0" name="Explosion_Hit" pingpong="0" repeatcount="1" repeatto="0" sid="631683420927250" speed="17">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Big_Explosion_Effect" sid="997972623023474">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="120460026003978">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="No_Hit" pingpong="0" repeatcount="1" repeatto="0" sid="573604353774393" speed="20">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="9" loop="0" name="Explosion_Hit" pingpong="0" repeatcount="1" repeatto="0" sid="320676193682913" speed="17">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -7868,6 +7922,27 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="TiledBackground2" sid="735476176766773">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Kai_Map_Moons" sid="146613113342967">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="959262630842840" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.78125" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Crystal_Ball_Sprite" sid="485399131935140">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="740585146511703" speed="16">
+                    <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
+                    <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Android_Buttons" plugin-id="Sprite" sid="111396605850099">
@@ -7963,6 +8038,7 @@
         </layout-folder>
         <layout>Earth_Map.xml</layout>
         <layout>Test_Layout_2.0.xml</layout>
+        <layout>World_of_the_Kais_Test_Map.xml</layout>
         <layout>Lighting_Test.xml</layout>
         <layout>RRArmy_Ship.xml</layout>
         <layout>Objects.xml</layout>
@@ -8031,6 +8107,9 @@
                     <event-folder name="P1_Collision_Events">
                         <event-sheet>P1_Collision.xml</event-sheet>
                     </event-folder>
+                    <event-folder name="P1_Camera">
+                        <event-sheet>Camera.xml</event-sheet>
+                    </event-folder>
                 </event-folder>
             </event-folder>
             <event-folder name="Charcter_Code">
@@ -8096,6 +8175,8 @@
                     <file name="Mid_Kame_Fire.ogg" />
                     <file name="SBC_Charge.ogg" />
                     <file name="SBC_fire.ogg" />
+                    <file name="Galick Charge.ogg" />
+                    <file name="Galick Fire.ogg" />
                 </sound-folder>
                 <file name="kiblast.ogg" />
                 <file name="ki_aura.ogg" />

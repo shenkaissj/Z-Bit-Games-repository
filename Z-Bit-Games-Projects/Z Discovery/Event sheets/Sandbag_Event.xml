@@ -159,7 +159,7 @@
                     <sub-events>
                         <event-block sid="648293775685185">
                             <conditions>
-                                <condition id="0" name="On collision with another object" sid="391647829702687" type="P1_Ki_Blast">
+                                <condition id="1" name="Is overlapping another object" sid="391647829702687" type="P1_Ki_Blast">
                                     <param id="0" name="Object">Sandbag</param>
                                 </condition>
                                 <condition id="7" inverted="1" name="Is mirrored" sid="630984760384228" type="Player" />
@@ -193,7 +193,7 @@
                         </event-block>
                         <event-block sid="983592251591572">
                             <conditions>
-                                <condition id="0" name="On collision with another object" sid="138757610756806" type="P1_Ki_Blast">
+                                <condition id="1" name="Is overlapping another object" sid="198766284833630" type="P1_Ki_Blast">
                                     <param id="0" name="Object">Sandbag</param>
                                 </condition>
                                 <condition id="7" name="Is mirrored" sid="671946598612960" type="Player" />
@@ -227,376 +227,624 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="When the sandbag interacts with the players beam" sid="368315115545764" title="Sandbag_Beam_Collision">
+            </sub-events>
+        </event-group>
+        <event-group description="When the Players Main Attack Colides with Either NPCs Object or another player" sid="662402870968509" title="Energy_Attacks_Collisions">
+            <sub-events>
+                <event-group description="For when the sandbag Collides with the energy attacks" sid="531950421093921" title="Sandbag_Energy_Attacks_Collision">
                     <sub-events>
-                        <event-block sid="773996168695610">
-                            <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="922893637097820" type="Sandbag">
-                                    <param id="0" name="Object">P1_Beam_Right</param>
-                                </condition>
-                                <condition id="7" inverted="1" name="Is mirrored" sid="248279680184012" type="Player" />
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="762235233370399" type="Player">
-                                    <param id="0" name="Instance variable">P1_Teleport</param>
-                                </condition>
-                            </conditions>
-                            <actions />
+                        <event-group description="This is for when the SBC Colides with the Sandbag" sid="540904953112129" title="Sandbag_SBC_Collision">
                             <sub-events>
-                                <event-block sid="904487792873948">
+                                <event-block sid="296155907142081">
                                     <conditions>
-                                        <condition id="-6" name="Every X seconds" sid="258348237901360" type="System">
-                                            <param id="0" name="Interval (seconds)">0.1</param>
+                                        <condition id="1" name="Is overlapping another object" sid="498708516175726" type="Sandbag">
+                                            <param id="0" name="Object">P1_SBC_Right</param>
+                                        </condition>
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="836719741784234" type="Player" />
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="475033754853046" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="821291613265107">
+                                        <event-block sid="642453855581942">
                                             <conditions>
-                                                <condition id="1" name="Is overlapping another object" sid="542776826657387" type="Sandbag">
-                                                    <param id="0" name="Object">P1_Beam_Right</param>
+                                                <condition id="-6" name="Every X seconds" sid="636888579466788" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="0" name="Play" sid="775113563422590" type="Audio">
-                                                    <param id="0" name="Audio file">mediumpunch</param>
-                                                    <param id="2" name="Loop">0</param>
-                                                    <param id="3" name="Volume">-25</param>
-                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="124175726121059" type="Hit_Effect">
-                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="126421901996912" type="Sandbag">
-                                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="588943895406670" type="Sandbag">
-                                                    <param id="0" name="Vector X">98</param>
-                                                </action>
-                                                <action id="7" name="Set mirrored" sid="555016672823805" type="Sandbag">
-                                                    <param id="0" name="State">0</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="210886936796670">
+                                                    <conditions>
+                                                        <condition id="1" name="Is overlapping another object" sid="327682690848278" type="Sandbag">
+                                                            <param id="0" name="Object">P1_SBC_Right</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="235138172959250" type="Audio">
+                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="783033581819873" type="Hit_Effect">
+                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="102968589755235" type="Sandbag">
+                                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="973443481236256" type="Sandbag">
+                                                            <param id="0" name="Vector X">98</param>
+                                                        </action>
+                                                        <action id="7" name="Set mirrored" sid="641353618363096" type="Sandbag">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="459128546782406">
-                            <conditions>
-                                <condition behavior="Fade" id="0" name="On fade-out finished" sid="590866167160624" type="P1_Beam_Right" />
-                                <condition id="1" name="Is overlapping another object" sid="340734726477490" type="Sandbag">
-                                    <param id="0" name="Object">P1_Beam_Right</param>
-                                </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="722409984858777" type="Player">
-                                    <param id="0" name="Instance variable">P1_Teleport</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="678876838698020" type="Audio">
-                                    <param id="0" name="Audio file">strongpunch</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-25</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="362391738311171" type="Audio">
-                                    <param id="0" name="Audio file">kiplosion</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-15</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="498862128261199" type="Explosion_Effect">
-                                    <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="517846964095778" type="Sandbag">
-                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action behavior="Platform" id="8" name="Set vector X" sid="361694494155447" type="Sandbag">
-                                    <param id="0" name="Vector X">142</param>
-                                </action>
-                                <action id="7" name="Set mirrored" sid="639808322638903" type="Sandbag">
-                                    <param id="0" name="State">0</param>
-                                </action>
-                                <action id="-13" name="Set boolean" sid="104134168269073" type="Sandbag">
-                                    <param id="0" name="Instance variable">Knockout_State</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="364769990028831">
-                            <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="980812623296564" type="Sandbag">
-                                    <param id="0" name="Object">P1_Beam_Left</param>
-                                </condition>
-                                <condition id="7" name="Is mirrored" sid="889011913076800" type="Player" />
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="965798431916796" type="Player">
-                                    <param id="0" name="Instance variable">P1_Teleport</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="752109320932526">
+                                <event-block sid="743084775738615">
                                     <conditions>
-                                        <condition id="-6" name="Every X seconds" sid="897785513860555" type="System">
-                                            <param id="0" name="Interval (seconds)">0.1</param>
+                                        <condition behavior="Fade" id="0" name="On fade-out finished" sid="308478627688790" type="P1_SBC_Right" />
+                                        <condition id="1" name="Is overlapping another object" sid="319717406521198" type="Sandbag">
+                                            <param id="0" name="Object">P1_SBC_Right</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="279960109035646" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="531584929183574" type="Audio">
+                                            <param id="0" name="Audio file">strongpunch</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="618114464067438" type="Sandbag">
+                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="126022532271728" type="Sandbag">
+                                            <param id="0" name="Vector X">142</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="210570767738739" type="Sandbag">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="240874071927910" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_State</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="431663211203675">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="514380025618771" type="Sandbag">
+                                            <param id="0" name="Object">P1_SBC_Left</param>
+                                        </condition>
+                                        <condition id="7" name="Is mirrored" sid="304395693199003" type="Player" />
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="118439411309889" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="161647880750058">
+                                        <event-block sid="350137604275764">
                                             <conditions>
-                                                <condition id="1" name="Is overlapping another object" sid="165533206106108" type="Sandbag">
-                                                    <param id="0" name="Object">P1_Beam_Left</param>
+                                                <condition id="-6" name="Every X seconds" sid="900348828160366" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="0" name="Play" sid="932628537634994" type="Audio">
-                                                    <param id="0" name="Audio file">mediumpunch</param>
-                                                    <param id="2" name="Loop">0</param>
-                                                    <param id="3" name="Volume">-25</param>
-                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="159053025510972" type="Hit_Effect">
-                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="610198738114905" type="Sandbag">
-                                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="941285893215623" type="Sandbag">
-                                                    <param id="0" name="Vector X">-98</param>
-                                                </action>
-                                                <action id="7" name="Set mirrored" sid="601630951495656" type="Sandbag">
-                                                    <param id="0" name="State">1</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="953756095241240">
+                                                    <conditions>
+                                                        <condition id="1" name="Is overlapping another object" sid="278030900322038" type="Sandbag">
+                                                            <param id="0" name="Object">P1_SBC_Left</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="192199681326622" type="Audio">
+                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="620726438246848" type="Hit_Effect">
+                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="578416658721253" type="Sandbag">
+                                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="349538983302251" type="Sandbag">
+                                                            <param id="0" name="Vector X">-98</param>
+                                                        </action>
+                                                        <action id="7" name="Set mirrored" sid="372673198921734" type="Sandbag">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="642619816546811">
-                            <conditions>
-                                <condition behavior="Fade" id="0" name="On fade-out finished" sid="344059171084253" type="P1_Beam_Left" />
-                                <condition id="1" name="Is overlapping another object" sid="470959208854084" type="Sandbag">
-                                    <param id="0" name="Object">P1_Beam_Left</param>
-                                </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="689670654962080" type="Player">
-                                    <param id="0" name="Instance variable">P1_Teleport</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="195807009387220" type="Audio">
-                                    <param id="0" name="Audio file">strongpunch</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-25</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="340378876303842" type="Audio">
-                                    <param id="0" name="Audio file">kiplosion</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-15</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="795184796401625" type="Explosion_Effect">
-                                    <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="690663282595497" type="Sandbag">
-                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action behavior="Platform" id="8" name="Set vector X" sid="483579963410370" type="Sandbag">
-                                    <param id="0" name="Vector X">-142</param>
-                                </action>
-                                <action id="7" name="Set mirrored" sid="472378089419362" type="Sandbag">
-                                    <param id="0" name="State">1</param>
-                                </action>
-                                <action id="-13" name="Set boolean" sid="499313792758187" type="Sandbag">
-                                    <param id="0" name="Instance variable">Knockout_State</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-                <event-group description="When the sandbag interacts with the players beam" sid="252170715921929" title="Sandbag_SBC_Beam_Collision2">
-                    <sub-events>
-                        <event-block sid="660297729073050">
-                            <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="221255086870248" type="Sandbag">
-                                    <param id="0" name="Object">P1_SBC_Right</param>
-                                </condition>
-                                <condition id="7" inverted="1" name="Is mirrored" sid="547187143702966" type="Player" />
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="788250784985804" type="Player">
-                                    <param id="0" name="Instance variable">P1_Teleport</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="589037443092590">
+                                <event-block sid="529227677566581">
                                     <conditions>
-                                        <condition id="-6" name="Every X seconds" sid="995152286297595" type="System">
-                                            <param id="0" name="Interval (seconds)">0.1</param>
+                                        <condition behavior="Fade" id="0" name="On fade-out finished" sid="452289850000960" type="P1_SBC_Left" />
+                                        <condition id="1" name="Is overlapping another object" sid="580367710971460" type="Sandbag">
+                                            <param id="0" name="Object">P1_SBC_Left</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="936216859152203" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="480536422868703" type="Audio">
+                                            <param id="0" name="Audio file">strongpunch</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="696009151177074" type="Sandbag">
+                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="826292281693194" type="Sandbag">
+                                            <param id="0" name="Vector X">-142</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="971044116283433" type="Sandbag">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="774957539865599" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_State</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="When the sandbag interacts with the players beam" sid="724911689894689" title="Sandbag_Kame_Collision">
+                            <sub-events>
+                                <event-block sid="262004011870531">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="145349227322880" type="Sandbag">
+                                            <param id="0" name="Object">P1_Beam_Right</param>
+                                        </condition>
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="287277007059881" type="Player" />
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="265728275337842" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="573686818099760">
+                                        <event-block sid="405828262002866">
                                             <conditions>
-                                                <condition id="1" name="Is overlapping another object" sid="997532618711446" type="Sandbag">
-                                                    <param id="0" name="Object">P1_SBC_Right</param>
+                                                <condition id="-6" name="Every X seconds" sid="334090906505983" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="0" name="Play" sid="493511482735679" type="Audio">
-                                                    <param id="0" name="Audio file">mediumpunch</param>
-                                                    <param id="2" name="Loop">0</param>
-                                                    <param id="3" name="Volume">-25</param>
-                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="157462176034953" type="Hit_Effect">
-                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="820201152378250" type="Sandbag">
-                                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="948558244639605" type="Sandbag">
-                                                    <param id="0" name="Vector X">98</param>
-                                                </action>
-                                                <action id="7" name="Set mirrored" sid="350353558183946" type="Sandbag">
-                                                    <param id="0" name="State">0</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="292669516010927">
+                                                    <conditions>
+                                                        <condition id="1" name="Is overlapping another object" sid="405872594481305" type="Sandbag">
+                                                            <param id="0" name="Object">P1_Beam_Right</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="975031522752358" type="Audio">
+                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="735421674360045" type="Hit_Effect">
+                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="503679624193584" type="Sandbag">
+                                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="927477842256768" type="Sandbag">
+                                                            <param id="0" name="Vector X">98</param>
+                                                        </action>
+                                                        <action id="7" name="Set mirrored" sid="379589801194640" type="Sandbag">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="704439764601898">
-                            <conditions>
-                                <condition behavior="Fade" id="0" name="On fade-out finished" sid="944985124885838" type="P1_SBC_Right" />
-                                <condition id="1" name="Is overlapping another object" sid="808292971177815" type="Sandbag">
-                                    <param id="0" name="Object">P1_SBC_Right</param>
-                                </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="354509186272311" type="Player">
-                                    <param id="0" name="Instance variable">P1_Teleport</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="387440551120997" type="Audio">
-                                    <param id="0" name="Audio file">strongpunch</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-25</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="706551368953010" type="Sandbag">
-                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action behavior="Platform" id="8" name="Set vector X" sid="301970002429212" type="Sandbag">
-                                    <param id="0" name="Vector X">142</param>
-                                </action>
-                                <action id="7" name="Set mirrored" sid="546892994111005" type="Sandbag">
-                                    <param id="0" name="State">0</param>
-                                </action>
-                                <action id="-13" name="Set boolean" sid="783813732619130" type="Sandbag">
-                                    <param id="0" name="Instance variable">Knockout_State</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="876604204155833">
-                            <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="729279054956060" type="Sandbag">
-                                    <param id="0" name="Object">P1_SBC_Left</param>
-                                </condition>
-                                <condition id="7" name="Is mirrored" sid="281501632908388" type="Player" />
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="885378409905838" type="Player">
-                                    <param id="0" name="Instance variable">P1_Teleport</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="914569049650981">
+                                <event-block sid="342345529631905">
                                     <conditions>
-                                        <condition id="-6" name="Every X seconds" sid="405148920402719" type="System">
-                                            <param id="0" name="Interval (seconds)">0.1</param>
+                                        <condition behavior="Fade" id="0" name="On fade-out finished" sid="497027965261622" type="P1_Beam_Right" />
+                                        <condition id="1" name="Is overlapping another object" sid="790031386804665" type="Sandbag">
+                                            <param id="0" name="Object">P1_Beam_Right</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="692066872850271" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="637784895894995" type="Audio">
+                                            <param id="0" name="Audio file">strongpunch</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="320239935746269" type="Audio">
+                                            <param id="0" name="Audio file">kiplosion</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="925838832361051" type="Explosion_Effect">
+                                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="789485545549136" type="Sandbag">
+                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="215162905419721" type="Sandbag">
+                                            <param id="0" name="Vector X">142</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="571417286822570" type="Sandbag">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="868161779085288" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_State</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="328328784590425">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="934238284413100" type="Sandbag">
+                                            <param id="0" name="Object">P1_Beam_Left</param>
+                                        </condition>
+                                        <condition id="7" name="Is mirrored" sid="633764878998742" type="Player" />
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="684213217671813" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="917980659114778">
+                                        <event-block sid="654563348615895">
                                             <conditions>
-                                                <condition id="1" name="Is overlapping another object" sid="996617563844065" type="Sandbag">
-                                                    <param id="0" name="Object">P1_SBC_Left</param>
+                                                <condition id="-6" name="Every X seconds" sid="946519336603812" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
                                                 </condition>
                                             </conditions>
-                                            <actions>
-                                                <action id="0" name="Play" sid="404874490191002" type="Audio">
-                                                    <param id="0" name="Audio file">mediumpunch</param>
-                                                    <param id="2" name="Loop">0</param>
-                                                    <param id="3" name="Volume">-25</param>
-                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="573778358346814" type="Hit_Effect">
-                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="802829811606305" type="Sandbag">
-                                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="959484812887493" type="Sandbag">
-                                                    <param id="0" name="Vector X">-98</param>
-                                                </action>
-                                                <action id="7" name="Set mirrored" sid="625596240023100" type="Sandbag">
-                                                    <param id="0" name="State">1</param>
-                                                </action>
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="436247592532380">
+                                                    <conditions>
+                                                        <condition id="1" name="Is overlapping another object" sid="741979766670673" type="Sandbag">
+                                                            <param id="0" name="Object">P1_Beam_Left</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="842100848613255" type="Audio">
+                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="843224312646510" type="Hit_Effect">
+                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="648514794183523" type="Sandbag">
+                                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="710471429972654" type="Sandbag">
+                                                            <param id="0" name="Vector X">-98</param>
+                                                        </action>
+                                                        <action id="7" name="Set mirrored" sid="378451463429693" type="Sandbag">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block sid="300734700475231">
+                                    <conditions>
+                                        <condition behavior="Fade" id="0" name="On fade-out finished" sid="944672861173790" type="P1_Beam_Left" />
+                                        <condition id="1" name="Is overlapping another object" sid="477325518558030" type="Sandbag">
+                                            <param id="0" name="Object">P1_Beam_Left</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="485525348299783" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="573194147677054" type="Audio">
+                                            <param id="0" name="Audio file">strongpunch</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="893271979001038" type="Audio">
+                                            <param id="0" name="Audio file">kiplosion</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="995618556091699" type="Explosion_Effect">
+                                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="435978940103721" type="Sandbag">
+                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="937977466650546" type="Sandbag">
+                                            <param id="0" name="Vector X">-142</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="228615724608795" type="Sandbag">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="644663662396157" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_State</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
-                        </event-block>
-                        <event-block sid="488349377576707">
-                            <conditions>
-                                <condition behavior="Fade" id="0" name="On fade-out finished" sid="560734805247521" type="P1_SBC_Left" />
-                                <condition id="1" name="Is overlapping another object" sid="815112364319246" type="Sandbag">
-                                    <param id="0" name="Object">P1_SBC_Left</param>
-                                </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="645186675308146" type="Player">
-                                    <param id="0" name="Instance variable">P1_Teleport</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="736893968049794" type="Audio">
-                                    <param id="0" name="Audio file">strongpunch</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-25</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="420482791494425" type="Sandbag">
-                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action behavior="Platform" id="8" name="Set vector X" sid="760384401705295" type="Sandbag">
-                                    <param id="0" name="Vector X">-142</param>
-                                </action>
-                                <action id="7" name="Set mirrored" sid="359877995250558" type="Sandbag">
-                                    <param id="0" name="State">1</param>
-                                </action>
-                                <action id="-13" name="Set boolean" sid="610597087856312" type="Sandbag">
-                                    <param id="0" name="Instance variable">Knockout_State</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
+                        </event-group>
+                        <event-group description="When the sandbag interacts with the players beam" sid="906104156822120" title="Sandbag_Galick_Collision">
+                            <sub-events>
+                                <event-block sid="367206203921703">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="187328859099788" type="Sandbag">
+                                            <param id="0" name="Object">P1_Galick_Right</param>
+                                        </condition>
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="664025611076039" type="Player" />
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="451307607731457" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="633670133945214">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="208781652929461" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="242731907614259">
+                                                    <conditions>
+                                                        <condition id="1" name="Is overlapping another object" sid="675129551779528" type="Sandbag">
+                                                            <param id="0" name="Object">P1_Galick_Right</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="135777998367287" type="Audio">
+                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="337847416879843" type="Hit_Effect">
+                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="739246468460784" type="Sandbag">
+                                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="920132380923550" type="Sandbag">
+                                                            <param id="0" name="Vector X">98</param>
+                                                        </action>
+                                                        <action id="7" name="Set mirrored" sid="147577367101453" type="Sandbag">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="354567247503623">
+                                    <conditions>
+                                        <condition behavior="Fade" id="0" name="On fade-out finished" sid="485185037324969" type="P1_Galick_Right" />
+                                        <condition id="1" name="Is overlapping another object" sid="682754372438444" type="Sandbag">
+                                            <param id="0" name="Object">P1_Galick_Right</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="804118810092332" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="401160264906173" type="Audio">
+                                            <param id="0" name="Audio file">strongpunch</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="287660524099758" type="Audio">
+                                            <param id="0" name="Audio file">kiplosion</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="543631585815133" type="Explosion_Effect">
+                                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="942805846599058" type="Sandbag">
+                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="499545704586852" type="Sandbag">
+                                            <param id="0" name="Vector X">142</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="773837655347023" type="Sandbag">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="118939540456143" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_State</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="769593243774351" type="System">
+                                            <param id="0" name="Seconds">0.3</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="484647983078787" type="Sandbag">
+                                            <param id="0" name="Vector Y">-243</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="650740770196612" type="System">
+                                            <param id="0" name="Object to create">Big_Explosion_Effect</param>
+                                            <param id="1" name="Layer">9</param>
+                                            <param id="2" name="X">Sandbag.X</param>
+                                            <param id="3" name="Y">Sandbag.Y</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="942768188922403" type="Big_Explosion_Effect">
+                                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="245269320183266" type="Audio">
+                                            <param id="0" name="Audio file">kiplosion</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="968417970149376">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="157841763929975" type="Sandbag">
+                                            <param id="0" name="Object">P1_Galick_Left</param>
+                                        </condition>
+                                        <condition id="7" name="Is mirrored" sid="448766073304245" type="Player" />
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="959270361373810" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="941230801911954">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="976828428123064" type="System">
+                                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="119466520343876">
+                                                    <conditions>
+                                                        <condition id="1" name="Is overlapping another object" sid="121896275041809" type="Sandbag">
+                                                            <param id="0" name="Object">P1_Galick_Left</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="374364286574319" type="Audio">
+                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="391009623184940" type="Hit_Effect">
+                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="310134071572769" type="Sandbag">
+                                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="217519525197304" type="Sandbag">
+                                                            <param id="0" name="Vector X">-98</param>
+                                                        </action>
+                                                        <action id="7" name="Set mirrored" sid="989877102060954" type="Sandbag">
+                                                            <param id="0" name="State">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="414757038379887">
+                                    <conditions>
+                                        <condition behavior="Fade" id="0" name="On fade-out finished" sid="815667733616229" type="P1_Galick_Left" />
+                                        <condition id="1" name="Is overlapping another object" sid="462788334497958" type="Sandbag">
+                                            <param id="0" name="Object">P1_Galick_Left</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="853200586879881" type="Player">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="567004947648971" type="Audio">
+                                            <param id="0" name="Audio file">strongpunch</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="146306307345223" type="Audio">
+                                            <param id="0" name="Audio file">kiplosion</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="740859631968936" type="Explosion_Effect">
+                                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="378620597871505" type="Sandbag">
+                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="675759451612179" type="Sandbag">
+                                            <param id="0" name="Vector X">-142</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="200378861084252" type="Sandbag">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="180686984854162" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_State</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="560363346767958" type="System">
+                                            <param id="0" name="Seconds">0.3</param>
+                                        </action>
+                                        <action behavior="Platform" id="9" name="Set vector Y" sid="474458554508927" type="Sandbag">
+                                            <param id="0" name="Vector Y">-243</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="774568243190484" type="System">
+                                            <param id="0" name="Object to create">Big_Explosion_Effect</param>
+                                            <param id="1" name="Layer">9</param>
+                                            <param id="2" name="X">Sandbag.X</param>
+                                            <param id="3" name="Y">Sandbag.Y</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="600930091409984" type="Big_Explosion_Effect">
+                                            <param id="0" name="Animation">&quot;Explosion_Hit&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="501218024095763" type="Audio">
+                                            <param id="0" name="Audio file">kiplosion</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
                     </sub-events>
                 </event-group>
             </sub-events>
