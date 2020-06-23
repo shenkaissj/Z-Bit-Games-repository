@@ -10,7 +10,7 @@
         <variable constant="0" name="P1_Ki_1_Max" sid="245443064039745" static="0" type="number">100</variable>
         <event-group description="the main chargeing event for the game" sid="453003525542487" title="P1_Chargeing the main Chargeing Event">
             <sub-events>
-                <event-group description="This is the games main charging event for when tou need to charge press the X key to charge up your ki in game" sid="179174212646697" title="P1_Charging_Event2">
+                <event-group description="This is the games main charging event for when tou need to charge press the X key to charge up your ki in game" sid="179174212646697" title="P1_Charging_Event">
                     <sub-events>
                         <event-group description="This is the main event for when the player is charging ki and the bar for the player" sid="727860547725996" title="P1_Main_Ki_Bar_Events">
                             <sub-events>
@@ -56,46 +56,60 @@
                                 </event-block>
                             </sub-events>
                         </event-group>
+                        <event-group description="These are the animated events for the players aura and other charging animation events" sid="148644802728647" title="P1_Animated_Aura_Bits">
+                            <sub-events>
+                                <event-block sid="452684399554858">
+                                    <conditions>
+                                        <condition id="4" name="On finished" sid="207698928405072" type="Startup_Aura">
+                                            <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="768071032549227" type="Startup_Aura" />
+                                        <action id="-15" name="Set visible" sid="375376892922064" type="P1_Aura">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="781363192110433">
+                                    <conditions>
+                                        <condition id="-9" name="Is visible" sid="359883753799408" type="P1_Aura" />
+                                        <condition id="-4" name="Trigger once while true" sid="145663192184479" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="854477163136540" type="Audio">
+                                            <param id="0" name="Audio file">ki chargeing sound</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="619975675190488">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="124565193412639" type="Player">
+                                            <param id="0" name="Instance variable">P1_Charge_Ki</param>
+                                        </condition>
+                                        <condition id="-9" name="Is visible" sid="891275924478752" type="P1_Aura" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="560307146298870" type="System">
+                                            <param id="0" name="Variable">P1_Ki_1</param>
+                                            <param id="1" name="Value">0.409</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
                         <event-group description="The Charging event for the players Base form" sid="743496532051457" title="P1_Charging_Event_Base">
                             <sub-events>
-                                <event-group description="These are the animated events for the players aura and other charging animation events" sid="148644802728647" title="P1_Animated_Aura_Bits">
-                                    <sub-events>
-                                        <event-block sid="452684399554858">
-                                            <conditions>
-                                                <condition id="4" name="On finished" sid="207698928405072" type="Startup_Aura">
-                                                    <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-9" name="Destroy" sid="768071032549227" type="Startup_Aura" />
-                                                <action id="-15" name="Set visible" sid="375376892922064" type="P1_Aura">
-                                                    <param id="0" name="Visibility">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="781363192110433">
-                                            <conditions>
-                                                <condition id="-9" name="Is visible" sid="359883753799408" type="P1_Aura" />
-                                                <condition id="-4" name="Trigger once while true" sid="145663192184479" type="System" />
-                                            </conditions>
-                                            <actions>
-                                                <action id="0" name="Play" sid="854477163136540" type="Audio">
-                                                    <param id="0" name="Audio file">ki chargeing sound</param>
-                                                    <param id="2" name="Loop">1</param>
-                                                    <param id="3" name="Volume">-15</param>
-                                                    <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-group>
                                 <event-group description="This Event is for when the player is pressing the charging button on PC" sid="143187052175764" title="P1_Ki_PC">
                                     <sub-events>
-                                        <event-group description="Chargeing for PC" sid="751183671085822" title="P1_Charge_Event_PC2">
+                                        <event-group description="Chargeing for PC" sid="751183671085822" title="P1_Charge_Event_PC">
                                             <sub-events>
-                                                <event-group description="Charging Base form" sid="642859789172722" title="P1_Charge_Base_PC2">
+                                                <event-group description="Charging Base form" sid="642859789172722" title="P1_Charge_Base_PC">
                                                     <sub-events>
-                                                        <event-group description="The Charging for base form while on the floor" sid="182502313220380" title="P1_Base Charging_Ground_Platform_PC2">
+                                                        <event-group description="The Charging for base form while on the floor" sid="182502313220380" title="P1_Base Charging_Ground_Platform_PC">
                                                             <sub-events>
                                                                 <event-block sid="695413202435236">
                                                                     <conditions>
@@ -165,6 +179,9 @@
                                                                                 <condition id="2" inverted="1" name="Is playing" sid="484427276477861" type="Player">
                                                                                     <param id="0" name="Animation">&quot;Rise_&quot; &amp; Player.P1_Charcters</param>
                                                                                 </condition>
+                                                                                <condition id="2" inverted="1" name="Is playing" sid="618805422099067" type="Player">
+                                                                                    <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player.P1_Charcters</param>
+                                                                                </condition>
                                                                             </conditions>
                                                                             <actions />
                                                                         </event-block>
@@ -222,62 +239,6 @@
                                                                                     <param id="0" name="Animation">&quot;Duck_&quot; &amp; Player.P1_Charcters</param>
                                                                                 </condition>
                                                                                 <condition id="2" inverted="1" name="Is playing" sid="709034391558305" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Rise_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                            </conditions>
-                                                                            <actions />
-                                                                        </event-block>
-                                                                    </sub-events>
-                                                                </event-block>
-                                                                <event-block sid="924495091891341">
-                                                                    <conditions>
-                                                                        <condition id="2" name="Key is down" sid="275652989977668" type="Keyboard">
-                                                                            <param id="0" name="Key">88</param>
-                                                                        </condition>
-                                                                        <condition id="-14" name="Compare variable" sid="247970371554037" type="System">
-                                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                                            <param id="1" name="Comparison">2</param>
-                                                                            <param id="2" name="Value">100</param>
-                                                                        </condition>
-                                                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="602553970660013" type="Player" />
-                                                                        <condition id="2" inverted="1" name="Is playing" sid="965907231797979" type="Player">
-                                                                            <param id="0" name="Animation">&quot;Super_2_&quot; &amp; Player.P1_Charcters</param>
-                                                                        </condition>
-                                                                        <condition id="2" inverted="1" name="Is playing" sid="629159919397971" type="Player">
-                                                                            <param id="0" name="Animation">&quot;Super_1_&quot; &amp; Player.P1_Charcters</param>
-                                                                        </condition>
-                                                                        <condition id="2" inverted="1" name="Key is down" sid="859324775969986" type="Keyboard">
-                                                                            <param id="0" name="Key">76</param>
-                                                                        </condition>
-                                                                    </conditions>
-                                                                    <actions>
-                                                                        <action id="-10" name="Add to" sid="559970662229895" type="System">
-                                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                                            <param id="1" name="Value">0.409</param>
-                                                                        </action>
-                                                                    </actions>
-                                                                    <sub-events>
-                                                                        <event-block sid="716192022872783">
-                                                                            <conditions>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="732735448464897" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Run_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="410875109783171" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="872129110595892" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="796379221582643" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="783456788273635" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="534127717998799" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Duck_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="414812824324519" type="Player">
                                                                                     <param id="0" name="Animation">&quot;Rise_&quot; &amp; Player.P1_Charcters</param>
                                                                                 </condition>
                                                                             </conditions>
@@ -445,7 +406,7 @@
                                                                 </event-block>
                                                             </sub-events>
                                                         </event-group>
-                                                        <event-group description="The Charging for Super Sayian form while on the floor" inactive="1" sid="357143063461508" title="P1_SSJ1 Charging_Ground_Platform_PC2">
+                                                        <event-group description="The Charging for Super Sayian form while on the floor" sid="357143063461508" title="P1_SSJ1 Charging_Ground_Platform_PC">
                                                             <sub-events>
                                                                 <event-block sid="493725154291784">
                                                                     <conditions>
@@ -515,6 +476,9 @@
                                                                                 <condition id="2" inverted="1" name="Is playing" sid="822675678600502" type="Player">
                                                                                     <param id="0" name="Animation">&quot;Rise_&quot; &amp; Player.P1_Charcters</param>
                                                                                 </condition>
+                                                                                <condition id="2" inverted="1" name="Is playing" sid="866128193603243" type="Player">
+                                                                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player.P1_Charcters</param>
+                                                                                </condition>
                                                                             </conditions>
                                                                             <actions />
                                                                         </event-block>
@@ -530,6 +494,7 @@
                                                                             <param id="1" name="Comparison">2</param>
                                                                             <param id="2" name="Value">100</param>
                                                                         </condition>
+                                                                        <condition id="-4" name="Trigger once while true" sid="925854964508124" type="System" />
                                                                         <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="643382335710284" type="Player" />
                                                                         <condition id="2" inverted="1" name="Is playing" sid="966375749495301" type="Player">
                                                                             <param id="0" name="Animation">&quot;Super_2_&quot; &amp; Player.P1_Charcters</param>
@@ -578,63 +543,6 @@
                                                                         </event-block>
                                                                     </sub-events>
                                                                 </event-block>
-                                                                <event-block sid="610303115446314">
-                                                                    <conditions>
-                                                                        <condition id="2" name="Key is down" sid="437343463125899" type="Keyboard">
-                                                                            <param id="0" name="Key">88</param>
-                                                                        </condition>
-                                                                        <condition id="-14" name="Compare variable" sid="481597427372125" type="System">
-                                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                                            <param id="1" name="Comparison">2</param>
-                                                                            <param id="2" name="Value">100</param>
-                                                                        </condition>
-                                                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="216128481460886" type="Player" />
-                                                                        <condition id="-4" name="Trigger once while true" sid="706920228876943" type="System" />
-                                                                        <condition id="2" inverted="1" name="Is playing" sid="257935527880060" type="Player">
-                                                                            <param id="0" name="Animation">&quot;Super_2_&quot; &amp; Player.P1_Charcters</param>
-                                                                        </condition>
-                                                                        <condition id="2" inverted="1" name="Is playing" sid="794364221429939" type="Player">
-                                                                            <param id="0" name="Animation">&quot;Super_1_&quot; &amp; Player.P1_Charcters</param>
-                                                                        </condition>
-                                                                        <condition id="2" inverted="1" name="Key is down" sid="260947986362019" type="Keyboard">
-                                                                            <param id="0" name="Key">76</param>
-                                                                        </condition>
-                                                                    </conditions>
-                                                                    <actions>
-                                                                        <action id="-10" name="Add to" sid="930825009414534" type="System">
-                                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                                            <param id="1" name="Value">0.409</param>
-                                                                        </action>
-                                                                    </actions>
-                                                                    <sub-events>
-                                                                        <event-block sid="705714179595606">
-                                                                            <conditions>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="168045793279055" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Run_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="131493377388199" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="585825805920464" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="550447724085444" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="702525719933098" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="351368374317336" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Duck_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="909609440606055" type="Player">
-                                                                                    <param id="0" name="Animation">&quot;Rise_&quot; &amp; Player.P1_Charcters</param>
-                                                                                </condition>
-                                                                            </conditions>
-                                                                            <actions />
-                                                                        </event-block>
-                                                                    </sub-events>
-                                                                </event-block>
                                                                 <event-block sid="192230228771282">
                                                                     <conditions>
                                                                         <condition id="3" name="On key released" sid="295007686778370" type="Keyboard">
@@ -652,7 +560,7 @@
                                                                             <param id="0" name="Animation">&quot;Super_1_&quot; &amp; Player.P1_Charcters</param>
                                                                         </condition>
                                                                         <condition id="2" name="Is playing" sid="341211551123981" type="Player">
-                                                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player.P1_Charcters</param>
+                                                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player.P1_Charcters</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -753,7 +661,7 @@
                                                                 <event-block sid="822119614843911">
                                                                     <conditions>
                                                                         <condition id="2" inverted="1" name="Is playing" sid="668105946725798" type="Player">
-                                                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player.P1_Charcters</param>
+                                                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player.P1_Charcters</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
