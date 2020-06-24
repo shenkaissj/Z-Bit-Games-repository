@@ -4,7 +4,7 @@
     <name>P1_Guarding</name>
     <events>
         <comment>This is the Guarding event for player_1</comment>
-        <event-group description="This Event allows the player to guard specific types of attacks." sid="998933317962136" title="P1_Guard_Event">
+        <event-group description="This Event allows the player to guard specific types of attacks." inactive="1" sid="998933317962136" title="P1_Guard_Event">
             <sub-events>
                 <event-group description="The Guard Event on computers" sid="191093444900504" title="Guard_Event_PC">
                     <sub-events>
@@ -70,12 +70,6 @@
                                                         <action id="-13" name="Set boolean" sid="701571348607201" type="Player">
                                                             <param id="0" name="Instance variable">P1_Guard_State</param>
                                                             <param id="1" name="Value">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="426647147267875" type="Player">
-                                                            <param id="0" name="Max Speed">20</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="4" name="Set max speed" sid="732700077607610" type="Player">
-                                                            <param id="0" name="Max Speed">50</param>
                                                         </action>
                                                         <action behavior="8Direction" id="2" name="Set ignoring input" sid="972248133575773" type="Player">
                                                             <param id="0" name="Input">1</param>
@@ -172,12 +166,6 @@
                                                             <param id="0" name="Instance variable">P1_Guard_State</param>
                                                             <param id="1" name="Value">0</param>
                                                         </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="216295264517742" type="Player">
-                                                            <param id="0" name="Max Speed">36</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="4" name="Set max speed" sid="695024252315859" type="Player">
-                                                            <param id="0" name="Max Speed">64</param>
-                                                        </action>
                                                         <action behavior="8Direction" id="2" name="Set ignoring input" sid="199584078816000" type="Player">
                                                             <param id="0" name="Input">0</param>
                                                         </action>
@@ -256,12 +244,6 @@
                                                         <action id="-13" name="Set boolean" sid="291815039813444" type="Player">
                                                             <param id="0" name="Instance variable">P1_Guard_State</param>
                                                             <param id="1" name="Value">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="653970146123097" type="Player">
-                                                            <param id="0" name="Max Speed">20</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="4" name="Set max speed" sid="274894485566168" type="Player">
-                                                            <param id="0" name="Max Speed">50</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -355,12 +337,6 @@
                                                             <param id="0" name="Instance variable">P1_Guard_State</param>
                                                             <param id="1" name="Value">0</param>
                                                         </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="426091705870702" type="Player">
-                                                            <param id="0" name="Max Speed">36</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="4" name="Set max speed" sid="413541621932269" type="Player">
-                                                            <param id="0" name="Max Speed">64</param>
-                                                        </action>
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
@@ -381,7 +357,7 @@
                                     <sub-events>
                                         <event-block sid="981447301580366">
                                             <conditions>
-                                                <condition id="4" name="Is touching object" sid="541139900531948" type="Touch">
+                                                <condition id="3" name="On touched object" sid="541139900531948" type="Touch">
                                                     <param id="0" name="Object">Guard_Button</param>
                                                 </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="684343717714721" type="Player">
@@ -393,7 +369,6 @@
                                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="842587701890782" type="Player">
                                                     <param id="0" name="Instance variable">P1_NoClip</param>
                                                 </condition>
-                                                <condition id="-4" name="Trigger once while true" sid="172815666119062" type="System" />
                                                 <condition id="2" inverted="1" name="Key is down" sid="490223762284519" type="Keyboard">
                                                     <param id="0" name="Key">88</param>
                                                 </condition>
@@ -436,12 +411,6 @@
                                                             <param id="0" name="Instance variable">P1_Guard_State</param>
                                                             <param id="1" name="Value">1</param>
                                                         </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="699731830126318" type="Player">
-                                                            <param id="0" name="Max Speed">20</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="4" name="Set max speed" sid="552953179829814" type="Player">
-                                                            <param id="0" name="Max Speed">50</param>
-                                                        </action>
                                                         <action behavior="8Direction" id="2" name="Set ignoring input" sid="217650504664720" type="Player">
                                                             <param id="0" name="Input">1</param>
                                                         </action>
@@ -462,6 +431,9 @@
                                                 <condition id="4" inverted="1" name="Is touching object" sid="887169347654914" type="Touch">
                                                     <param id="0" name="Object">Guard_Button</param>
                                                 </condition>
+                                                <condition id="4" inverted="1" name="Is touching object" sid="400210075398553" type="Touch">
+                                                    <param id="0" name="Object">Charge_Button</param>
+                                                </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="532364249557753" type="Player">
                                                     <param id="0" name="Instance variable">P1_SSJ1</param>
                                                     <param id="1" name="Comparison">0</param>
@@ -474,12 +446,10 @@
                                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="467816974569904" type="Player">
                                                     <param id="0" name="Instance variable">P1_Chargeing</param>
                                                 </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="529442882775101" type="Player">
-                                                    <param id="0" name="Animation">&quot;Run_&quot; &amp; Player.P1_Charcters</param>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="662110121381409" type="Player">
+                                                    <param id="0" name="Instance variable">P1_Run</param>
                                                 </condition>
-                                                <condition id="-8" name="Is boolean instance variable set" sid="651353790566312" type="Player">
-                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
-                                                </condition>
+                                                <condition id="-4" name="Trigger once while true" sid="875397053566727" type="System" />
                                             </conditions>
                                             <actions />
                                             <sub-events>
@@ -537,12 +507,6 @@
                                                             <param id="0" name="Instance variable">P1_Guard_State</param>
                                                             <param id="1" name="Value">0</param>
                                                         </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="569107210217893" type="Player">
-                                                            <param id="0" name="Max Speed">36</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="4" name="Set max speed" sid="654715912651225" type="Player">
-                                                            <param id="0" name="Max Speed">64</param>
-                                                        </action>
                                                         <action behavior="8Direction" id="2" name="Set ignoring input" sid="990440228163018" type="Player">
                                                             <param id="0" name="Input">0</param>
                                                         </action>
@@ -564,7 +528,7 @@
                                     <sub-events>
                                         <event-block sid="325853226357945">
                                             <conditions>
-                                                <condition id="4" name="Is touching object" sid="551519245269920" type="Touch">
+                                                <condition id="3" name="On touched object" sid="512492755378662" type="Touch">
                                                     <param id="0" name="Object">Guard_Button</param>
                                                 </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="866743157631174" type="Player">
@@ -576,7 +540,6 @@
                                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="341094089011366" type="Player">
                                                     <param id="0" name="Instance variable">P1_NoClip</param>
                                                 </condition>
-                                                <condition id="-4" name="Trigger once while true" sid="735734244853725" type="System" />
                                                 <condition id="2" inverted="1" name="Key is down" sid="179113926949846" type="Keyboard">
                                                     <param id="0" name="Key">88</param>
                                                 </condition>
@@ -622,12 +585,6 @@
                                                             <param id="0" name="Instance variable">P1_Guard_State</param>
                                                             <param id="1" name="Value">1</param>
                                                         </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="998788865520161" type="Player">
-                                                            <param id="0" name="Max Speed">20</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="4" name="Set max speed" sid="792916972233239" type="Player">
-                                                            <param id="0" name="Max Speed">50</param>
-                                                        </action>
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
@@ -641,6 +598,9 @@
                                             <conditions>
                                                 <condition id="4" inverted="1" name="Is touching object" sid="646039639767344" type="Touch">
                                                     <param id="0" name="Object">Guard_Button</param>
+                                                </condition>
+                                                <condition id="4" inverted="1" name="Is touching object" sid="345395503206469" type="Touch">
+                                                    <param id="0" name="Object">Charge_Button</param>
                                                 </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="527170489916795" type="Player">
                                                     <param id="0" name="Instance variable">P1_SSJ1</param>
@@ -657,12 +617,10 @@
                                                 <condition id="2" inverted="1" name="Is playing" sid="466956816699233" type="Player">
                                                     <param id="0" name="Animation">&quot;Run_&quot; &amp; Player.P1_Charcters</param>
                                                 </condition>
-                                                <condition id="2" inverted="1" name="Is playing" sid="485064943373084" type="Player">
-                                                    <param id="0" name="Animation">&quot;RunSSJ1_&quot; &amp; Player.P1_Charcters</param>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="653030398615755" type="Player">
+                                                    <param id="0" name="Instance variable">P1_Run</param>
                                                 </condition>
-                                                <condition id="-8" name="Is boolean instance variable set" sid="332441342550101" type="Player">
-                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
-                                                </condition>
+                                                <condition id="-4" name="Trigger once while true" sid="597052989462377" type="System" />
                                             </conditions>
                                             <actions />
                                             <sub-events>
@@ -712,19 +670,19 @@
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="4" name="Set animation" sid="236652362795273" type="Player">
-                                                            <param id="0" name="Animation">&quot;IdleSSJ1_&quot; &amp; Player.P1_Charcters</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
                                                         <action id="-13" name="Set boolean" sid="211076122527231" type="Player">
                                                             <param id="0" name="Instance variable">P1_Guard_State</param>
                                                             <param id="1" name="Value">0</param>
                                                         </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="361733814474572" type="Player">
-                                                            <param id="0" name="Max Speed">36</param>
+                                                        <action id="4" name="Set animation" sid="236652362795273" type="Player">
+                                                            <param id="0" name="Animation">&quot;IdleSSJ1_&quot; &amp; Player.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
                                                         </action>
-                                                        <action behavior="8Direction" id="4" name="Set max speed" sid="117518159269206" type="Player">
-                                                            <param id="0" name="Max Speed">64</param>
+                                                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="412503931877971" type="Player">
+                                                            <param id="0" name="Input">0</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="960284093021818" type="Player">
+                                                            <param id="0" name="Input">0</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -738,5 +696,62 @@
                 </event-group>
             </sub-events>
         </event-group>
+        <event-block any="1" sid="533922060564425">
+            <conditions>
+                <condition id="2" inverted="1" name="Key is down" sid="502275458837268" type="Keyboard">
+                    <param id="0" name="Key">79</param>
+                </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="873522237395593" type="Touch">
+                    <param id="0" name="Object">Guard_Button</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="721557511146118">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="753089504164243" type="Player">
+                            <param id="0" name="Animation">&quot;Idle_&quot; &amp; Player.P1_Charcters</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="697734407937139" type="Player">
+                            <param id="0" name="Instance variable">P1_Run</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="749801437866000" type="Player">
+                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="998220409317170" type="Player">
+                            <param id="0" name="Input">0</param>
+                        </action>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="255403782516411" type="Player">
+                            <param id="0" name="Input">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="640892972714241">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="810228764727953" type="Player">
+                            <param id="0" name="Animation">&quot;IdleSSJ1_&quot; &amp; Player.P1_Charcters</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="683386722353641" type="Player">
+                            <param id="0" name="Instance variable">P1_Run</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="800068023579266" type="Player">
+                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="531152672245803" type="Player">
+                            <param id="0" name="Input">0</param>
+                        </action>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="152841831644541" type="Player">
+                            <param id="0" name="Input">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>
