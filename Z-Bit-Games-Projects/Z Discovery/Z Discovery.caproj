@@ -193,6 +193,9 @@
                 </object-type>
                 <object-type name="Mobile_Left" sid="328612285342122">
                     <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="Mobile_Run_Left" sid="967189306912311" type="boolean" />
+                    </instance-variables>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="266544919109299" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5">
@@ -208,6 +211,9 @@
                 </object-type>
                 <object-type name="Mobile_Right" sid="582300636958286">
                     <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="Mobile_Run_Right" sid="843862677472098" type="boolean" />
+                    </instance-variables>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="724970218907209" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5">
@@ -225,7 +231,14 @@
                     <plugin id="Sprite" />
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="347527734246896" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.472813" y="0" />
+                                    <point x="0.960938" y="0.492188" />
+                                    <point x="0.472813" y="1" />
+                                    <point x="0" y="0.503906" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -1795,6 +1808,8 @@
                         <instance-variable name="P1_Super_Count" sid="879839818616475" type="number" />
                         <instance-variable name="P1_Player_Icon" sid="949919945635736" type="string" />
                         <instance-variable name="P1_Charge_Ki" sid="588318889925283" type="boolean" />
+                        <instance-variable name="P1_Run_Counter" sid="203129354120863" type="number" />
+                        <instance-variable name="P1_Walk_Counter" sid="554538926920548" type="number" />
                     </instance-variables>
                     <behaviors>
                         <behavior-type name="Timer" sid="435835945874937">
@@ -2561,25 +2576,13 @@
                                                         </collision-poly>
                                                     </frame>
                                                 </animation>
-                                                <animation framecount="2" loop="0" name="FlyForward_KPIC1" pingpong="0" repeatcount="1" repeatto="0" sid="870193443546364" speed="5">
+                                                <animation framecount="1" loop="0" name="FlyForward_KPIC1" pingpong="0" repeatcount="1" repeatto="0" sid="870193443546364" speed="5">
                                                     <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\King Piccolo Sprite sheet\sprite_43.png">
                                                         <collision-poly>
                                                             <point x="0.3125" y="0" />
                                                             <point x="0.743421" y="0" />
                                                             <point x="0.746711" y="1" />
                                                             <point x="0.31579" y="1" />
-                                                        </collision-poly>
-                                                    </frame>
-                                                    <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\King Piccolo Sprite sheet\sprite_44.png">
-                                                        <collision-poly>
-                                                            <point x="0.526316" y="0.47619" />
-                                                            <point x="0.473684" y="0.47619" />
-                                                            <point x="0.105263" y="0.809524" />
-                                                            <point x="0.894737" y="0.47619" />
-                                                            <point x="0.894737" y="0.904762" />
-                                                            <point x="0.473684" y="1" />
-                                                            <point x="0.0526316" y="0.952381" />
-                                                            <point x="0.473684" y="0.47619" />
                                                         </collision-poly>
                                                     </frame>
                                                 </animation>
@@ -3821,16 +3824,8 @@
                                                         </collision-poly>
                                                     </frame>
                                                 </animation>
-                                                <animation framecount="2" loop="0" name="FlyForward_CELL1" pingpong="0" repeatcount="1" repeatto="0" sid="682371707674815" speed="5">
+                                                <animation framecount="1" loop="0" name="FlyForward_CELL1" pingpong="0" repeatcount="1" repeatto="0" sid="682371707674815" speed="5">
                                                     <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\Perfect Cell Sprite sheet\sprite_44.png">
-                                                        <collision-poly>
-                                                            <point x="0.3125" y="0" />
-                                                            <point x="0.743421" y="0" />
-                                                            <point x="0.746711" y="1" />
-                                                            <point x="0.31579" y="1" />
-                                                        </collision-poly>
-                                                    </frame>
-                                                    <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\Perfect Cell Sprite sheet\sprite_45.png">
                                                         <collision-poly>
                                                             <point x="0.3125" y="0" />
                                                             <point x="0.743421" y="0" />
@@ -4552,25 +4547,13 @@
                                                             </collision-poly>
                                                         </frame>
                                                     </animation>
-                                                    <animation framecount="2" loop="0" name="FlyForward_GKU1" pingpong="0" repeatcount="0" repeatto="0" sid="375143026191494" speed="16">
+                                                    <animation framecount="1" loop="0" name="FlyForward_GKU1" pingpong="0" repeatcount="0" repeatto="0" sid="375143026191494" speed="16">
                                                         <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
                                                             <collision-poly>
                                                                 <point x="0.3125" y="0" />
                                                                 <point x="0.743421" y="0" />
                                                                 <point x="0.746711" y="1" />
                                                                 <point x="0.31579" y="1" />
-                                                            </collision-poly>
-                                                        </frame>
-                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\Goku Sprite sheet\sprite_44.png">
-                                                            <collision-poly>
-                                                                <point x="0.526316" y="0.47619" />
-                                                                <point x="0.473684" y="0.47619" />
-                                                                <point x="0.684211" y="0.285714" />
-                                                                <point x="1" y="0.47619" />
-                                                                <point x="0.894737" y="0.904762" />
-                                                                <point x="0.473684" y="1" />
-                                                                <point x="0.0526316" y="0.952381" />
-                                                                <point x="0.421053" y="0.47619" />
                                                             </collision-poly>
                                                         </frame>
                                                     </animation>
@@ -5492,16 +5475,8 @@
                                                             </collision-poly>
                                                         </frame>
                                                     </animation>
-                                                    <animation framecount="2" loop="0" name="FlyForwardSSJ1_GKU1" pingpong="0" repeatcount="1" repeatto="0" sid="403497738777843" speed="5">
+                                                    <animation framecount="1" loop="0" name="FlyForwardSSJ1_GKU1" pingpong="0" repeatcount="1" repeatto="0" sid="403497738777843" speed="5">
                                                         <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\SSJ Goku Sprite\sprite_28.png">
-                                                            <collision-poly>
-                                                                <point x="0.3125" y="0" />
-                                                                <point x="0.743421" y="0" />
-                                                                <point x="0.746711" y="1" />
-                                                                <point x="0.31579" y="1" />
-                                                            </collision-poly>
-                                                        </frame>
-                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\SSJ Goku Sprite sheet\sprite_29.png">
                                                             <collision-poly>
                                                                 <point x="0.3125" y="0" />
                                                                 <point x="0.743421" y="0" />
@@ -6280,16 +6255,8 @@
                                                             </collision-poly>
                                                         </frame>
                                                     </animation>
-                                                    <animation framecount="2" loop="0" name="FlyForward_VEGMid1" pingpong="0" repeatcount="0" repeatto="0" sid="376780636360869" speed="16">
+                                                    <animation framecount="1" loop="0" name="FlyForward_VEGMid1" pingpong="0" repeatcount="0" repeatto="0" sid="376780636360869" speed="16">
                                                         <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\Finished Charcter Sprites\Vegeta Base Sprite\sprite_43.png">
-                                                            <collision-poly>
-                                                                <point x="0.3125" y="0" />
-                                                                <point x="0.743421" y="0" />
-                                                                <point x="0.746711" y="1" />
-                                                                <point x="0.31579" y="1" />
-                                                            </collision-poly>
-                                                        </frame>
-                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\Vegeta Sprite sheet\sprite_44.png">
                                                             <collision-poly>
                                                                 <point x="0.3125" y="0" />
                                                                 <point x="0.743421" y="0" />
@@ -7072,16 +7039,8 @@
                                                             </collision-poly>
                                                         </frame>
                                                     </animation>
-                                                    <animation framecount="2" loop="0" name="FlyForwardSSJ1_VEGMid1" pingpong="0" repeatcount="0" repeatto="0" sid="385246350135015" speed="16">
+                                                    <animation framecount="1" loop="0" name="FlyForwardSSJ1_VEGMid1" pingpong="0" repeatcount="0" repeatto="0" sid="385246350135015" speed="16">
                                                         <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\SSJ Vegeta Sprite sheet\sprite_44.png">
-                                                            <collision-poly>
-                                                                <point x="0.3125" y="0" />
-                                                                <point x="0.743421" y="0" />
-                                                                <point x="0.746711" y="1" />
-                                                                <point x="0.31579" y="1" />
-                                                            </collision-poly>
-                                                        </frame>
-                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\SSJ Vegeta Sprite sheet\sprite_45.png">
                                                             <collision-poly>
                                                                 <point x="0.3125" y="0" />
                                                                 <point x="0.743421" y="0" />
@@ -7761,16 +7720,8 @@
                                                             </collision-poly>
                                                         </frame>
                                                     </animation>
-                                                    <animation framecount="2" loop="0" name="FlyForward_TG1" pingpong="0" repeatcount="0" repeatto="0" sid="341831221759383" speed="16">
+                                                    <animation framecount="1" loop="0" name="FlyForward_TG1" pingpong="0" repeatcount="0" repeatto="0" sid="341831221759383" speed="16">
                                                         <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\Teen Gohan Sprite sheet\sprite_43.png">
-                                                            <collision-poly>
-                                                                <point x="0.3125" y="0" />
-                                                                <point x="0.743421" y="0" />
-                                                                <point x="0.746711" y="1" />
-                                                                <point x="0.31579" y="1" />
-                                                            </collision-poly>
-                                                        </frame>
-                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\Teen Gohan Sprite sheet\sprite_44.png">
                                                             <collision-poly>
                                                                 <point x="0.3125" y="0" />
                                                                 <point x="0.743421" y="0" />
@@ -8495,16 +8446,8 @@
                                                             </collision-poly>
                                                         </frame>
                                                     </animation>
-                                                    <animation framecount="2" loop="0" name="FlyForwardSSJ1_TG1" pingpong="0" repeatcount="0" repeatto="0" sid="544675629335846" speed="16">
+                                                    <animation framecount="1" loop="0" name="FlyForwardSSJ1_TG1" pingpong="0" repeatcount="0" repeatto="0" sid="544675629335846" speed="16">
                                                         <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\SSJ Teen Gohan Sprite sheet\sprite_43.png">
-                                                            <collision-poly>
-                                                                <point x="0.3125" y="0" />
-                                                                <point x="0.743421" y="0" />
-                                                                <point x="0.746711" y="1" />
-                                                                <point x="0.31579" y="1" />
-                                                            </collision-poly>
-                                                        </frame>
-                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\SSJ Teen Gohan Sprite sheet\sprite_44.png">
                                                             <collision-poly>
                                                                 <point x="0.3125" y="0" />
                                                                 <point x="0.743421" y="0" />
@@ -9200,7 +9143,7 @@
                                                             </collision-poly>
                                                         </frame>
                                                     </animation>
-                                                    <animation framecount="2" loop="0" name="FlyForward_GOHN1" pingpong="0" repeatcount="0" repeatto="0" sid="714985419188949" speed="16">
+                                                    <animation framecount="1" loop="0" name="FlyForward_GOHN1" pingpong="0" repeatcount="0" repeatto="0" sid="714985419188949" speed="16">
                                                         <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\Gohan Sprite sheet\Gohan Unsnipped Skin 1\sprite_44.png">
                                                             <collision-poly>
                                                                 <point x="0.3125" y="0" />
@@ -9209,7 +9152,6 @@
                                                                 <point x="0.31579" y="1" />
                                                             </collision-poly>
                                                         </frame>
-                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\Gohan Sprite sheet\Gohan Unsnipped Skin 1\sprite_45.png" />
                                                     </animation>
                                                     <animation framecount="6" loop="1" name="Run_GOHN1" pingpong="0" repeatcount="1" repeatto="0" sid="826428964048761" speed="17">
                                                         <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\Gohan Sprite sheet\Gohan Unsnipped Skin 1\sprite_35.png">
@@ -11274,25 +11216,13 @@
                                                             </collision-poly>
                                                         </frame>
                                                     </animation>
-                                                    <animation framecount="2" loop="0" name="FlyForward_FRIZA" pingpong="0" repeatcount="0" repeatto="0" sid="458983699099590" speed="16">
+                                                    <animation framecount="1" loop="0" name="FlyForward_FRIZA" pingpong="0" repeatcount="0" repeatto="0" sid="458983699099590" speed="16">
                                                         <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\Frieza Final Form Sprite sheet\sprite_43.png">
                                                             <collision-poly>
                                                                 <point x="0.3125" y="0" />
                                                                 <point x="0.743421" y="0" />
                                                                 <point x="0.746711" y="1" />
                                                                 <point x="0.31579" y="1" />
-                                                            </collision-poly>
-                                                        </frame>
-                                                        <frame duration="1" hotspotX="0.526316" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Tylers stuff DONT TOUCH\files for tylers project DONT TOUCH!!!!\Dragon Ball Z Discovery Sprites\Charcter_Sprite Sheets\Frieza Final Form Sprite sheet\sprite_44.png">
-                                                            <collision-poly>
-                                                                <point x="0.526316" y="0.47619" />
-                                                                <point x="0.473684" y="0.47619" />
-                                                                <point x="0.684211" y="0.285714" />
-                                                                <point x="1" y="0.47619" />
-                                                                <point x="0.894737" y="0.904762" />
-                                                                <point x="0.473684" y="1" />
-                                                                <point x="0.0526316" y="0.952381" />
-                                                                <point x="0.421053" y="0.47619" />
                                                             </collision-poly>
                                                         </frame>
                                                     </animation>
