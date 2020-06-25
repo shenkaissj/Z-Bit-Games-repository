@@ -12,98 +12,106 @@
             <sub-events>
                 <event-group description="This is the games main charging event for when tou need to charge press the X key to charge up your ki in game" sid="179174212646697" title="P1_Charging_Event">
                     <sub-events>
-                        <event-group description="This is the main event for when the player is charging ki and the bar for the player" sid="727860547725996" title="P1_Main_Ki_Bar_Events">
+                        <event-group description="The Main Events for the ki bar and the amount of ki used in game" sid="473475674991794" title="Ki_Bar_Events">
                             <sub-events>
-                                <event-block sid="139723403226731">
-                                    <conditions>
-                                        <condition id="-1" name="Every tick" sid="864786760933890" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-5" name="Set width" sid="225924306778670" type="P1_Ki_Bar1">
-                                            <param id="0" name="Width">(Self.InitialWidth + (P1_Ki_1 - P1_Ki_1_Max) * (Self.InitialWidth / P1_Ki_1_Max))</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="322674566577353">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="859342934045463" type="System">
-                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                            <param id="1" name="Comparison">2</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="581754729514940" type="System">
-                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="215057598993752">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="973464228844947" type="System">
-                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">100</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="528805320699522" type="System">
-                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                            <param id="1" name="Value">100</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
+                                <event-group description="This is the main event for when the player is charging ki and the bar for the player" sid="727860547725996" title="P1_Ki_Bar_Events">
+                                    <sub-events>
+                                        <event-block sid="139723403226731">
+                                            <conditions>
+                                                <condition id="-1" name="Every tick" sid="864786760933890" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-5" name="Set width" sid="225924306778670" type="P1_Ki_Bar1">
+                                                    <param id="0" name="Width">(Self.InitialWidth + (P1_Ki_1 - P1_Ki_1_Max) * (Self.InitialWidth / P1_Ki_1_Max))</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="322674566577353">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="859342934045463" type="System">
+                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="581754729514940" type="System">
+                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="215057598993752">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="973464228844947" type="System">
+                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">100</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="528805320699522" type="System">
+                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                    <param id="1" name="Value">100</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
                             </sub-events>
                         </event-group>
-                        <event-group description="These are the animated events for the players aura and other charging animation events" sid="148644802728647" title="P1_Animated_Aura_Bits">
+                        <event-group description="The specific elements for an animated aura" sid="964622943282319" title="Animated_Aura_Elemtnts">
                             <sub-events>
-                                <event-block sid="452684399554858">
-                                    <conditions>
-                                        <condition id="4" name="On finished" sid="207698928405072" type="Startup_Aura">
-                                            <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Destroy" sid="768071032549227" type="Startup_Aura" />
-                                        <action id="-15" name="Set visible" sid="375376892922064" type="P1_Aura">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="781363192110433">
-                                    <conditions>
-                                        <condition id="-9" name="Is visible" sid="359883753799408" type="P1_Aura" />
-                                        <condition id="-4" name="Trigger once while true" sid="145663192184479" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Play" sid="854477163136540" type="Audio">
-                                            <param id="0" name="Audio file">ki chargeing sound</param>
-                                            <param id="2" name="Loop">1</param>
-                                            <param id="3" name="Volume">-15</param>
-                                            <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="619975675190488">
-                                    <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="124565193412639" type="Player">
-                                            <param id="0" name="Instance variable">P1_Charge_Ki</param>
-                                        </condition>
-                                        <condition id="-9" name="Is visible" sid="891275924478752" type="P1_Aura" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-10" name="Add to" sid="560307146298870" type="System">
-                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                            <param id="1" name="Value">0.409</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
+                                <event-group description="These are the animated events for the players aura and other charging animation events" sid="148644802728647" title="P1_Animated_Aura_Elements">
+                                    <sub-events>
+                                        <event-block sid="452684399554858">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="207698928405072" type="Startup_Aura">
+                                                    <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Destroy" sid="768071032549227" type="Startup_Aura" />
+                                                <action id="-15" name="Set visible" sid="375376892922064" type="P1_Aura">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="781363192110433">
+                                            <conditions>
+                                                <condition id="-9" name="Is visible" sid="359883753799408" type="P1_Aura" />
+                                                <condition id="-4" name="Trigger once while true" sid="145663192184479" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="854477163136540" type="Audio">
+                                                    <param id="0" name="Audio file">ki chargeing sound</param>
+                                                    <param id="2" name="Loop">1</param>
+                                                    <param id="3" name="Volume">-15</param>
+                                                    <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="619975675190488">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="124565193412639" type="Player">
+                                                    <param id="0" name="Instance variable">P1_Charge_Ki</param>
+                                                </condition>
+                                                <condition id="-9" name="Is visible" sid="891275924478752" type="P1_Aura" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="560307146298870" type="System">
+                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                    <param id="1" name="Value">0.409</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
                             </sub-events>
                         </event-group>
                         <event-group description="The Charging event for the players Base form" sid="743496532051457" title="P1_Charging_Event_Base">
                             <sub-events>
-                                <event-group description="This Event is for when the player is pressing the charging button on PC" sid="143187052175764" title="Ki_PC">
+                                <event-group description="This Event is for when the player is pressing the charging button on PC" sid="143187052175764" title="Ki_Charging_PC">
                                     <sub-events>
                                         <event-group description="Chargeing for PC" sid="751183671085822" title="P1_Charge_Event_PC">
                                             <sub-events>
@@ -1009,7 +1017,7 @@
                                         </event-group>
                                     </sub-events>
                                 </event-group>
-                                <event-group description="This Event is for when the player is pressing the charging button on Mobile" sid="879385867115424" title="Ki_Mobile">
+                                <event-group description="This Event is for when the player is pressing the charging button on Mobile" sid="879385867115424" title="Ki_Charging_Mobile">
                                     <sub-events>
                                         <event-group description="Charging for mobile" sid="275209597937987" title="P1_Charge_Event_Mobile">
                                             <sub-events>
