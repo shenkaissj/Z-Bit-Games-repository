@@ -14,7 +14,7 @@
                                     <sub-events>
                                         <event-block sid="340350631259952">
                                             <conditions>
-                                                <condition behavior="Platform" id="6" name="On fall" sid="981858176096634" type="Player" />
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="981858176096634" type="Player" />
                                                 <condition id="-7" name="Compare instance variable" sid="242314682114018" type="Player">
                                                     <param id="0" name="Instance variable">P1_SSJ1</param>
                                                     <param id="1" name="Comparison">0</param>
@@ -28,9 +28,6 @@
                                             <sub-events>
                                                 <event-block sid="105242901649686">
                                                     <conditions>
-                                                        <condition id="2" inverted="1" name="Is playing" sid="838337239274009" type="Player">
-                                                            <param id="0" name="Animation">&quot;Falling_&quot; &amp; Player.P1_Charcters</param>
-                                                        </condition>
                                                         <condition id="2" inverted="1" name="Is playing" sid="978575048866859" type="Player">
                                                             <param id="0" name="Animation">&quot;Baseform_&quot; &amp; Player.P1_Charcters</param>
                                                         </condition>
@@ -160,6 +157,16 @@
                                                             <param id="1" name="From">1</param>
                                                         </action>
                                                         <action id="-9" name="Destroy" sid="725958795176104" type="P1_Kamehameha_Charge" />
+                                                        <action id="-3" name="Create object" sid="878520932189328" type="System">
+                                                            <param id="0" name="Object to create">P1_Jump_Effect</param>
+                                                            <param id="1" name="Layer">5</param>
+                                                            <param id="2" name="X">Player.X</param>
+                                                            <param id="3" name="Y">Player.Y</param>
+                                                        </action>
+                                                        <action behavior="Pin" id="0" name="Pin to object" sid="910094856673584" type="P1_Jump_Effect">
+                                                            <param id="0" name="Pin to">Player</param>
+                                                            <param id="1" name="Mode">0</param>
+                                                        </action>
                                                     </actions>
                                                     <sub-events>
                                                         <event-block sid="805035902651520">
@@ -767,7 +774,7 @@
                                     <sub-events>
                                         <event-block sid="841567330327876">
                                             <conditions>
-                                                <condition behavior="Platform" id="6" name="On fall" sid="143892632203624" type="Player" />
+                                                <condition behavior="Platform" id="4" name="Is falling" sid="143892632203624" type="Player" />
                                                 <condition id="-7" name="Compare instance variable" sid="517802339956749" type="Player">
                                                     <param id="0" name="Instance variable">P1_SSJ1</param>
                                                     <param id="1" name="Comparison">0</param>
@@ -781,9 +788,6 @@
                                             <sub-events>
                                                 <event-block sid="328075882620877">
                                                     <conditions>
-                                                        <condition id="2" inverted="1" name="Is playing" sid="625517444637240" type="Player">
-                                                            <param id="0" name="Animation">&quot;Falling_&quot; &amp; Player.P1_Charcters</param>
-                                                        </condition>
                                                         <condition id="2" inverted="1" name="Is playing" sid="870342056802771" type="Player">
                                                             <param id="0" name="Animation">&quot;Baseform_&quot; &amp; Player.P1_Charcters</param>
                                                         </condition>
@@ -939,6 +943,16 @@
                                                             <param id="1" name="From">1</param>
                                                         </action>
                                                         <action id="-9" name="Destroy" sid="544613017271152" type="P1_Kamehameha_Charge" />
+                                                        <action id="-3" name="Create object" sid="188061125899932" type="System">
+                                                            <param id="0" name="Object to create">P1_Jump_Effect</param>
+                                                            <param id="1" name="Layer">5</param>
+                                                            <param id="2" name="X">Player.X</param>
+                                                            <param id="3" name="Y">Player.Y</param>
+                                                        </action>
+                                                        <action behavior="Pin" id="0" name="Pin to object" sid="542309783813527" type="P1_Jump_Effect">
+                                                            <param id="0" name="Pin to">Player</param>
+                                                            <param id="1" name="Mode">0</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
@@ -1478,5 +1492,15 @@
                 </event-group>
             </sub-events>
         </event-group>
+        <event-block sid="765397325517923">
+            <conditions>
+                <condition id="4" name="On finished" sid="147411034263913" type="P1_Jump_Effect">
+                    <param id="0" name="Animation">&quot;Jump_Effect&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="144648762147209" type="P1_Jump_Effect" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
