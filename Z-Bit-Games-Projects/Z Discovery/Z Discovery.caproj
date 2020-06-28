@@ -25,6 +25,7 @@
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
+        <plugin author="Scirra" id="video" version="1">Video</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -34,6 +35,7 @@
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
@@ -1398,6 +1400,9 @@
             </object-type>
             <object-type global="1" name="Player2_Array" sid="354505532635289">
                 <plugin id="Arr" />
+            </object-type>
+            <object-type name="Intro_Video" sid="309718301936156">
+                <plugin id="video" />
             </object-type>
         </object-folder>
         <object-folder name="Enviorment">
@@ -14758,6 +14763,66 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Sprite10" sid="378354723215213">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="127489816720358">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Animation2" pingpong="0" repeatcount="1" repeatto="0" sid="745969601815904" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Loading_Image_1" sid="985517925464375">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="235299174812199">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="652442210438101" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.504202" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite11" sid="295994941444564">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Rotate" sid="754840175116167">
+                    <behavior id="Rotate" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="348963529299239">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <effects>
+                <effect-type name="GlowHorizontal">
+                    <effect id="glowhorizontal" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="336958542638554" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Load_Finish_Fade_In" sid="192025160464260">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="321568502680251">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="606427747219461" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Android_Buttons" plugin-id="Sprite" sid="111396605850099">
@@ -14893,10 +14958,13 @@
         </family>
     </families>
     <layout-folder>
-        <layout-folder name="Openings &amp; warrning screens">
+        <layout-folder name="Openings_&amp;_Game_Menus">
             <layout-folder name="Menus">
                 <layout>Main_Menu.xml</layout>
                 <layout>Charcter_Select.xml</layout>
+            </layout-folder>
+            <layout-folder name="Loading_Screen">
+                <layout>Loading_Screen_1.xml</layout>
             </layout-folder>
             <layout>Opening_Layout.xml</layout>
             <layout>Warrning_Screen.xml</layout>
@@ -14995,12 +15063,15 @@
                 <event-sheet>Intro_Event_sheet .xml</event-sheet>
                 <event-sheet>Made_With_Consturct_2_Event.xml</event-sheet>
             </event-folder>
+            <event-folder name="Charcter_Select_Event">
+                <event-sheet>Versus_Charcter_Select.xml</event-sheet>
+            </event-folder>
+            <event-folder name="Loadingscreen_Events">
+                <event-sheet>Loading_Screen_Event.xml</event-sheet>
+            </event-folder>
             <event-sheet>Title_Screen_Event.xml</event-sheet>
             <event-sheet>Menu_events.xml</event-sheet>
             <event-sheet>Warrning_Intro.xml</event-sheet>
-        </event-folder>
-        <event-folder name="Charcter_Select_Event">
-            <event-sheet>Versus_Charcter_Select.xml</event-sheet>
         </event-folder>
         <event-folder name="Game_Objects_Events">
             <event-folder name="Clouds">
@@ -15014,6 +15085,7 @@
         <event-sheet>Instructions for Programers.xml</event-sheet>
         <event-sheet>Pause_Event.xml</event-sheet>
         <event-sheet>Debug_Event.xml</event-sheet>
+        <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />
@@ -15139,6 +15211,11 @@
             <file name="icon-128.png" />
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="Z_Bit_Games_Intro">
+            <file name="Z Bit Games Intro.mp4" />
+            <file name="Z-Bit-Games-Intro.ogv" />
+            <file name="Z-Bit-Games-Intro.webm" />
         </file-folder>
     </files-folder>
 </c2project>
