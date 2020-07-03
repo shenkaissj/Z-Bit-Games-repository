@@ -10,408 +10,840 @@
                     <sub-events>
                         <event-group description="The Dashing Ability for Player1" sid="103696532903244" title="P1_Dashing_PC">
                             <sub-events>
-                                <event-group description="This Event is for the Players Dashing Ability while in there Base forms" sid="387326889962905" title="P1_Dashing_Base">
+                                <event-group description="for when the player is dashing on ground" sid="420954283480053" title="P1_Dashing_Grounded">
                                     <sub-events>
-                                        <comment>Dashing_Right</comment>
-                                        <event-block sid="684167806528036">
-                                            <conditions>
-                                                <condition id="0" name="On key pressed" sid="565295413463904" type="Keyboard">
-                                                    <param id="0" name="Key">90</param>
-                                                </condition>
-                                                <condition id="-7" name="Compare instance variable" sid="840438398189639" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">0</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
+                                        <event-group description="This Event is for the Players Dashing Ability while in there Base forms" sid="387326889962905" title="P1_Dashing_Base">
                                             <sub-events>
-                                                <event-block sid="427360353686622">
+                                                <comment>Dashing_Right</comment>
+                                                <event-block sid="684167806528036">
                                                     <conditions>
-                                                        <condition id="7" inverted="1" name="Is mirrored" sid="554441804853021" type="Player_1" />
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="396351438632033" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                                        <condition id="0" name="On key pressed" sid="565295413463904" type="Keyboard">
+                                                            <param id="0" name="Key">90</param>
                                                         </condition>
-                                                        <condition id="-14" inverted="1" name="Compare variable" sid="489441193012167" type="System">
-                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                            <param id="1" name="Comparison">3</param>
+                                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="355055583770664" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="840438398189639" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
                                                             <param id="2" name="Value">0</param>
                                                         </condition>
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="189589332045879" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
-                                                        </condition>
-                                                        <condition id="2" inverted="1" name="Is playing" sid="313846801998843" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
-                                                        </condition>
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="798257696014687" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Beam_State</param>
-                                                        </condition>
                                                     </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="200722271717862" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action id="-13" name="Set boolean" sid="441255244205053" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                                            <param id="1" name="Value">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="8" name="Set vector X" sid="780763675486623" type="Player_1">
-                                                            <param id="0" name="Vector X">162</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="9" name="Set vector X" sid="575771823477004" type="Player_1">
-                                                            <param id="0" name="Vector X">78</param>
-                                                        </action>
-                                                        <action id="0" name="Play" sid="911542417346699" type="Audio">
-                                                            <param id="0" name="Audio file">teleport</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-8</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="555694490210381" type="Player_1">
-                                                            <param id="0" name="Max Speed">78</param>
-                                                        </action>
-                                                        <action id="-11" name="Subtract from" sid="456818849652610" type="System">
-                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                            <param id="1" name="Value">5</param>
-                                                        </action>
-                                                        <action id="7" name="Set mirrored" sid="655036563544245" type="Player_1">
-                                                            <param id="0" name="State">0</param>
-                                                        </action>
-                                                        <action id="7" name="Set mirrored" sid="550363491071905" type="Punch_Collision">
-                                                            <param id="0" name="State">0</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="559982404816499" type="Player_1">
-                                                            <param id="0" name="Input">1</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="612818955888135" type="Player_1">
-                                                            <param id="0" name="Input">1</param>
-                                                        </action>
-                                                        <action id="-16" name="Wait" sid="688122559285358" type="System">
-                                                            <param id="0" name="Seconds">0.3</param>
-                                                        </action>
-                                                        <action id="4" name="Set animation" sid="297413714958526" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;Jump_&quot; &amp; Player_1.P1_Charcters</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="259206464978862" type="Player_1">
-                                                            <param id="0" name="Input">0</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="696605130504924" type="Player_1">
-                                                            <param id="0" name="Input">0</param>
-                                                        </action>
-                                                        <action id="-13" name="Set boolean" sid="579470702386044" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="922460701236485" type="Player_1">
-                                                            <param id="0" name="Max Speed">45</param>
-                                                        </action>
-                                                    </actions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="427360353686622">
+                                                            <conditions>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="554441804853021" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="396351438632033" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="489441193012167" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="189589332045879" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="313846801998843" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="798257696014687" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="200722271717862" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="441255244205053" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="780763675486623" type="Player_1">
+                                                                    <param id="0" name="Vector X">162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="575771823477004" type="Player_1">
+                                                                    <param id="0" name="Vector X">78</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="911542417346699" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="555694490210381" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="456818849652610" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="655036563544245" type="Player_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="550363491071905" type="Punch_Collision">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="559982404816499" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="612818955888135" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="688122559285358" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="297413714958526" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="259206464978862" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="696605130504924" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="579470702386044" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="922460701236485" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                        <comment>Dashing_Left</comment>
-                                        <event-block sid="761556283484761">
-                                            <conditions>
-                                                <condition id="0" name="On key pressed" sid="706661513446234" type="Keyboard">
-                                                    <param id="0" name="Key">90</param>
-                                                </condition>
-                                                <condition id="-7" name="Compare instance variable" sid="854792651730842" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">0</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="778178835601053">
+                                                <comment>Dashing_Left</comment>
+                                                <event-block sid="761556283484761">
                                                     <conditions>
-                                                        <condition id="7" name="Is mirrored" sid="158728385376999" type="Player_1" />
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="455235604191823" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                                        <condition id="0" name="On key pressed" sid="706661513446234" type="Keyboard">
+                                                            <param id="0" name="Key">90</param>
                                                         </condition>
-                                                        <condition id="-14" inverted="1" name="Compare variable" sid="690328951877975" type="System">
-                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                            <param id="1" name="Comparison">3</param>
+                                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="803885099848128" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="854792651730842" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
                                                             <param id="2" name="Value">0</param>
                                                         </condition>
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="274573197747355" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
-                                                        </condition>
-                                                        <condition id="2" inverted="1" name="Is playing" sid="881959028937733" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
-                                                        </condition>
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="801158368957254" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Beam_State</param>
-                                                        </condition>
                                                     </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="901542672954960" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action id="-13" name="Set boolean" sid="622074642646860" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                                            <param id="1" name="Value">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="8" name="Set vector X" sid="130997143908595" type="Player_1">
-                                                            <param id="0" name="Vector X">-162</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="9" name="Set vector X" sid="673511204363642" type="Player_1">
-                                                            <param id="0" name="Vector X">-78</param>
-                                                        </action>
-                                                        <action id="0" name="Play" sid="451002401793646" type="Audio">
-                                                            <param id="0" name="Audio file">teleport</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-8</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="858188164102070" type="Player_1">
-                                                            <param id="0" name="Max Speed">78</param>
-                                                        </action>
-                                                        <action id="-11" name="Subtract from" sid="922860744929939" type="System">
-                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                            <param id="1" name="Value">5</param>
-                                                        </action>
-                                                        <action id="7" name="Set mirrored" sid="442579982970242" type="Player_1">
-                                                            <param id="0" name="State">1</param>
-                                                        </action>
-                                                        <action id="7" name="Set mirrored" sid="321483314424507" type="Punch_Collision">
-                                                            <param id="0" name="State">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="913858527473595" type="Player_1">
-                                                            <param id="0" name="Input">1</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="969599322788453" type="Player_1">
-                                                            <param id="0" name="Input">1</param>
-                                                        </action>
-                                                        <action id="-16" name="Wait" sid="546864986816872" type="System">
-                                                            <param id="0" name="Seconds">0.3</param>
-                                                        </action>
-                                                        <action id="4" name="Set animation" sid="941147425205385" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;Jump_&quot; &amp; Player_1.P1_Charcters</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="178833513154175" type="Player_1">
-                                                            <param id="0" name="Input">0</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="595013496502810" type="Player_1">
-                                                            <param id="0" name="Input">0</param>
-                                                        </action>
-                                                        <action id="-13" name="Set boolean" sid="723267404082458" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="887987246955123" type="Player_1">
-                                                            <param id="0" name="Max Speed">45</param>
-                                                        </action>
-                                                    </actions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="778178835601053">
+                                                            <conditions>
+                                                                <condition id="7" name="Is mirrored" sid="158728385376999" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="455235604191823" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="690328951877975" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="274573197747355" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="881959028937733" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="801158368957254" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="901542672954960" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="622074642646860" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="130997143908595" type="Player_1">
+                                                                    <param id="0" name="Vector X">-162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="673511204363642" type="Player_1">
+                                                                    <param id="0" name="Vector X">-78</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="451002401793646" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="858188164102070" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="922860744929939" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="442579982970242" type="Player_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="321483314424507" type="Punch_Collision">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="913858527473595" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="969599322788453" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="546864986816872" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="941147425205385" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="178833513154175" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="595013496502810" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="723267404082458" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="887987246955123" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                             </sub-events>
-                                        </event-block>
+                                        </event-group>
+                                        <event-group description="This Event is for the Players Dashing Ability while in there Super Sayian forms" sid="849762176905538" title="P1_Dashing_SSJ1">
+                                            <sub-events>
+                                                <comment>Dashing_Right</comment>
+                                                <event-block sid="568866124937233">
+                                                    <conditions>
+                                                        <condition id="0" name="On key pressed" sid="747258985838189" type="Keyboard">
+                                                            <param id="0" name="Key">90</param>
+                                                        </condition>
+                                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="971555899267391" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="165153490674523" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="523235758460019">
+                                                            <conditions>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="579482581532163" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="591293515136762" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="873926323176175" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="718040286673853" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="381794510353506" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;ChargeSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="767125888467234" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="448862587805132" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="960200231647887" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="459974958410925" type="Player_1">
+                                                                    <param id="0" name="Vector X">162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="820738897128220" type="Player_1">
+                                                                    <param id="0" name="Vector X">78</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="133147031105210" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="227410287888475" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="948476962796413" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="481639701505525" type="Player_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="992536284176035" type="Punch_Collision">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="272594249832517" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="165511589330291" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="562061273137874" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="543914142299484" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;JumpSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="377147836239231" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="708504340530011" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="129574252338506" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="787999350854905" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <comment>Dashing_Left</comment>
+                                                <event-block sid="441056325324319">
+                                                    <conditions>
+                                                        <condition id="0" name="On key pressed" sid="396764706209178" type="Keyboard">
+                                                            <param id="0" name="Key">90</param>
+                                                        </condition>
+                                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="419766566349510" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="549258331517390" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="462390629881624">
+                                                            <conditions>
+                                                                <condition id="7" name="Is mirrored" sid="650903966545823" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="335167200038095" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="966807985788388" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="389521158453561" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="327348534211447" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;ChargeSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="781281230800131" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="777526993941289" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="327803513707366" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="555325518835949" type="Player_1">
+                                                                    <param id="0" name="Vector X">-162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="655012994761100" type="Player_1">
+                                                                    <param id="0" name="Vector X">-78</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="188984960462524" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="507655837898580" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="703902016049758" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="163564131127914" type="Player_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="617751318324729" type="Punch_Collision">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="553420415367723" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="889526211740557" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="679600107983940" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="965811533920875" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;JumpSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="220269866676830" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="323634195680451" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="947019366473186" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="203304532184236" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-group>
                                     </sub-events>
                                 </event-group>
-                                <event-group description="This Event is for the Players Dashing Ability while in there Super Sayian forms" sid="849762176905538" title="P1_Dashing_SSJ1">
+                                <event-group description="for when the player is dashing in the air" sid="778713902662254" title="P1_Dashing_Flying">
                                     <sub-events>
-                                        <comment>Dashing_Right</comment>
-                                        <event-block sid="568866124937233">
-                                            <conditions>
-                                                <condition id="0" name="On key pressed" sid="747258985838189" type="Keyboard">
-                                                    <param id="0" name="Key">90</param>
-                                                </condition>
-                                                <condition id="-7" name="Compare instance variable" sid="165153490674523" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">1</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
+                                        <event-group description="This Event is for the Players Dashing Ability while in there Base forms" sid="690285153834634" title="P1_Dashing_Base_Fly">
                                             <sub-events>
-                                                <event-block sid="523235758460019">
+                                                <comment>Dashing_Right</comment>
+                                                <event-block sid="763105078399714">
                                                     <conditions>
-                                                        <condition id="7" inverted="1" name="Is mirrored" sid="579482581532163" type="Player_1" />
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="591293515136762" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                                        <condition id="0" name="On key pressed" sid="817705366335047" type="Keyboard">
+                                                            <param id="0" name="Key">90</param>
                                                         </condition>
-                                                        <condition id="-14" inverted="1" name="Compare variable" sid="873926323176175" type="System">
-                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                            <param id="1" name="Comparison">3</param>
+                                                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="897365669960997" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="557694503860443" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
                                                             <param id="2" name="Value">0</param>
                                                         </condition>
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="718040286673853" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
-                                                        </condition>
-                                                        <condition id="2" inverted="1" name="Is playing" sid="381794510353506" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;ChargeSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                                        </condition>
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="767125888467234" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="124225575923454" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Fly</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="448862587805132" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action id="-13" name="Set boolean" sid="960200231647887" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                                            <param id="1" name="Value">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="8" name="Set vector X" sid="459974958410925" type="Player_1">
-                                                            <param id="0" name="Vector X">162</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="9" name="Set vector X" sid="820738897128220" type="Player_1">
-                                                            <param id="0" name="Vector X">78</param>
-                                                        </action>
-                                                        <action id="0" name="Play" sid="133147031105210" type="Audio">
-                                                            <param id="0" name="Audio file">teleport</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-8</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="227410287888475" type="Player_1">
-                                                            <param id="0" name="Max Speed">78</param>
-                                                        </action>
-                                                        <action id="-11" name="Subtract from" sid="948476962796413" type="System">
-                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                            <param id="1" name="Value">5</param>
-                                                        </action>
-                                                        <action id="7" name="Set mirrored" sid="481639701505525" type="Player_1">
-                                                            <param id="0" name="State">0</param>
-                                                        </action>
-                                                        <action id="7" name="Set mirrored" sid="992536284176035" type="Punch_Collision">
-                                                            <param id="0" name="State">0</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="272594249832517" type="Player_1">
-                                                            <param id="0" name="Input">1</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="165511589330291" type="Player_1">
-                                                            <param id="0" name="Input">1</param>
-                                                        </action>
-                                                        <action id="-16" name="Wait" sid="562061273137874" type="System">
-                                                            <param id="0" name="Seconds">0.3</param>
-                                                        </action>
-                                                        <action id="4" name="Set animation" sid="543914142299484" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;JumpSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="377147836239231" type="Player_1">
-                                                            <param id="0" name="Input">0</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="708504340530011" type="Player_1">
-                                                            <param id="0" name="Input">0</param>
-                                                        </action>
-                                                        <action id="-13" name="Set boolean" sid="129574252338506" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="787999350854905" type="Player_1">
-                                                            <param id="0" name="Max Speed">45</param>
-                                                        </action>
-                                                    </actions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="125233891691122">
+                                                            <conditions>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="396655948496135" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="327037864082369" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="428105095048225" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="633765563109616" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="589155182020208" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="350926924569843" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="384610408130066" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="733803545033651" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="507524725308162" type="Player_1">
+                                                                    <param id="0" name="Vector X">162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="144735315216293" type="Player_1">
+                                                                    <param id="0" name="Vector X">78</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="104396441070687" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="701093637800007" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="186266432127743" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="291325578998068" type="Player_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="613576726906778" type="Punch_Collision">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="630226045182473" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="521415313545547" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="333126701124927" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="332434548126004" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="609096336840113" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="385968605079640" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="652175723889641" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="501668914110630" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                        <comment>Dashing_Left</comment>
-                                        <event-block sid="441056325324319">
-                                            <conditions>
-                                                <condition id="0" name="On key pressed" sid="396764706209178" type="Keyboard">
-                                                    <param id="0" name="Key">90</param>
-                                                </condition>
-                                                <condition id="-7" name="Compare instance variable" sid="549258331517390" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">1</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="462390629881624">
+                                                <comment>Dashing_Left</comment>
+                                                <event-block sid="795218574654966">
                                                     <conditions>
-                                                        <condition id="7" name="Is mirrored" sid="650903966545823" type="Player_1" />
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="335167200038095" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                                        <condition id="0" name="On key pressed" sid="415027606946053" type="Keyboard">
+                                                            <param id="0" name="Key">90</param>
                                                         </condition>
-                                                        <condition id="-14" inverted="1" name="Compare variable" sid="966807985788388" type="System">
-                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                            <param id="1" name="Comparison">3</param>
+                                                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="132797959268114" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="138009005753988" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
                                                             <param id="2" name="Value">0</param>
                                                         </condition>
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="389521158453561" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
-                                                        </condition>
-                                                        <condition id="2" inverted="1" name="Is playing" sid="327348534211447" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;ChargeSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                                        </condition>
-                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="781281230800131" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="219360454637967" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Fly</param>
                                                         </condition>
                                                     </conditions>
-                                                    <actions>
-                                                        <action id="4" name="Set animation" sid="777526993941289" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action id="-13" name="Set boolean" sid="327803513707366" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                                            <param id="1" name="Value">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="8" name="Set vector X" sid="555325518835949" type="Player_1">
-                                                            <param id="0" name="Vector X">-162</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="9" name="Set vector X" sid="655012994761100" type="Player_1">
-                                                            <param id="0" name="Vector X">-78</param>
-                                                        </action>
-                                                        <action id="0" name="Play" sid="188984960462524" type="Audio">
-                                                            <param id="0" name="Audio file">teleport</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-8</param>
-                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="507655837898580" type="Player_1">
-                                                            <param id="0" name="Max Speed">78</param>
-                                                        </action>
-                                                        <action id="-11" name="Subtract from" sid="703902016049758" type="System">
-                                                            <param id="0" name="Variable">P1_Ki_1</param>
-                                                            <param id="1" name="Value">5</param>
-                                                        </action>
-                                                        <action id="7" name="Set mirrored" sid="163564131127914" type="Player_1">
-                                                            <param id="0" name="State">1</param>
-                                                        </action>
-                                                        <action id="7" name="Set mirrored" sid="617751318324729" type="Punch_Collision">
-                                                            <param id="0" name="State">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="553420415367723" type="Player_1">
-                                                            <param id="0" name="Input">1</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="889526211740557" type="Player_1">
-                                                            <param id="0" name="Input">1</param>
-                                                        </action>
-                                                        <action id="-16" name="Wait" sid="679600107983940" type="System">
-                                                            <param id="0" name="Seconds">0.3</param>
-                                                        </action>
-                                                        <action id="4" name="Set animation" sid="965811533920875" type="Player_1">
-                                                            <param id="0" name="Animation">&quot;JumpSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                                            <param id="1" name="From">1</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="220269866676830" type="Player_1">
-                                                            <param id="0" name="Input">0</param>
-                                                        </action>
-                                                        <action behavior="8Direction" id="2" name="Set ignoring input" sid="323634195680451" type="Player_1">
-                                                            <param id="0" name="Input">0</param>
-                                                        </action>
-                                                        <action id="-13" name="Set boolean" sid="947019366473186" type="Player_1">
-                                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                        <action behavior="Platform" id="1" name="Set max speed" sid="203304532184236" type="Player_1">
-                                                            <param id="0" name="Max Speed">45</param>
-                                                        </action>
-                                                    </actions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="574598619710191">
+                                                            <conditions>
+                                                                <condition id="7" name="Is mirrored" sid="110529810740998" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="978547553324642" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="203778343796473" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="744236741306443" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="518420570000434" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="144165181996679" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="831411515426946" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="848421964884967" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="977385012655252" type="Player_1">
+                                                                    <param id="0" name="Vector X">-162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="796431030044823" type="Player_1">
+                                                                    <param id="0" name="Vector X">-78</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="561856129966602" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="290653000969002" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="987522447717237" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="156660403470875" type="Player_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="489346555965657" type="Punch_Collision">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="898543132659643" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="172782787736409" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="622948795201489" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="112756697765697" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="853850752916971" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="304969711991713" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="253786080208804" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="771822845425660" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                             </sub-events>
-                                        </event-block>
+                                        </event-group>
+                                        <event-group description="This Event is for the Players Dashing Ability while in there Super Sayian forms" sid="108209461175889" title="P1_Dashing_SSJ1_Fly">
+                                            <sub-events>
+                                                <comment>Dashing_Right</comment>
+                                                <event-block sid="262603767521764">
+                                                    <conditions>
+                                                        <condition id="0" name="On key pressed" sid="920514430100340" type="Keyboard">
+                                                            <param id="0" name="Key">90</param>
+                                                        </condition>
+                                                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="531347823436459" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="605121232660949" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="523137693767166" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Fly</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="522645556743242">
+                                                            <conditions>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="197947538937880" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="876479995786513" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="760145706781090" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="206977230326362" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="768757659627353" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;ChargeSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="145662122251931" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="748221026096942" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="879896845886147" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="877330701464573" type="Player_1">
+                                                                    <param id="0" name="Vector X">162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="184197289194753" type="Player_1">
+                                                                    <param id="0" name="Vector X">78</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="874754825936966" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="740389251469228" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="874444815178678" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="497073871292032" type="Player_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="418827763260187" type="Punch_Collision">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="281194084435489" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="465363367442515" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="174323251682482" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="625199756516979" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;JumpSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="307086559281583" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="681126630085943" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="413558250623098" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="134348562748588" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <comment>Dashing_Left</comment>
+                                                <event-block sid="305257354949704">
+                                                    <conditions>
+                                                        <condition id="0" name="On key pressed" sid="526432369563084" type="Keyboard">
+                                                            <param id="0" name="Key">90</param>
+                                                        </condition>
+                                                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="784013242702670" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="833659128550810" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="205559703115959" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Fly</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="509941716689301">
+                                                            <conditions>
+                                                                <condition id="7" name="Is mirrored" sid="927032412516130" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="703620114792764" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="558642103786912" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="231619633921199" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="977112887083377" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;ChargeSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="925077362723596" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="998854625800728" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="583578649581468" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="327006822087302" type="Player_1">
+                                                                    <param id="0" name="Vector X">-162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="126241682781023" type="Player_1">
+                                                                    <param id="0" name="Vector X">-78</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="544172678892734" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="315881061566986" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="898555601252576" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="567737369167754" type="Player_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="651267446091252" type="Punch_Collision">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="927820925986948" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="120465302560206" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="314142885373502" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="304156377648537" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;JumpSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="968268943915977" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="515811752159412" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="895873235631935" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="899149403117652" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-group>
                                     </sub-events>
                                 </event-group>
                             </sub-events>
@@ -432,6 +864,7 @@
                                                         <condition id="3" name="On touched object" sid="798530671037036" type="Touch">
                                                             <param id="0" name="Object">Dashing_Button</param>
                                                         </condition>
+                                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="313569581652779" type="Player_1" />
                                                         <condition id="-7" name="Compare instance variable" sid="778806937453264" type="Player_1">
                                                             <param id="0" name="Instance variable">P1_SSJ1</param>
                                                             <param id="1" name="Comparison">0</param>
@@ -531,6 +964,7 @@
                                                         <condition id="3" name="On touched object" sid="588233538842647" type="Touch">
                                                             <param id="0" name="Object">Dashing_Button</param>
                                                         </condition>
+                                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="538996008564334" type="Player_1" />
                                                         <condition id="-7" name="Compare instance variable" sid="177464355963128" type="Player_1">
                                                             <param id="0" name="Instance variable">P1_SSJ1</param>
                                                             <param id="1" name="Comparison">0</param>
@@ -634,6 +1068,7 @@
                                                         <condition id="3" name="On touched object" sid="734516443155341" type="Touch">
                                                             <param id="0" name="Object">Dashing_Button</param>
                                                         </condition>
+                                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="772585281227586" type="Player_1" />
                                                         <condition id="-7" name="Compare instance variable" sid="200546335058584" type="Player_1">
                                                             <param id="0" name="Instance variable">P1_SSJ1</param>
                                                             <param id="1" name="Comparison">0</param>
@@ -733,6 +1168,7 @@
                                                         <condition id="3" name="On touched object" sid="658643333351720" type="Touch">
                                                             <param id="0" name="Object">Dashing_Button</param>
                                                         </condition>
+                                                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="701857948942040" type="Player_1" />
                                                         <condition id="-7" name="Compare instance variable" sid="548446590600321" type="Player_1">
                                                             <param id="0" name="Instance variable">P1_SSJ1</param>
                                                             <param id="1" name="Comparison">0</param>
@@ -820,6 +1256,430 @@
                                                                     <param id="1" name="Value">0</param>
                                                                 </action>
                                                                 <action behavior="Platform" id="1" name="Set max speed" sid="477178247709816" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-group>
+                                    </sub-events>
+                                </event-group>
+                                <event-group description="for when the player is dashing in the air" sid="669187858419955" title="P1_Dashing_Flying_Mobile">
+                                    <sub-events>
+                                        <event-group description="This Event is for the Players Dashing Ability while in there Base forms" sid="426002624471201" title="P1_Dashing_Base_Fly_Mobile">
+                                            <sub-events>
+                                                <comment>Dashing_Right</comment>
+                                                <event-block sid="350209319256178">
+                                                    <conditions>
+                                                        <condition id="3" name="On touched object" sid="272231737967739" type="Touch">
+                                                            <param id="0" name="Object">Dashing_Button</param>
+                                                        </condition>
+                                                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="373939653299392" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="341482301917479" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="654753505766479" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Fly</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="442773357441952">
+                                                            <conditions>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="319126848388223" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="563718510642334" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="211563571230306" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="721795386049113" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="108884402971955" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="104129342575146" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="937396231141314" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="517402797429241" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="599132374084175" type="Player_1">
+                                                                    <param id="0" name="Vector X">162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="688067540077642" type="Player_1">
+                                                                    <param id="0" name="Vector X">162</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="724607115647781" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="694926039954855" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="920430439875838" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="299478539903886" type="Player_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="597471007642949" type="Punch_Collision">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="188504481409554" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="942623249414513" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="278157083562494" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="656987886714446" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="565727920551691" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="146364860979246" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="488310220454546" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="326392837735434" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <comment>Dashing_Left</comment>
+                                                <event-block sid="329058346412317">
+                                                    <conditions>
+                                                        <condition id="3" name="On touched object" sid="804324806747458" type="Touch">
+                                                            <param id="0" name="Object">Dashing_Button</param>
+                                                        </condition>
+                                                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="922202661185116" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="132816503728836" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="115833210209196" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Fly</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="159893379779541">
+                                                            <conditions>
+                                                                <condition id="7" name="Is mirrored" sid="773156519793898" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="402596619644934" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="100325179753408" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="707838624639422" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="630785129899539" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="753830367221112" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="993760887276933" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="285928450861410" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="502231535043072" type="Player_1">
+                                                                    <param id="0" name="Vector X">-162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="355960613224526" type="Player_1">
+                                                                    <param id="0" name="Vector X">-162</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="568740879544363" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="328369303667782" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="990904874064032" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="730444978564743" type="Player_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="122687654187225" type="Punch_Collision">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="941482920465744" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="772237049902787" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="224936394228398" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="698440977962238" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Jump_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="976820395514852" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="740166189233165" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="103324730871135" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="492520719226015" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-group>
+                                        <event-group description="This Event is for the Players Dashing Ability while in there Super Sayian forms" sid="960663268780165" title="P1_Dashing_SSJ1_Fly_Mobile">
+                                            <sub-events>
+                                                <comment>Dashing_Right</comment>
+                                                <event-block sid="915592170461190">
+                                                    <conditions>
+                                                        <condition id="3" name="On touched object" sid="633903990685069" type="Touch">
+                                                            <param id="0" name="Object">Dashing_Button</param>
+                                                        </condition>
+                                                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="549917855232616" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="742863113444472" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="301691971322113" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Fly</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="750461445920946">
+                                                            <conditions>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="218674801991716" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="955690892657641" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="618044105219232" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="889319438001180" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="688651393677321" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;ChargeSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="986276181115413" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="441624410607745" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="964120676549344" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="891900646261433" type="Player_1">
+                                                                    <param id="0" name="Vector X">162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="957055536581319" type="Player_1">
+                                                                    <param id="0" name="Vector X">162</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="157048502798837" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="421974129541030" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="884251923953559" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="854052354007364" type="Player_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="949561088736817" type="Punch_Collision">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="510363004347422" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="701856742938310" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="177813218336772" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="243901624032171" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;JumpSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="351498536966040" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="923659775821957" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="432741893345371" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="883851157589094" type="Player_1">
+                                                                    <param id="0" name="Max Speed">45</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <comment>Dashing_Left</comment>
+                                                <event-block sid="991667223280851">
+                                                    <conditions>
+                                                        <condition id="3" name="On touched object" sid="671359942406458" type="Touch">
+                                                            <param id="0" name="Object">Dashing_Button</param>
+                                                        </condition>
+                                                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="192964471696888" type="Player_1" />
+                                                        <condition id="-7" name="Compare instance variable" sid="997018506397639" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-8" name="Is boolean instance variable set" sid="824429270533466" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Fly</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="418103357893233">
+                                                            <conditions>
+                                                                <condition id="7" name="Is mirrored" sid="138874215953129" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="956500199213248" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                </condition>
+                                                                <condition id="-14" inverted="1" name="Compare variable" sid="593400338917283" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Comparison">3</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="766144069482964" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                                <condition id="2" inverted="1" name="Is playing" sid="104741401015574" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;ChargeSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="925211757415239" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="626137428063250" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="517392627146539" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="271239653726035" type="Player_1">
+                                                                    <param id="0" name="Vector X">-162</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="9" name="Set vector X" sid="183364329659159" type="Player_1">
+                                                                    <param id="0" name="Vector X">-162</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="645251450282320" type="Audio">
+                                                                    <param id="0" name="Audio file">teleport</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-8</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="454849754472836" type="Player_1">
+                                                                    <param id="0" name="Max Speed">78</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="618911145424707" type="System">
+                                                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                                                    <param id="1" name="Value">5</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="451219074234822" type="Player_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="675373915420279" type="Punch_Collision">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="360998871436876" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="135098122873392" type="Player_1">
+                                                                    <param id="0" name="Input">1</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="926280215650416" type="System">
+                                                                    <param id="0" name="Seconds">0.3</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="967666767699277" type="Player_1">
+                                                                    <param id="0" name="Animation">&quot;JumpSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="251861303896865" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="483085781036692" type="Player_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action id="-13" name="Set boolean" sid="336580602916934" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                                    <param id="1" name="Value">0</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="122757177499075" type="Player_1">
                                                                     <param id="0" name="Max Speed">45</param>
                                                                 </action>
                                                             </actions>
