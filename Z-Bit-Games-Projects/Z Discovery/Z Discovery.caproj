@@ -63,8 +63,8 @@
         <prop name="Clear background">No</prop>
         <prop name="Downscaling">Medium quality</prop>
         <prop name="Enable WebGL">On</prop>
-        <prop name="Fullscreen in browser">Letterbox scale</prop>
-        <prop name="Fullscreen scaling">Low quality</prop>
+        <prop name="Fullscreen in browser">Scale outer</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Fullscreen scaling quality">Low</prop>
         <prop name="Hide address bar">No</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
@@ -14036,9 +14036,6 @@
                         <behavior-type name="Swiming_Direction" sid="832233154062345">
                             <behavior id="EightDir" />
                         </behavior-type>
-                        <behavior-type name="ScrollTo" sid="953744748544821">
-                            <behavior id="scrollto" />
-                        </behavior-type>
                     </behaviors>
                     <effects>
                         <effect-type name="Brightness">
@@ -26289,6 +26286,55 @@
                         </animation>
                     </animation-folder>
                 </object-type>
+                <object-type name="P1_Explosion_Effect" sid="820442682531003">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="481847436151295">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="No_Hit" pingpong="0" repeatcount="1" repeatto="0" sid="878991926556286" speed="20">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="7" loop="0" name="Explosion_Hit" pingpong="0" repeatcount="1" repeatto="0" sid="211172699011891" speed="17">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P1_Hit_Effect" sid="842361097847028">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="425188300894819">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="No_Hit" pingpong="0" repeatcount="1" repeatto="0" sid="611269525075287" speed="20">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="5" loop="0" name="Light_Hit_Effect" pingpong="0" repeatcount="1" repeatto="0" sid="831972646308216" speed="32">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                        <animation framecount="5" loop="0" name="Strong_Hit_Effect" pingpong="0" repeatcount="1" repeatto="0" sid="538617407826549" speed="32">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
         </object-folder>
         <object-type name="Sprite" sid="655980538531533">
@@ -26789,6 +26835,26 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="P1_Max_Power_Sparks" sid="801923170655900">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="556566156623769">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="NoSparks" pingpong="0" repeatcount="1" repeatto="0" sid="849282377759245" speed="30">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="5" loop="0" name="Sparks" pingpong="0" repeatcount="1" repeatto="0" sid="531612063420341" speed="30">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Android_Buttons" plugin-id="Sprite" sid="111396605850099">
@@ -26994,6 +27060,7 @@
                     <event-folder name="P1_Input">
                         <event-sheet>P1_Input.xml</event-sheet>
                     </event-folder>
+                    <event-sheet>Player_1_Event.xml</event-sheet>
                 </event-folder>
             </event-folder>
         </event-folder>
@@ -27060,7 +27127,13 @@
             <event-folder name="CPU_Events" />
             <event-folder name="CPU_Icons" />
         </event-folder>
-        <event-folder name="CPU_Inputs" />
+        <event-folder name="CPU_Inputs">
+            <event-folder name="CPU_1_Inputs">
+                <event-folder name="CPU_1_Input">
+                    <event-sheet>CPU_1_Input.xml</event-sheet>
+                </event-folder>
+            </event-folder>
+        </event-folder>
         <event-sheet>Mobile_Detictor.xml</event-sheet>
         <event-sheet>Instructions for Programers.xml</event-sheet>
         <event-sheet>Pause_Event.xml</event-sheet>
@@ -27173,6 +27246,9 @@
             <file name="DBZBT3 Song_00_JP.ogg" />
         </music-folder>
         <music-folder name="In_Game_Music">
+            <music-folder name="JOJO_Music">
+                <file name="Jotaro Kujo&apos;s Theme.ogg" />
+            </music-folder>
             <file name="Battle Point Unlimited.ogg" />
             <file name="Angel.ogg" />
             <file name="DBZBT3 Menace.ogg" />
