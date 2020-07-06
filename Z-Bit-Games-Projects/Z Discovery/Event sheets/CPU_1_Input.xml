@@ -251,8 +251,8 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="7" name="Set mirrored" sid="358811378591237" type="CPU_1">
-                                            <param id="0" name="State">0</param>
+                                        <action id="7" name="Set mirrored" sid="489536063493115" type="CPU_1">
+                                            <param id="0" name="State">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -275,8 +275,8 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="7" name="Set mirrored" sid="489536063493115" type="CPU_1">
-                                            <param id="0" name="State">1</param>
+                                        <action id="7" name="Set mirrored" sid="358811378591237" type="CPU_1">
+                                            <param id="0" name="State">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -345,6 +345,94 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Play" sid="681139921069527" type="Audio">
+                                            <param id="0" name="Audio file">jump</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="the jumping while moving state for the computer" sid="490770347875826" title="CPU1_JumpMove_State">
+                            <sub-events>
+                                <comment>Jumping_State</comment>
+                                <event-block sid="659106357605925">
+                                    <conditions>
+                                        <condition behavior="Platform" id="3" name="Is jumping" sid="173096473148899" type="Player_1" />
+                                        <condition behavior="Platform" id="0" name="Is moving" sid="443504988992352" type="CPU_1" />
+                                        <condition id="-7" name="Compare instance variable" sid="560400856106668" type="CPU_Array">
+                                            <param id="0" name="Instance variable">Dist_X</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">35</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="672077145246436" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_State</param>
+                                            <param id="1" name="Value">&quot;Moving_Jump&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="250951412583206">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="145907232985790" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Moving_Jump&quot;</param>
+                                        </condition>
+                                        <condition id="-7" inverted="1" name="Compare instance variable" sid="115840464216378" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Idle&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="733975205417412">
+                                            <conditions>
+                                                <condition id="-1" name="Compare X" sid="347977526123852" type="CPU_1">
+                                                    <param id="0" name="Comparison">4</param>
+                                                    <param id="1" name="X co-ordinate">Player_1.X</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="664117525495047" type="System">
+                                                    <param id="0" name="Seconds">0.3</param>
+                                                </action>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="464103416878122" type="CPU_1">
+                                                    <param id="0" name="Control">2</param>
+                                                </action>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="639063817726809" type="CPU_1">
+                                                    <param id="0" name="Control">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="913590825461602">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="545692805211945" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="286000343142578" type="System">
+                                                    <param id="0" name="Seconds">0.3</param>
+                                                </action>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="492383786626814" type="CPU_1">
+                                                    <param id="0" name="Control">1</param>
+                                                </action>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="171316253122213" type="CPU_1">
+                                                    <param id="0" name="Control">2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Jumping_Sound_State</comment>
+                                <event-block sid="399011402321466">
+                                    <conditions>
+                                        <condition behavior="Platform" id="5" name="On jump" sid="240170285344313" type="CPU_1" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="191628592632372" type="Audio">
                                             <param id="0" name="Audio file">jump</param>
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">-25</param>
