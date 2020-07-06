@@ -35,22 +35,35 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action behavior="LineOfSight" id="1" name="Set cone of view" sid="930512227444841" type="CPU_1">
-                                    <param id="0" name="Cone of view">360</param>
+                                    <param id="0" name="Cone of view">700</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="869787280024032" title="CPU1_Distance">
+                <event-group description="the distance between the player and the CPU" sid="869787280024032" title="CPU1_Distance">
                     <sub-events>
+                        <comment>CPU_1_Ground_Distances</comment>
                         <event-block sid="762721494235674">
                             <conditions>
                                 <condition id="-1" name="Every tick" sid="129879351391562" type="System" />
                             </conditions>
                             <actions>
                                 <action id="-10" name="Set value" sid="265130088920113" type="CPU_Array">
-                                    <param id="0" name="Instance variable">Dist</param>
+                                    <param id="0" name="Instance variable">Dist_X</param>
                                     <param id="1" name="Value">distance(CPU_1.X,CPU_1.X,Player_1.X,Player_1.X)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>CPU_1_Air_Distances</comment>
+                        <event-block sid="670366381098411">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="398794625963476" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="704508058824777" type="CPU_Array">
+                                    <param id="0" name="Instance variable">Dist_Y</param>
+                                    <param id="1" name="Value">distance(CPU_1.Y,CPU_1.Y,Player_1.Y,Player_1.Y)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -221,7 +234,7 @@
                                     <conditions>
                                         <condition behavior="Platform" id="3" name="Is jumping" sid="348949040409692" type="Player_1" />
                                         <condition id="-7" name="Compare instance variable" sid="839197283360556" type="CPU_Array">
-                                            <param id="0" name="Instance variable">Dist</param>
+                                            <param id="0" name="Instance variable">Dist_Y</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">35</param>
                                         </condition>
@@ -244,13 +257,7 @@
                                     <actions />
                                     <sub-events>
                                         <event-block sid="686514269665719">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="723631895880851" type="CPU_Array">
-                                                    <param id="0" name="Instance variable">Dist</param>
-                                                    <param id="1" name="Comparison">5</param>
-                                                    <param id="2" name="Value">35</param>
-                                                </condition>
-                                            </conditions>
+                                            <conditions />
                                             <actions>
                                                 <action id="-16" name="Wait" sid="958071344366884" type="System">
                                                     <param id="0" name="Seconds">0.3</param>
@@ -287,7 +294,7 @@
                                             <param id="0" name="Object">Player_1</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="837235672004749" type="CPU_Array">
-                                            <param id="0" name="Instance variable">Dist</param>
+                                            <param id="0" name="Instance variable">Dist_X</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">35</param>
                                         </condition>
