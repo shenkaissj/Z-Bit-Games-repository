@@ -298,6 +298,11 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;Walk&quot;</param>
                                         </condition>
+                                        <condition id="-7" inverted="1" name="Compare instance variable" sid="568859714924161" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Idle&quot;</param>
+                                        </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
@@ -312,6 +317,9 @@
                                                 <action behavior="Platform" id="7" name="Simulate control" sid="200308078643752" type="CPU_1">
                                                     <param id="0" name="Control">0</param>
                                                 </action>
+                                                <action id="7" name="Set mirrored" sid="130163896659917" type="CPU_1">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
                                             </actions>
                                         </event-block>
                                         <event-block sid="667762762331347">
@@ -321,6 +329,9 @@
                                             <actions>
                                                 <action behavior="Platform" id="7" name="Simulate control" sid="155347920986800" type="CPU_1">
                                                     <param id="0" name="Control">1</param>
+                                                </action>
+                                                <action id="7" name="Set mirrored" sid="984568410679792" type="CPU_1">
+                                                    <param id="0" name="State">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -354,6 +365,24 @@
                                             </actions>
                                         </event-block>
                                     </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="the state for the cpu when the player is knocked out or decideing on a move" sid="557217396738528" title="CPU1_Idle_State">
+                            <sub-events>
+                                <event-block any="1" sid="939063398895887">
+                                    <conditions>
+                                        <condition behavior="Platform" id="7" name="On stopped" sid="906796970397815" type="CPU_1" />
+                                        <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="851993077241715" type="CPU_1">
+                                            <param id="0" name="Object">Player_1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="729872329533737" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_State</param>
+                                            <param id="1" name="Value">&quot;Idle&quot;</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-group>
