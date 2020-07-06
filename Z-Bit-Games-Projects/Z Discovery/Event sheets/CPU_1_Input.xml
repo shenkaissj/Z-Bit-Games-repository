@@ -69,6 +69,7 @@
                         </event-block>
                         <event-group description="for when the player is pushed back from being too close to the player" sid="119195234588756" title="CPU1_Player_Distance">
                             <sub-events>
+                                <comment>This Event pushes the player away so the cpu can have space</comment>
                                 <event-block sid="844402316068576">
                                     <conditions>
                                         <condition id="1" name="Is overlapping another object" sid="762066354911325" type="Player_1">
@@ -227,6 +228,58 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <comment>this event is for when the cpu turns around</comment>
+                                <event-block sid="228581100949670">
+                                    <conditions>
+                                        <condition id="-1" inverted="1" name="Compare X" sid="346664705349027" type="Player_1">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">CPU_1.X</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="589775049982370" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="741083136792155" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="600689286124586" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="442812991490623" type="CPU_Array">
+                                            <param id="0" name="Instance variable">Dist_X</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">35</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="358811378591237" type="CPU_1">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="583657806093293">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="676538053922204" type="System" />
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="968808923604057" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Teleport</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="116453672169976" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="806741271938835" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="651738448028480" type="CPU_Array">
+                                            <param id="0" name="Instance variable">Dist_X</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">35</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="489536063493115" type="CPU_1">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
                             </sub-events>
                         </event-group>
                     </sub-events>
@@ -238,9 +291,10 @@
                                 <comment>Jumping_State</comment>
                                 <event-block sid="375555480305187">
                                     <conditions>
-                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="753484767517544" type="CPU_1">
+                                        <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="753484767517544" type="CPU_1">
                                             <param id="0" name="Object">Player_1</param>
                                         </condition>
+                                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="263920410720231" type="CPU_1" />
                                         <condition id="-7" name="Compare instance variable" sid="839197283360556" type="CPU_Array">
                                             <param id="0" name="Instance variable">Dist_Y</param>
                                             <param id="1" name="Comparison">5</param>
