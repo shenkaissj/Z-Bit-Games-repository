@@ -3,14 +3,18 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Mobile_Detictor</name>
     <events>
-        <comment>This Event is to Detict if the player is either on a mobile device or on PC</comment>
-        <event-block sid="298557767177297">
-            <conditions>
-                <condition id="-20" inverted="1" name="Is on mobile device" sid="200004097204726" type="System" />
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="414123170088294" type="Mobile_Controls" />
-            </actions>
-        </event-block>
+        <event-group description="with this event it sees if the user is either on PC or Android if they are on PC then it will destroy the mobile controls but if its on android then it wont destroy the controls." sid="886107084528699" title="Mobile Detictor">
+            <sub-events>
+                <comment>This Event is to Detict if the player is either on a mobile device or on PC</comment>
+                <event-block sid="298557767177297">
+                    <conditions>
+                        <condition id="-20" inverted="1" name="Is on mobile device" sid="200004097204726" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="414123170088294" type="Mobile_Controls" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

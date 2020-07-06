@@ -5,160 +5,358 @@
     <events>
         <event-group description="the main Inputs from the CPU 1" sid="169083832700314" title="CPU1_Input">
             <sub-events>
-                <event-group description="for when the player is pushed back from being too close to the player" sid="119195234588756" title="CPU1_Distance">
+                <event-block sid="644035002929041">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="548417775402629" type="CPU_1" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="894342908888667" type="Audio">
+                            <param id="0" name="Audio file">land on ground</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-25</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="This event is for the computers line of sight when he looks at a player" sid="315493079072005" title="CPU1_Line of sight">
                     <sub-events>
-                        <event-block sid="844402316068576">
+                        <event-block sid="629575814989789">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="762066354911325" type="Player_1">
-                                    <param id="0" name="Object">CPU_1</param>
+                                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="658050060582939" type="CPU_1">
+                                    <param id="0" name="Object">Player_1</param>
                                 </condition>
-                                <condition id="7" inverted="1" name="Is mirrored" sid="326474902697516" type="Player_1" />
-                                <condition id="2" inverted="1" name="Is playing" sid="143816858598467" type="Player_1">
-                                    <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Is playing" sid="533895043437659" type="Player_1">
-                                    <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="724208187408548" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="143320333970867" type="CPU_Array">
+                                    <param id="0" name="Instance variable">CPU_Active</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action behavior="Platform" id="8" name="Set vector X" sid="987436562557937" type="CPU_1">
-                                    <param id="0" name="Vector X">54</param>
+                                <action id="-13" name="Set boolean" sid="366441441878868" type="CPU_Array">
+                                    <param id="0" name="Instance variable">CPU_Active</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
-                                <action behavior="Platform" id="8" name="Set vector X" sid="687158799480431" type="Player_1">
-                                    <param id="0" name="Vector X">-5</param>
-                                </action>
-                                <action behavior="8Direction" id="9" name="Set vector X" sid="643047515045666" type="Player_1">
-                                    <param id="0" name="Vector X">-5</param>
+                                <action behavior="LineOfSight" id="1" name="Set cone of view" sid="930512227444841" type="CPU_1">
+                                    <param id="0" name="Cone of view">360</param>
                                 </action>
                             </actions>
-                            <sub-events>
-                                <event-block sid="775900991871087">
-                                    <conditions>
-                                        <condition id="2" inverted="1" name="Is playing" sid="804611263011741" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="284648138820255" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="540384947811836" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="672867082937963" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="995240281705498" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack5_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="759673646381155" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                </event-block>
-                                <event-block sid="620660598371330">
-                                    <conditions>
-                                        <condition id="2" inverted="1" name="Is playing" sid="166917698845817" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="671232063437187" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack2_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="278079283676898" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack3_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="585072871632320" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack4_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="247074486703999" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack5_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="693023975666953" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                </event-block>
-                            </sub-events>
                         </event-block>
-                        <event-block sid="424376481178003">
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="869787280024032" title="CPU1_Distance">
+                    <sub-events>
+                        <event-block sid="762721494235674">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="969768458904009" type="Player_1">
-                                    <param id="0" name="Object">CPU_1</param>
-                                </condition>
-                                <condition id="7" name="Is mirrored" sid="151393666404168" type="Player_1" />
-                                <condition id="2" inverted="1" name="Is playing" sid="693420279846325" type="Player_1">
-                                    <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Is playing" sid="302894046459153" type="Player_1">
-                                    <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                </condition>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="823686662349477" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Teleport</param>
-                                </condition>
+                                <condition id="-1" name="Every tick" sid="129879351391562" type="System" />
                             </conditions>
                             <actions>
-                                <action behavior="Platform" id="8" name="Set vector X" sid="531623246519231" type="CPU_1">
-                                    <param id="0" name="Vector X">-54</param>
-                                </action>
-                                <action behavior="Platform" id="8" name="Set vector X" sid="998094247177280" type="Player_1">
-                                    <param id="0" name="Vector X">5</param>
-                                </action>
-                                <action behavior="8Direction" id="9" name="Set vector X" sid="922790882075733" type="Player_1">
-                                    <param id="0" name="Vector X">5</param>
+                                <action id="-10" name="Set value" sid="265130088920113" type="CPU_Array">
+                                    <param id="0" name="Instance variable">Dist</param>
+                                    <param id="1" name="Value">distance(CPU_1.X,CPU_1.X,Player_1.X,Player_1.X)</param>
                                 </action>
                             </actions>
+                        </event-block>
+                        <event-group description="for when the player is pushed back from being too close to the player" inactive="1" sid="119195234588756" title="CPU1_Player_Distance">
                             <sub-events>
-                                <event-block sid="865686869058827">
+                                <event-block sid="844402316068576">
                                     <conditions>
-                                        <condition id="2" inverted="1" name="Is playing" sid="556910829341794" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        <condition id="1" name="Is overlapping another object" sid="762066354911325" type="Player_1">
+                                            <param id="0" name="Object">CPU_1</param>
                                         </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="647330951038660" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="326474902697516" type="Player_1" />
+                                        <condition id="2" inverted="1" name="Is playing" sid="143816858598467" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
                                         </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="148664128262458" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
+                                        <condition id="2" inverted="1" name="Is playing" sid="533895043437659" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
                                         </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="978381945160644" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="429892730315189" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack5_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="624828134455675" type="Player_1">
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="724208187408548" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Teleport</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="987436562557937" type="CPU_1">
+                                            <param id="0" name="Vector X">23</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="687158799480431" type="Player_1">
+                                            <param id="0" name="Vector X">-1</param>
+                                        </action>
+                                        <action behavior="8Direction" id="9" name="Set vector X" sid="643047515045666" type="Player_1">
+                                            <param id="0" name="Vector X">-1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="775900991871087">
+                                            <conditions>
+                                                <condition id="2" inverted="1" name="Is playing" sid="804611263011741" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="284648138820255" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="540384947811836" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="672867082937963" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="995240281705498" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack5_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="759673646381155" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                        <event-block sid="620660598371330">
+                                            <conditions>
+                                                <condition id="2" inverted="1" name="Is playing" sid="166917698845817" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="671232063437187" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack2_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="278079283676898" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack3_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="585072871632320" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack4_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="247074486703999" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack5_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="693023975666953" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
-                                <event-block sid="630413688886249">
+                                <event-block sid="424376481178003">
                                     <conditions>
-                                        <condition id="2" inverted="1" name="Is playing" sid="350552965998312" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        <condition id="1" name="Is overlapping another object" sid="969768458904009" type="Player_1">
+                                            <param id="0" name="Object">CPU_1</param>
                                         </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="178235452516103" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack2_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        <condition id="7" name="Is mirrored" sid="151393666404168" type="Player_1" />
+                                        <condition id="2" inverted="1" name="Is playing" sid="693420279846325" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
                                         </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="949439469060813" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack3_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        <condition id="2" inverted="1" name="Is playing" sid="302894046459153" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
                                         </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="274065290679829" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack4_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="597355337321660" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Attack5_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="377033503212192" type="Player_1">
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="823686662349477" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Teleport</param>
                                         </condition>
                                     </conditions>
-                                    <actions />
+                                    <actions>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="531623246519231" type="CPU_1">
+                                            <param id="0" name="Vector X">-23</param>
+                                        </action>
+                                        <action behavior="Platform" id="8" name="Set vector X" sid="998094247177280" type="Player_1">
+                                            <param id="0" name="Vector X">1</param>
+                                        </action>
+                                        <action behavior="8Direction" id="9" name="Set vector X" sid="922790882075733" type="Player_1">
+                                            <param id="0" name="Vector X">1</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="865686869058827">
+                                            <conditions>
+                                                <condition id="2" inverted="1" name="Is playing" sid="556910829341794" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="647330951038660" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="148664128262458" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="978381945160644" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="429892730315189" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack5_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="624828134455675" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                        <event-block sid="630413688886249">
+                                            <conditions>
+                                                <condition id="2" inverted="1" name="Is playing" sid="350552965998312" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="178235452516103" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack2_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="949439469060813" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack3_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="274065290679829" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack4_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="597355337321660" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack5_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="377033503212192" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
-                        </event-block>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+                <event-group description="the basic state for the cpu in game" sid="566571570070996" title="CPU1_Basic_States">
+                    <sub-events>
+                        <event-group description="the jumping state for the computer" sid="689371237546795" title="CPU1_Jump_State">
+                            <sub-events>
+                                <comment>Jumping_State</comment>
+                                <event-block sid="375555480305187">
+                                    <conditions>
+                                        <condition behavior="Platform" id="3" name="Is jumping" sid="348949040409692" type="Player_1" />
+                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="428804477481745" type="CPU_1">
+                                            <param id="0" name="Object">Player_1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="249935398905990" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_State</param>
+                                            <param id="1" name="Value">&quot;Jump&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="742359032596406">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="536247075303528" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Jump&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="686514269665719">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="958071344366884" type="System">
+                                                    <param id="0" name="Seconds">0.3</param>
+                                                </action>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="390066612035239" type="CPU_1">
+                                                    <param id="0" name="Control">2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Jumping_Sound_State</comment>
+                                <event-block sid="122722974559926">
+                                    <conditions>
+                                        <condition behavior="Platform" id="5" name="On jump" sid="164839517628290" type="CPU_1" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="681139921069527" type="Audio">
+                                            <param id="0" name="Audio file">jump</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="The Walking State for the Computer" sid="519241178861000" title="CPU1_Walking_State">
+                            <sub-events>
+                                <comment>Walking_State</comment>
+                                <event-block sid="301450684801628">
+                                    <conditions>
+                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="357199377691147" type="CPU_1">
+                                            <param id="0" name="Object">Player_1</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="837235672004749" type="CPU_Array">
+                                            <param id="0" name="Instance variable">Dist</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">35</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="353370533760505" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_State</param>
+                                            <param id="1" name="Value">&quot;Walk&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="632996298520712">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="727140156375984" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Walk&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="790040976757715">
+                                            <conditions>
+                                                <condition id="-1" name="Compare X" sid="548895942901073" type="CPU_1">
+                                                    <param id="0" name="Comparison">4</param>
+                                                    <param id="1" name="X co-ordinate">Player_1.X</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="200308078643752" type="CPU_1">
+                                                    <param id="0" name="Control">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="667762762331347">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="693677401021888" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="155347920986800" type="CPU_1">
+                                                    <param id="0" name="Control">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Walking Speed for CPU</comment>
+                                <event-block sid="497870733461209">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="486135813905153" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Walk&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="831014473567416">
+                                            <conditions>
+                                                <condition behavior="Platform" id="0" name="Is moving" sid="754644472276100" type="CPU_1" />
+                                            </conditions>
+                                            <actions>
+                                                <action behavior="Platform" id="2" name="Set acceleration" sid="282057359962615" type="CPU_1">
+                                                    <param id="0" name="Acceleration">150</param>
+                                                </action>
+                                                <action behavior="Platform" id="3" name="Set deceleration" sid="851179019644114" type="CPU_1">
+                                                    <param id="0" name="Deceleration">100</param>
+                                                </action>
+                                                <action behavior="Platform" id="1" name="Set max speed" sid="698349979159687" type="CPU_1">
+                                                    <param id="0" name="Max Speed">64</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
                     </sub-events>
                 </event-group>
             </sub-events>
