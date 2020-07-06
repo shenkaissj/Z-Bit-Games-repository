@@ -67,7 +67,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-group description="for when the player is pushed back from being too close to the player" inactive="1" sid="119195234588756" title="CPU1_Player_Distance">
+                        <event-group description="for when the player is pushed back from being too close to the player" sid="119195234588756" title="CPU1_Player_Distance">
                             <sub-events>
                                 <event-block sid="844402316068576">
                                     <conditions>
@@ -232,7 +232,9 @@
                                 <comment>Jumping_State</comment>
                                 <event-block sid="375555480305187">
                                     <conditions>
-                                        <condition behavior="Platform" id="3" name="Is jumping" sid="348949040409692" type="Player_1" />
+                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="753484767517544" type="CPU_1">
+                                            <param id="0" name="Object">Player_1</param>
+                                        </condition>
                                         <condition id="-7" name="Compare instance variable" sid="839197283360556" type="CPU_Array">
                                             <param id="0" name="Instance variable">Dist_Y</param>
                                             <param id="1" name="Comparison">5</param>
@@ -253,11 +255,21 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">&quot;Jump&quot;</param>
                                         </condition>
+                                        <condition id="-7" inverted="1" name="Compare instance variable" sid="646141382768801" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Idle&quot;</param>
+                                        </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
                                         <event-block sid="686514269665719">
-                                            <conditions />
+                                            <conditions>
+                                                <condition id="-2" name="Compare Y" sid="907169694526048" type="CPU_1">
+                                                    <param id="0" name="Comparison">4</param>
+                                                    <param id="1" name="Y co-ordinate">Player_1.Y</param>
+                                                </condition>
+                                            </conditions>
                                             <actions>
                                                 <action id="-16" name="Wait" sid="958071344366884" type="System">
                                                     <param id="0" name="Seconds">0.3</param>
