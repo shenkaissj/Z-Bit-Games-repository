@@ -18,126 +18,340 @@
                 <action id="6" name="Stop" sid="908357302456071" type="Audio">
                     <param id="0" name="Tag">&quot;title&quot;</param>
                 </action>
+                <action id="-10" name="Set value" sid="419553237989770" type="Main_Menu_Buttons">
+                    <param id="0" name="Instance variable">Menu_Bars</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
         </event-block>
-        <event-group description="the main menu for the game" sid="853044489680834" title="Main_Menu" />
+        <event-group description="the main menu for the game" sid="853044489680834" title="Main_Menu">
+            <sub-events>
+                <event-group description="the first 3 menus for the first row" sid="520402264189194" title="Menu_List_1">
+                    <sub-events>
+                        <comment>Menu_List_1</comment>
+                        <event-block sid="795227574234452">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="967531372402526" type="Main_Menu_Buttons">
+                                    <param id="0" name="Instance variable">Menu_Bars</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="366778940153466" type="Tutorial" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="496513681997325">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="543692489643256" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="369755795034362" type="Tutorial">
+                                            <param id="0" name="Animation">&quot;Selected&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="364921742508914" type="Audio">
+                                            <param id="0" name="Audio file">select 1</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="431464651765010" type="Main_Menu_Buttons">
+                                            <param id="0" name="Instance variable">Menu_Bars_Names</param>
+                                            <param id="1" name="Value">&quot;Tutorial&quot;</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="303746106589004" type="Menu_Sprite_Font">
+                                            <param id="0" name="Text">&quot;With this game mode you can learn the basics of  the game&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="144900946972764">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="131031763560079" type="Main_Menu_Buttons">
+                                    <param id="0" name="Instance variable">Menu_Bars</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="520829062004859" type="Arcade" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="216816984094037">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="457942598771354" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="101227281884705" type="Arcade">
+                                            <param id="0" name="Animation">&quot;Selected&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="115223823649810" type="Audio">
+                                            <param id="0" name="Audio file">select 1</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="811678071831853" type="Main_Menu_Buttons">
+                                            <param id="0" name="Instance variable">Menu_Bars_Names</param>
+                                            <param id="1" name="Value">&quot;Arcade&quot;</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="782105674579345" type="Menu_Sprite_Font">
+                                            <param id="0" name="Text">&quot;Fight aginst Random fighters and earn extras&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="922557014590786">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="252377002887869" type="Main_Menu_Buttons">
+                                    <param id="0" name="Instance variable">Menu_Bars</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="389994332424006">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="821274106148433" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="836493854202168" type="Versus">
+                                            <param id="0" name="Animation">&quot;Selected&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="265319702998371" type="Audio">
+                                            <param id="0" name="Audio file">select 1</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="153807146889456" type="Main_Menu_Buttons">
+                                            <param id="0" name="Instance variable">Menu_Bars_Names</param>
+                                            <param id="1" name="Value">&quot;Versus&quot;</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="465199584605441" type="Menu_Sprite_Font">
+                                            <param id="0" name="Text">&quot;Fight aginst a computer or your frindes in a match or a free for all &quot;</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="830725800262940" type="Tutorial">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="619021036467462" type="Arcade">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="325761383182415" type="Versus">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="863619806041142" type="Online_Mode">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="908355559836455" type="Challange_Mode">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="675510137775262" type="Store">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Menu_List_2</comment>
+                        <event-block sid="891203211543052">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="629142383430025" type="Main_Menu_Buttons">
+                                    <param id="0" name="Instance variable">Menu_Bars</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="539840478549285">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="909949018565392" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="872870709970822" type="Online_Mode">
+                                            <param id="0" name="Animation">&quot;Selected&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="194159239252384" type="Audio">
+                                            <param id="0" name="Audio file">select 1</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-15</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="963073258550091" type="Main_Menu_Buttons">
+                                            <param id="0" name="Instance variable">Menu_Bars_Names</param>
+                                            <param id="1" name="Value">&quot;Versus&quot;</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="770252293255613" type="Menu_Sprite_Font">
+                                            <param id="0" name="Text">&quot;Fight aginst a computer or your frindes in a match or a free for all &quot;</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="173804836760728" type="Tutorial">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="643200905402606" type="Arcade">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="841080480891964" type="Versus">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="220470779342355" type="Online_Mode">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="896521414856911" type="Challange_Mode">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="209939388080461" type="Store">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="this event is for when your not selecting a game mode" sid="389919946810518" title="No_Select_1">
+                    <sub-events>
+                        <comment>Menu_List_1</comment>
+                        <event-block sid="896428638024626">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="309717585327915" type="Main_Menu_Buttons">
+                                    <param id="0" name="Instance variable">Menu_Bars_Names</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Tutorial&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="228401506227739" type="System" />
+                                <condition id="-9" name="Is visible" sid="923649370416492" type="Tutorial" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="859372586213989" type="Tutorial">
+                                    <param id="0" name="Animation">&quot;Not_Selected&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="372298922508488">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="578634601421334" type="Main_Menu_Buttons">
+                                    <param id="0" name="Instance variable">Menu_Bars_Names</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Arcade&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="751945133288545" type="System" />
+                                <condition id="-9" name="Is visible" sid="770719453951785" type="Arcade" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="756048955739493" type="Arcade">
+                                    <param id="0" name="Animation">&quot;Not_Selected&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="196951412462034">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="414426354560410" type="Main_Menu_Buttons">
+                                    <param id="0" name="Instance variable">Menu_Bars_Names</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Versus&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="649600489050589" type="System" />
+                                <condition id="-9" name="Is visible" sid="985445790410186" type="Versus" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="962243312832110" type="Versus">
+                                    <param id="0" name="Animation">&quot;Not_Selected&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
         <event-group description="the tutorial menu for the game" sid="361869122035666" title="Tutorial_Menu" />
-        <comment>The sound for when the mouse is over a game mode</comment>
-        <event-block sid="517422843538218">
+        <event-block sid="945094457062525">
             <conditions>
-                <condition id="7" name="Cursor is over object" sid="657357006403729" type="Mouse">
-                    <param id="0" name="Object">Main_Menu_Buttons</param>
+                <condition id="-7" name="Compare instance variable" sid="691068969841802" type="Main_Menu_Buttons">
+                    <param id="0" name="Instance variable">Menu_Bars</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">1</param>
                 </condition>
-                <condition id="-4" name="Trigger once while true" sid="116366221985484" type="System" />
             </conditions>
             <actions>
-                <action id="0" name="Play" sid="895905138746693" type="Audio">
-                    <param id="0" name="Audio file">select 1</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">-15</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                <action id="-10" name="Set value" sid="841829680043084" type="Main_Menu_Buttons">
+                    <param id="0" name="Instance variable">Menu_Bars</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="864374073703390">
+        <event-block sid="294713626693268">
             <conditions>
-                <condition id="7" inverted="1" name="Cursor is over object" sid="392672343661163" type="Mouse">
-                    <param id="0" name="Object">Main_Menu_Buttons</param>
+                <condition id="-7" name="Compare instance variable" sid="815879775174516" type="Main_Menu_Buttons">
+                    <param id="0" name="Instance variable">Menu_Bars</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">7</param>
                 </condition>
-                <condition id="-4" name="Trigger once while true" sid="488130124347411" type="System" />
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="323166512424974" type="Menu_Sprite_Font">
-                    <param id="0" name="Text">&quot;???&quot;</param>
+                <action id="-10" name="Set value" sid="959681715308723" type="Main_Menu_Buttons">
+                    <param id="0" name="Instance variable">Menu_Bars</param>
+                    <param id="1" name="Value">7</param>
                 </action>
             </actions>
         </event-block>
-        <comment>When the mouse is over the options</comment>
-        <event-block sid="795227574234452">
+        <event-block sid="736493936822317">
             <conditions>
-                <condition id="7" name="Cursor is over object" sid="967531372402526" type="Mouse">
-                    <param id="0" name="Object">Arcade</param>
+                <condition id="0" name="On key pressed" sid="611489795680221" type="Keyboard">
+                    <param id="0" name="Key">87</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="4" name="Set animation" sid="101794393678376" type="Arcade">
-                    <param id="0" name="Animation">&quot;Selected&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="0" name="Set text" sid="192115521423271" type="Menu_Sprite_Font">
-                    <param id="0" name="Text">&quot;Fight aginst Random fighters and earn extras&quot;</param>
+                <action id="-12" name="Subtract from" sid="554168564928264" type="Main_Menu_Buttons">
+                    <param id="0" name="Instance variable">Menu_Bars</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="144900946972764">
+        <event-block sid="275008436795626">
             <conditions>
-                <condition id="7" name="Cursor is over object" sid="804768251969266" type="Mouse">
-                    <param id="0" name="Object">Versus</param>
+                <condition id="0" name="On key pressed" sid="800680688066999" type="Keyboard">
+                    <param id="0" name="Key">83</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="4" name="Set animation" sid="614656197638617" type="Versus">
-                    <param id="0" name="Animation">&quot;Selected&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="0" name="Set text" sid="364411448222757" type="Menu_Sprite_Font">
-                    <param id="0" name="Text">&quot;Fight aginst a computer or your frindes on a 1 on 1 match or a free for all &quot;</param>
+                <action id="-11" name="Add to" sid="226349201338459" type="Main_Menu_Buttons">
+                    <param id="0" name="Instance variable">Menu_Bars</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
-        <event-block sid="922557014590786">
+        <event-block sid="528467737783729">
             <conditions>
-                <condition id="7" name="Cursor is over object" sid="212841484894734" type="Mouse">
-                    <param id="0" name="Object">Tutorial</param>
+                <condition id="3" name="On touched object" sid="352099317621335" type="Touch">
+                    <param id="0" name="Object">Menu_Up</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="4" name="Set animation" sid="445009180237677" type="Tutorial">
-                    <param id="0" name="Animation">&quot;Selected&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action id="0" name="Set text" sid="335285204830005" type="Menu_Sprite_Font">
-                    <param id="0" name="Text">&quot;With this game mode you can learn the basics of  the game&quot;</param>
+                <action id="-12" name="Subtract from" sid="498365055007326" type="Main_Menu_Buttons">
+                    <param id="0" name="Instance variable">Menu_Bars</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>
-        <comment>When the Mouse isnt over the options</comment>
-        <event-block sid="578964293885921">
+        <event-block sid="496460706931614">
             <conditions>
-                <condition id="7" inverted="1" name="Cursor is over object" sid="634106072412618" type="Mouse">
-                    <param id="0" name="Object">Arcade</param>
+                <condition id="3" name="On touched object" sid="587393030208190" type="Touch">
+                    <param id="0" name="Object">Menu_Down</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="4" name="Set animation" sid="228121504633995" type="Arcade">
-                    <param id="0" name="Animation">&quot;Not_Selected&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="427912340140947">
-            <conditions>
-                <condition id="7" inverted="1" name="Cursor is over object" sid="670026297004090" type="Mouse">
-                    <param id="0" name="Object">Versus</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="443645248805280" type="Versus">
-                    <param id="0" name="Animation">&quot;Not_Selected&quot;</param>
-                    <param id="1" name="From">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="617784407397755">
-            <conditions>
-                <condition id="7" inverted="1" name="Cursor is over object" sid="668579104325174" type="Mouse">
-                    <param id="0" name="Object">Tutorial</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="935597226770000" type="Tutorial">
-                    <param id="0" name="Animation">&quot;Not_Selected&quot;</param>
-                    <param id="1" name="From">1</param>
+                <action id="-11" name="Add to" sid="241522464509913" type="Main_Menu_Buttons">
+                    <param id="0" name="Instance variable">Menu_Bars</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>

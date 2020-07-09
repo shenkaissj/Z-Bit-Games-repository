@@ -134,6 +134,7 @@
                     <instance-variable name="CPU_State" sid="966941962600321" type="string" />
                     <instance-variable name="Dist_X" sid="214963755883538" type="number" />
                     <instance-variable name="Dist_Y" sid="400687074936065" type="number" />
+                    <instance-variable name="CPU_1_Actor" sid="130073073878873" type="number" />
                 </instance-variables>
                 <container>
                     <type>CPU_Array</type>
@@ -143,7 +144,7 @@
             <object-type global="1" name="Player1_Array" sid="800252645115285">
                 <plugin id="Arr" />
                 <instance-variables>
-                    <instance-variable name="Actor" sid="462638935215429" type="boolean" />
+                    <instance-variable name="P1_Actor" sid="462638935215429" type="boolean" />
                 </instance-variables>
                 <container>
                     <type>Player1_Array</type>
@@ -618,6 +619,39 @@
                                         <point x="0.96875" y="0.492188" />
                                         <point x="0.4825" y="1" />
                                         <point x="0" y="0.496094" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="Menu_Up" sid="159203404008449">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="828795357537413" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                    <collision-poly>
+                                        <point x="0.472813" y="0" />
+                                        <point x="0.960938" y="0.496094" />
+                                        <point x="0.472813" y="1" />
+                                        <point x="0" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="Menu_Down" sid="298462724314311">
+                        <plugin id="Sprite" />
+                        <instance-variables>
+                            <instance-variable name="Mobile_Down" sid="219994633281024" type="boolean" />
+                        </instance-variables>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="704485255534104" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                    <collision-poly>
+                                        <point x="0.472813" y="0" />
+                                        <point x="0.957031" y="0.503906" />
+                                        <point x="0.472813" y="1" />
+                                        <point x="0" y="0.5" />
                                     </collision-poly>
                                 </frame>
                             </animation>
@@ -1173,6 +1207,17 @@
                     <object-folder name="Gamemodes">
                         <object-type name="Arcade" sid="608394758548620">
                             <plugin id="Sprite" />
+                            <container>
+                                <type>Versus</type>
+                                <type>Tutorial</type>
+                                <type>Arcade</type>
+                                <type>Online_Mode</type>
+                                <type>Options</type>
+                                <type>Challange_Mode</type>
+                                <type>StoryMode</type>
+                                <type>Store</type>
+                                <type>Invetory</type>
+                            </container>
                             <animation-folder>
                                 <animation framecount="1" loop="0" name="Not_Selected" pingpong="0" repeatcount="1" repeatto="0" sid="110776636958120" speed="5">
                                     <frame duration="1" hotspotX="0.503597" hotspotY="0.5">
@@ -1198,6 +1243,17 @@
                         </object-type>
                         <object-type name="Tutorial" sid="830264157362904">
                             <plugin id="Sprite" />
+                            <container>
+                                <type>Versus</type>
+                                <type>Tutorial</type>
+                                <type>Arcade</type>
+                                <type>Online_Mode</type>
+                                <type>Options</type>
+                                <type>Challange_Mode</type>
+                                <type>StoryMode</type>
+                                <type>Store</type>
+                                <type>Invetory</type>
+                            </container>
                             <animation-folder>
                                 <animation framecount="1" loop="0" name="Not_Selected" pingpong="0" repeatcount="1" repeatto="0" sid="295205082504662" speed="5">
                                     <frame duration="1" hotspotX="0.503597" hotspotY="0.5">
@@ -1223,6 +1279,17 @@
                         </object-type>
                         <object-type name="Versus" sid="327073836758768">
                             <plugin id="Sprite" />
+                            <container>
+                                <type>Versus</type>
+                                <type>Tutorial</type>
+                                <type>Arcade</type>
+                                <type>Online_Mode</type>
+                                <type>Options</type>
+                                <type>Challange_Mode</type>
+                                <type>StoryMode</type>
+                                <type>Store</type>
+                                <type>Invetory</type>
+                            </container>
                             <animation-folder>
                                 <animation framecount="1" loop="0" name="Not_Selected" pingpong="0" repeatcount="1" repeatto="0" sid="455861759099688" speed="5">
                                     <frame duration="1" hotspotX="0.503597" hotspotY="0.5">
@@ -1248,6 +1315,17 @@
                         </object-type>
                         <object-type name="Challange_Mode" sid="800968001266295">
                             <plugin id="Sprite" />
+                            <container>
+                                <type>Versus</type>
+                                <type>Tutorial</type>
+                                <type>Arcade</type>
+                                <type>Online_Mode</type>
+                                <type>Options</type>
+                                <type>Challange_Mode</type>
+                                <type>StoryMode</type>
+                                <type>Store</type>
+                                <type>Invetory</type>
+                            </container>
                             <animation-folder>
                                 <animation framecount="1" loop="0" name="Not_Selected" pingpong="0" repeatcount="1" repeatto="0" sid="373131461776642" speed="5">
                                     <frame duration="1" hotspotX="0.503597" hotspotY="0.5">
@@ -1273,6 +1351,17 @@
                         </object-type>
                         <object-type name="StoryMode" sid="350364976314060">
                             <plugin id="Sprite" />
+                            <container>
+                                <type>Versus</type>
+                                <type>Tutorial</type>
+                                <type>Arcade</type>
+                                <type>Online_Mode</type>
+                                <type>Options</type>
+                                <type>Challange_Mode</type>
+                                <type>StoryMode</type>
+                                <type>Store</type>
+                                <type>Invetory</type>
+                            </container>
                             <animation-folder>
                                 <animation framecount="1" loop="0" name="Not_Selected" pingpong="0" repeatcount="1" repeatto="0" sid="368358526700955" speed="5">
                                     <frame duration="1" hotspotX="0.503597" hotspotY="0.5">
@@ -1298,6 +1387,17 @@
                         </object-type>
                         <object-type name="Online_Mode" sid="772072525676708">
                             <plugin id="Sprite" />
+                            <container>
+                                <type>Versus</type>
+                                <type>Tutorial</type>
+                                <type>Arcade</type>
+                                <type>Online_Mode</type>
+                                <type>Options</type>
+                                <type>Challange_Mode</type>
+                                <type>StoryMode</type>
+                                <type>Store</type>
+                                <type>Invetory</type>
+                            </container>
                             <animation-folder>
                                 <animation framecount="1" loop="0" name="Not_Selected" pingpong="0" repeatcount="1" repeatto="0" sid="284056302373980" speed="5">
                                     <frame duration="1" hotspotX="0.503597" hotspotY="0.5">
@@ -1323,6 +1423,17 @@
                         </object-type>
                         <object-type name="Options" sid="852949957469832">
                             <plugin id="Sprite" />
+                            <container>
+                                <type>Versus</type>
+                                <type>Tutorial</type>
+                                <type>Arcade</type>
+                                <type>Online_Mode</type>
+                                <type>Options</type>
+                                <type>Challange_Mode</type>
+                                <type>StoryMode</type>
+                                <type>Store</type>
+                                <type>Invetory</type>
+                            </container>
                             <animation-folder>
                                 <animation framecount="1" loop="0" name="Not_Selected" pingpong="0" repeatcount="1" repeatto="0" sid="964723560521568" speed="5">
                                     <frame duration="1" hotspotX="0.503597" hotspotY="0.5">
@@ -1348,6 +1459,17 @@
                         </object-type>
                         <object-type name="Invetory" sid="987397684602896">
                             <plugin id="Sprite" />
+                            <container>
+                                <type>Versus</type>
+                                <type>Tutorial</type>
+                                <type>Arcade</type>
+                                <type>Online_Mode</type>
+                                <type>Options</type>
+                                <type>Challange_Mode</type>
+                                <type>StoryMode</type>
+                                <type>Store</type>
+                                <type>Invetory</type>
+                            </container>
                             <animation-folder>
                                 <animation framecount="1" loop="0" name="Not_Selected" pingpong="0" repeatcount="1" repeatto="0" sid="864320427187402" speed="5">
                                     <frame duration="1" hotspotX="0.503597" hotspotY="0.5">
@@ -1371,8 +1493,19 @@
                                 </animation>
                             </animation-folder>
                         </object-type>
-                        <object-type name="Shop" sid="483237812554045">
+                        <object-type name="Store" sid="483237812554045">
                             <plugin id="Sprite" />
+                            <container>
+                                <type>Versus</type>
+                                <type>Tutorial</type>
+                                <type>Arcade</type>
+                                <type>Online_Mode</type>
+                                <type>Options</type>
+                                <type>Challange_Mode</type>
+                                <type>StoryMode</type>
+                                <type>Store</type>
+                                <type>Invetory</type>
+                            </container>
                             <animation-folder>
                                 <animation framecount="1" loop="0" name="Not_Selected" pingpong="0" repeatcount="1" repeatto="0" sid="550575384243885" speed="5">
                                     <frame duration="1" hotspotX="0.503597" hotspotY="0.5">
@@ -27152,6 +27285,8 @@
                 <member>Dashing_Button</member>
                 <member>Guard_Button</member>
                 <member>Ki_Blast_Button</member>
+                <member>Menu_Down</member>
+                <member>Menu_Up</member>
                 <member>Mobile_Down</member>
                 <member>Mobile_Left</member>
                 <member>Mobile_Right</member>
@@ -27181,6 +27316,8 @@
                 <member>Dashing_Button</member>
                 <member>Guard_Button</member>
                 <member>Ki_Blast_Button</member>
+                <member>Menu_Down</member>
+                <member>Menu_Up</member>
                 <member>Mobile_Down</member>
                 <member>Mobile_Left</member>
                 <member>Mobile_Right</member>
@@ -27287,7 +27424,7 @@
                 <member>Invetory</member>
                 <member>Online_Mode</member>
                 <member>Options</member>
-                <member>Shop</member>
+                <member>Store</member>
                 <member>StoryMode</member>
                 <member>Tutorial</member>
                 <member>Versus</member>
@@ -27295,6 +27432,8 @@
             <instance-variables>
                 <instance-variable name="Name" sid="824802401483903" type="number" />
                 <instance-variable name="Goto_Layout" sid="589011296868121" type="number" />
+                <instance-variable name="Menu_Bars" sid="817746980178792" type="number" />
+                <instance-variable name="Menu_Bars_Names" sid="580124522779969" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Fade" sid="928580626451023">
@@ -27309,7 +27448,9 @@
                 <layout-folder name="Main_Menu">
                     <layout>Main_Menu.xml</layout>
                 </layout-folder>
-                <layout-folder name="Tutorial_Menu" />
+                <layout-folder name="Tutorial_Menu">
+                    <layout>Tutorial_Menu.xml</layout>
+                </layout-folder>
                 <layout>Charcter_Select.xml</layout>
             </layout-folder>
             <layout-folder name="Loading_Screen">
