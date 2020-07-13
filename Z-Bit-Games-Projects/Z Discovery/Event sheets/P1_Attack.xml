@@ -146,7 +146,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="354848861568751" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="354848861568751" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -179,7 +179,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="633208001252071" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="633208001252071" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -244,7 +244,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="619750610605674" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="619750610605674" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -277,7 +277,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="905953412017947" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="905953412017947" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -342,7 +342,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="532633196727591" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="532633196727591" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -375,7 +375,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="883507395466376" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="883507395466376" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -393,6 +393,104 @@
                                                         </event-block>
                                                     </sub-events>
                                                 </event-block>
+                                                <event-block sid="252541130206717">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="543870870961476" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="136595279197105" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="570131179056055" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="335807308374887" type="Audio">
+                                                            <param id="0" name="Audio file">meleemiss3</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="836613782139264" type="Player_1">
+                                                            <param id="0" name="Max Speed">24</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="812596018404250">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="665696166296417" type="Punch_Collision">
+                                                                    <param id="0" name="Object">Sandbag</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="248449689966136" type="Player_1" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="527193716558888" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="118617954121377" type="Sandbag">
+                                                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="317265987340332" type="SandBag_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="430550007673448" type="Sandbag">
+                                                                    <param id="0" name="Vector X">142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="775268587579409" type="Sandbag">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="732030259148634">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="862799126156304" type="Punch_Collision">
+                                                                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="137718953429934" type="Player_1" />
+                                                                <condition id="2" inverted="1" name="Is playing" sid="141505169226806" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Animation">&quot;Defeated_2&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="697188703139099" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="396059680728632" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="584317237105315" type="SandBag_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="697942797968887" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Vector X">142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="262011439607841" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-12" name="Subtract from" sid="751366279313196" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Instance variable">health</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
                                             </sub-events>
                                         </event-block>
                                     </sub-events>
@@ -400,7 +498,7 @@
                                 <comment>This event is for when The Light hit counter restarts for the attacking animations</comment>
                                 <event-block sid="768983753095735">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="631391359851419" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="568984227150927" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">3</param>
@@ -419,16 +517,19 @@
                                         <condition id="2" inverted="1" name="Key is down" sid="707594214345572" type="Keyboard">
                                             <param id="0" name="Key">75</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="238411688909599" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="173332835954410" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">2</param>
                                         </condition>
-                                        <condition id="-6" name="Every X seconds" sid="275436365881613" type="System">
+                                        <condition id="-6" name="Every X seconds" sid="313600413796712" type="System">
                                             <param id="0" name="Interval (seconds)">1.2</param>
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-16" name="Wait" sid="225538235857261" type="System">
+                                            <param id="0" name="Seconds">1.2</param>
+                                        </action>
                                         <action id="-10" name="Set value" sid="202115818616772" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Value">0</param>
@@ -574,7 +675,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="666905928473869" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="666905928473869" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -607,7 +708,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="672393138565898" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="672393138565898" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -672,7 +773,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="351989268384564" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="351989268384564" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -705,7 +806,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="831387151297470" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="831387151297470" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -770,7 +871,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="133377056970319" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="133377056970319" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -803,7 +904,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="123341085316995" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="123341085316995" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -821,6 +922,104 @@
                                                         </event-block>
                                                     </sub-events>
                                                 </event-block>
+                                                <event-block sid="213789119225802">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="551178066279486" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="541516000029770" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="601707552784247" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="790769602592170" type="Audio">
+                                                            <param id="0" name="Audio file">meleemiss3</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="159669081264383" type="Player_1">
+                                                            <param id="0" name="Max Speed">24</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="856319303477656">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="275449639256132" type="Punch_Collision">
+                                                                    <param id="0" name="Object">Sandbag</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="181915960230875" type="Player_1" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="107114264071007" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="809515703178453" type="Sandbag">
+                                                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="532284235342231" type="SandBag_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="687186783813550" type="Sandbag">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="298893538442504" type="Sandbag">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="456075158296292">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="891376368116442" type="Punch_Collision">
+                                                                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="123251186197489" type="Player_1" />
+                                                                <condition id="2" inverted="1" name="Is playing" sid="580674304240980" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Animation">&quot;Defeated_2&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="355962585712192" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="122094480027533" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="156818981744264" type="SandBag_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="757108691937454" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="321749122770259" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-12" name="Subtract from" sid="921334387045058" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Instance variable">health</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
                                             </sub-events>
                                         </event-block>
                                     </sub-events>
@@ -828,7 +1027,7 @@
                                 <comment>This event is for when The Light hit counter restarts for the attacking animations</comment>
                                 <event-block sid="180653504379579">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="880205477191393" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="359439963111325" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">3</param>
@@ -847,16 +1046,19 @@
                                         <condition id="2" inverted="1" name="Key is down" sid="367977824809137" type="Keyboard">
                                             <param id="0" name="Key">75</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="683678075984127" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="430497753425012" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">2</param>
                                         </condition>
-                                        <condition id="-6" name="Every X seconds" sid="489726730693957" type="System">
+                                        <condition id="-6" name="Every X seconds" sid="407327590146250" type="System">
                                             <param id="0" name="Interval (seconds)">1.2</param>
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-16" name="Wait" sid="534387346753236" type="System">
+                                            <param id="0" name="Seconds">1.2</param>
+                                        </action>
                                         <action id="-10" name="Set value" sid="302179669300865" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Value">0</param>
@@ -1009,7 +1211,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="329842700512660" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="329842700512660" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1042,7 +1244,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="865277506275811" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="865277506275811" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1107,7 +1309,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="495561373175685" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="495561373175685" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1140,7 +1342,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="899892806064030" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="899892806064030" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1205,7 +1407,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="226587254714632" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="226587254714632" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1238,7 +1440,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="193559857841535" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="193559857841535" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1256,6 +1458,104 @@
                                                         </event-block>
                                                     </sub-events>
                                                 </event-block>
+                                                <event-block sid="748497162738245">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="240243284831251" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="417731037510045" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="416825685596796" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Attack4_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="393236635781773" type="Audio">
+                                                            <param id="0" name="Audio file">meleemiss3</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="114743475597169" type="Player_1">
+                                                            <param id="0" name="Max Speed">24</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="989996575422490">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="861355783674776" type="Punch_Collision">
+                                                                    <param id="0" name="Object">Sandbag</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="422379386530252" type="Player_1" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="715960435917785" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="319790869541792" type="Sandbag">
+                                                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="683552133054029" type="SandBag_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="113011633202344" type="Sandbag">
+                                                                    <param id="0" name="Vector X">142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="882607379176843" type="Sandbag">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="904475231273280">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="804924593192100" type="Punch_Collision">
+                                                                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="962675954120668" type="Player_1" />
+                                                                <condition id="2" inverted="1" name="Is playing" sid="537437526795645" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Animation">&quot;Defeated_2&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="745766864074838" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="114110853943294" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="470666952783930" type="SandBag_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="888982464282214" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Vector X">142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="472605411734762" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-12" name="Subtract from" sid="707486406480786" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Instance variable">health</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
                                             </sub-events>
                                         </event-block>
                                     </sub-events>
@@ -1263,7 +1563,7 @@
                                 <comment>This event is for when The Light hit counter restarts for the attacking animations</comment>
                                 <event-block sid="687415369782740">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="139503754430356" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="310736302775821" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">3</param>
@@ -1282,16 +1582,19 @@
                                         <condition id="2" inverted="1" name="Key is down" sid="244725122851011" type="Keyboard">
                                             <param id="0" name="Key">75</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="625293431777134" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="473367648295847" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">2</param>
                                         </condition>
-                                        <condition id="-6" name="Every X seconds" sid="994185425368006" type="System">
+                                        <condition id="-6" name="Every X seconds" sid="494113126603258" type="System">
                                             <param id="0" name="Interval (seconds)">1.2</param>
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-16" name="Wait" sid="244960419707008" type="System">
+                                            <param id="0" name="Seconds">1.2</param>
+                                        </action>
                                         <action id="-10" name="Set value" sid="720748285418233" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Value">0</param>
@@ -1440,7 +1743,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="753092551396655" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="753092551396655" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1473,7 +1776,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="500089846460799" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="500089846460799" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1538,7 +1841,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="615107150982641" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="615107150982641" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1571,7 +1874,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="841201688504076" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="841201688504076" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1636,7 +1939,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="723933466017202" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="723933466017202" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1669,7 +1972,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="511078685518375" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="511078685518375" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1687,6 +1990,104 @@
                                                         </event-block>
                                                     </sub-events>
                                                 </event-block>
+                                                <event-block sid="335641555624479">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="620667057511287" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-7" name="Compare instance variable" sid="333644964821789" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="337474805105988" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Attack4_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="748287663722570" type="Audio">
+                                                            <param id="0" name="Audio file">meleemiss3</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-25</param>
+                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="1" name="Set max speed" sid="232854984272270" type="Player_1">
+                                                            <param id="0" name="Max Speed">24</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="563364643414471">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="245079817727690" type="Punch_Collision">
+                                                                    <param id="0" name="Object">Sandbag</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="945678685166304" type="Player_1" />
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="520134283422504" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="430466146271212" type="Sandbag">
+                                                                    <param id="0" name="Animation">&quot;Hurt1&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="736753217857360" type="SandBag_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="439465170165088" type="Sandbag">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="786098473944034" type="Sandbag">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="359006414508218">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="850360758596718" type="Punch_Collision">
+                                                                    <param id="0" name="Object">RR_Soldier_NPC</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="146059918269802" type="Player_1" />
+                                                                <condition id="2" inverted="1" name="Is playing" sid="666225315443558" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Animation">&quot;Defeated_2&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="296132820739291" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="547562798670550" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Animation">&quot;Hurt&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="795503081820327" type="SandBag_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="867222491671940" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="691880313414962" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-12" name="Subtract from" sid="879289464802138" type="RR_Soldier_NPC">
+                                                                    <param id="0" name="Instance variable">health</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
                                             </sub-events>
                                         </event-block>
                                     </sub-events>
@@ -1694,7 +2095,7 @@
                                 <comment>This event is for when The Light hit counter restarts for the attacking animations</comment>
                                 <event-block sid="117960641247499">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="913555833167823" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="433986069187607" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">3</param>
@@ -1718,11 +2119,14 @@
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">2</param>
                                         </condition>
-                                        <condition id="-6" name="Every X seconds" sid="789025570600781" type="System">
+                                        <condition id="-6" name="Every X seconds" sid="485797082292691" type="System">
                                             <param id="0" name="Interval (seconds)">1.2</param>
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-16" name="Wait" sid="294800937246889" type="System">
+                                            <param id="0" name="Seconds">1.2</param>
+                                        </action>
                                         <action id="-10" name="Set value" sid="374552676024670" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Value">0</param>
@@ -1883,7 +2287,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="150044346890134" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="150044346890134" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1916,7 +2320,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="185978878087750" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="185978878087750" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -1981,7 +2385,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="404880509051468" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="404880509051468" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2014,7 +2418,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="827485814207049" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="827485814207049" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2079,7 +2483,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="314631517811941" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="314631517811941" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2112,7 +2516,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="464268544092989" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="464268544092989" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2137,7 +2541,7 @@
                                 <comment>This event is for when The Light hit counter restarts for the attacking animations</comment>
                                 <event-block sid="593180928263035">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="628413934916376" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="966077864666590" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">3</param>
@@ -2151,22 +2555,25 @@
                                     </actions>
                                 </event-block>
                                 <comment>This event takes the light hit counter back to zero when the attack button isnt pressed</comment>
-                                <event-block sid="901632691788382">
+                                <event-block sid="381655954416208">
                                     <conditions>
-                                        <condition id="2" inverted="1" name="Key is down" sid="820490696354074" type="Keyboard">
-                                            <param id="0" name="Key">75</param>
+                                        <condition id="4" inverted="1" name="Is touching object" sid="795695959657054" type="Touch">
+                                            <param id="0" name="Object">Punch_Button</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="311247298334694" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="535033216970718" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">2</param>
                                         </condition>
-                                        <condition id="-6" name="Every X seconds" sid="204110279510051" type="System">
+                                        <condition id="-6" name="Every X seconds" sid="845626444722880" type="System">
                                             <param id="0" name="Interval (seconds)">1.2</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="771357245760773" type="Player_1">
+                                        <action id="-16" name="Wait" sid="566253878825714" type="System">
+                                            <param id="0" name="Seconds">1.2</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="145992808669214" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -2317,7 +2724,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="418741901145443" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="418741901145443" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2350,7 +2757,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="331166423967080" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="331166423967080" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2415,7 +2822,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="201125290415705" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="201125290415705" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2448,7 +2855,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="751721788631232" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="751721788631232" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2513,7 +2920,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="732867188858470" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="732867188858470" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2546,7 +2953,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="897505771235152" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="897505771235152" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2571,10 +2978,10 @@
                                 <comment>This event is for when The Light hit counter restarts for the attacking animations</comment>
                                 <event-block sid="578835378904410">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="253896074883755" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="471453208798904" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">3</param>
+                                            <param id="2" name="Value">4</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -2585,22 +2992,25 @@
                                     </actions>
                                 </event-block>
                                 <comment>This event takes the light hit counter back to zero when the attack button isnt pressed</comment>
-                                <event-block sid="531572175483844">
+                                <event-block sid="670409193580199">
                                     <conditions>
-                                        <condition id="2" inverted="1" name="Key is down" sid="444665821322484" type="Keyboard">
-                                            <param id="0" name="Key">75</param>
+                                        <condition id="4" inverted="1" name="Is touching object" sid="546333557352707" type="Touch">
+                                            <param id="0" name="Object">Punch_Button</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="529867526264367" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="670677881403548" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">2</param>
+                                            <param id="2" name="Value">3</param>
                                         </condition>
-                                        <condition id="-6" name="Every X seconds" sid="488346540277508" type="System">
+                                        <condition id="-6" name="Every X seconds" sid="773175175072158" type="System">
                                             <param id="0" name="Interval (seconds)">1.2</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="777638467651531" type="Player_1">
+                                        <action id="-16" name="Wait" sid="919180057123611" type="System">
+                                            <param id="0" name="Seconds">1.2</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="655141967215897" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -2758,7 +3168,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="657924548613459" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="657924548613459" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2791,7 +3201,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="483822558015353" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="483822558015353" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2856,7 +3266,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="583584691379198" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="583584691379198" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2889,7 +3299,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="957029680276871" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="957029680276871" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2954,7 +3364,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="370212821604841" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="370212821604841" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -2987,7 +3397,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="628587076025653" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="628587076025653" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -3012,7 +3422,7 @@
                                 <comment>This event is for when The Light hit counter restarts for the attacking animations</comment>
                                 <event-block sid="745753716638065">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="879109007664007" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="691773470567894" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">3</param>
@@ -3026,22 +3436,25 @@
                                     </actions>
                                 </event-block>
                                 <comment>This event takes the light hit counter back to zero when the attack button isnt pressed</comment>
-                                <event-block sid="499348372975598">
+                                <event-block sid="103847675611358">
                                     <conditions>
-                                        <condition id="2" inverted="1" name="Key is down" sid="214938816584537" type="Keyboard">
-                                            <param id="0" name="Key">75</param>
+                                        <condition id="4" inverted="1" name="Is touching object" sid="627124882351258" type="Touch">
+                                            <param id="0" name="Object">Punch_Button</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="991476459065833" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="937238007115440" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">2</param>
                                         </condition>
-                                        <condition id="-6" name="Every X seconds" sid="892971655714101" type="System">
+                                        <condition id="-6" name="Every X seconds" sid="247160255143970" type="System">
                                             <param id="0" name="Interval (seconds)">1.2</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="482676841770563" type="Player_1">
+                                        <action id="-16" name="Wait" sid="703922821829168" type="System">
+                                            <param id="0" name="Seconds">1.2</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="906849275486682" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
@@ -3195,7 +3608,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="401269977773324" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="401269977773324" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -3228,7 +3641,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="915275516070553" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="915275516070553" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -3293,7 +3706,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="864373262874486" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="864373262874486" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -3326,7 +3739,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="176813788386688" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="176813788386688" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -3371,6 +3784,10 @@
                                                         <action behavior="Platform" id="1" name="Set max speed" sid="838399459506783" type="Player_1">
                                                             <param id="0" name="Max Speed">24</param>
                                                         </action>
+                                                        <action id="4" name="Set animation" sid="421180190694712" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Attack4_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
                                                     </actions>
                                                     <sub-events>
                                                         <event-block sid="996059013790254">
@@ -3391,7 +3808,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt1&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="269272608685491" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="269272608685491" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -3424,7 +3841,7 @@
                                                                     <param id="0" name="Animation">&quot;Hurt&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
-                                                                <action id="4" name="Set animation" sid="413680689445628" type="Hit_Effect">
+                                                                <action id="4" name="Set animation" sid="413680689445628" type="SandBag_Hit_Effect">
                                                                     <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                                     <param id="1" name="From">1</param>
                                                                 </action>
@@ -3449,7 +3866,7 @@
                                 <comment>This event is for when The Light hit counter restarts for the attacking animations</comment>
                                 <event-block sid="482291507532191">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="658967009790818" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="313670841468318" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">3</param>
@@ -3463,22 +3880,25 @@
                                     </actions>
                                 </event-block>
                                 <comment>This event takes the light hit counter back to zero when the attack button isnt pressed</comment>
-                                <event-block sid="667041197989281">
+                                <event-block sid="157919538454289">
                                     <conditions>
-                                        <condition id="2" inverted="1" name="Key is down" sid="484929287996584" type="Keyboard">
-                                            <param id="0" name="Key">75</param>
+                                        <condition id="4" inverted="1" name="Is touching object" sid="384691011407414" type="Touch">
+                                            <param id="0" name="Object">Punch_Button</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="190225935929780" type="Player_1">
+                                        <condition id="-7" name="Compare instance variable" sid="590294779442082" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">2</param>
                                         </condition>
-                                        <condition id="-6" name="Every X seconds" sid="380079284388623" type="System">
+                                        <condition id="-6" name="Every X seconds" sid="324714232762514" type="System">
                                             <param id="0" name="Interval (seconds)">1.2</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="411737422201589" type="Player_1">
+                                        <action id="-16" name="Wait" sid="694029183618155" type="System">
+                                            <param id="0" name="Seconds">1.2</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="967057845465335" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Light_Hit_Count</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
