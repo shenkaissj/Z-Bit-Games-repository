@@ -4761,5 +4761,73 @@
                 </event-group>
             </sub-events>
         </event-group>
+        <event-block any="1" sid="316190286595131">
+            <conditions>
+                <condition id="2" name="Key is down" sid="648627980448992" type="Keyboard">
+                    <param id="0" name="Key">75</param>
+                </condition>
+                <condition id="4" name="Is touching object" sid="382109327800107" type="Touch">
+                    <param id="0" name="Object">Punch_Button</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="145899498058607">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="904356500929129" type="Punch_Collision">
+                            <param id="0" name="Object">Sandbag</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="531290325615717" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="297253281974629" type="Sandbag">
+                            <param id="0" name="Instance variable">Knockout_Counter</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="627754349876791">
+            <conditions>
+                <condition id="2" name="Key is down" sid="575019478750649" type="Keyboard">
+                    <param id="0" name="Key">75</param>
+                </condition>
+                <condition id="4" name="Is touching object" sid="333191766410090" type="Touch">
+                    <param id="0" name="Object">Punch_Button</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="310893607848348">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="898354360669734" type="Sandbag">
+                            <param id="0" name="Instance variable">Knockout_Counter</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">7</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="916420992658418" type="Sandbag">
+                            <param id="0" name="Instance variable">Knockout_State</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="171415931292962" type="Punch_Collision">
+                            <param id="0" name="Object">Sandbag</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="367591394593531" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="865619408463173" type="Audio">
+                            <param id="0" name="Audio file">strongpunch</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-25</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="540730005888480" type="SandBag_Hit_Effect">
+                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>
