@@ -1206,6 +1206,103 @@
                 </event-group>
                 <event-group description="" sid="112714794634774" title="Sandbag_Knockout">
                     <sub-events>
+                        <event-group description="this event if for how many times the sandbag can get hit before getting knocked out" sid="327286226217822" title="Sandbag_Knockout_Counter">
+                            <sub-events>
+                                <event-block sid="841793083672232">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="291489146300507" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_Counter</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">8</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" sid="302768049422816" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="106577667562177" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_State</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="841655992778380" type="System">
+                                            <param id="0" name="Seconds">1.1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="153081487270253" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_Counter</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="808227845939657">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="556879105534240" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_Counter</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="259077385016702" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_Chance</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="323770593758124">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="331886266588919" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_Counter</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="843211149575516" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_Chance</param>
+                                            <param id="1" name="Value">8</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="809665163043890">
+                                    <conditions>
+                                        <condition behavior="Platform" id="9" name="On landed" sid="660006001827043" type="Sandbag" />
+                                        <condition id="-8" name="Is boolean instance variable set" sid="231533222716267" type="Sandbag">
+                                            <param id="0" name="Instance variable">Knockout_State</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="582189004734126" type="Audio">
+                                            <param id="0" name="Audio file">GroundLand</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="190899065082209" type="Sandbag_Dust_Effect">
+                                            <param id="0" name="Animation">&quot;Dust&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="971980582744738" type="System">
+                                            <param id="0" name="Object to create">Sandbag_Dust_Effect</param>
+                                            <param id="1" name="Layer">9</param>
+                                            <param id="2" name="X">Sandbag.X</param>
+                                            <param id="3" name="Y">Sandbag.Y</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="958836745252636" type="Sandbag_Dust_Effect">
+                                            <param id="0" name="Pin to">Sandbag</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="346908593198438" type="System">
+                                            <param id="0" name="Object to create">Sandbag_Dust_Effect_2</param>
+                                            <param id="1" name="Layer">9</param>
+                                            <param id="2" name="X">Sandbag.X</param>
+                                            <param id="3" name="Y">Sandbag.Y</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="499904682221042" type="Sandbag_Dust_Effect_2">
+                                            <param id="0" name="Pin to">Sandbag</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
                         <event-block sid="185252099383726">
                             <conditions>
                                 <condition id="-8" name="Is boolean instance variable set" sid="398486690452453" type="Sandbag">
@@ -1297,29 +1394,6 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="841793083672232">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="291489146300507" type="Sandbag">
-                                    <param id="0" name="Instance variable">Knockout_Counter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">7</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="302768049422816" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-13" name="Set boolean" sid="106577667562177" type="Sandbag">
-                                    <param id="0" name="Instance variable">Knockout_State</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="841655992778380" type="System">
-                                    <param id="0" name="Seconds">1.1</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="153081487270253" type="Sandbag">
-                                    <param id="0" name="Instance variable">Knockout_Counter</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block sid="769899538129025">
                             <conditions>
                                 <condition id="0" name="On key pressed" sid="828570332759700" type="Keyboard">
@@ -1357,51 +1431,48 @@
                 </event-group>
             </sub-events>
         </event-group>
-        <event-block sid="808227845939657">
+        <event-block sid="691537134771288">
             <conditions>
-                <condition id="-7" name="Compare instance variable" sid="556879105534240" type="Sandbag">
-                    <param id="0" name="Instance variable">Knockout_Counter</param>
-                    <param id="1" name="Comparison">3</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
+                <condition id="-2" name="On start of layout" sid="628001027520311" type="System" />
             </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="259077385016702" type="Sandbag">
-                    <param id="0" name="Instance variable">Knockout_Chance</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="323770593758124">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="331886266588919" type="Sandbag">
-                    <param id="0" name="Instance variable">Knockout_Counter</param>
-                    <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">7</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-10" name="Set value" sid="843211149575516" type="Sandbag">
-                    <param id="0" name="Instance variable">Knockout_Chance</param>
-                    <param id="1" name="Value">7</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="809665163043890">
-            <conditions>
-                <condition behavior="Platform" id="9" name="On landed" sid="660006001827043" type="Sandbag" />
-                <condition id="-8" name="Is boolean instance variable set" sid="231533222716267" type="Sandbag">
-                    <param id="0" name="Instance variable">Knockout_State</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Play" sid="582189004734126" type="Audio">
-                    <param id="0" name="Audio file">GroundLand</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">-25</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="806400955824313">
+                    <conditions />
+                    <actions>
+                        <action id="-3" name="Create object" sid="835079767179139" type="System">
+                            <param id="0" name="Object to create">SandBag_Hit_Effect</param>
+                            <param id="1" name="Layer">9</param>
+                            <param id="2" name="X">Sandbag.X</param>
+                            <param id="3" name="Y">Sandbag.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="865704215771625" type="SandBag_Hit_Effect">
+                            <param id="0" name="Pin to">Sandbag</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="632403960088621" type="System">
+                            <param id="0" name="Object to create">Explosion_Effect</param>
+                            <param id="1" name="Layer">9</param>
+                            <param id="2" name="X">Sandbag.X</param>
+                            <param id="3" name="Y">Sandbag.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="805530397357740" type="Explosion_Effect">
+                            <param id="0" name="Pin to">Sandbag</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="173427953491608" type="System">
+                            <param id="0" name="Object to create">Sandbag_Dust_Effect</param>
+                            <param id="1" name="Layer">9</param>
+                            <param id="2" name="X">Sandbag.X</param>
+                            <param id="3" name="Y">Sandbag.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="318859730437810" type="Sandbag_Dust_Effect">
+                            <param id="0" name="Pin to">Sandbag</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>
