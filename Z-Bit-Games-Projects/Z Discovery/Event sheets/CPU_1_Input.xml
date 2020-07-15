@@ -614,8 +614,8 @@
                                     <param id="2" name="Value">32</param>
                                 </condition>
                                 <condition id="-7" name="Compare instance variable" sid="259583586153430" type="CPU_Array">
-                                    <param id="0" name="Instance variable">CPU_1_Movement_ActionRoll</param>
-                                    <param id="1" name="Comparison">5</param>
+                                    <param id="0" name="Instance variable">CPU_1_ActionRoll</param>
+                                    <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">2</param>
                                 </condition>
                             </conditions>
@@ -755,10 +755,29 @@
                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="928847425200479" type="CPU_Array">
                     <param id="0" name="Instance variable">CPU_1_Actor</param>
                 </condition>
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="115347122398566" type="CPU_1">
+                    <param id="0" name="Object">Player_1</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-10" name="Set value" sid="536366928455658" type="CPU_Array">
-                    <param id="0" name="Instance variable">CPU_1_Movement_ActionRoll</param>
+                    <param id="0" name="Instance variable">CPU_1_ActionRoll</param>
+                    <param id="1" name="Value">round(random(0.5,2))</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="544362101079480">
+            <conditions>
+                <condition id="0" name="On function" sid="256315483686537" type="CPU1_Fuctions">
+                    <param id="0" name="Name">&quot;ran&quot;</param>
+                </condition>
+                <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="228850642831756" type="CPU_1">
+                    <param id="0" name="Object">Player_1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="179984879966313" type="CPU_Array">
+                    <param id="0" name="Instance variable">CPU_1_ActionRoll</param>
                     <param id="1" name="Value">round(random(0.5,2))</param>
                 </action>
             </actions>

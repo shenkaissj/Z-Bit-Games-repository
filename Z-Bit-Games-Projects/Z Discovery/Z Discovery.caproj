@@ -13,6 +13,7 @@
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
@@ -136,11 +137,10 @@
                     <instance-variable name="Dist_Y" sid="400687074936065" type="number" />
                     <instance-variable name="CPU_1_Actor" sid="130073073878873" type="boolean" />
                     <instance-variable name="CPU_1_Recovery" sid="412662402330098" type="number" />
-                    <instance-variable name="CPU_1_KO_Value" sid="772414309145111" type="string" />
+                    <instance-variable name="CPU_1_KnockoutCounter" sid="772414309145111" type="string" />
                     <instance-variable name="CPU_1_Knockedout" sid="145829864165583" type="boolean" />
-                    <instance-variable name="CPU_1_Knockedout_Flying" sid="589369612032746" type="boolean" />
                     <instance-variable name="CPU_1_Damage" sid="237790251815846" type="boolean" />
-                    <instance-variable name="CPU_1_Movement_ActionRoll" sid="433692673899987" type="number" />
+                    <instance-variable name="CPU_1_ActionRoll" sid="433692673899987" type="number" />
                     <instance-variable name="CPU_1_Attack_ActionRoll" sid="659896697420792" type="number" />
                 </instance-variables>
                 <container>
@@ -153,9 +153,8 @@
                 <instance-variables>
                     <instance-variable name="P1_Actor" sid="462638935215429" type="boolean" />
                     <instance-variable name="P1_Recovery" sid="157743882210006" type="number" />
-                    <instance-variable name="P1_1_KO_Value" sid="882346177739902" type="number" />
+                    <instance-variable name="P1_KnockoutCounter" sid="882346177739902" type="number" />
                     <instance-variable name="P1_Knockedout" sid="276891041943560" type="boolean" />
-                    <instance-variable name="P1_Knockedout_Flying" sid="639754375932158" type="boolean" />
                     <instance-variable name="P1_Damage" sid="844596703118643" type="number" />
                 </instance-variables>
                 <container>
@@ -168,6 +167,9 @@
             </object-type>
             <object-type name="Intro_Video" sid="309718301936156">
                 <plugin id="video" />
+            </object-type>
+            <object-type name="CPU1_Fuctions" sid="620175836146756">
+                <plugin id="Function" />
             </object-type>
         </object-folder>
         <object-folder name="Sprite_Collisions">
@@ -679,6 +681,13 @@
                             </instance-variables>
                             <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
                         </object-type>
+                        <object-type name="CPU1_Ki_Bar" sid="887806761447749">
+                            <plugin id="TiledBg" />
+                            <instance-variables>
+                                <instance-variable name="InitialWidth" sid="835049980091792" type="number" />
+                            </instance-variables>
+                            <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
+                        </object-type>
                     </object-folder>
                     <object-folder name="Health_Bar">
                         <object-type name="Health_Gui_1" sid="859888355208088">
@@ -888,6 +897,13 @@
                                     </animation>
                                 </animation-folder>
                             </animation-folder>
+                        </object-type>
+                        <object-type name="CPU1_HP_Bar" sid="881497444221203">
+                            <plugin id="TiledBg" />
+                            <instance-variables>
+                                <instance-variable name="InitialWidth" sid="393019199191699" type="number" />
+                            </instance-variables>
+                            <texture original-source="C:\Users\tyler jones\Downloads\Ki Bar\sprite_1.png" />
                         </object-type>
                     </object-folder>
                 </object-folder>
@@ -26403,7 +26419,7 @@
                             </animation>
                         </animation-folder>
                     </object-type>
-                    <object-type name="Swoosh_Effect" sid="791973847701049">
+                    <object-type name="P1_Swoosh_Effect" sid="791973847701049">
                         <plugin id="Particles" />
                         <behaviors>
                             <behavior-type name="Pin" sid="391161691779920">
@@ -26545,6 +26561,15 @@
                                 </frame>
                             </animation>
                         </animation-folder>
+                    </object-type>
+                    <object-type name="CPU1_Swoosh_Effect" sid="845805449229659">
+                        <plugin id="Particles" />
+                        <behaviors>
+                            <behavior-type name="Pin" sid="181604139774362">
+                                <behavior id="Pin" />
+                            </behavior-type>
+                        </behaviors>
+                        <texture />
                     </object-type>
                 </object-folder>
                 <object-folder name="Other_Effects">
@@ -27747,6 +27772,8 @@
         </family>
         <family name="Ki_and_Hp_Bars" plugin-id="TiledBg" sid="155487045998673">
             <members>
+                <member>CPU1_HP_Bar</member>
+                <member>CPU1_Ki_Bar</member>
                 <member>P1_HP_Bar</member>
                 <member>P1_Ki_Bar</member>
             </members>
@@ -27931,7 +27958,7 @@
                         <event-folder name="P1_Ki_Bar">
                             <event-sheet>P1_Ki_Chargeing_Event.xml</event-sheet>
                         </event-folder>
-                        <event-folder name="P1_SSJ_Bar">
+                        <event-folder name="P1_Stamina_Bar">
                             <event-sheet>P1_SSJ_Bar_Event.xml</event-sheet>
                         </event-folder>
                     </event-folder>
@@ -28042,6 +28069,13 @@
                 <event-folder name="CPU1_Attacks">
                     <event-sheet>CPU1_Attack.xml</event-sheet>
                 </event-folder>
+                <event-folder name="CPU_1_Bars">
+                    <event-folder name="CPU_1_HP_Bar" />
+                    <event-folder name="CPU_1_Ki_Bar">
+                        <event-sheet>CPU_1_Ki_Chargeing_Event.xml</event-sheet>
+                    </event-folder>
+                    <event-folder name="CPU_1_Stamina_Bar" />
+                </event-folder>
             </event-folder>
         </event-folder>
         <event-sheet>Mobile_Detictor.xml</event-sheet>
@@ -28080,6 +28114,7 @@
             </properties>
         </global-instance>
         <global-instance type="Browser" uid="7" />
+        <global-instance type="CPU1_Fuctions" uid="1242" />
     </global-instances>
     <sounds-folder>
         <sound-folder name="Player_SFXs">
