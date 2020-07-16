@@ -137,33 +137,25 @@
                     <instance-variable name="Dist_Y" sid="400687074936065" type="number" />
                     <instance-variable name="CPU_1_Actor" sid="130073073878873" type="boolean" />
                     <instance-variable name="CPU_1_Recovery" sid="412662402330098" type="number" />
-                    <instance-variable name="CPU_1_KnockoutCounter" sid="772414309145111" type="string" />
-                    <instance-variable name="CPU_1_Knockedout" sid="145829864165583" type="boolean" />
+                    <instance-variable name="CPU_1_Knockout_Counter" sid="772414309145111" type="number" />
+                    <instance-variable name="CPU_1_Knockout_State" sid="145829864165583" type="boolean" />
                     <instance-variable name="CPU_1_Damage" sid="237790251815846" type="boolean" />
                     <instance-variable name="CPU_1_ActionRoll" sid="433692673899987" type="number" />
-                    <instance-variable name="CPU_1_Attack_ActionRoll" sid="659896697420792" type="number" />
                 </instance-variables>
                 <container>
                     <type>CPU_Array</type>
                     <type>CPU_1</type>
                 </container>
             </object-type>
-            <object-type global="1" name="Player1_Array" sid="800252645115285">
+            <object-type global="1" name="Player_Actor" sid="800252645115285">
                 <plugin id="Arr" />
                 <instance-variables>
-                    <instance-variable name="P1_Actor" sid="462638935215429" type="boolean" />
-                    <instance-variable name="P1_Recovery" sid="157743882210006" type="number" />
-                    <instance-variable name="P1_KnockoutCounter" sid="882346177739902" type="number" />
-                    <instance-variable name="P1_Knockedout" sid="276891041943560" type="boolean" />
-                    <instance-variable name="P1_Damage" sid="844596703118643" type="number" />
+                    <instance-variable name="Player_Actor" sid="462638935215429" type="boolean" />
                 </instance-variables>
                 <container>
-                    <type>Player1_Array</type>
+                    <type>Player_Actor</type>
                     <type>Player_1</type>
                 </container>
-            </object-type>
-            <object-type global="1" name="Player2_Array" sid="354505532635289">
-                <plugin id="Arr" />
             </object-type>
             <object-type name="Intro_Video" sid="309718301936156">
                 <plugin id="video" />
@@ -410,6 +402,19 @@
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="404198512552646" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Player_2_Punch_Collision" sid="432586930020875">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="418486243381349">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="745563034038239" speed="5">
+                            <frame duration="1" hotspotX="-0.125" hotspotY="0.5" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -2355,7 +2360,9 @@
                     <object-type name="CPU_1" sid="721530338217264">
                         <plugin id="Sprite" />
                         <instance-variables>
-                            <instance-variable name="Action_Roll" sid="215574540861657" type="number" />
+                            <instance-variable name="CPU1_Action_Roll" sid="215574540861657" type="number" />
+                            <instance-variable name="CPU1_Dist" sid="536268940652545" type="number" />
+                            <instance-variable name="CPU1_Controller" sid="584499506140116" type="number" />
                         </instance-variables>
                         <behaviors>
                             <behavior-type name="Timer" sid="585357450973660">
@@ -5782,7 +5789,7 @@
                                                                 </collision-poly>
                                                             </frame>
                                                         </animation>
-                                                        <animation framecount="1" loop="1" name="Down_GKU1" pingpong="0" repeatcount="1" repeatto="0" sid="895015664111687" speed="16">
+                                                        <animation framecount="1" loop="0" name="Down_GKU1" pingpong="0" repeatcount="1" repeatto="0" sid="895015664111687" speed="16">
                                                             <frame duration="1" hotspotX="0.473684" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Desktop\Updated Goku Sprite sheet\sprite_10.png">
                                                                 <collision-poly>
                                                                     <point x="0.3125" y="0" />
@@ -6604,7 +6611,7 @@
                                                                 </collision-poly>
                                                             </frame>
                                                         </animation>
-                                                        <animation framecount="1" loop="1" name="Down_SSJ1_GKUMid1" pingpong="0" repeatcount="1" repeatto="0" sid="783525588582243" speed="16">
+                                                        <animation framecount="1" loop="0" name="Down_SSJ1_GKUMid1" pingpong="0" repeatcount="1" repeatto="0" sid="783525588582243" speed="16">
                                                             <frame duration="1" hotspotX="0.473684" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\SSJ Goku Sprite\sprite_50.png">
                                                                 <collision-poly>
                                                                     <point x="0.3125" y="0" />
@@ -14319,8 +14326,6 @@
                             <instance-variable name="P1_Skins" sid="180886736940786" type="number" />
                             <instance-variable name="P1_Combo_Hit_Counter" sid="504745729238472" type="number" />
                             <instance-variable name="P1_Super_Type" sid="767759125291221" type="number" />
-                            <instance-variable name="Run_Counter_CPU" sid="230385565702673" type="number" />
-                            <instance-variable name="Walk_Counter_CPU" sid="249566057967215" type="number" />
                             <instance-variable name="P1_Beam_Ready" sid="801423449814711" type="boolean" />
                             <instance-variable name="P1_Beam_State" sid="865233663656188" type="boolean" />
                             <instance-variable name="P1_Guard_State" sid="873689249644019" type="boolean" />
@@ -14332,6 +14337,11 @@
                             <instance-variable name="P1_Charge_Ki" sid="588318889925283" type="boolean" />
                             <instance-variable name="P1_Run_Counter" sid="203129354120863" type="number" />
                             <instance-variable name="P1_Walk_Counter" sid="554538926920548" type="number" />
+                            <instance-variable name="P1_Actor" sid="505899490776765" type="boolean" />
+                            <instance-variable name="P1_Recovery" sid="692601768831634" type="number" />
+                            <instance-variable name="P1_Knockout_Counter" sid="364628301234662" type="number" />
+                            <instance-variable name="P1_Knockout_State" sid="869695232824756" type="boolean" />
+                            <instance-variable name="P1_Damaged" sid="413569904942522" type="number" />
                         </instance-variables>
                         <behaviors>
                             <behavior-type name="Timer" sid="435835945874937">
@@ -14356,7 +14366,7 @@
                             </effect-type>
                         </effects>
                         <container>
-                            <type>Player1_Array</type>
+                            <type>Player_Actor</type>
                             <type>Player_1</type>
                         </container>
                         <animation-folder>
@@ -26951,6 +26961,68 @@
                                 </animation>
                             </animation-folder>
                         </object-type>
+                        <object-type name="P1_Dust_Effect" sid="833095829123773">
+                            <plugin id="Particles" />
+                            <behaviors>
+                                <behavior-type name="Pin" sid="407437409375900">
+                                    <behavior id="Pin" />
+                                </behavior-type>
+                            </behaviors>
+                            <texture />
+                        </object-type>
+                        <object-type name="CPU1_Dust_Effect" sid="904916494033045">
+                            <plugin id="Sprite" />
+                            <behaviors>
+                                <behavior-type name="Pin" sid="736602458415708">
+                                    <behavior id="Pin" />
+                                </behavior-type>
+                            </behaviors>
+                            <animation-folder>
+                                <animation framecount="1" loop="0" name="No_Dust" pingpong="0" repeatcount="1" repeatto="0" sid="733579193794081" speed="15">
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                </animation>
+                                <animation framecount="7" loop="0" name="Dust" pingpong="0" repeatcount="1" repeatto="0" sid="489149557083210" speed="15">
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                </animation>
+                            </animation-folder>
+                        </object-type>
+                        <object-type name="P1_Dust_Effect2" sid="309953015804578">
+                            <plugin id="Sprite" />
+                            <behaviors>
+                                <behavior-type name="Pin" sid="774173956694139">
+                                    <behavior id="Pin" />
+                                </behavior-type>
+                            </behaviors>
+                            <animation-folder>
+                                <animation framecount="1" loop="0" name="No_Dust" pingpong="0" repeatcount="1" repeatto="0" sid="368104440023317" speed="15">
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                </animation>
+                                <animation framecount="7" loop="0" name="Dust" pingpong="0" repeatcount="1" repeatto="0" sid="202181704363912" speed="15">
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.3125" />
+                                </animation>
+                            </animation-folder>
+                        </object-type>
+                        <object-type name="CPU1_Dust_Effect2" sid="988498866287805">
+                            <plugin id="Particles" />
+                            <behaviors>
+                                <behavior-type name="Pin" sid="876660280728801">
+                                    <behavior id="Pin" />
+                                </behavior-type>
+                            </behaviors>
+                            <texture />
+                        </object-type>
                     </object-folder>
                     <object-folder name="CPU1_Effects">
                         <object-type name="CPU1_Swoosh_Effect" sid="845805449229659">
@@ -27955,6 +28027,7 @@
                 <member>NoKiblastCollision</member>
                 <member>NoNoClipCollision</member>
                 <member>NoTransformationCollision</member>
+                <member>Player_2_Punch_Collision</member>
                 <member>Punch_Collision</member>
                 <member>Push_Back_Collision</member>
                 <member>Push_Forward_Collision</member>
