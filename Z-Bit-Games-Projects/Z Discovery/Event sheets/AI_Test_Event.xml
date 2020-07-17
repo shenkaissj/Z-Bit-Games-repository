@@ -3,10 +3,6 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>AI_Test_Event</name>
     <events>
-        <include>CPU_1_Ki_Chargeing_Event</include>
-        <include>CPU_1_Strong_Punch</include>
-        <include>CPU_1_Attack</include>
-        <include>CPU1_HP</include>
         <include>Mobile_Detictor</include>
         <include>Debug_Event</include>
         <event-group description="the main functions for player 1 in game" sid="515888201475334" title="Player_1_For_Ai_Test">
@@ -18,6 +14,19 @@
         <event-group description="The Main Events for the CPU" sid="339881977988025" title="CPU_Events">
             <sub-events>
                 <include>CPU_Chacter_Code_Event</include>
+                <event-group description="the main events for the cpu to attack" sid="683084891929351" title="CPU_1_attack_Events">
+                    <sub-events>
+                        <include>CPU_1_Strong_Punch</include>
+                        <include>CPU_1_Attack</include>
+                        <include>CPU_1_Dash</include>
+                    </sub-events>
+                </event-group>
+                <event-group description="the health bar and ki bar for the computer" sid="604247224516177" title="CPU1_HP_&amp;_Ki_Bar">
+                    <sub-events>
+                        <include>CPU_1_Ki_Chargeing_Event</include>
+                        <include>CPU1_HP</include>
+                    </sub-events>
+                </event-group>
                 <event-group description="the main movement for the AI" sid="286417024004707" title="CPU_1_Input">
                     <sub-events>
                         <include>CPU_1_Input</include>
@@ -98,14 +107,6 @@
                                     <param id="2" name="X">Player_1.X</param>
                                     <param id="3" name="Y">Player_1.Y</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="859187966599174" type="System">
-                                    <param id="0" name="Variable">CPU_1_Ki</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="582835986373490" type="System">
-                                    <param id="0" name="Variable">CPU1_Hp</param>
-                                    <param id="1" name="Value">100</param>
-                                </action>
                                 <action id="-13" name="Set boolean" sid="674577708936212" type="CPU_Array">
                                     <param id="0" name="Instance variable">CPU_1_Attack</param>
                                     <param id="1" name="Value">1</param>
@@ -132,5 +133,28 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="853602752910008">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="190734662400916" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="625114935249757" type="System">
+                    <param id="0" name="Variable">CPU_1_Ki</param>
+                    <param id="1" name="Value">70</param>
+                </action>
+                <action id="-9" name="Set value" sid="396789096991133" type="System">
+                    <param id="0" name="Variable">CPU1_Hp</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="115661212222143" type="System">
+                    <param id="0" name="Variable">P1_Ki_1</param>
+                    <param id="1" name="Value">70</param>
+                </action>
+                <action id="-9" name="Set value" sid="407890988647392" type="System">
+                    <param id="0" name="Variable">P1_Hp</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
