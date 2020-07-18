@@ -2357,6 +2357,7 @@
                             <plugin id="Sprite" />
                             <instance-variables>
                                 <instance-variable name="Music_List_Variable" sid="452487471395537" type="number" />
+                                <instance-variable name="Music_Names" sid="478182108463521" type="boolean" />
                             </instance-variables>
                             <animation-folder>
                                 <animation-folder name="Music_List">
@@ -2394,6 +2395,7 @@
                             <plugin id="Sprite" />
                             <instance-variables>
                                 <instance-variable name="Charcter_List_Variable" sid="978606822001633" type="number" />
+                                <instance-variable name="Stage_Names" sid="523205052916103" type="string" />
                             </instance-variables>
                             <animation-folder>
                                 <animation-folder name="Stage_List">
@@ -2596,6 +2598,8 @@
                             <instance-variable name="CPU1_Dist" sid="536268940652545" type="number" />
                             <instance-variable name="CPU1_Controller" sid="584499506140116" type="number" />
                             <instance-variable name="CPU1_SSJ1_Action_Roll" sid="528563378729295" type="number" />
+                            <instance-variable name="CPU_Movement_Left_Actionroll" sid="635590963196812" type="number" />
+                            <instance-variable name="CPU_Movement_Right_Actionroll" sid="730295162054446" type="number" />
                         </instance-variables>
                         <behaviors>
                             <behavior-type name="Timer" sid="585357450973660">
@@ -14575,6 +14579,7 @@
                             <instance-variable name="P1_Knockout_Counter" sid="364628301234662" type="number" />
                             <instance-variable name="P1_Knockout_State" sid="869695232824756" type="boolean" />
                             <instance-variable name="P1_Damaged" sid="413569904942522" type="number" />
+                            <instance-variable name="P1_Hurting" sid="467832635575063" type="boolean" />
                         </instance-variables>
                         <behaviors>
                             <behavior-type name="Timer" sid="435835945874937">
@@ -18273,6 +18278,68 @@
                                                                     <point x="0.31579" y="1" />
                                                                 </collision-poly>
                                                             </frame>
+                                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                                <collision-poly>
+                                                                    <point x="0.3125" y="0" />
+                                                                    <point x="0.743421" y="0" />
+                                                                    <point x="0.746711" y="1" />
+                                                                    <point x="0.31579" y="1" />
+                                                                </collision-poly>
+                                                            </frame>
+                                                        </animation>
+                                                    </animation-folder>
+                                                    <animation-folder name="Versus_Mode_Emotes">
+                                                        <animation framecount="1" loop="0" name="Victory1_GKU1" pingpong="1" repeatcount="2" repeatto="2" sid="162564393847282" speed="1">
+                                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                                <collision-poly>
+                                                                    <point x="0.3125" y="0" />
+                                                                    <point x="0.743421" y="0" />
+                                                                    <point x="0.746711" y="1" />
+                                                                    <point x="0.31579" y="1" />
+                                                                </collision-poly>
+                                                            </frame>
+                                                        </animation>
+                                                        <animation framecount="1" loop="0" name="Victory2_GKU1" pingpong="1" repeatcount="2" repeatto="2" sid="513349155973860" speed="1">
+                                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                                <collision-poly>
+                                                                    <point x="0.3125" y="0" />
+                                                                    <point x="0.743421" y="0" />
+                                                                    <point x="0.746711" y="1" />
+                                                                    <point x="0.31579" y="1" />
+                                                                </collision-poly>
+                                                            </frame>
+                                                        </animation>
+                                                        <animation framecount="1" loop="0" name="lose1_GKU1" pingpong="1" repeatcount="2" repeatto="2" sid="414718701884469" speed="1">
+                                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                                <collision-poly>
+                                                                    <point x="0.3125" y="0" />
+                                                                    <point x="0.743421" y="0" />
+                                                                    <point x="0.746711" y="1" />
+                                                                    <point x="0.31579" y="1" />
+                                                                </collision-poly>
+                                                            </frame>
+                                                        </animation>
+                                                        <animation framecount="1" loop="0" name="lose2_GKU1" pingpong="1" repeatcount="2" repeatto="2" sid="295225318581764" speed="1">
+                                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                                <collision-poly>
+                                                                    <point x="0.3125" y="0" />
+                                                                    <point x="0.743421" y="0" />
+                                                                    <point x="0.746711" y="1" />
+                                                                    <point x="0.31579" y="1" />
+                                                                </collision-poly>
+                                                            </frame>
+                                                        </animation>
+                                                        <animation framecount="1" loop="0" name="Timeout1_GKU1" pingpong="1" repeatcount="2" repeatto="2" sid="522695001723131" speed="1">
+                                                            <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
+                                                                <collision-poly>
+                                                                    <point x="0.3125" y="0" />
+                                                                    <point x="0.743421" y="0" />
+                                                                    <point x="0.746711" y="1" />
+                                                                    <point x="0.31579" y="1" />
+                                                                </collision-poly>
+                                                            </frame>
+                                                        </animation>
+                                                        <animation framecount="1" loop="0" name="Timeout2_GKU1" pingpong="1" repeatcount="2" repeatto="2" sid="348177108590786" speed="1">
                                                             <frame duration="1" hotspotX="0.526316" hotspotY="0.52381">
                                                                 <collision-poly>
                                                                     <point x="0.3125" y="0" />
@@ -28360,6 +28427,20 @@
                     <behavior id="Fade" />
                 </behavior-type>
             </behaviors>
+        </family>
+        <family name="CharcterSelect_Menus_2" plugin-id="Sprite" sid="389504190563971">
+            <members>
+                <member>CrystalBall_Map_Select</member>
+                <member>CrystalBall_Map_Select_Fade</member>
+                <member>Map_Select_Stages</member>
+                <member>Music_Select</member>
+                <member>Music_Select_Arrow_Left</member>
+                <member>Music_Select_Arrow_Right</member>
+                <member>Ready_Sprite</member>
+                <member>Stage_Select</member>
+                <member>Stage_Select_Arrow_Left</member>
+                <member>Stage_Select_Arrow_Right</member>
+            </members>
         </family>
     </families>
     <layout-folder>
