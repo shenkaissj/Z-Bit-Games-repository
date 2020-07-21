@@ -1,0 +1,1044 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>P1_Input</name>
+    <events>
+        <event-group description="The basic PC controls for the player" sid="569504330750897" title="P1_Controls_PC">
+            <sub-events>
+                <comment>This Event is mainly for when the player is moving around in the game</comment>
+                <event-group description="This Event is for the Players Main basic Inputs on PC" sid="978627515889998" title="Main_Controls">
+                    <sub-events>
+                        <event-block sid="918146771361912">
+                            <conditions>
+                                <condition behavior="Platform" id="9" name="On landed" sid="547890453340359" type="Player_1" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="342784212792367" type="Audio">
+                                    <param id="0" name="Audio file">land on ground</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="356130307434506">
+                            <conditions>
+                                <condition behavior="Platform" id="5" name="On jump" sid="816836415167150" type="Player_1" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="863751986410329" type="Audio">
+                                    <param id="0" name="Audio file">jump</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Jump Button</comment>
+                        <event-block sid="855688411261731">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="143015459589707" type="Keyboard">
+                                    <param id="0" name="Key">87</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="428125467910397" type="Player_1">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="693176742353114" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Value">&quot;Jump&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="858702227992535">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="352262824228350" type="Player_1">
+                                            <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="237093838421183" type="Player_1">
+                                            <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="333924692989514" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Kick_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="674476029615606" type="Player_1">
+                                            <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="333273598638748" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="526071127296219" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="549370386764388" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="557868492800056" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="964654215279087" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="588742827207723" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack_Style_1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="972489572645793" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Key is down" sid="300374403976513" type="Keyboard">
+                                            <param id="0" name="Key">70</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Left Button</comment>
+                        <event-block sid="109821762663410">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="443662522916343" type="Keyboard">
+                                    <param id="0" name="Key">65</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="666324199265799" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Duck_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="196353660905680" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Super_2_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="537208419024118" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="308130246877781" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="272103387595627" type="Keyboard">
+                                    <param id="0" name="Key">70</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="139704782192141" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Transform</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="714601040007084" type="Player_1">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="548053820559834" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="864603175643724" type="P1_Smoke">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="790766305166331" type="Punch_Collision">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="144706097575845" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Value">&quot;Left&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="359721672799931">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="422443855256596" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="279366778947053" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="328852774235428" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="223610565886924" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="449712334539388" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="213680210335383" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="252535479269624" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack_Style_1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Right Button</comment>
+                        <event-block sid="862462056996957">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="892855759220822" type="Keyboard">
+                                    <param id="0" name="Key">68</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="141937753881945" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Duck_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="267251003064030" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Super_2_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="592433042917711" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="440818217881192" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="565518763168152" type="Keyboard">
+                                    <param id="0" name="Key">70</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="447691965957848" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Transform</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="173618903136567" type="Player_1">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="478077521501342" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="358529230287245" type="P1_Smoke">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="729512569499254" type="Punch_Collision">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="586269148477639" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Value">&quot;Right&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="754021395497111">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="893613921441343" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="106629195191587" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="292933443591058" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="785296458217054" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="980274687202209" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="131351380765582" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="521008594761798" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Attack_Style_1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <comment>This Event is for the main Players Flying Controls</comment>
+                <event-group description="This Event is for when the main Player is flying on PC" sid="279206770164265" title="Fly_Controls">
+                    <sub-events>
+                        <comment>Jump Button</comment>
+                        <event-block sid="454260843192788">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="184292136596225" type="Keyboard">
+                                    <param id="0" name="Key">87</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="622153263598170" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Fly</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="149649567046421" type="Keyboard">
+                                    <param id="0" name="Key">70</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="928532017937835" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Value">&quot;Fly_Up&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="557376479219901">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="419300126587416" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="405108536359587" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="322189353280765" type="Player_1">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Left Button</comment>
+                        <event-block sid="922636262694029">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="273030443723858" type="Keyboard">
+                                    <param id="0" name="Key">65</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="181642056222589" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Fly</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="140011253875761" type="Keyboard">
+                                    <param id="0" name="Key">70</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="661460192970072" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Value">&quot;Fly_Left&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="577459459975158">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="670449651790163" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="602311878932945" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="694144491644759" type="Player_1">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="713903125417629" type="Player_1">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="914147310712757" type="P1_Smoke">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="589017902157989" type="Punch_Collision">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Right Button</comment>
+                        <event-block sid="944269511982592">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="532888651572555" type="Keyboard">
+                                    <param id="0" name="Key">68</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="959850994104123" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Fly</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="478607792112696" type="Keyboard">
+                                    <param id="0" name="Key">70</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="179140874158729" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Value">&quot;Fly_Right&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="891957253146393">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="687423954209308" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="805087065736878" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="806732330079108" type="Player_1">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="449393066396462" type="Player_1">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="637807629839740" type="P1_Smoke">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="559142779752544" type="Punch_Collision">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Down_Button</comment>
+                        <event-block sid="390771863078202">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="560306128341273" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="407869180430855" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Fly</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="854505633775242" type="Keyboard">
+                                    <param id="0" name="Key">70</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="372387091841137" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Value">&quot;Fly_Down&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="354147732338992">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="785468885749374" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="414074727567417" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="364566728701509" type="Player_1">
+                                            <param id="0" name="Control">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="The basic Mobile controls for the player" sid="777014945831542" title="P1_Controls_Mobile">
+            <sub-events>
+                <comment>This Event is mainly for when the player is moving around in the game</comment>
+                <event-group description="This Event is for the Players Main basic Inputs on Mobile" sid="824357628724175" title="Main_Controls_Mobile">
+                    <sub-events>
+                        <event-block sid="185451076070072">
+                            <conditions>
+                                <condition behavior="Platform" id="9" name="On landed" sid="972168178903012" type="Player_1" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="472723225982710" type="Audio">
+                                    <param id="0" name="Audio file">land on ground</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="720745029108356">
+                            <conditions>
+                                <condition behavior="Platform" id="5" name="On jump" sid="205665386616824" type="Player_1" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="869691194471485" type="Audio">
+                                    <param id="0" name="Audio file">jump</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Jump Button</comment>
+                        <event-block sid="410990337425205">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="577099829908941" type="Touch">
+                                    <param id="0" name="Object">Mobile_Up</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="312855851319079" type="Mobile_Down" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="116546792309482">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="238661610168644" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="130972688403471" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="860122949344602" type="Player_1">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Left Button</comment>
+                        <event-block sid="189359607784304">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="783612205082005" type="Touch">
+                                    <param id="0" name="Object">Mobile_Left</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="405188884938764" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Duck_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="324781646357271" type="Mobile_Down" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="500120459973256">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="234490035897762" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="853056529292975" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="326836346071273" type="Player_1">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="905862665335747" type="Player_1">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="185705480589982" type="P1_Smoke">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="177344155641063" type="Punch_Collision">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Right Button</comment>
+                        <event-block sid="861760547112344">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="823813030395842" type="Touch">
+                                    <param id="0" name="Object">Mobile_Right</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="263228258213935" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Duck_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="250524323318811" type="Mobile_Down" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="165149224103560">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="487929625805034" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="342505635002397" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="776861159604390" type="Player_1">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="970594677379284" type="Player_1">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="461339062193044" type="P1_Smoke">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="956912066014759" type="Punch_Collision">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <comment>This Event is for the main Players Flying Controls</comment>
+                <event-group description="This Event is for when the main Player is flying on Mobile" sid="980464006537010" title="Fly_Controls_Mobile">
+                    <sub-events>
+                        <comment>Jump Button</comment>
+                        <event-block sid="738411370303265">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="437963613317522" type="Touch">
+                                    <param id="0" name="Object">Mobile_Up</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="335252857008135" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Fly</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="336896713383510" type="Mobile_Down" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="951461918190305">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="282804172179188" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="362079670510679" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="189582654722373" type="Player_1">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Left Button</comment>
+                        <event-block sid="512925530259615">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="834673660499769" type="Touch">
+                                    <param id="0" name="Object">Mobile_Left</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="969093870934651" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Fly</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="465873531779743" type="Mobile_Down" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="938794606504412">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="796830516638331" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="280370574832936" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="996664535029370" type="Player_1">
+                                            <param id="0" name="Control">0</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="451429911002311" type="Player_1">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="593573468905777" type="P1_Smoke">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="950960572020518" type="Punch_Collision">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Right Button</comment>
+                        <event-block sid="332163312193174">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="864187386895775" type="Touch">
+                                    <param id="0" name="Object">Mobile_Right</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="836911035148520" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Fly</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="530455354794970" type="Mobile_Down" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="109188103847368">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="134696847955448" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="739807718237210" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="113800495993496" type="Player_1">
+                                            <param id="0" name="Control">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="559913954778079" type="Player_1">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="209567559135963" type="P1_Smoke">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="412665412909243" type="Punch_Collision">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Down_Button</comment>
+                        <event-block sid="753669321814096">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="935021982411850" type="Touch">
+                                    <param id="0" name="Object">Mobile_Down</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="340842150848515" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Fly</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="938894969351196" type="Mobile_Down" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="271448460786094">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="555405202695765" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                        <condition id="2" inverted="1" name="Is playing" sid="407833749244193" type="Player_1">
+                                            <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="8Direction" id="7" name="Simulate control" sid="456681048126142" type="Player_1">
+                                            <param id="0" name="Control">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="the basic inputs for the players movement" sid="442061836484592" title="Player_1_Movement Input">
+            <sub-events>
+                <event-group description="the inputs for attacking" sid="477670862450710" title="P1_Attack_Inputs">
+                    <sub-events>
+                        <event-block sid="281093499012350">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="925243301253207" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Attacking&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="537474623306572" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="893826834889139" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="639830680723186" type="Player_InputFont">
+                                    <param id="0" name="Text">&quot;Attacking&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="the flying inputs for the charcters controls" sid="455539775367914" title="P1_Flying_Inputs">
+                    <sub-events>
+                        <comment>this is when they input fly up</comment>
+                        <event-block sid="916485766300741">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="433515126778108" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Fly_Up&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="906045313204912" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="802947239293477" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="685473194865447" type="Player_InputFont">
+                                    <param id="0" name="Text">&quot;Fly_Idle&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>this is when they input fly left</comment>
+                        <event-block sid="509707131005967">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="977800405045601" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Fly_Left&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="210391437899229" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="223343198520809" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="986952167678256" type="Player_InputFont">
+                                    <param id="0" name="Text">&quot;Fly_Left&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>this is when they input fly right</comment>
+                        <event-block sid="812851166166639">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="885389487254205" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Fly_Right&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="684908389594201" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="168423881671604" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="274536898987390" type="Player_InputFont">
+                                    <param id="0" name="Text">&quot;Fly_Right&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>this is when they input fly down</comment>
+                        <event-block sid="442071817229575">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="274619088679785" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Fly_Down&quot;</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="925698954509445" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="748955852528102" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="930596257214940" type="Player_InputFont">
+                                    <param id="0" name="Text">&quot;Fly_Down&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="the Moving inputs for the charcters controls" sid="732526010107784" title="P1_Platform_Inputs">
+                    <sub-events>
+                        <event-group description="when someones inputing left or right" sid="135154861564231" title="Input_Left &amp; Right">
+                            <sub-events>
+                                <comment>This Event is for when the player Inputs left and right while moving on the ground</comment>
+                                <event-block sid="383811565190141">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="773556352965667" type="Player_1_Array">
+                                            <param id="0" name="Instance variable">P1_Inputs</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Left&quot;</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="2" name="Is on floor" sid="644857671933749" type="Player_1" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="147731438612483" type="Player_InputFont">
+                                            <param id="0" name="Text">&quot;Left&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="568967733671796">
+                                            <conditions>
+                                                <condition id="2" inverted="1" name="Is playing" sid="709040418195650" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="358853198711145" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="413140199194794" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="740847291847572" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="449754241227539" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="836321590294490" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="821352391976435" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack_Style_1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="721506770442933">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="811560622543027" type="Player_1_Array">
+                                            <param id="0" name="Instance variable">P1_Inputs</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Right&quot;</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="2" name="Is on floor" sid="123417710711285" type="Player_1" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="467811011076327" type="Player_InputFont">
+                                            <param id="0" name="Text">&quot;Right&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="302375757305116">
+                                            <conditions>
+                                                <condition id="2" inverted="1" name="Is playing" sid="877017828671647" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="243996514290286" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="115909698226060" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="450344677503256" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="713136381243769" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="729569688848953" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="141584821157704" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack_Style_1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="the input for jumping" sid="500251968007535" title="P1_Jump_Input">
+                            <sub-events>
+                                <comment>This is the players Jumping input</comment>
+                                <event-block sid="193326541971440">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="265156417608912" type="Player_1_Array">
+                                            <param id="0" name="Instance variable">P1_Inputs</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Jump&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="876751276545216" type="Player_InputFont">
+                                            <param id="0" name="Text">&quot;Jump&quot;</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="446536692379954">
+                                            <conditions>
+                                                <condition id="2" inverted="1" name="Is playing" sid="119747299081020" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;LeftPunch_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="472251761612193" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;RightPunch_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="108453547995601" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Kick_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="317404337004317" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;UperPunch_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="759444888463540" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="741179865899768" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="589507987442450" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="422040308165514" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="408792708622409" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="136793629616485" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Attack_Style_1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="338268631147469" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Charge_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Is playing" sid="247973324589168" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Charge_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" inverted="1" name="Key is down" sid="136673016384991" type="Keyboard">
+                                                    <param id="0" name="Key">70</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="297442615164326">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="903595499786485" type="Player_1" />
+                                        <condition behavior="Platform" id="3" name="Is jumping" sid="138479444603770" type="Player_1" />
+                                        <condition id="-7" name="Compare instance variable" sid="355549915897361" type="Player_1_Array">
+                                            <param id="0" name="Instance variable">P1_Inputs</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Left&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="726261921109181" type="Player_InputFont">
+                                            <param id="0" name="Text">&quot;Jump+Left&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="787666288048083">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Is mirrored" sid="225325275582860" type="Player_1" />
+                                        <condition behavior="Platform" id="3" name="Is jumping" sid="486716371520879" type="Player_1" />
+                                        <condition id="-7" name="Compare instance variable" sid="285377028774866" type="Player_1_Array">
+                                            <param id="0" name="Instance variable">P1_Inputs</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Right&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="487291581266233" type="Player_InputFont">
+                                            <param id="0" name="Text">&quot;Jump+Right&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-block sid="648575439088131">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="547952389906137" type="Player_1_Array">
+                                    <param id="0" name="Instance variable">P1_Inputs</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Crouch&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-block sid="510315908956527">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="633686032328178" type="Keyboard">
+                    <param id="0" name="Key">75</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="319327138111802" type="Player_1_Array">
+                    <param id="0" name="Instance variable">P1_Inputs</param>
+                    <param id="1" name="Value">&quot;Attacking&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="451738172298131">
+            <conditions>
+                <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="337482282422040" type="Player_1" />
+                <condition id="-6" name="Every X seconds" sid="522194178955961" type="System">
+                    <param id="0" name="Interval (seconds)">1.2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="10" name="Set vector Y" sid="429242956318254" type="Player_1">
+                    <param id="0" name="Vector Y">14</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

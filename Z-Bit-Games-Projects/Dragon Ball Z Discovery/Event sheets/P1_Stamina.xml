@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>P1_Stamina</name>
+    <events>
+        <variable constant="0" name="P1_Stamina" sid="481677447994475" static="0" type="number">0</variable>
+        <comment>P1_KiBar_Max:the Max Ki event for player 1</comment>
+        <variable constant="0" name="P1_Stamina_Max" sid="476990187937167" static="0" type="number">100</variable>
+        <event-group description="This is the main event for when the player is charging ki and the bar for the player" sid="985744950592496" title="P1_Stamina_Bar_Elements">
+            <sub-events>
+                <event-block sid="344697590037865">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="854811931285064" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="340173150255453" type="P1_Stamina_Bar">
+                            <param id="0" name="Width">(Self.InitialWidth + (P1_Stamina - P1_Stamina_Max) * (Self.InitialWidth / P1_Stamina_Max))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="489274213971882">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="494469353824691" type="System">
+                            <param id="0" name="Variable">P1_Stamina</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="882278980392545" type="System">
+                            <param id="0" name="Variable">P1_Stamina</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="663444456937000">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="261330322763650" type="System">
+                            <param id="0" name="Variable">P1_Stamina</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="642849353331599" type="System">
+                            <param id="0" name="Variable">P1_Stamina</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
