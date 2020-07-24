@@ -76,631 +76,981 @@
                 </event-group>
             </sub-events>
         </event-group>
-        <event-group description="this event is for when the Player gets knocked out" sid="823914854199611" title="P1_Knockout">
+        <event-group description="these events are for when the player gets damaged or defeated in game" sid="625764309318271" title="P1_Damage_events">
             <sub-events>
-                <event-group description="this event if for how many times the P1 can get hit before getting knocked out" sid="415223231650791" title="P1_Knockout_Counter">
+                <event-group description="when ever the player gets damaged in game" sid="711350185968332" title="P1_Damaged">
                     <sub-events>
-                        <event-group description="the event if for when the cpu gets knocked out in base form" sid="971491142888755" title="P1_Knockout_Event">
+                        <event-group description="when the player gets damaged in there Base Form" sid="627705359116779" title="P1_Damage_Base">
                             <sub-events>
-                                <event-block sid="543171163428877">
-                                    <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="822532035868577" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                        </condition>
-                                        <condition id="7" inverted="1" name="Is mirrored" sid="392420160440065" type="Player_1" />
-                                        <condition id="-4" name="Trigger once while true" sid="410469931658094" type="System" />
-                                    </conditions>
-                                    <actions />
+                                <event-group description="" sid="578649004918682" title="P1_Damage_State">
                                     <sub-events>
-                                        <event-block sid="379531708596483">
+                                        <event-block sid="421001534630353">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="775037326207053" type="Player_1">
+                                                <condition id="-7" name="Compare instance variable" sid="906031837232189" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Damage_State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="618807657773841" type="Player_1">
                                                     <param id="0" name="Instance variable">P1_SSJ1</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="595267910804949" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="258852537727243" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
                                                 </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="530280097625416" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Transform</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="129953644084726" type="Player_1">
-                                                    <param id="0" name="Vector X">-232</param>
-                                                </action>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="944260190846198" type="Player_1">
-                                                    <param id="0" name="Vector Y">-143</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="108309579799372" type="Player_1">
-                                                    <param id="0" name="Animation">&quot;Damaged_&quot; &amp; Player_1.P1_Charcters</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action behavior="Platform" id="2" name="Set acceleration" sid="856343001848258" type="Player_1">
-                                                    <param id="0" name="Acceleration">350</param>
-                                                </action>
-                                                <action behavior="Platform" id="3" name="Set deceleration" sid="735246788690986" type="Player_1">
-                                                    <param id="0" name="Deceleration">100</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="697847030624915">
-                                    <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="550338331969104" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                        </condition>
-                                        <condition id="7" name="Is mirrored" sid="752992425752821" type="Player_1" />
-                                        <condition id="-4" name="Trigger once while true" sid="906434831678418" type="System" />
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="711573174311659">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="416264968288362" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">0</param>
-                                                </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="328717738110732" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Chargeing</param>
-                                                </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="909698572718852" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Transform</param>
+                                                <condition id="-4" name="Trigger once while true" sid="549246210616822" type="System" />
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="249040569295271" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Dead</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="183933818946925" type="Player_1">
-                                                    <param id="0" name="Vector X">232</param>
+                                                <action id="0" name="Play" sid="679591076450202" type="Audio">
+                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-25</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                 </action>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="499229420940723" type="Player_1">
-                                                    <param id="0" name="Vector Y">-143</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="486504437884818" type="Player_1">
-                                                    <param id="0" name="Animation">&quot;Damaged_&quot; &amp; Player_1.P1_Charcters</param>
+                                                <action id="4" name="Set animation" sid="271219571105340" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; Player_1.P1_Charcters</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
-                                                <action behavior="Platform" id="2" name="Set acceleration" sid="714937770756952" type="Player_1">
-                                                    <param id="0" name="Acceleration">350</param>
-                                                </action>
-                                                <action behavior="Platform" id="3" name="Set deceleration" sid="281251261561475" type="Player_1">
-                                                    <param id="0" name="Deceleration">100</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="440400569757873">
-                                    <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="261023581012386" type="Player_1" />
-                                        <condition id="-8" name="Is boolean instance variable set" sid="731149930136575" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                        </condition>
-                                        <condition id="-14" inverted="1" name="Compare variable" sid="250226973659158" type="System">
-                                            <param id="0" name="Variable">P1_Hp</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="840499838656255">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="502096617602669" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">0</param>
-                                                </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="515609988315431" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Chargeing</param>
-                                                </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="689407067195197" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Transform</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="4" name="Set animation" sid="740735062556959" type="Player_1">
-                                                    <param id="0" name="Animation">&quot;Down_&quot; &amp; Player_1.P1_Charcters</param>
+                                                <action id="4" name="Set animation" sid="901971749397155" type="P1_Hit_Effect">
+                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
-                                                <action id="-16" name="Wait" sid="608846772504995" type="System">
-                                                    <param id="0" name="Seconds">1.1</param>
+                                                <action id="-11" name="Subtract from" sid="444881194695942" type="System">
+                                                    <param id="0" name="Variable">P1_Hp</param>
+                                                    <param id="1" name="Value">2</param>
                                                 </action>
-                                                <action behavior="Platform" id="2" name="Set acceleration" sid="617140097230610" type="Player_1">
-                                                    <param id="0" name="Acceleration">150</param>
-                                                </action>
-                                                <action behavior="Platform" id="3" name="Set deceleration" sid="804841762994783" type="Player_1">
-                                                    <param id="0" name="Deceleration">100</param>
-                                                </action>
-                                                <action id="-13" name="Set boolean" sid="997113838981591" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                                    <param id="1" name="Value">0</param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="968962599393519" type="Player_1">
+                                                <action id="-11" name="Add to" sid="281231378713552" type="Player_1">
                                                     <param id="0" name="Instance variable">P1_Knockout_Counter</param>
-                                                    <param id="1" name="Value">0</param>
+                                                    <param id="1" name="Value">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="518370568872693">
-                                    <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="427774394000320" type="Player_1" />
-                                        <condition id="-8" name="Is boolean instance variable set" sid="137974190465502" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                        </condition>
-                                        <condition id="-14" name="Compare variable" sid="902575464964895" type="System">
-                                            <param id="0" name="Variable">P1_Hp</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="902406536999148">
+                                        <event-block sid="728919180536317">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="391217079942742" type="Player_1">
+                                                <condition id="-7" name="Compare instance variable" sid="259960670213963" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Damage_State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="673245809726055" type="Player_1">
                                                     <param id="0" name="Instance variable">P1_SSJ1</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="297907356841711" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="982020532281139" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
                                                 </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="883499232150573" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Transform</param>
+                                                <condition id="-4" name="Trigger once while true" sid="238565470627525" type="System" />
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="823477405511070" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Dead</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="383152647872991" type="Player_1">
-                                                    <param id="0" name="Animation">&quot;Down_&quot; &amp; Player_1.P1_Charcters</param>
+                                                <action id="0" name="Play" sid="371029786932767" type="Audio">
+                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-25</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="990246556108218" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; Player_1.P1_Charcters</param>
                                                     <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="724952992612657" type="P1_Hit_Effect">
+                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-11" name="Subtract from" sid="522181594058651" type="System">
+                                                    <param id="0" name="Variable">P1_Hp</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="847711764732474" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                                    <param id="1" name="Value">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
-                                </event-block>
-                                <event-block sid="787727015779707">
-                                    <conditions>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="722788222507671" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                        </condition>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="590322079313124" type="Player_1" />
-                                        <condition id="-4" name="Trigger once while true" sid="790948294373086" type="System" />
-                                        <condition id="-7" name="Compare instance variable" sid="758521364989221" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_SSJ1</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                        <condition id="-14" inverted="1" name="Compare variable" sid="342162026351487" type="System">
-                                            <param id="0" name="Variable">P1_Hp</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="971165082010458" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Idle_&quot; &amp; Player_1.P1_Charcters</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action behavior="Platform" id="2" name="Set acceleration" sid="875666067998661" type="Player_1">
-                                            <param id="0" name="Acceleration">150</param>
-                                        </action>
-                                        <action behavior="Platform" id="3" name="Set deceleration" sid="505207163789253" type="Player_1">
-                                            <param id="0" name="Deceleration">100</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
+                                </event-group>
+                                <comment>this event puts the player back in the idle state after getting damaged</comment>
+                                <event-group description="" sid="312841300797863" title="P1_Damage_Finished_Animation">
+                                    <sub-events>
+                                        <event-block sid="128907774738302">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="468435534585698" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="313026401765965" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition behavior="Platform" id="2" name="Is on floor" sid="467971373431122" type="Player_1" />
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="519650029134046" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="293191024097913" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Idle_&quot; &amp; Player_1.P1_Charcters</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="881391430875375" type="Player_1">
+                                                    <param id="0" name="Input">0</param>
+                                                </action>
+                                                <action behavior="Platform" id="1" name="Set max speed" sid="135096009373870" type="Player_1">
+                                                    <param id="0" name="Max Speed">64</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="722312574849986">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="665387317458241" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Hurt2_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="937420489042891" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition behavior="Platform" id="2" name="Is on floor" sid="233322440254998" type="Player_1" />
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="349644236634321" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="891588510669032" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Idle_&quot; &amp; Player_1.P1_Charcters</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="698810403176680" type="Player_1">
+                                                    <param id="0" name="Input">0</param>
+                                                </action>
+                                                <action behavior="Platform" id="1" name="Set max speed" sid="749999399983698" type="Player_1">
+                                                    <param id="0" name="Max Speed">64</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
                             </sub-events>
                         </event-group>
-                        <event-group description="the event if for when the cpu gets knocked out in base form" sid="958743540524752" title="P1_Knockout_Event_SSJ1">
+                        <event-group description="when the player gets damaged in there SSJ Form" sid="309113560916267" title="P1_Damage_SSJ1">
                             <sub-events>
-                                <event-block sid="597312080557070">
-                                    <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="114073486467910" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                        </condition>
-                                        <condition id="7" inverted="1" name="Is mirrored" sid="440949275794150" type="Player_1" />
-                                        <condition id="-4" name="Trigger once while true" sid="920188716931204" type="System" />
-                                    </conditions>
-                                    <actions />
+                                <event-group description="" sid="444901193498202" title="P1_Damage_State_SSJ1">
                                     <sub-events>
-                                        <event-block sid="793090303136356">
+                                        <event-block sid="421074098441785">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="401883844197544" type="Player_1">
+                                                <condition id="-7" name="Compare instance variable" sid="551798052530418" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Damage_State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="279336473815682" type="Player_1">
                                                     <param id="0" name="Instance variable">P1_SSJ1</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="752811835246587" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="887915669365102" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
                                                 </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="335441185566129" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Transform</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="503628590569661" type="Player_1">
-                                                    <param id="0" name="Vector X">-232</param>
-                                                </action>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="457136255905066" type="Player_1">
-                                                    <param id="0" name="Vector Y">-143</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="843082841413929" type="Player_1">
-                                                    <param id="0" name="Animation">&quot;Damaged_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                                    <param id="1" name="From">1</param>
-                                                </action>
-                                                <action behavior="Platform" id="2" name="Set acceleration" sid="553460868616994" type="Player_1">
-                                                    <param id="0" name="Acceleration">350</param>
-                                                </action>
-                                                <action behavior="Platform" id="3" name="Set deceleration" sid="159893104995392" type="Player_1">
-                                                    <param id="0" name="Deceleration">100</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="163654229532861">
-                                    <conditions>
-                                        <condition id="-8" name="Is boolean instance variable set" sid="766387682377301" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                        </condition>
-                                        <condition id="7" name="Is mirrored" sid="560361601590732" type="Player_1" />
-                                        <condition id="-4" name="Trigger once while true" sid="860281798156724" type="System" />
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="672004979187286">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="836262410812104" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">1</param>
-                                                </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="586895128597361" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Chargeing</param>
-                                                </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="525787034181582" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Transform</param>
+                                                <condition id="-4" name="Trigger once while true" sid="356603114217682" type="System" />
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="457396680943274" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Dead</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action behavior="Platform" id="8" name="Set vector X" sid="123067133367069" type="Player_1">
-                                                    <param id="0" name="Vector X">232</param>
+                                                <action id="0" name="Play" sid="246287550703510" type="Audio">
+                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-25</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                 </action>
-                                                <action behavior="Platform" id="9" name="Set vector Y" sid="532947349856644" type="Player_1">
-                                                    <param id="0" name="Vector Y">-143</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="889077294362324" type="Player_1">
-                                                    <param id="0" name="Animation">&quot;Damaged_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                <action id="4" name="Set animation" sid="618798214954150" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
-                                                <action behavior="Platform" id="2" name="Set acceleration" sid="248460335313752" type="Player_1">
-                                                    <param id="0" name="Acceleration">350</param>
-                                                </action>
-                                                <action behavior="Platform" id="3" name="Set deceleration" sid="517249568222575" type="Player_1">
-                                                    <param id="0" name="Deceleration">100</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="340711563188595">
-                                    <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="239948486019662" type="Player_1" />
-                                        <condition id="-8" name="Is boolean instance variable set" sid="353551029013700" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                        </condition>
-                                        <condition id="-14" inverted="1" name="Compare variable" sid="829240776109330" type="System">
-                                            <param id="0" name="Variable">P1_Hp</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="437156337759367">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="900224808693117" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">1</param>
-                                                </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="647554610359683" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Chargeing</param>
-                                                </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="567540135027474" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Transform</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="4" name="Set animation" sid="671614707105634" type="Player_1">
-                                                    <param id="0" name="Animation">&quot;Down_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                <action id="4" name="Set animation" sid="949987289751138" type="P1_Hit_Effect">
+                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
-                                                <action id="-16" name="Wait" sid="673441540021798" type="System">
-                                                    <param id="0" name="Seconds">1.1</param>
+                                                <action id="-11" name="Subtract from" sid="480891279807380" type="System">
+                                                    <param id="0" name="Variable">P1_Hp</param>
+                                                    <param id="1" name="Value">2</param>
                                                 </action>
-                                                <action behavior="Platform" id="2" name="Set acceleration" sid="426468742269419" type="Player_1">
-                                                    <param id="0" name="Acceleration">150</param>
-                                                </action>
-                                                <action behavior="Platform" id="3" name="Set deceleration" sid="128508055951972" type="Player_1">
-                                                    <param id="0" name="Deceleration">100</param>
-                                                </action>
-                                                <action id="-13" name="Set boolean" sid="423312814883507" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                                    <param id="1" name="Value">0</param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="713668433126316" type="Player_1">
+                                                <action id="-11" name="Add to" sid="519982975523110" type="Player_1">
                                                     <param id="0" name="Instance variable">P1_Knockout_Counter</param>
-                                                    <param id="1" name="Value">0</param>
+                                                    <param id="1" name="Value">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="219226347116685">
-                                    <conditions>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="377678055910531" type="Player_1" />
-                                        <condition id="-8" name="Is boolean instance variable set" sid="870713401548862" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                        </condition>
-                                        <condition id="-14" name="Compare variable" sid="317493242679813" type="System">
-                                            <param id="0" name="Variable">P1_Hp</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block sid="559395417448008">
+                                        <event-block sid="684312515525501">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="874888422928603" type="Player_1">
+                                                <condition id="-7" name="Compare instance variable" sid="362966969769225" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Damage_State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="377506342627242" type="Player_1">
                                                     <param id="0" name="Instance variable">P1_SSJ1</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="377153567526448" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="196018170516096" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
                                                 </condition>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="831190945787777" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_Transform</param>
+                                                <condition id="-4" name="Trigger once while true" sid="607110157894068" type="System" />
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="390628559067553" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Dead</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="4" name="Set animation" sid="266214443819363" type="Player_1">
-                                                    <param id="0" name="Animation">&quot;Down_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                <action id="0" name="Play" sid="647559759811293" type="Audio">
+                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">-25</param>
+                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="967085493446687" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Hurt2_&quot; &amp; Player_1.P1_Charcters</param>
                                                     <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="178553736936642" type="P1_Hit_Effect">
+                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-11" name="Subtract from" sid="739964390880981" type="System">
+                                                    <param id="0" name="Variable">P1_Hp</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                                <action id="-11" name="Add to" sid="900602410796682" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                                    <param id="1" name="Value">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
                                     </sub-events>
-                                </event-block>
-                                <event-block sid="209861628515560">
-                                    <conditions>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="348377419731197" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                        </condition>
-                                        <condition behavior="Platform" id="2" name="Is on floor" sid="931742746998907" type="Player_1" />
-                                        <condition id="-4" name="Trigger once while true" sid="198336573544430" type="System" />
-                                        <condition id="-7" name="Compare instance variable" sid="789823676116452" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_SSJ1</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                        <condition id="-14" inverted="1" name="Compare variable" sid="644119840174163" type="System">
-                                            <param id="0" name="Variable">P1_Hp</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="4" name="Set animation" sid="630740398617078" type="Player_1">
-                                            <param id="0" name="Animation">&quot;IdleSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action behavior="Platform" id="2" name="Set acceleration" sid="136836149121719" type="Player_1">
-                                            <param id="0" name="Acceleration">150</param>
-                                        </action>
-                                        <action behavior="Platform" id="3" name="Set deceleration" sid="384107628988196" type="Player_1">
-                                            <param id="0" name="Deceleration">100</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
+                                </event-group>
+                                <comment>this event puts the player back in the idle state after getting damaged</comment>
+                                <event-group description="" sid="760902088446601" title="P1_Damage_Finished_Animation_SSJ1">
+                                    <sub-events>
+                                        <event-block sid="975542180478091">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="660709790505006" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="166041084167368" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition behavior="Platform" id="2" name="Is on floor" sid="987731205373971" type="Player_1" />
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="918921375368939" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="810226107835174" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;IdleSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="812386360897367" type="Player_1">
+                                                    <param id="0" name="Input">0</param>
+                                                </action>
+                                                <action behavior="Platform" id="1" name="Set max speed" sid="757970055378959" type="Player_1">
+                                                    <param id="0" name="Max Speed">64</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="115428194991742">
+                                            <conditions>
+                                                <condition id="4" name="On finished" sid="707491642364232" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Hurt2_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="636453514767231" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition behavior="Platform" id="2" name="Is on floor" sid="879167555927184" type="Player_1" />
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="246329348411917" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="958325620557782" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;IdleSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="727376784043102" type="Player_1">
+                                                    <param id="0" name="Input">0</param>
+                                                </action>
+                                                <action behavior="Platform" id="1" name="Set max speed" sid="544784989331968" type="Player_1">
+                                                    <param id="0" name="Max Speed">64</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
                             </sub-events>
                         </event-group>
-                        <event-block sid="492390260513885">
+                        <event-block sid="448614773537520">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="276302249649042" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Knockout_Counter</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">8</param>
+                                <condition id="-7" name="Compare instance variable" sid="602825358996878" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Damage_State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
                                 </condition>
-                                <condition id="-4" name="Trigger once while true" sid="783871906411707" type="System" />
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" sid="241789691342324" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="274276064787986" type="System">
-                                    <param id="0" name="Seconds">1.1</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="306035015105908" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                <action id="-10" name="Set value" sid="242056558735656" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Damage_State</param>
                                     <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="851949136224266">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="370344356773212" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Knockout_Counter</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="547864976896027" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Knockout_Counter</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="951532035011353">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="758962392773514" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Knockout_Counter</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">8</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="538943223029912" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Knockout_Counter</param>
-                                    <param id="1" name="Value">8</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="879552170439856">
-                            <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" sid="473713906253730" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Chargeing</param>
-                                </condition>
-                                <condition id="-8" name="Is boolean instance variable set" sid="970325484908425" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="381611243781860" type="P1_Startup_Aura" />
-                                <action id="-9" name="Destroy" sid="346486721219536" type="P1_Swoosh_Effect" />
-                                <action id="6" name="Stop" sid="283768081423654" type="Audio">
-                                    <param id="0" name="Tag">&quot;Charge&quot;</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="508618772950741" type="P1_Aura">
-                                    <param id="0" name="Animation">&quot;Charge_End&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action id="-13" name="Set boolean" sid="146040345602195" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Charge_Ki</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="598935864545803">
-                            <conditions>
-                                <condition behavior="Platform" id="9" name="On landed" sid="695169858532064" type="Player_1" />
-                                <condition id="-8" name="Is boolean instance variable set" sid="811529501887965" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Play" sid="688844736506809" type="Audio">
-                                    <param id="0" name="Audio file">GroundLand</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-25</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="4" name="Set animation" sid="838342282683028" type="P1_Dust_Effect">
-                                    <param id="0" name="Animation">&quot;Dust&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action id="-3" name="Create object" sid="313052476775211" type="System">
-                                    <param id="0" name="Object to create">P1_Dust_Effect</param>
-                                    <param id="1" name="Layer">9</param>
-                                    <param id="2" name="X">Player_1.X</param>
-                                    <param id="3" name="Y">Player_1.Y</param>
-                                </action>
-                                <action behavior="Pin" id="0" name="Pin to object" sid="807826660735403" type="P1_Dust_Effect">
-                                    <param id="0" name="Pin to">Player_1</param>
-                                    <param id="1" name="Mode">1</param>
-                                </action>
-                                <action id="-3" name="Create object" sid="551360954683186" type="System">
-                                    <param id="0" name="Object to create">P1_Dust_Effect2</param>
-                                    <param id="1" name="Layer">9</param>
-                                    <param id="2" name="X">Player_1.X</param>
-                                    <param id="3" name="Y">Player_1.Y</param>
-                                </action>
-                                <action behavior="Pin" id="0" name="Pin to object" sid="880159023585975" type="P1_Dust_Effect2">
-                                    <param id="0" name="Pin to">Player_1</param>
-                                    <param id="1" name="Mode">1</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-block sid="370907616306337">
+                <event-group description="this event is for when the Player gets knocked out" sid="823914854199611" title="P1_Knockout">
+                    <sub-events>
+                        <event-group description="this event if for how many times the P1 can get hit before getting knocked out" sid="415223231650791" title="P1_Knockout_Counter">
+                            <sub-events>
+                                <event-group description="the event if for when the cpu gets knocked out in base form" sid="971491142888755" title="P1_Knockout_Event">
+                                    <sub-events>
+                                        <event-block sid="543171163428877">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="822532035868577" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                </condition>
+                                                <condition id="7" inverted="1" name="Is mirrored" sid="392420160440065" type="Player_1" />
+                                                <condition id="-4" name="Trigger once while true" sid="410469931658094" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="379531708596483">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="775037326207053" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="595267910804949" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="530280097625416" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Transform</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="129953644084726" type="Player_1">
+                                                            <param id="0" name="Vector X">-232</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="944260190846198" type="Player_1">
+                                                            <param id="0" name="Vector Y">-143</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="108309579799372" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Damaged_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="2" name="Set acceleration" sid="856343001848258" type="Player_1">
+                                                            <param id="0" name="Acceleration">350</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="3" name="Set deceleration" sid="735246788690986" type="Player_1">
+                                                            <param id="0" name="Deceleration">100</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="697847030624915">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="550338331969104" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                </condition>
+                                                <condition id="7" name="Is mirrored" sid="752992425752821" type="Player_1" />
+                                                <condition id="-4" name="Trigger once while true" sid="906434831678418" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="711573174311659">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="416264968288362" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="328717738110732" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="909698572718852" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Transform</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="183933818946925" type="Player_1">
+                                                            <param id="0" name="Vector X">232</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="499229420940723" type="Player_1">
+                                                            <param id="0" name="Vector Y">-143</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="486504437884818" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Damaged_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="2" name="Set acceleration" sid="714937770756952" type="Player_1">
+                                                            <param id="0" name="Acceleration">350</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="3" name="Set deceleration" sid="281251261561475" type="Player_1">
+                                                            <param id="0" name="Deceleration">100</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="440400569757873">
+                                            <conditions>
+                                                <condition behavior="Platform" id="2" name="Is on floor" sid="261023581012386" type="Player_1" />
+                                                <condition id="-8" name="Is boolean instance variable set" sid="731149930136575" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="169356989077277" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Dead</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="840499838656255">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="502096617602669" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="515609988315431" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="689407067195197" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Transform</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="740735062556959" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Down_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="608846772504995" type="System">
+                                                            <param id="0" name="Seconds">1.1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="2" name="Set acceleration" sid="617140097230610" type="Player_1">
+                                                            <param id="0" name="Acceleration">150</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="3" name="Set deceleration" sid="804841762994783" type="Player_1">
+                                                            <param id="0" name="Deceleration">100</param>
+                                                        </action>
+                                                        <action id="-13" name="Set boolean" sid="997113838981591" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="968962599393519" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="518370568872693">
+                                            <conditions>
+                                                <condition behavior="Platform" id="2" name="Is on floor" sid="427774394000320" type="Player_1" />
+                                                <condition id="-8" name="Is boolean instance variable set" sid="137974190465502" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                </condition>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="723330799279936" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Dead</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="902406536999148">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="391217079942742" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="297907356841711" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="883499232150573" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Transform</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="383152647872991" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Down_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="787727015779707">
+                                            <conditions>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="722788222507671" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                </condition>
+                                                <condition behavior="Platform" id="2" name="Is on floor" sid="590322079313124" type="Player_1" />
+                                                <condition id="-4" name="Trigger once while true" sid="790948294373086" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="758521364989221" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition id="-14" inverted="1" name="Compare variable" sid="342162026351487" type="System">
+                                                    <param id="0" name="Variable">P1_Hp</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="971165082010458" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;Idle_&quot; &amp; Player_1.P1_Charcters</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action behavior="Platform" id="2" name="Set acceleration" sid="875666067998661" type="Player_1">
+                                                    <param id="0" name="Acceleration">150</param>
+                                                </action>
+                                                <action behavior="Platform" id="3" name="Set deceleration" sid="505207163789253" type="Player_1">
+                                                    <param id="0" name="Deceleration">100</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                                <event-group description="the event if for when the cpu gets knocked out in base form" sid="958743540524752" title="P1_Knockout_Event_SSJ1">
+                                    <sub-events>
+                                        <event-block sid="597312080557070">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="114073486467910" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                </condition>
+                                                <condition id="7" inverted="1" name="Is mirrored" sid="440949275794150" type="Player_1" />
+                                                <condition id="-4" name="Trigger once while true" sid="920188716931204" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="793090303136356">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="401883844197544" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="752811835246587" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="335441185566129" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Transform</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="503628590569661" type="Player_1">
+                                                            <param id="0" name="Vector X">-232</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="457136255905066" type="Player_1">
+                                                            <param id="0" name="Vector Y">-143</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="843082841413929" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Damaged_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="2" name="Set acceleration" sid="553460868616994" type="Player_1">
+                                                            <param id="0" name="Acceleration">350</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="3" name="Set deceleration" sid="159893104995392" type="Player_1">
+                                                            <param id="0" name="Deceleration">100</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="163654229532861">
+                                            <conditions>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="766387682377301" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                </condition>
+                                                <condition id="7" name="Is mirrored" sid="560361601590732" type="Player_1" />
+                                                <condition id="-4" name="Trigger once while true" sid="860281798156724" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="672004979187286">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="836262410812104" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="586895128597361" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="525787034181582" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Transform</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Platform" id="8" name="Set vector X" sid="123067133367069" type="Player_1">
+                                                            <param id="0" name="Vector X">232</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="9" name="Set vector Y" sid="532947349856644" type="Player_1">
+                                                            <param id="0" name="Vector Y">-143</param>
+                                                        </action>
+                                                        <action id="4" name="Set animation" sid="889077294362324" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Damaged_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="2" name="Set acceleration" sid="248460335313752" type="Player_1">
+                                                            <param id="0" name="Acceleration">350</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="3" name="Set deceleration" sid="517249568222575" type="Player_1">
+                                                            <param id="0" name="Deceleration">100</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="340711563188595">
+                                            <conditions>
+                                                <condition behavior="Platform" id="2" name="Is on floor" sid="239948486019662" type="Player_1" />
+                                                <condition id="-8" name="Is boolean instance variable set" sid="353551029013700" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="326452028132583" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Dead</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="437156337759367">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="900224808693117" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="647554610359683" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="567540135027474" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Transform</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="671614707105634" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Down_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="673441540021798" type="System">
+                                                            <param id="0" name="Seconds">1.1</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="2" name="Set acceleration" sid="426468742269419" type="Player_1">
+                                                            <param id="0" name="Acceleration">150</param>
+                                                        </action>
+                                                        <action behavior="Platform" id="3" name="Set deceleration" sid="128508055951972" type="Player_1">
+                                                            <param id="0" name="Deceleration">100</param>
+                                                        </action>
+                                                        <action id="-13" name="Set boolean" sid="423312814883507" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="713668433126316" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="219226347116685">
+                                            <conditions>
+                                                <condition behavior="Platform" id="2" name="Is on floor" sid="377678055910531" type="Player_1" />
+                                                <condition id="-8" name="Is boolean instance variable set" sid="870713401548862" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                </condition>
+                                                <condition id="-8" name="Is boolean instance variable set" sid="317493242679813" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Dead</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="559395417448008">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="874888422928603" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="377153567526448" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Chargeing</param>
+                                                        </condition>
+                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="831190945787777" type="Player_1">
+                                                            <param id="0" name="Instance variable">P1_Transform</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="4" name="Set animation" sid="266214443819363" type="Player_1">
+                                                            <param id="0" name="Animation">&quot;Down_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="209861628515560">
+                                            <conditions>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="348377419731197" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                </condition>
+                                                <condition behavior="Platform" id="2" name="Is on floor" sid="931742746998907" type="Player_1" />
+                                                <condition id="-4" name="Trigger once while true" sid="198336573544430" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="789823676116452" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                                <condition id="-14" inverted="1" name="Compare variable" sid="644119840174163" type="System">
+                                                    <param id="0" name="Variable">P1_Hp</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="630740398617078" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;IdleSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action behavior="Platform" id="2" name="Set acceleration" sid="136836149121719" type="Player_1">
+                                                    <param id="0" name="Acceleration">150</param>
+                                                </action>
+                                                <action behavior="Platform" id="3" name="Set deceleration" sid="384107628988196" type="Player_1">
+                                                    <param id="0" name="Deceleration">100</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-group>
+                                <event-block sid="492390260513885">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="276302249649042" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">8</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" sid="783871906411707" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="241789691342324" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="274276064787986" type="System">
+                                            <param id="0" name="Seconds">1.1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="306035015105908" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="851949136224266">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="370344356773212" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="547864976896027" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="951532035011353">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="758962392773514" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="538943223029912" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                            <param id="1" name="Value">8</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="879552170439856">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="473713906253730" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Chargeing</param>
+                                        </condition>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="970325484908425" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="381611243781860" type="P1_Startup_Aura" />
+                                        <action id="-9" name="Destroy" sid="346486721219536" type="P1_Swoosh_Effect" />
+                                        <action id="6" name="Stop" sid="283768081423654" type="Audio">
+                                            <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="508618772950741" type="P1_Aura">
+                                            <param id="0" name="Animation">&quot;Charge_End&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="146040345602195" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Charge_Ki</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="598935864545803">
+                                    <conditions>
+                                        <condition behavior="Platform" id="9" name="On landed" sid="695169858532064" type="Player_1" />
+                                        <condition id="-8" name="Is boolean instance variable set" sid="811529501887965" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="688844736506809" type="Audio">
+                                            <param id="0" name="Audio file">GroundLand</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-25</param>
+                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="838342282683028" type="P1_Dust_Effect">
+                                            <param id="0" name="Animation">&quot;Dust&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="313052476775211" type="System">
+                                            <param id="0" name="Object to create">P1_Dust_Effect</param>
+                                            <param id="1" name="Layer">9</param>
+                                            <param id="2" name="X">Player_1.X</param>
+                                            <param id="3" name="Y">Player_1.Y</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="807826660735403" type="P1_Dust_Effect">
+                                            <param id="0" name="Pin to">Player_1</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="551360954683186" type="System">
+                                            <param id="0" name="Object to create">P1_Dust_Effect2</param>
+                                            <param id="1" name="Layer">9</param>
+                                            <param id="2" name="X">Player_1.X</param>
+                                            <param id="3" name="Y">Player_1.Y</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="880159023585975" type="P1_Dust_Effect2">
+                                            <param id="0" name="Pin to">Player_1</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-block sid="370907616306337">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="207585204976309" type="Keyboard">
+                                    <param id="0" name="Key">78</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="819396984280631" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Chargeing</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="765801045997670" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="this event lets the cpu know if its dead" sid="571338995403726" title="P1_Dead">
+                    <sub-events>
+                        <event-block sid="360156631704745">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="403124615469124" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="441690967112168" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Dead</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="295413057209545" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="184899918514215" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="623221129054956" type="System">
+                                    <param id="0" name="Variable">P1_Super_Meter</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="696789583580368">
+                            <conditions>
+                                <condition behavior="Platform" id="9" name="On landed" sid="736005249454786" type="Player_1" />
+                                <condition id="-8" name="Is boolean instance variable set" sid="360497891486411" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Dead</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="747758911644647" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="359370959346080">
                     <conditions>
-                        <condition id="0" name="On key pressed" sid="207585204976309" type="Keyboard">
-                            <param id="0" name="Key">78</param>
-                        </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="819396984280631" type="Player_1">
-                            <param id="0" name="Instance variable">P1_Chargeing</param>
+                        <condition id="0" name="On key pressed" sid="301621482512763" type="Keyboard">
+                            <param id="0" name="Key">71</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-13" name="Set boolean" sid="765801045997670" type="Player_1">
-                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                        <action id="-11" name="Add to" sid="663305383574622" type="Player_1">
+                            <param id="0" name="Instance variable">P1_Damage_State</param>
                             <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="615258461168847">
+        <event-block sid="553621164039513">
             <conditions>
-                <condition id="4" name="On finished" sid="313577530192829" type="Player_1">
-                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; Player_1.P1_Charcters</param>
+                <condition id="1" name="Is overlapping another object" sid="863616517262782" type="Player_1">
+                    <param id="0" name="Object">DamageBlock</param>
                 </condition>
-                <condition id="-7" name="Compare instance variable" sid="760116620911405" type="Player_1">
-                    <param id="0" name="Instance variable">P1_SSJ1</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="939299288539085" type="Player_1">
-                    <param id="0" name="Instance variable">P1_Guard_State</param>
-                </condition>
-                <condition id="2" inverted="1" name="Key is down" sid="306829979968877" type="Keyboard">
-                    <param id="0" name="Key">79</param>
-                </condition>
+                <condition id="-4" name="Trigger once while true" sid="316313328038659" type="System" />
             </conditions>
             <actions>
-                <action id="4" name="Set animation" sid="557930459609391" type="Player_1">
-                    <param id="0" name="Animation">&quot;Idle_&quot; &amp; Player_1.P1_Charcters</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action behavior="Platform" id="0" name="Set ignoring input" sid="173731818671746" type="Player_1">
-                    <param id="0" name="Input">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="470005607953636">
-            <conditions>
-                <condition id="4" name="On finished" sid="709412432457627" type="Player_1">
-                    <param id="0" name="Animation">&quot;Hurt2_&quot; &amp; Player_1.P1_Charcters</param>
-                </condition>
-                <condition id="-7" name="Compare instance variable" sid="717191520497059" type="Player_1">
-                    <param id="0" name="Instance variable">P1_SSJ1</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="616888697162261" type="Player_1">
-                    <param id="0" name="Instance variable">P1_Guard_State</param>
-                </condition>
-                <condition id="2" inverted="1" name="Key is down" sid="501523270863306" type="Keyboard">
-                    <param id="0" name="Key">79</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="4" name="Set animation" sid="592962805045751" type="Player_1">
-                    <param id="0" name="Animation">&quot;Idle_&quot; &amp; Player_1.P1_Charcters</param>
-                    <param id="1" name="From">1</param>
-                </action>
-                <action behavior="Platform" id="0" name="Set ignoring input" sid="707684121456091" type="Player_1">
-                    <param id="0" name="Input">0</param>
+                <action id="-11" name="Add to" sid="340236476997779" type="Player_1">
+                    <param id="0" name="Instance variable">P1_Damage_State</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
         </event-block>

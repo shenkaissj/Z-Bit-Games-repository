@@ -141,6 +141,8 @@
                     <instance-variable name="CPU_1_Knockout_State" sid="145829864165583" type="boolean" />
                     <instance-variable name="CPU_1_Damage" sid="237790251815846" type="boolean" />
                     <instance-variable name="CPU_1_ActionRoll" sid="433692673899987" type="number" />
+                    <instance-variable name="CPU_1_Dead" sid="487856505818869" type="boolean" />
+                    <instance-variable name="CPU_1_Damaged" sid="667021214968988" type="boolean" />
                 </instance-variables>
                 <container>
                     <type>CPU_Array</type>
@@ -14631,7 +14633,8 @@
                             <instance-variable name="P1_Knockout_Counter" sid="364628301234662" type="number" />
                             <instance-variable name="P1_Knockout_State" sid="869695232824756" type="boolean" />
                             <instance-variable name="P1_Damaged" sid="413569904942522" type="number" />
-                            <instance-variable name="P1_Hurting" sid="467832635575063" type="boolean" />
+                            <instance-variable name="P1_Damage_State" sid="467832635575063" type="number" />
+                            <instance-variable name="P1_Dead" sid="592525782378830" type="boolean" />
                         </instance-variables>
                         <behaviors>
                             <behavior-type name="Timer" sid="435835945874937">
@@ -28428,6 +28431,11 @@
         </object-type>
         <object-type name="Ready_Font" sid="130288306291161">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="422017461059030">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="852646778751705" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -28436,6 +28444,11 @@
         </object-type>
         <object-type name="GO_Font" sid="321864443787354">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="407738820788550">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="854021795137245" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -28444,8 +28457,34 @@
         </object-type>
         <object-type name="KO_Font" sid="139385850061742">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="852864780061992">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="398718142221101" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Winner" sid="545398262627997">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="459025200698310">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="198579394842177" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="DamageBlock" sid="236748265972235">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="850576474432574" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
