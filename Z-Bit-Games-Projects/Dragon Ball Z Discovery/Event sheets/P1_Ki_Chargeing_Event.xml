@@ -164,6 +164,9 @@
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="485724702205987" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
                                                                         </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="132197392736958" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
                                                                     </conditions>
                                                                     <actions>
                                                                         <action id="4" name="Set animation" sid="621075222129957" type="Player_1">
@@ -204,6 +207,9 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="716507552103165" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="396082257947333" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -282,32 +288,42 @@
                                                                         </action>
                                                                     </actions>
                                                                 </event-block>
-                                                                <event-block sid="429038240217799">
+                                                                <event-block any="1" sid="429038240217799">
                                                                     <conditions>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="847358285265550" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Charge_Ki</param>
                                                                         </condition>
-                                                                        <condition id="2" name="Is playing" sid="305303890875274" type="Player_1">
-                                                                            <param id="0" name="Animation">&quot;Idle_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                        <condition id="-8" name="Is boolean instance variable set" sid="524319647107244" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
                                                                     </conditions>
-                                                                    <actions>
-                                                                        <action id="6" name="Stop" sid="961184241980229" type="Audio">
-                                                                            <param id="0" name="Tag">&quot;Charge&quot;</param>
-                                                                        </action>
-                                                                        <action id="4" name="Set animation" sid="400277907791640" type="P1_Aura">
-                                                                            <param id="0" name="Animation">&quot;Charge_End&quot;</param>
-                                                                            <param id="1" name="From">1</param>
-                                                                        </action>
-                                                                        <action id="-13" name="Set boolean" sid="808056267744349" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_Charge_Ki</param>
-                                                                            <param id="1" name="Value">0</param>
-                                                                        </action>
-                                                                    </actions>
+                                                                    <actions />
+                                                                    <sub-events>
+                                                                        <event-block sid="520103358322777">
+                                                                            <conditions>
+                                                                                <condition id="2" name="Is playing" sid="360168899629704" type="Player_1">
+                                                                                    <param id="0" name="Animation">&quot;Idle_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                                </condition>
+                                                                            </conditions>
+                                                                            <actions>
+                                                                                <action id="6" name="Stop" sid="604725825003644" type="Audio">
+                                                                                    <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                                                                </action>
+                                                                                <action id="4" name="Set animation" sid="296783750248350" type="P1_Aura">
+                                                                                    <param id="0" name="Animation">&quot;Charge_End&quot;</param>
+                                                                                    <param id="1" name="From">1</param>
+                                                                                </action>
+                                                                                <action id="-13" name="Set boolean" sid="309038266828839" type="Player_1">
+                                                                                    <param id="0" name="Instance variable">P1_Charge_Ki</param>
+                                                                                    <param id="1" name="Value">0</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                        </event-block>
+                                                                    </sub-events>
                                                                 </event-block>
                                                             </sub-events>
                                                         </event-group>
-                                                        <event-group description="The Charging for base form while in the air" sid="454821361282680" title="P1_Base Charging_Fly_PC">
+                                                        <event-group description="The Charging for base form while in the air" inactive="1" sid="454821361282680" title="P1_Base Charging_Fly_PC">
                                                             <sub-events>
                                                                 <event-block sid="368192662033145">
                                                                     <conditions>
@@ -475,6 +491,9 @@
                                                                         </condition>
                                                                         <condition id="-8" name="Is boolean instance variable set" sid="214819616451963" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Fly</param>
+                                                                        </condition>
+                                                                        <condition id="-8" name="Is boolean instance variable set" sid="800975697611123" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -671,60 +690,70 @@
                                                                         </event-block>
                                                                     </sub-events>
                                                                 </event-block>
-                                                                <event-block sid="822119614843911">
+                                                                <event-block any="1" sid="822119614843911">
                                                                     <conditions>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="487121512856269" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Charge_Ki</param>
                                                                         </condition>
-                                                                        <condition id="2" name="Is playing" sid="241177218017538" type="Player_1">
-                                                                            <param id="0" name="Animation">&quot;IdleSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                        <condition id="-8" name="Is boolean instance variable set" sid="595088873406658" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
                                                                     </conditions>
-                                                                    <actions>
-                                                                        <action id="6" name="Stop" sid="338490090467419" type="Audio">
-                                                                            <param id="0" name="Tag">&quot;Charge&quot;</param>
-                                                                        </action>
-                                                                        <action id="4" name="Set animation" sid="272587633864747" type="P1_Aura">
-                                                                            <param id="0" name="Animation">&quot;Charge_End&quot;</param>
-                                                                            <param id="1" name="From">1</param>
-                                                                        </action>
-                                                                        <action id="-13" name="Set boolean" sid="663186794072480" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_Charge_Ki</param>
-                                                                            <param id="1" name="Value">0</param>
-                                                                        </action>
-                                                                    </actions>
+                                                                    <actions />
                                                                     <sub-events>
-                                                                        <event-block sid="612614932960585">
+                                                                        <event-block sid="891865733255210">
                                                                             <conditions>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="904373039462263" type="Player_1">
-                                                                                    <param id="0" name="Animation">&quot;Run_&quot; &amp; Player_1.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="832470025680774" type="Player_1">
-                                                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="724260573704466" type="Player_1">
-                                                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="752379359063994" type="Player_1">
-                                                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="357942806954279" type="Player_1">
-                                                                                    <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="714761567640033" type="Player_1">
-                                                                                    <param id="0" name="Animation">&quot;Duck_&quot; &amp; Player_1.P1_Charcters</param>
-                                                                                </condition>
-                                                                                <condition id="2" inverted="1" name="Is playing" sid="317261175502065" type="Player_1">
-                                                                                    <param id="0" name="Animation">&quot;Rise_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                                <condition id="2" name="Is playing" sid="120874361091292" type="Player_1">
+                                                                                    <param id="0" name="Animation">&quot;IdleSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
                                                                                 </condition>
                                                                             </conditions>
-                                                                            <actions />
+                                                                            <actions>
+                                                                                <action id="6" name="Stop" sid="473076330738772" type="Audio">
+                                                                                    <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                                                                </action>
+                                                                                <action id="4" name="Set animation" sid="735350221510636" type="P1_Aura">
+                                                                                    <param id="0" name="Animation">&quot;Charge_End&quot;</param>
+                                                                                    <param id="1" name="From">1</param>
+                                                                                </action>
+                                                                                <action id="-13" name="Set boolean" sid="919648205535940" type="Player_1">
+                                                                                    <param id="0" name="Instance variable">P1_Charge_Ki</param>
+                                                                                    <param id="1" name="Value">0</param>
+                                                                                </action>
+                                                                            </actions>
+                                                                            <sub-events>
+                                                                                <event-block sid="619629039138887">
+                                                                                    <conditions>
+                                                                                        <condition id="2" inverted="1" name="Is playing" sid="329378931891943" type="Player_1">
+                                                                                            <param id="0" name="Animation">&quot;Run_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                                        </condition>
+                                                                                        <condition id="2" inverted="1" name="Is playing" sid="615391761069497" type="Player_1">
+                                                                                            <param id="0" name="Animation">&quot;Attack1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                                        </condition>
+                                                                                        <condition id="2" inverted="1" name="Is playing" sid="474170970839559" type="Player_1">
+                                                                                            <param id="0" name="Animation">&quot;Attack2_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                                        </condition>
+                                                                                        <condition id="2" inverted="1" name="Is playing" sid="537526128237827" type="Player_1">
+                                                                                            <param id="0" name="Animation">&quot;Attack3_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                                        </condition>
+                                                                                        <condition id="2" inverted="1" name="Is playing" sid="883534937099992" type="Player_1">
+                                                                                            <param id="0" name="Animation">&quot;Attack4_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                                        </condition>
+                                                                                        <condition id="2" inverted="1" name="Is playing" sid="489963174243109" type="Player_1">
+                                                                                            <param id="0" name="Animation">&quot;Duck_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                                        </condition>
+                                                                                        <condition id="2" inverted="1" name="Is playing" sid="898451953192674" type="Player_1">
+                                                                                            <param id="0" name="Animation">&quot;Rise_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                                        </condition>
+                                                                                    </conditions>
+                                                                                    <actions />
+                                                                                </event-block>
+                                                                            </sub-events>
                                                                         </event-block>
                                                                     </sub-events>
                                                                 </event-block>
                                                             </sub-events>
                                                         </event-group>
-                                                        <event-group description="The Charging for Super Sayian form while in the air" sid="282417626672671" title="P1_SSJ1 Charging_Fly_PC">
+                                                        <event-group description="The Charging for Super Sayian form while in the air" inactive="1" sid="282417626672671" title="P1_SSJ1 Charging_Fly_PC">
                                                             <sub-events>
                                                                 <event-block sid="108935826225442">
                                                                     <conditions>
@@ -892,6 +921,9 @@
                                                                         </condition>
                                                                         <condition id="-8" name="Is boolean instance variable set" sid="921294184569261" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Fly</param>
+                                                                        </condition>
+                                                                        <condition id="-8" name="Is boolean instance variable set" sid="330099572088460" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>

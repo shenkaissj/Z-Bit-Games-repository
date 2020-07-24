@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CPU1_KiBlast</name>
+    <events>
+        <event-group description="the basic projectile for the charctet" inactive="1" sid="531220077279256" title="CPU_Ki_Blast">
+            <sub-events>
+                <event-group description="The main kiblast ability but for the CPU1" sid="734940474238574" title="CPU1_Ki_Blast">
+                    <sub-events>
+                        <event-group description="Ki Blast for the cpu in baseform" sid="714289740339746" title="CPU1_Ki_Blast_Base">
+                            <sub-events>
+                                <event-block sid="663374476556305">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="255999550018682" type="CPU_1">
+                                            <param id="0" name="Instance variable">CPU1_Main_ActionRoll</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">4</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="782352824666580" type="CPU_Array">
+                                            <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-14" inverted="1" name="Compare variable" sid="412372697204445" type="System">
+                                            <param id="0" name="Variable">CPU_1_Ki</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="982924428991416">
+                                            <conditions>
+                                                <condition id="-6" name="Every X seconds" sid="312928801819851" type="System">
+                                                    <param id="0" name="Interval (seconds)">1.0</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="369543682456903" type="CPU_1">
+                                                    <param id="0" name="Animation">&quot;Charge&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="883919325891947" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Fireing_Beam</param>
+                                                </condition>
+                                                <condition id="-7" inverted="1" name="Compare instance variable" sid="657090593745665" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Charcters</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;KG1&quot;</param>
+                                                </condition>
+                                                <condition id="-7" inverted="1" name="Compare instance variable" sid="967440381108970" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Charcters</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;KG2&quot;</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="663371334466262" type="CPU_1">
+                                                    <param id="0" name="Animation">&quot;Baseform_FT1&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                </condition>
+                                                <condition id="2" name="Is playing" sid="723437315227588" type="CPU_1">
+                                                    <param id="0" name="Animation">&quot;SSJ1_Transformation_1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                </condition>
+                                                <condition id="-9" inverted="1" name="Is visible" sid="495455534626021" type="CPU1_Aura" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="437336443572030">
+                                                    <conditions>
+                                                        <condition id="-6" name="Every X seconds" sid="771519174750796" type="System">
+                                                            <param id="0" name="Interval (seconds)">0.2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="172554009073006" type="CPU_Array">
+                                                            <param id="0" name="Instance variable">CPU_1_Ki_Blast_Count</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-13" name="Set boolean" sid="546031159825441" type="CPU_Array">
+                                                            <param id="0" name="Instance variable">CPU_1_Run</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action id="-11" name="Subtract from" sid="844761129376911" type="System">
+                                                            <param id="0" name="Variable">CPU_1_Ki</param>
+                                                            <param id="1" name="Value">10</param>
+                                                        </action>
+                                                    </actions>
+                                                    <sub-events>
+                                                        <event-block sid="389194118944023">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="812835701324040" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="468421481226836" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Ki_Blast_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="284877287115924" type="CPU_1">
+                                                                    <param id="0" name="Max Speed">23</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="989682942863757" type="Audio">
+                                                                    <param id="0" name="Audio file">kiblast</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-13</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="290804994059926" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-3" name="Create object" sid="785101057903427" type="System">
+                                                                    <param id="0" name="Object to create">CPU1_Ki_Blast</param>
+                                                                    <param id="1" name="Layer">9</param>
+                                                                    <param id="2" name="X">CPU_1.X</param>
+                                                                    <param id="3" name="Y">CPU_1.Y</param>
+                                                                </action>
+                                                                <action id="-16" name="Wait" sid="820186264468844" type="System">
+                                                                    <param id="0" name="Seconds">0.2</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="194237697014152" type="Audio">
+                                                                    <param id="0" name="Audio file">kiblast</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-13</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="650826109049361" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-3" name="Create object" sid="899504904653006" type="System">
+                                                                    <param id="0" name="Object to create">CPU1_Ki_Blast</param>
+                                                                    <param id="1" name="Layer">9</param>
+                                                                    <param id="2" name="X">CPU_1.X</param>
+                                                                    <param id="3" name="Y">CPU_1.Y</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="0" name="Set ignoring input" sid="430474527731146" type="CPU_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                                <action behavior="8Direction" id="2" name="Set ignoring input" sid="761205130785917" type="CPU_1">
+                                                                    <param id="0" name="Input">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="986332064310267">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="807908443742331" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Ki_Blast_Count</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="965523322799161" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Ki_Blast_Count</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="724546894904163">
+                                    <conditions>
+                                        <condition id="-18" name="On created" sid="383219630075136" type="CPU1_Ki_Blast" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="630668330109645">
+                                            <conditions>
+                                                <condition id="7" name="Is mirrored" sid="723987857995779" type="CPU_1" />
+                                                <condition id="-7" inverted="1" name="Compare instance variable" sid="594534409151582" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Charcters</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;KG1&quot;</param>
+                                                </condition>
+                                                <condition id="-7" inverted="1" name="Compare instance variable" sid="777560354291057" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Charcters</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;KG2&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-8" name="Set angle" sid="618444882539329" type="CPU1_Ki_Blast">
+                                                    <param id="0" name="Angle">180</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

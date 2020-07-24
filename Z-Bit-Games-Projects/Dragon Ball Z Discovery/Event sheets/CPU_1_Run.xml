@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CPU_1_Run</name>
+    <events>
+        <event-group description="The Running State for the Computer" inactive="1" sid="854414060984501" title="CPU1_Run_State">
+            <sub-events>
+                <comment>Walking_State</comment>
+                <event-block sid="283369418667471">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="271258717910060" type="CPU_1">
+                            <param id="0" name="Object">Player_1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="893251045006473" type="CPU_Array">
+                            <param id="0" name="Instance variable">Dist_X</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="261073256549939" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_State</param>
+                            <param id="1" name="Value">&quot;Run&quot;</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="250102363908681" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_1_Run</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="472146269960572">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="598846850088357" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Run&quot;</param>
+                        </condition>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="467935104639607" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Idle&quot;</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="477288875104246" type="Player_1">
+                            <param id="0" name="Instance variable">P1_Charge_Ki</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="749653774065807" type="Player_1">
+                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="836330316566005">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="905282376772628" type="CPU_1">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">Player_1.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="980834597264431" type="CPU_1">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="363464828109511" type="CPU_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="251562226969567">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="310709096938978" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="692119941305430" type="CPU_1">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="768429555992707" type="CPU_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Walking Speed for CPU</comment>
+                <event-block sid="183360130428799">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="457982854253317" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Run&quot;</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="734154768641309" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_1_Run</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="481950904180630" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="944835466817078">
+                            <conditions>
+                                <condition behavior="Platform" id="0" name="Is moving" sid="920354622732353" type="CPU_1" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="690229197941958" type="CPU_1">
+                                    <param id="0" name="Animation">&quot;Run_&quot; &amp; Player_1.P1_Charcters</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="564660849210360" type="CPU_1">
+                                    <param id="0" name="Acceleration">200</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="879542580550439" type="CPU_1">
+                                    <param id="0" name="Max Speed">84</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="481392258514807" type="CPU1_Smoke">
+                                    <param id="0" name="X">Player_1.X</param>
+                                    <param id="1" name="Y">Player_1.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="477968261556537">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="644697801768332" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_1_Run</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="502537178860143" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="900542322835134">
+                            <conditions>
+                                <condition behavior="Platform" id="0" name="Is moving" sid="828482466202426" type="CPU_1" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="287264962821297" type="CPU1_Smoke">
+                                    <param id="0" name="Animation">&quot;Running_Dust_Effect&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

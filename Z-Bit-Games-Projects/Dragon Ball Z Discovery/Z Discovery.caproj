@@ -1483,6 +1483,14 @@
                                 </animation-folder>
                             </animation-folder>
                         </object-type>
+                        <object-type name="Erbito_Icon_Test" sid="413217671470879">
+                            <plugin id="Sprite" />
+                            <animation-folder>
+                                <animation framecount="1" loop="0" name="Krillin" pingpong="0" repeatcount="1" repeatto="0" sid="296888552004923" speed="5">
+                                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                                </animation>
+                            </animation-folder>
+                        </object-type>
                     </object-folder>
                     <object-type name="Debug_Down" sid="129201310105032">
                         <plugin id="Sprite" />
@@ -26778,6 +26786,19 @@
                             </animation-folder>
                         </animation-folder>
                     </object-type>
+                    <object-type name="CPU1_Ki_Blast" sid="599669858090127">
+                        <plugin id="Sprite" />
+                        <behaviors>
+                            <behavior-type name="Bullet" sid="462689476554599">
+                                <behavior id="Bullet" />
+                            </behavior-type>
+                        </behaviors>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="236631162729103" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
                 </object-folder>
                 <object-folder name="Sprite_Effects">
                     <object-folder name="P1_Effects">
@@ -27358,7 +27379,7 @@
                                 </animation>
                             </animation-folder>
                         </object-type>
-                        <object-type name="P1_Dust_Effect" sid="833095829123773">
+                        <object-type name="P1_Dust_Effect2" sid="833095829123773">
                             <plugin id="Particles" />
                             <behaviors>
                                 <behavior-type name="Pin" sid="407437409375900">
@@ -27389,7 +27410,7 @@
                                 </animation>
                             </animation-folder>
                         </object-type>
-                        <object-type name="P1_Dust_Effect2" sid="309953015804578">
+                        <object-type name="P1_Dust_Effect" sid="309953015804578">
                             <plugin id="Sprite" />
                             <behaviors>
                                 <behavior-type name="Pin" sid="774173956694139">
@@ -27490,6 +27511,13 @@
                                     <frame duration="1" hotspotX="0.530612" hotspotY="0.770833" />
                                     <frame duration="1" hotspotX="0.530612" hotspotY="0.770833" />
                                 </animation>
+                                <animation framecount="5" loop="1" name="Charge_End" pingpong="0" repeatcount="0" repeatto="0" sid="584292741841897" speed="20">
+                                    <frame duration="1" hotspotX="0.530612" hotspotY="0.770833" />
+                                    <frame duration="1" hotspotX="0.530612" hotspotY="0.770833" />
+                                    <frame duration="1" hotspotX="0.530612" hotspotY="0.770833" />
+                                    <frame duration="1" hotspotX="0.530612" hotspotY="0.770833" />
+                                    <frame duration="1" hotspotX="0.530612" hotspotY="0.770833" />
+                                </animation>
                             </animation-folder>
                         </object-type>
                         <object-type name="CPU1_Startup_Aura" sid="507869587561238">
@@ -27505,8 +27533,7 @@
                                 </effect-type>
                             </effects>
                             <animation-folder>
-                                <animation framecount="4" loop="0" name="Charge_Start" pingpong="0" repeatcount="0" repeatto="0" sid="983969643755946" speed="16">
-                                    <frame duration="1" hotspotX="0.530612" hotspotY="0.770833" />
+                                <animation framecount="3" loop="0" name="Charge_Start" pingpong="0" repeatcount="0" repeatto="0" sid="983969643755946" speed="16">
                                     <frame duration="1" hotspotX="0.530612" hotspotY="0.770833" />
                                     <frame duration="1" hotspotX="0.530612" hotspotY="0.770833" />
                                     <frame duration="1" hotspotX="0.530612" hotspotY="0.770833" />
@@ -28526,6 +28553,7 @@
             <members>
                 <member>Camera_Debug</member>
                 <member>Cell_Icon_Test</member>
+                <member>Erbito_Icon_Test</member>
                 <member>Frieza_Icon_Test</member>
                 <member>Future_Trunks_Icon_Test</member>
                 <member>God_Mode_Debug</member>
@@ -28747,6 +28775,7 @@
                 <event-folder name="CPU_1_Attacks">
                     <event-sheet>CPU_1_Attack.xml</event-sheet>
                     <event-sheet>CPU_1_Strong_Punch.xml</event-sheet>
+                    <event-sheet>CPU1_KiBlast.xml</event-sheet>
                 </event-folder>
                 <event-folder name="CPU_1_Bars">
                     <event-folder name="CPU_1_HP_Bar">
@@ -28760,6 +28789,14 @@
                 <event-folder name="CPU_1_Dash">
                     <event-sheet>CPU_1_Dash.xml</event-sheet>
                 </event-folder>
+                <event-folder name="CPU1_Supers">
+                    <event-sheet>CPU_1_Supers.xml</event-sheet>
+                </event-folder>
+                <event-folder name="CPU_1_Run">
+                    <event-sheet>CPU_1_Run.xml</event-sheet>
+                </event-folder>
+                <event-folder name="CPU_1_Guarding" />
+                <event-folder name="CPU_1_SSJ" />
             </event-folder>
         </event-folder>
         <event-sheet>Mobile_Detictor.xml</event-sheet>
@@ -28884,6 +28921,12 @@
         <sound-folder name="In_Game_SFX">
             <file name="Flying Nimbus loop SFX.ogg" />
             <file name="Flying Nimbus Rush.ogg" />
+        </sound-folder>
+        <sound-folder name="Announcer_SFX">
+            <file name="go.ogg" />
+            <file name="ready.ogg" />
+            <file name="you_lose.ogg" />
+            <file name="you_win.ogg" />
         </sound-folder>
     </sounds-folder>
     <music-folder>

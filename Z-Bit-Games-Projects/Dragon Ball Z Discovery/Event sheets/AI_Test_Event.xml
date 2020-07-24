@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>AI_Test_Event</name>
     <events>
+        <include>CPU1_KiBlast</include>
+        <include>CPU_1_Ki_Chargeing_Event</include>
         <include>Mobile_Detictor</include>
         <include>Music</include>
         <include>Clouds</include>
@@ -126,6 +128,27 @@
                                 </action>
                                 <action id="-15" name="Set visible" sid="410429669802340" type="Punch_Collision">
                                     <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="872000765100292" type="System">
+                                    <param id="0" name="Object to create">CPU1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">CPU_1.X</param>
+                                    <param id="3" name="Y">CPU_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="203615891089541" type="CPU1_Aura">
+                                    <param id="0" name="Pin to">CPU_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="952972327490697" type="CPU1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="659253486637396" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="437394128679012" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
                                 </action>
                             </actions>
                         </event-block>
