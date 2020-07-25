@@ -58,7 +58,7 @@
     </window-size>
     <pixel-rounding>1</pixel-rounding>
     <preview-effects>1</preview-effects>
-    <first-layout>Warrning_Screen</first-layout>
+    <first-layout>AI_Test_Layout &amp; VS Mode</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">No</prop>
@@ -143,6 +143,7 @@
                     <instance-variable name="CPU_1_ActionRoll" sid="433692673899987" type="number" />
                     <instance-variable name="CPU_1_Dead" sid="487856505818869" type="boolean" />
                     <instance-variable name="CPU_1_Damaged" sid="667021214968988" type="boolean" />
+                    <instance-variable name="CPU_1_Damage_State" sid="254679625572655" type="number" />
                 </instance-variables>
                 <container>
                     <type>CPU_Array</type>
@@ -1876,14 +1877,7 @@
                                     </frame>
                                 </animation>
                                 <animation framecount="1" loop="0" name="Selected" pingpong="0" repeatcount="1" repeatto="0" sid="907959678693113" speed="5">
-                                    <frame duration="1" hotspotX="0.503597" hotspotY="0.5">
-                                        <collision-poly>
-                                            <point x="0.266187" y="0.25" />
-                                            <point x="0.964029" y="0.25" />
-                                            <point x="0.964029" y="0.6875" />
-                                            <point x="0.266187" y="0.6875" />
-                                        </collision-poly>
-                                    </frame>
+                                    <frame duration="1" hotspotX="0.503597" hotspotY="0.5" />
                                 </animation>
                             </animation-folder>
                         </object-type>
@@ -2635,6 +2629,15 @@
                     </object-type>
                     <object-type name="Player_InputFont" sid="249787274182603">
                         <plugin id="Spritefont2" />
+                        <texture original-source="C:\Users\mario\OneDrive\Pictures\Sprite TextFont 2.png" />
+                    </object-type>
+                    <object-type name="Charcter_NamesVictory_Taunt" sid="220263855700055">
+                        <plugin id="Spritefont2" />
+                        <behaviors>
+                            <behavior-type name="Fade" sid="508982640434703">
+                                <behavior id="Fade" />
+                            </behavior-type>
+                        </behaviors>
                         <texture original-source="C:\Users\mario\OneDrive\Pictures\Sprite TextFont 2.png" />
                     </object-type>
                 </object-folder>
@@ -19069,7 +19072,7 @@
                                                                 </collision-poly>
                                                             </frame>
                                                         </animation>
-                                                        <animation framecount="1" loop="1" name="Down_SSJ1_GKUMid1" pingpong="0" repeatcount="1" repeatto="0" sid="288296521468596" speed="16">
+                                                        <animation framecount="1" loop="1" name="Down_SSJ1_GKU1" pingpong="0" repeatcount="1" repeatto="0" sid="288296521468596" speed="16">
                                                             <frame duration="1" hotspotX="0.473684" hotspotY="0.52381" original-source="C:\Users\mario\OneDrive\Documents\Dragon Ball Z Discovery Sprites\SSJ Goku Sprite\sprite_50.png">
                                                                 <collision-poly>
                                                                     <point x="0.3125" y="0" />
@@ -27444,6 +27447,24 @@
                             </behaviors>
                             <texture />
                         </object-type>
+                        <object-type name="P1_Pow_Effect" sid="674897217359372">
+                            <plugin id="Particles" />
+                            <behaviors>
+                                <behavior-type name="Pin" sid="332979088599322">
+                                    <behavior id="Pin" />
+                                </behavior-type>
+                            </behaviors>
+                            <texture />
+                        </object-type>
+                        <object-type name="CPU1_Pow_Effect" sid="324483192258351">
+                            <plugin id="Particles" />
+                            <behaviors>
+                                <behavior-type name="Pin" sid="502257840542460">
+                                    <behavior id="Pin" />
+                                </behavior-type>
+                            </behaviors>
+                            <texture />
+                        </object-type>
                     </object-folder>
                     <object-folder name="CPU1_Effects">
                         <object-type name="CPU1_Swoosh_Effect" sid="845805449229659">
@@ -28657,11 +28678,6 @@
                 <instance-variable name="Menu_Bars" sid="817746980178792" type="number" />
                 <instance-variable name="Menu_Bars_Names" sid="580124522779969" type="string" />
             </instance-variables>
-            <behaviors>
-                <behavior-type name="Fade" sid="928580626451023">
-                    <behavior id="Fade" />
-                </behavior-type>
-            </behaviors>
         </family>
         <family name="CharcterSelect_Menus_2" plugin-id="Sprite" sid="389504190563971">
             <members>
@@ -28683,6 +28699,7 @@
             <layout-folder name="Menus">
                 <layout-folder name="Main_Menu">
                     <layout>Main_Menu.xml</layout>
+                    <layout>Versus_Screen.xml</layout>
                 </layout-folder>
                 <layout-folder name="Tutorial_Menu">
                     <layout>Tutorial_Menu.xml</layout>
@@ -28710,53 +28727,6 @@
         <layout>Objects.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-folder name="Player_Controls">
-            <event-folder name="Main_Player_Controls">
-                <event-folder name="P1_Controls">
-                    <event-folder name="P1_Attacks">
-                        <event-sheet>P1_Attack.xml</event-sheet>
-                        <event-sheet>P1_KiBlast.xml</event-sheet>
-                        <event-sheet>P1_Strong_Punch.xml</event-sheet>
-                    </event-folder>
-                    <event-folder name="P1_Bars">
-                        <event-folder name="P1_HP_Bar">
-                            <event-sheet>P1_HP.xml</event-sheet>
-                        </event-folder>
-                        <event-folder name="P1_Ki_Bar">
-                            <event-sheet>P1_Ki_Chargeing_Event.xml</event-sheet>
-                        </event-folder>
-                        <event-folder name="P1_Stamina_Bar">
-                            <event-sheet>P1_Stamina.xml</event-sheet>
-                        </event-folder>
-                    </event-folder>
-                    <event-folder name="P1_Duck_Button">
-                        <event-sheet>P1_Duck.xml</event-sheet>
-                    </event-folder>
-                    <event-folder name="P1_SSJ">
-                        <event-sheet>P1_SuperSayian.xml</event-sheet>
-                    </event-folder>
-                    <event-folder name="P1_Supers">
-                        <event-sheet>P1_SuperMoves.xml</event-sheet>
-                    </event-folder>
-                    <event-folder name="P1_Run">
-                        <event-sheet>P1_Run_Button.xml</event-sheet>
-                    </event-folder>
-                    <event-folder name="P1_Fly">
-                        <event-sheet>P1_Fly.xml</event-sheet>
-                    </event-folder>
-                    <event-folder name="P1_Guarding">
-                        <event-sheet>P1_Guarding.xml</event-sheet>
-                    </event-folder>
-                    <event-folder name="P1_Dash">
-                        <event-sheet>P1_Dash.xml</event-sheet>
-                    </event-folder>
-                    <event-folder name="P1_Input">
-                        <event-sheet>P1_Input.xml</event-sheet>
-                    </event-folder>
-                    <event-sheet>Player_1_Event.xml</event-sheet>
-                </event-folder>
-            </event-folder>
-        </event-folder>
         <event-folder name="NPC,S &amp; CPU">
             <event-folder name="Sandbag">
                 <event-sheet>Sandbag_Event.xml</event-sheet>
@@ -28813,6 +28783,8 @@
                 <event-sheet>Resolution_Event.xml</event-sheet>
             </event-folder>
             <event-sheet>Warrning_Intro.xml</event-sheet>
+            <event-sheet>Future_events for Menus.xml</event-sheet>
+            <event-sheet>Versus_Screen_Event.xml</event-sheet>
         </event-folder>
         <event-folder name="Game_Objects_Events">
             <event-folder name="Clouds">
@@ -28860,6 +28832,53 @@
                 </event-folder>
                 <event-folder name="CPU_1_Guarding" />
                 <event-folder name="CPU_1_SSJ" />
+            </event-folder>
+        </event-folder>
+        <event-folder name="Player_Controls">
+            <event-folder name="Main_Player_Controls">
+                <event-folder name="P1_Controls">
+                    <event-folder name="P1_Attacks">
+                        <event-sheet>P1_Attack.xml</event-sheet>
+                        <event-sheet>P1_KiBlast.xml</event-sheet>
+                        <event-sheet>P1_Strong_Punch.xml</event-sheet>
+                    </event-folder>
+                    <event-folder name="P1_Bars">
+                        <event-folder name="P1_HP_Bar">
+                            <event-sheet>P1_HP.xml</event-sheet>
+                        </event-folder>
+                        <event-folder name="P1_Ki_Bar">
+                            <event-sheet>P1_Ki_Chargeing_Event.xml</event-sheet>
+                        </event-folder>
+                        <event-folder name="P1_Stamina_Bar">
+                            <event-sheet>P1_Stamina.xml</event-sheet>
+                        </event-folder>
+                    </event-folder>
+                    <event-folder name="P1_Duck_Button">
+                        <event-sheet>P1_Duck.xml</event-sheet>
+                    </event-folder>
+                    <event-folder name="P1_SSJ">
+                        <event-sheet>P1_SuperSayian.xml</event-sheet>
+                    </event-folder>
+                    <event-folder name="P1_Supers">
+                        <event-sheet>P1_SuperMoves.xml</event-sheet>
+                    </event-folder>
+                    <event-folder name="P1_Run">
+                        <event-sheet>P1_Run_Button.xml</event-sheet>
+                    </event-folder>
+                    <event-folder name="P1_Fly">
+                        <event-sheet>P1_Fly.xml</event-sheet>
+                    </event-folder>
+                    <event-folder name="P1_Guarding">
+                        <event-sheet>P1_Guarding.xml</event-sheet>
+                    </event-folder>
+                    <event-folder name="P1_Dash">
+                        <event-sheet>P1_Dash.xml</event-sheet>
+                    </event-folder>
+                    <event-folder name="P1_Input">
+                        <event-sheet>P1_Input.xml</event-sheet>
+                    </event-folder>
+                    <event-sheet>Player_1_Event.xml</event-sheet>
+                </event-folder>
             </event-folder>
         </event-folder>
         <event-sheet>Mobile_Detictor.xml</event-sheet>

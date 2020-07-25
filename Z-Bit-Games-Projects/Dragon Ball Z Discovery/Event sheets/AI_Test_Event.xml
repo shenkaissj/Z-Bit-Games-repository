@@ -54,6 +54,59 @@
         </event-block>
         <event-group description="the event for the start of layout" sid="443481430619474" title="CPU1_Start of Layout">
             <sub-events>
+                <event-block sid="853602752910008">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="190734662400916" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="625114935249757" type="System">
+                            <param id="0" name="Variable">CPU_1_Ki</param>
+                            <param id="1" name="Value">70</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="396789096991133" type="System">
+                            <param id="0" name="Variable">CPU1_Hp</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="115661212222143" type="System">
+                            <param id="0" name="Variable">P1_Ki_1</param>
+                            <param id="1" name="Value">70</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="407890988647392" type="System">
+                            <param id="0" name="Variable">P1_Hp</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="934439155758248">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="912286695775534" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="140962111642520" type="Player_1">
+                            <param id="0" name="Instance variable">P1_Actor</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="785818120091173" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_1_Actor</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="413155087507438" type="Health_Gui_1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="239778528151452" type="Health_Gui_2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="405332386900550" type="Ki_and_Hp_Bars">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="503643424411740" type="Ki_and_Hp_Bars2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="740166305707748" type="Mobile_Controls">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="849971713625783">
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="333980465078494" type="System" />
@@ -61,11 +114,7 @@
                     <actions />
                     <sub-events>
                         <event-block sid="566417638907900">
-                            <conditions>
-                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="994377991431539" type="CPU_Array">
-                                    <param id="0" name="Instance variable">CPU_1_Actor</param>
-                                </condition>
-                            </conditions>
+                            <conditions />
                             <actions>
                                 <action behavior="Platform" id="5" name="Set gravity" sid="468647828216927" type="CPU_1">
                                     <param id="0" name="Gravity">413</param>
@@ -156,29 +205,70 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="853602752910008">
+        <event-group description="the main events for player" sid="797397040275900" title="Player_Events" />
+        <event-block sid="121550248177134">
             <conditions>
-                <condition id="-2" name="On start of layout" sid="190734662400916" type="System" />
+                <condition behavior="Fade" id="1" name="On fade-in finished" sid="713335252206329" type="Ready_Font" />
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="625114935249757" type="System">
-                    <param id="0" name="Variable">CPU_1_Ki</param>
-                    <param id="1" name="Value">70</param>
-                </action>
-                <action id="-9" name="Set value" sid="396789096991133" type="System">
-                    <param id="0" name="Variable">CPU1_Hp</param>
-                    <param id="1" name="Value">100</param>
-                </action>
-                <action id="-9" name="Set value" sid="115661212222143" type="System">
-                    <param id="0" name="Variable">P1_Ki_1</param>
-                    <param id="1" name="Value">70</param>
-                </action>
-                <action id="-9" name="Set value" sid="407890988647392" type="System">
-                    <param id="0" name="Variable">P1_Hp</param>
-                    <param id="1" name="Value">100</param>
+                <action id="0" name="Play" sid="436545416814016" type="Audio">
+                    <param id="0" name="Audio file">ready</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-17</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
             </actions>
         </event-block>
-        <event-group description="the main events for player" sid="797397040275900" title="Player_Events" />
+        <event-block sid="638677392610574">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade-out finished" sid="455930568112242" type="Ready_Font" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="439024590986877" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="483758377344427" type="GO_Font">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="523676391397895" type="GO_Font" />
+            </actions>
+        </event-block>
+        <event-block sid="127208195376629">
+            <conditions>
+                <condition behavior="Fade" id="1" name="On fade-in finished" sid="318999843714303" type="GO_Font" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="900008123108277" type="Audio">
+                    <param id="0" name="Audio file">go</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-17</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="786562196578667" type="Player_1">
+                    <param id="0" name="Instance variable">P1_Actor</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="457725402508073" type="CPU_Array">
+                    <param id="0" name="Instance variable">CPU_1_Actor</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="776788808240085" type="Health_Gui_1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="967229694979695" type="Health_Gui_2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="751456271210208" type="Ki_and_Hp_Bars">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="708148861048220" type="Ki_and_Hp_Bars2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="578128394369308" type="Mobile_Controls">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="856796262520400" type="Mobile_Controls" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

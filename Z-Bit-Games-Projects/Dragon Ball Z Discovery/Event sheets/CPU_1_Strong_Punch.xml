@@ -38,6 +38,15 @@
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="351863601277060" type="CPU_Array">
                                     <param id="0" name="Instance variable">CPU_1_Charge_Ki</param>
                                 </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="625264316114989" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="943192590830846" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Transform</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="115070061074845" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charge_Ki</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -158,8 +167,8 @@
                                                             <sub-events>
                                                                 <event-block sid="125293109176145">
                                                                     <conditions>
-                                                                        <condition id="1" name="Is overlapping another object" sid="534905021294607" type="Punch_Collision">
-                                                                            <param id="0" name="Object">Sandbag</param>
+                                                                        <condition id="1" name="Is overlapping another object" sid="534905021294607" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
                                                                         </condition>
                                                                         <condition id="7" inverted="1" name="Is mirrored" sid="184658300486558" type="Player_1" />
                                                                     </conditions>
@@ -176,36 +185,32 @@
                                                                             <param id="3" name="Volume">-25</param>
                                                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                         </action>
-                                                                        <action id="4" name="Set animation" sid="450188591405880" type="Sandbag">
-                                                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
-                                                                            <param id="1" name="From">1</param>
-                                                                        </action>
-                                                                        <action id="4" name="Set animation" sid="133219259880636" type="SandBag_Hit_Effect">
-                                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
-                                                                            <param id="1" name="From">1</param>
-                                                                        </action>
-                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="490654089991104" type="Sandbag">
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="490654089991104" type="Player_1">
                                                                             <param id="0" name="Vector X">231</param>
                                                                         </action>
-                                                                        <action id="7" name="Set mirrored" sid="968895604777485" type="Sandbag">
+                                                                        <action id="7" name="Set mirrored" sid="968895604777485" type="Player_1">
                                                                             <param id="0" name="State">0</param>
                                                                         </action>
-                                                                        <action id="-13" name="Set boolean" sid="525936128416811" type="Sandbag">
-                                                                            <param id="0" name="Instance variable">Knockout_State</param>
+                                                                        <action id="-11" name="Add to" sid="740474788979373" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
                                                                             <param id="1" name="Value">1</param>
                                                                         </action>
-                                                                        <action id="-10" name="Set value" sid="636679993880212" type="Sandbag">
-                                                                            <param id="0" name="Instance variable">Knockout_Counter</param>
+                                                                        <action id="-13" name="Set boolean" sid="525936128416811" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="-10" name="Set value" sid="636679993880212" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
                                                                             <param id="1" name="Value">0</param>
                                                                         </action>
                                                                         <action id="-3" name="Create object" sid="797955923138047" type="System">
-                                                                            <param id="0" name="Object to create">Sandbag_Pow_Effect</param>
+                                                                            <param id="0" name="Object to create">P1_Pow_Effect</param>
                                                                             <param id="1" name="Layer">9</param>
-                                                                            <param id="2" name="X">Sandbag.X</param>
-                                                                            <param id="3" name="Y">Sandbag.Y</param>
+                                                                            <param id="2" name="X">Player_1.X</param>
+                                                                            <param id="3" name="Y">Player_1.Y</param>
                                                                         </action>
-                                                                        <action behavior="Pin" id="0" name="Pin to object" sid="893840086555688" type="Sandbag_Pow_Effect">
-                                                                            <param id="0" name="Pin to">Sandbag</param>
+                                                                        <action behavior="Pin" id="0" name="Pin to object" sid="893840086555688" type="P1_Pow_Effect">
+                                                                            <param id="0" name="Pin to">Player_1</param>
                                                                             <param id="1" name="Mode">1</param>
                                                                         </action>
                                                                     </actions>
@@ -264,6 +269,15 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="677848526452644" type="CPU_Array">
                                     <param id="0" name="Instance variable">CPU_1_Charge_Ki</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="667849607076074" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="355738182561595" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Transform</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="781063760844455" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charge_Ki</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -382,8 +396,8 @@
                                                             <sub-events>
                                                                 <event-block sid="785058295859111">
                                                                     <conditions>
-                                                                        <condition id="1" name="Is overlapping another object" sid="691681766186862" type="Punch_Collision">
-                                                                            <param id="0" name="Object">Sandbag</param>
+                                                                        <condition id="1" name="Is overlapping another object" sid="730204250285482" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
                                                                         </condition>
                                                                         <condition id="7" inverted="1" name="Is mirrored" sid="247612860612890" type="Player_1" />
                                                                     </conditions>
@@ -400,36 +414,32 @@
                                                                             <param id="3" name="Volume">-25</param>
                                                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                         </action>
-                                                                        <action id="4" name="Set animation" sid="602911952012283" type="Sandbag">
-                                                                            <param id="0" name="Animation">&quot;Hurt1&quot;</param>
-                                                                            <param id="1" name="From">1</param>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="184573745096024" type="Player_1">
+                                                                            <param id="0" name="Vector X">231</param>
                                                                         </action>
-                                                                        <action id="4" name="Set animation" sid="759535427591212" type="SandBag_Hit_Effect">
-                                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
-                                                                            <param id="1" name="From">1</param>
+                                                                        <action id="7" name="Set mirrored" sid="121270715587264" type="Player_1">
+                                                                            <param id="0" name="State">1</param>
                                                                         </action>
-                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="755403534425908" type="Sandbag">
-                                                                            <param id="0" name="Vector X">-231</param>
-                                                                        </action>
-                                                                        <action id="7" name="Set mirrored" sid="706946545033750" type="Sandbag">
-                                                                            <param id="0" name="State">0</param>
-                                                                        </action>
-                                                                        <action id="-13" name="Set boolean" sid="960114932652930" type="Sandbag">
-                                                                            <param id="0" name="Instance variable">Knockout_State</param>
+                                                                        <action id="-11" name="Add to" sid="459298762403097" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
                                                                             <param id="1" name="Value">1</param>
                                                                         </action>
-                                                                        <action id="-10" name="Set value" sid="552333922174648" type="Sandbag">
-                                                                            <param id="0" name="Instance variable">Knockout_Counter</param>
+                                                                        <action id="-13" name="Set boolean" sid="386333810242720" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="-10" name="Set value" sid="147085774686282" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
                                                                             <param id="1" name="Value">0</param>
                                                                         </action>
-                                                                        <action id="-3" name="Create object" sid="390033493187288" type="System">
-                                                                            <param id="0" name="Object to create">Sandbag_Pow_Effect</param>
+                                                                        <action id="-3" name="Create object" sid="737652102123622" type="System">
+                                                                            <param id="0" name="Object to create">P1_Pow_Effect</param>
                                                                             <param id="1" name="Layer">9</param>
-                                                                            <param id="2" name="X">Sandbag.X</param>
-                                                                            <param id="3" name="Y">Sandbag.Y</param>
+                                                                            <param id="2" name="X">Player_1.X</param>
+                                                                            <param id="3" name="Y">Player_1.Y</param>
                                                                         </action>
-                                                                        <action behavior="Pin" id="0" name="Pin to object" sid="314891898711174" type="Sandbag_Pow_Effect">
-                                                                            <param id="0" name="Pin to">Sandbag</param>
+                                                                        <action behavior="Pin" id="0" name="Pin to object" sid="431341751918076" type="P1_Pow_Effect">
+                                                                            <param id="0" name="Pin to">Player_1</param>
                                                                             <param id="1" name="Mode">1</param>
                                                                         </action>
                                                                     </actions>

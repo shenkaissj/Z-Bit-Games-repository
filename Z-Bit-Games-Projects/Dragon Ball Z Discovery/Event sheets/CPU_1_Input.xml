@@ -258,6 +258,64 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <comment>this event is for when the cpu turns around</comment>
+                        <event-block sid="826023626498789">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="201208942557675" type="Player_1">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">CPU_1.X</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="133018249911336" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="634588852660775" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="116924475866687" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="989446283412887" type="CPU_Array">
+                                    <param id="0" name="Instance variable">Dist_X</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">35</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="881952411873809" type="CPU_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="595642471293158" type="CPU1_Player_Punch_Collision">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="774891097952451">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="602309121077186" type="System" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="621887842681848" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Teleport</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="865334309850189" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="170025621464989" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="981594216428307" type="CPU_Array">
+                                    <param id="0" name="Instance variable">Dist_X</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">35</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="836373644043109" type="CPU_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="168683015308584" type="CPU1_Player_Punch_Collision">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-group description="for when the player is pushed back from being too close to the player" sid="361907384893211" title="CPU1_Player_Distance">
                             <sub-events>
                                 <comment>This Event pushes the player away so the cpu can have space</comment>
@@ -430,64 +488,6 @@
                                             <actions />
                                         </event-block>
                                     </sub-events>
-                                </event-block>
-                                <comment>this event is for when the cpu turns around</comment>
-                                <event-block sid="826023626498789">
-                                    <conditions>
-                                        <condition id="-1" name="Compare X" sid="201208942557675" type="Player_1">
-                                            <param id="0" name="Comparison">4</param>
-                                            <param id="1" name="X co-ordinate">CPU_1.X</param>
-                                        </condition>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="133018249911336" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="634588852660775" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="116924475866687" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="989446283412887" type="CPU_Array">
-                                            <param id="0" name="Instance variable">Dist_X</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">35</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="7" name="Set mirrored" sid="881952411873809" type="CPU_1">
-                                            <param id="0" name="State">1</param>
-                                        </action>
-                                        <action id="7" name="Set mirrored" sid="595642471293158" type="CPU1_Player_Punch_Collision">
-                                            <param id="0" name="State">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="774891097952451">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="602309121077186" type="System" />
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="621887842681848" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Teleport</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="865334309850189" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Teleport_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="170025621464989" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Teleport_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
-                                        </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="981594216428307" type="CPU_Array">
-                                            <param id="0" name="Instance variable">Dist_X</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">35</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="7" name="Set mirrored" sid="836373644043109" type="CPU_1">
-                                            <param id="0" name="State">0</param>
-                                        </action>
-                                        <action id="7" name="Set mirrored" sid="168683015308584" type="CPU1_Player_Punch_Collision">
-                                            <param id="0" name="State">0</param>
-                                        </action>
-                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-group>
@@ -755,7 +755,7 @@
                                 <event-block sid="890432150282711">
                                     <conditions>
                                         <condition id="-6" name="Every X seconds" sid="296482302801696" type="System">
-                                            <param id="0" name="Interval (seconds)">2.3</param>
+                                            <param id="0" name="Interval (seconds)">0.3</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -765,7 +765,7 @@
                                         </action>
                                         <action id="-10" name="Set value" sid="448511248626899" type="CPU_1">
                                             <param id="0" name="Instance variable">CPU1_Main_ActionRoll</param>
-                                            <param id="1" name="Value">choose(1,2,3)</param>
+                                            <param id="1" name="Value">choose(1,2)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -834,8 +834,8 @@
                             <sub-events>
                                 <event-block sid="224269250031281">
                                     <conditions>
-                                        <condition id="-6" name="Every X seconds" sid="843659469530607" type="System">
-                                            <param id="0" name="Interval (seconds)">2.3</param>
+                                        <condition id="-6" name="Every X seconds" sid="200416294190464" type="System">
+                                            <param id="0" name="Interval (seconds)">0.3</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -843,9 +843,9 @@
                                             <param id="0" name="Instance variable">CPU1_Right_Action_Roll</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="430867903579228" type="CPU_1">
+                                        <action id="-10" name="Set value" sid="129283941770560" type="CPU_1">
                                             <param id="0" name="Instance variable">CPU1_Main_ActionRoll</param>
-                                            <param id="1" name="Value">choose(1,2,3)</param>
+                                            <param id="1" name="Value">choose(1,2)</param>
                                         </action>
                                     </actions>
                                 </event-block>

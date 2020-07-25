@@ -138,6 +138,12 @@
                                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="297491846347936" type="CPU_Array">
                                                     <param id="0" name="Instance variable">CPU_1_Transform</param>
                                                 </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="710318798093878" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="217171679741700" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Dead</param>
+                                                </condition>
                                             </conditions>
                                             <actions>
                                                 <action id="4" name="Set animation" sid="442929413104642" type="CPU_1">
@@ -177,6 +183,12 @@
                                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="213854576637154" type="CPU_Array">
                                                     <param id="0" name="Instance variable">CPU_1_Transform</param>
                                                 </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="468914761688259" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="997055464719137" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Dead</param>
+                                                </condition>
                                             </conditions>
                                             <actions>
                                                 <action id="-3" name="Create object" sid="246004621666123" type="System">
@@ -207,6 +219,12 @@
                                                 </condition>
                                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="289405664354615" type="CPU_Array">
                                                     <param id="0" name="Instance variable">CPU_1_Transform</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="726370443095906" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                </condition>
+                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="395869699151676" type="CPU_Array">
+                                                    <param id="0" name="Instance variable">CPU_1_Dead</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -1445,6 +1463,9 @@
                 <condition id="-8" name="Is boolean instance variable set" sid="116047513578499" type="CPU_Array">
                     <param id="0" name="Instance variable">CPU_1_Charge_Ki</param>
                 </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="357279237658857" type="CPU_Array">
+                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                </condition>
                 <condition id="-4" name="Trigger once while true" sid="137237256736490" type="System" />
             </conditions>
             <actions>
@@ -1457,6 +1478,44 @@
                 <action behavior="Pin" id="0" name="Pin to object" sid="610932555322240" type="CPU1_Swoosh_Effect">
                     <param id="0" name="Pin to">CPU_1</param>
                     <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="517062517688239">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="246749774870387" type="CPU_Array">
+                    <param id="0" name="Instance variable">CPU_1_Charge_Ki</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="991897113184549" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="215898112927372" type="CPU1_Swoosh_Effect" />
+                <action id="6" name="Stop" sid="821837577191282" type="Audio">
+                    <param id="0" name="Tag">&quot;CPU1_Charge&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="609892063929169" type="CPU1_Aura">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="479681838376820">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="764134607159614" type="CPU_Array">
+                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="637926800531926" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="911892991577168" type="CPU1_Swoosh_Effect" />
+                <action id="6" name="Stop" sid="979267534934035" type="Audio">
+                    <param id="0" name="Tag">&quot;CPU1_Charge&quot;</param>
+                </action>
+                <action id="-10" name="Set value" sid="756826450138934" type="CPU_1">
+                    <param id="0" name="Instance variable">CPU1_Main_ActionRoll</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="339788789215898" type="CPU1_Aura">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
