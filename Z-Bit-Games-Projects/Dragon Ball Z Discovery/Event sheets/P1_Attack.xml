@@ -30,6 +30,15 @@
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="165121355209913" type="Player_1">
                                     <param id="0" name="Instance variable">P1_Dead</param>
                                 </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="820954533914158" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="987572321689807" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt2_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="128660374030564" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -199,7 +208,25 @@
                                                                     <param id="0" name="Instance variable">CPU_1_Damage_State</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
-                                                                <action id="-11" name="Add to" sid="103588841991716" type="CPU_Array">
+                                                                <action id="0" name="Play" sid="787958168542969" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="514678330907510" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="582534274516680" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="313609844899964" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="610067209651355" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
@@ -314,34 +341,52 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
-                                                        <event-block sid="273963529321575">
+                                                        <event-block sid="996740834172111">
                                                             <conditions>
-                                                                <condition id="1" name="Is overlapping another object" sid="639770082427613" type="Punch_Collision">
+                                                                <condition id="1" name="Is overlapping another object" sid="868055100808430" type="Punch_Collision">
                                                                     <param id="0" name="Object">CPU_1</param>
                                                                 </condition>
-                                                                <condition id="7" inverted="1" name="Is mirrored" sid="279222000991249" type="Player_1" />
-                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="115774749543622" type="CPU_Array">
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="977343828219484" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="528087851217856" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
-                                                                <action id="0" name="Play" sid="670410783347838" type="Audio">
+                                                                <action id="0" name="Play" sid="784976233282082" type="Audio">
                                                                     <param id="0" name="Audio file">mediumpunch</param>
                                                                     <param id="2" name="Loop">0</param>
                                                                     <param id="3" name="Volume">-25</param>
                                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                 </action>
-                                                                <action behavior="Platform" id="8" name="Set vector X" sid="116693092591946" type="CPU_1">
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="709554810792935" type="CPU_1">
                                                                     <param id="0" name="Vector X">-142</param>
                                                                 </action>
-                                                                <action id="7" name="Set mirrored" sid="218016104990140" type="CPU_1">
+                                                                <action id="7" name="Set mirrored" sid="514390493511387" type="CPU_1">
                                                                     <param id="0" name="State">0</param>
                                                                 </action>
-                                                                <action id="-11" name="Add to" sid="563082007086472" type="CPU_Array">
+                                                                <action id="-11" name="Add to" sid="321990044293644" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Damage_State</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
-                                                                <action id="-11" name="Add to" sid="264024560780117" type="CPU_Array">
+                                                                <action id="0" name="Play" sid="454724245927440" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="425446485767065" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="304693724574175" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="835328177492191" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="322667056784786" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
@@ -456,34 +501,52 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
-                                                        <event-block sid="675037126191561">
+                                                        <event-block sid="969980946714302">
                                                             <conditions>
-                                                                <condition id="1" name="Is overlapping another object" sid="324240996136435" type="Punch_Collision">
+                                                                <condition id="1" name="Is overlapping another object" sid="474855026998479" type="Punch_Collision">
                                                                     <param id="0" name="Object">CPU_1</param>
                                                                 </condition>
-                                                                <condition id="7" inverted="1" name="Is mirrored" sid="539671533079753" type="Player_1" />
-                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="871602834658553" type="CPU_Array">
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="466462599264663" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="567366473299708" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
-                                                                <action id="0" name="Play" sid="323989454999016" type="Audio">
+                                                                <action id="0" name="Play" sid="133033696546550" type="Audio">
                                                                     <param id="0" name="Audio file">mediumpunch</param>
                                                                     <param id="2" name="Loop">0</param>
                                                                     <param id="3" name="Volume">-25</param>
                                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                 </action>
-                                                                <action behavior="Platform" id="8" name="Set vector X" sid="868579500652654" type="CPU_1">
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="693943846376788" type="CPU_1">
                                                                     <param id="0" name="Vector X">-142</param>
                                                                 </action>
-                                                                <action id="7" name="Set mirrored" sid="691524738771813" type="CPU_1">
-                                                                    <param id="0" name="State">1</param>
+                                                                <action id="7" name="Set mirrored" sid="980101627459685" type="CPU_1">
+                                                                    <param id="0" name="State">0</param>
                                                                 </action>
-                                                                <action id="-11" name="Add to" sid="452146477915341" type="CPU_Array">
+                                                                <action id="-11" name="Add to" sid="644577522095945" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Damage_State</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
-                                                                <action id="-11" name="Add to" sid="199462612069784" type="CPU_Array">
+                                                                <action id="0" name="Play" sid="811267157105261" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="257908914594640" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="562268598473927" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="736461997804594" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="683573910436866" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
@@ -595,6 +658,15 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="250939719382881" type="Player_1">
                                     <param id="0" name="Instance variable">P1_Dead</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="244533321880366" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="328765676442209" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt2_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="204240875151217" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -746,34 +818,52 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
-                                                        <event-block sid="614715482293455">
+                                                        <event-block sid="709484887496935">
                                                             <conditions>
-                                                                <condition id="1" name="Is overlapping another object" sid="236465149977425" type="Punch_Collision">
+                                                                <condition id="1" name="Is overlapping another object" sid="201013886078002" type="Punch_Collision">
                                                                     <param id="0" name="Object">CPU_1</param>
                                                                 </condition>
-                                                                <condition id="7" name="Is mirrored" sid="141083277481177" type="Player_1" />
-                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="521513660395700" type="CPU_Array">
+                                                                <condition id="7" name="Is mirrored" sid="258562247046583" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="781102438524115" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
-                                                                <action id="0" name="Play" sid="986272314227787" type="Audio">
+                                                                <action id="0" name="Play" sid="180563059000975" type="Audio">
                                                                     <param id="0" name="Audio file">mediumpunch</param>
                                                                     <param id="2" name="Loop">0</param>
                                                                     <param id="3" name="Volume">-25</param>
                                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                 </action>
-                                                                <action behavior="Platform" id="8" name="Set vector X" sid="541886627633740" type="CPU_1">
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="889646998828852" type="CPU_1">
                                                                     <param id="0" name="Vector X">-142</param>
                                                                 </action>
-                                                                <action id="7" name="Set mirrored" sid="201961326427091" type="CPU_1">
+                                                                <action id="7" name="Set mirrored" sid="595640976905832" type="CPU_1">
                                                                     <param id="0" name="State">1</param>
                                                                 </action>
-                                                                <action id="-11" name="Add to" sid="811411617630238" type="CPU_Array">
+                                                                <action id="-11" name="Add to" sid="414541218259129" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Damage_State</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
-                                                                <action id="-11" name="Add to" sid="892510954122075" type="CPU_Array">
+                                                                <action id="0" name="Play" sid="981042040905387" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="158497277079570" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="498601028505157" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="956122436845719" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="766829234310526" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
@@ -888,34 +978,52 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
-                                                        <event-block sid="925273755232743">
+                                                        <event-block sid="205179813258476">
                                                             <conditions>
-                                                                <condition id="1" name="Is overlapping another object" sid="989741321254110" type="Punch_Collision">
+                                                                <condition id="1" name="Is overlapping another object" sid="897951079995427" type="Punch_Collision">
                                                                     <param id="0" name="Object">CPU_1</param>
                                                                 </condition>
-                                                                <condition id="7" name="Is mirrored" sid="396536181684677" type="Player_1" />
-                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="707434369418207" type="CPU_Array">
+                                                                <condition id="7" name="Is mirrored" sid="869474215201115" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="839305750261165" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
-                                                                <action id="0" name="Play" sid="573691672493323" type="Audio">
+                                                                <action id="0" name="Play" sid="979774001871394" type="Audio">
                                                                     <param id="0" name="Audio file">mediumpunch</param>
                                                                     <param id="2" name="Loop">0</param>
                                                                     <param id="3" name="Volume">-25</param>
                                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                 </action>
-                                                                <action behavior="Platform" id="8" name="Set vector X" sid="387970351910996" type="CPU_1">
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="195940045956315" type="CPU_1">
                                                                     <param id="0" name="Vector X">-142</param>
                                                                 </action>
-                                                                <action id="7" name="Set mirrored" sid="869589685401246" type="CPU_1">
+                                                                <action id="7" name="Set mirrored" sid="558461093964067" type="CPU_1">
                                                                     <param id="0" name="State">1</param>
                                                                 </action>
-                                                                <action id="-11" name="Add to" sid="671608461444286" type="CPU_Array">
+                                                                <action id="-11" name="Add to" sid="662543282983221" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Damage_State</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
-                                                                <action id="-11" name="Add to" sid="236404467682525" type="CPU_Array">
+                                                                <action id="0" name="Play" sid="697053545629275" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="140224162992552" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="143361826754239" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="825927004008750" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="609583988775000" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
@@ -1030,34 +1138,52 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
-                                                        <event-block sid="286581397296366">
+                                                        <event-block sid="495131843953131">
                                                             <conditions>
-                                                                <condition id="1" name="Is overlapping another object" sid="669865145924710" type="Punch_Collision">
+                                                                <condition id="1" name="Is overlapping another object" sid="504674784790549" type="Punch_Collision">
                                                                     <param id="0" name="Object">CPU_1</param>
                                                                 </condition>
-                                                                <condition id="7" name="Is mirrored" sid="794387100324569" type="Player_1" />
-                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="530549391885847" type="CPU_Array">
+                                                                <condition id="7" name="Is mirrored" sid="883156590235380" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="789542128575679" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
-                                                                <action id="0" name="Play" sid="412146074423072" type="Audio">
+                                                                <action id="0" name="Play" sid="944550729843468" type="Audio">
                                                                     <param id="0" name="Audio file">mediumpunch</param>
                                                                     <param id="2" name="Loop">0</param>
                                                                     <param id="3" name="Volume">-25</param>
                                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                                 </action>
-                                                                <action behavior="Platform" id="8" name="Set vector X" sid="264301401150088" type="CPU_1">
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="306975788912816" type="CPU_1">
                                                                     <param id="0" name="Vector X">-142</param>
                                                                 </action>
-                                                                <action id="7" name="Set mirrored" sid="827590635412715" type="CPU_1">
+                                                                <action id="7" name="Set mirrored" sid="472780494355496" type="CPU_1">
                                                                     <param id="0" name="State">1</param>
                                                                 </action>
-                                                                <action id="-11" name="Add to" sid="884282759438662" type="CPU_Array">
+                                                                <action id="-11" name="Add to" sid="648032532006469" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Damage_State</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
-                                                                <action id="-11" name="Add to" sid="388637618841441" type="CPU_Array">
+                                                                <action id="0" name="Play" sid="808638873919138" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="750283679488476" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="547447852086545" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="781806831483692" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="646662577580696" type="CPU_Array">
                                                                     <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
@@ -1173,6 +1299,15 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="992523464341551" type="Player_1">
                                     <param id="0" name="Instance variable">P1_Dead</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="839834245737874" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="747096768572868" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt2_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="334014039728615" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -1323,6 +1458,57 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
+                                                        <event-block sid="125706622609948">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="730618223755298" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="377717819345953" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="629947629476081" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="315089384508008" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="477395133294779" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="725486361796593" type="CPU_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="175154361809173" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="509975322532558" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="665925740623742" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="440765317398238" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="173783755731576" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="520020828064319" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
                                                         <event-block sid="178289375279337">
                                                             <conditions>
                                                                 <condition id="1" name="Is overlapping another object" sid="704251168834351" type="Punch_Collision">
@@ -1428,6 +1614,57 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
+                                                        <event-block sid="195702013926040">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="610314338871348" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="394492521692602" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="666322147119078" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="493370769696793" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="348947225806647" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="372766260540668" type="CPU_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="690980352501125" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="722682850359833" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="408057908366475" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="781315379709630" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="363104514734258" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="634467413871450" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
                                                         <event-block sid="316405931133826">
                                                             <conditions>
                                                                 <condition id="1" name="Is overlapping another object" sid="990633044944697" type="Punch_Collision">
@@ -1529,6 +1766,57 @@
                                                                 </action>
                                                                 <action id="-11" name="Add to" sid="980765669047568" type="Sandbag">
                                                                     <param id="0" name="Instance variable">Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="741532868030259">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="322655766983144" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="578582806510968" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="601756235979133" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="137690494789759" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="506565030620060" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="672562467793052" type="CPU_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="375776572725545" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="681058011922152" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="464929786170002" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="500525380039561" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="558186649334234" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="942755430249975" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
                                                             </actions>
@@ -1639,6 +1927,15 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="762684028549956" type="Player_1">
                                     <param id="0" name="Instance variable">P1_Dead</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="915401481884806" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="218593529539883" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt2_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="111107764110435" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -1793,6 +2090,57 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
+                                                        <event-block sid="719695492583690">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="157184036585609" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="508259962701812" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="383434507406151" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="173869027305036" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="301408111425326" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="770972137430406" type="CPU_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="387672923633543" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="336308977781756" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="520950759488828" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="754030282605259" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="334643933752286" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="553656391050863" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
                                                         <event-block sid="109056219759393">
                                                             <conditions>
                                                                 <condition id="1" name="Is overlapping another object" sid="831281788529853" type="Punch_Collision">
@@ -1902,6 +2250,57 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
+                                                        <event-block sid="392837199424741">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="497581393571293" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="775606855358346" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="204390662747084" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="610946366573810" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="375531950276368" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="559585489831468" type="CPU_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="607131485065288" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="321856926214205" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="169396875769312" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="491517895074090" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="160399583740742" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="791639450151391" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
                                                         <event-block sid="353547335760197">
                                                             <conditions>
                                                                 <condition id="1" name="Is overlapping another object" sid="985142177525414" type="Punch_Collision">
@@ -2007,6 +2406,57 @@
                                                                 </action>
                                                                 <action id="-11" name="Add to" sid="495659393303921" type="Sandbag">
                                                                     <param id="0" name="Instance variable">Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="605532798051955">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="830707496915571" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="245313120032966" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="422953346994170" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="911884422258122" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="349881500103221" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="671134487284274" type="CPU_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="345432874474454" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="984532941533722" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="325664515828575" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="674327479196265" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="287468000362721" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="649372140282718" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
                                                                     <param id="1" name="Value">1</param>
                                                                 </action>
                                                             </actions>
@@ -2126,6 +2576,15 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="822918880231721" type="Player_1">
                                     <param id="0" name="Instance variable">P1_Dead</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="462257298543420" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="517906194437671" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt2_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="470789157709717" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -2272,6 +2731,57 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
+                                                        <event-block sid="539781689658174">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="784602104668020" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="203414423466837" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="768214171652008" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="577532287563954" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="143314318259281" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="283594211083308" type="CPU_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="905052180338341" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="166925062162193" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="871246418837015" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="104318368346484" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="393790538025521" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="536962367885076" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
                                                         <event-block sid="439886476589008">
                                                             <conditions>
                                                                 <condition id="1" name="Is overlapping another object" sid="260137996956080" type="Punch_Collision">
@@ -2370,6 +2880,57 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
+                                                        <event-block sid="158057662425648">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="790507947564109" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="151727518420441" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="998226726261201" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="579149119243004" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="689269054338347" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="633903413308799" type="CPU_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="352902966665801" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="599021974089314" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="222864560168656" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="271392448653190" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="497409982300383" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="281069929428957" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
                                                         <event-block sid="728381861588531">
                                                             <conditions>
                                                                 <condition id="1" name="Is overlapping another object" sid="226611828717720" type="Punch_Collision">
@@ -2465,6 +3026,57 @@
                                                                 </action>
                                                                 <action id="7" name="Set mirrored" sid="270660891124277" type="Sandbag">
                                                                     <param id="0" name="State">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="523597706804484">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="427774758440121" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="683267509248194" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="667752118940489" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="853382538599620" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="709852206507891" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="281278543363424" type="CPU_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="701843692631064" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="546129069452694" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="490571958546388" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="498382377236999" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="102359172223175" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="830162088809781" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
@@ -2574,6 +3186,15 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="734272668115080" type="Player_1">
                                     <param id="0" name="Instance variable">P1_Dead</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="634998609030458" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="641244192310171" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt2_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="828044126129770" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -2712,6 +3333,57 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
+                                                        <event-block sid="892844385632202">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="857465653360014" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="918390709461426" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="545626137449801" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="755954902288519" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="929163751742991" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="315773061074072" type="CPU_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="282220930186426" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="878258913316774" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="165963551325253" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="448627419289278" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="623376860926337" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="826205190308823" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
                                                         <event-block sid="220365923840463">
                                                             <conditions>
                                                                 <condition id="1" name="Is overlapping another object" sid="521615649574889" type="Punch_Collision">
@@ -2810,6 +3482,57 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
+                                                        <event-block sid="380492309384950">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="275964974888246" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="555793749575036" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="520084215734653" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="633362182135150" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="535883529893097" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="522140662807424" type="CPU_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="211876619537072" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="798998925484538" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="667124766076256" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="496804927163077" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="463821703813772" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="419352672065378" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
                                                         <event-block sid="179538874232955">
                                                             <conditions>
                                                                 <condition id="1" name="Is overlapping another object" sid="292392913908551" type="Punch_Collision">
@@ -2905,6 +3628,57 @@
                                                                 </action>
                                                                 <action id="7" name="Set mirrored" sid="872883242636690" type="Sandbag">
                                                                     <param id="0" name="State">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="739032289754010">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="674526982998764" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="987624635884566" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="917894631071559" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="185591220563837" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="525182514254330" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="667095541734662" type="CPU_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="155546093037614" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="600758386408799" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="417214107102676" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="161844066508824" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="647665684282729" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="125693951376306" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
@@ -3018,6 +3792,15 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="650734061414238" type="Player_1">
                                     <param id="0" name="Instance variable">P1_Dead</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="902278470588369" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="607071108635243" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt2_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="781389005341801" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -3167,6 +3950,57 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
+                                                        <event-block sid="918436349787163">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="486794614435386" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="884296176276624" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="223857857905577" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="183553498787662" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="910908141143251" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="170077999303412" type="CPU_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="647155761969041" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="505160709644217" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="730797759103643" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="210470453593397" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="682954869521858" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="205395163560835" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
                                                         <event-block sid="379022576854182">
                                                             <conditions>
                                                                 <condition id="1" name="Is overlapping another object" sid="626460537660024" type="Punch_Collision">
@@ -3265,6 +4099,57 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
+                                                        <event-block sid="744741427143208">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="432737785636486" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="845204667064952" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="965832051143493" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="809008974120193" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="998257601049831" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="819968488447616" type="CPU_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="703877439531892" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="627081465254537" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="172959888262574" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="506014566988491" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="490842778176798" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="550691190705535" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
                                                         <event-block sid="143016935350925">
                                                             <conditions>
                                                                 <condition id="1" name="Is overlapping another object" sid="434367901160155" type="Punch_Collision">
@@ -3360,6 +4245,57 @@
                                                                 </action>
                                                                 <action id="7" name="Set mirrored" sid="343643727258926" type="Sandbag">
                                                                     <param id="0" name="State">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="514985763615265">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="546322497115525" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" inverted="1" name="Is mirrored" sid="453252619667267" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="602235859832679" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="147228016852640" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="873049569437982" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="919955132969214" type="CPU_1">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="805855190745547" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="826884942428854" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="908932141097747" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="765746008019268" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="384181613832188" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="446871398801075" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
@@ -3469,6 +4405,15 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="454012293834920" type="Player_1">
                                     <param id="0" name="Instance variable">P1_Dead</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="796259906476758" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="887478622735464" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Hurt2_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="417128405072344" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Knockout_State</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -3618,6 +4563,57 @@
                                                                 </action>
                                                             </actions>
                                                         </event-block>
+                                                        <event-block sid="733691146995805">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="790460262039540" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="586631665054086" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="191448208756945" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="717147666946042" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="119160579126466" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="391152129659156" type="CPU_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="872816339444052" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="964940624460864" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="519966329337782" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="953404461675018" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="613082900801830" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="612717751354457" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
                                                         <event-block sid="815759187633822">
                                                             <conditions>
                                                                 <condition id="1" name="Is overlapping another object" sid="417151746203735" type="Punch_Collision">
@@ -3713,6 +4709,57 @@
                                                                 </action>
                                                                 <action id="7" name="Set mirrored" sid="985729860675977" type="Sandbag">
                                                                     <param id="0" name="State">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="635621221418546">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="649118272987729" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="343623865353921" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="863610390327292" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="306085239249236" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="276903391814094" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="112102458354962" type="CPU_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="663325672578510" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="461329762242686" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="908768076507034" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="610338425483494" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="748001991782849" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="930851530752055" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>
@@ -3815,6 +4862,57 @@
                                                                 </action>
                                                                 <action id="7" name="Set mirrored" sid="614868281398683" type="Sandbag">
                                                                     <param id="0" name="State">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="571183501483959">
+                                                            <conditions>
+                                                                <condition id="1" name="Is overlapping another object" sid="363230299388373" type="Punch_Collision">
+                                                                    <param id="0" name="Object">CPU_1</param>
+                                                                </condition>
+                                                                <condition id="7" name="Is mirrored" sid="867532593598999" type="Player_1" />
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="148465546094092" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Play" sid="425660114107360" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="8" name="Set vector X" sid="677873650706576" type="CPU_1">
+                                                                    <param id="0" name="Vector X">-142</param>
+                                                                </action>
+                                                                <action id="7" name="Set mirrored" sid="522543005848018" type="CPU_1">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="333890073904289" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Damage_State</param>
+                                                                    <param id="1" name="Value">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="581374150309386" type="Audio">
+                                                                    <param id="0" name="Audio file">mediumpunch</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="346678157384890" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="4" name="Set animation" sid="745544016999484" type="CPU1_Hit_Effect">
+                                                                    <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="-11" name="Subtract from" sid="829188442978491" type="System">
+                                                                    <param id="0" name="Variable">CPU1_Hp</param>
+                                                                    <param id="1" name="Value">2</param>
+                                                                </action>
+                                                                <action id="-11" name="Add to" sid="761436357704206" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Knockout_Counter</param>
+                                                                    <param id="1" name="Value">1</param>
                                                                 </action>
                                                             </actions>
                                                         </event-block>

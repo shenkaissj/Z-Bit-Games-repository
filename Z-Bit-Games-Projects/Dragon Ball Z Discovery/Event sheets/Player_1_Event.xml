@@ -18,7 +18,7 @@
                     </sub-events>
                 </event-group>
                 <include>Chacter_Code_Event</include>
-                <event-group description="the SSJ transformation event" inactive="1" sid="569886055348071" title="P1_SSJ">
+                <event-group description="the SSJ transformation event" sid="569886055348071" title="P1_SSJ">
                     <sub-events>
                         <include>P1_SuperSayian</include>
                     </sub-events>
@@ -48,7 +48,6 @@
                 <event-group description="inputs for player 1" sid="148589889396768" title="P1_Input">
                     <sub-events>
                         <include>P1_Duck</include>
-                        <include>P1_Run_Button</include>
                         <include>P1_Input</include>
                     </sub-events>
                 </event-group>
@@ -177,10 +176,6 @@
                                 <action id="-15" name="Set visible" sid="762155936311196" type="Collisions">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="969018698209364" type="Player_1">
-                                    <param id="0" name="Instance variable">P1_Charcters</param>
-                                    <param id="1" name="Value">&quot;GKU1&quot;</param>
-                                </action>
                                 <action behavior="Bullet" id="0" name="Set speed" sid="806557588030508" type="P1_Ki_Blast">
                                     <param id="0" name="Speed">400</param>
                                 </action>
@@ -219,6 +214,1808 @@
                                     <param id="1" name="Mode">1</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="916959268507377" type="System">
+                                    <param id="0" name="Variable">P1_Stamina</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="184576604395209" title="Player run">
+            <sub-events>
+                <include>P1_Run_Button</include>
+            </sub-events>
+        </event-group>
+        <event-group description="this event is for when you change a charcter in the debug mode" sid="649751500167724" title="Debug_Mode_Charcter_Icons3">
+            <sub-events>
+                <event-block sid="248460433697250">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="297711760795407" type="System">
+                            <param id="0" name="Variable">Charcter_Select_Value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="599287385897755">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="170218418038519" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="852004874634096" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charcters</param>
+                                    <param id="1" name="Value">&quot;GKU1&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="866849644229137" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="632042609955751" type="Player_1">
+                                    <param id="0" name="Gravity">413</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="446827623393056" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="521433941093358" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action behavior="Platform" id="4" name="Set jump strength" sid="290619602198428" type="Player_1">
+                                    <param id="0" name="Jump strength">184</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="948159491854744" type="Player_1">
+                                    <param id="0" name="Max Speed">64</param>
+                                </action>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="458761441636109" type="Player_1">
+                                    <param id="0" name="Max fall speed">520</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="115032831690818" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="946126877786719" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_attack</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="747127924086256" type="P1_Smoke">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="773578048765162" type="System">
+                                    <param id="0" name="Object to create">P1_Smoke</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="656721033212595" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="669917609562557" type="System">
+                                    <param id="0" name="Object to create">Punch_Collision</param>
+                                    <param id="1" name="Layer">8</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="423845864366517" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="518178911784154" type="Punch_Collision">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="557651088917110" type="Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="899000425309496" type="System">
+                                    <param id="0" name="Object to create">P1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="815011415798273" type="P1_Aura">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="331264188536377" type="P1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="964806721790544" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="382105517931587" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="667209960168738" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Super_Count</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="688630283079583" type="Player_1">
+                                    <param id="0" name="Max Speed">76</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="918238893739003" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="663471864594023" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="779414974562262" type="Collision_Platforms">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="213430220753127" type="Collisions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="850844077838159" type="P1_Ki_Blast">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="612392951278011" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="417679769229226" type="Debug_Family_Object">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="812416959876268" type="Debug_Options">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="233811171431448" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="330363124864421" type="System">
+                                    <param id="0" name="Object to create">P1_Shild_Effect</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="538391272644312" type="P1_Shild_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="612797256507829" type="System">
+                                    <param id="0" name="Object to create">P1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="434776892711939" type="P1_Hit_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="433005065360028" type="System">
+                                    <param id="0" name="Variable">P1_Stamina</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="562999236313361">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="650094130811634" type="System">
+                            <param id="0" name="Variable">Charcter_Select_Value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="385570162316689">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="445691312286117" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="742499836356970" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charcters</param>
+                                    <param id="1" name="Value">&quot;VEGMid1&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="368423553020419" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="531999067871930" type="Player_1">
+                                    <param id="0" name="Gravity">413</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="224207997857658" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="583912437478547" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action behavior="Platform" id="4" name="Set jump strength" sid="166194538890933" type="Player_1">
+                                    <param id="0" name="Jump strength">184</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="867503273354492" type="Player_1">
+                                    <param id="0" name="Max Speed">64</param>
+                                </action>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="211069173639036" type="Player_1">
+                                    <param id="0" name="Max fall speed">520</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="342024612943564" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="900800483686996" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_attack</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="740573554424557" type="P1_Smoke">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="655471155141973" type="System">
+                                    <param id="0" name="Object to create">P1_Smoke</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="103710896941271" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="769646322594128" type="System">
+                                    <param id="0" name="Object to create">Punch_Collision</param>
+                                    <param id="1" name="Layer">8</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="743184933415137" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="168428431211294" type="Punch_Collision">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="941731609589354" type="Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="398733068268579" type="System">
+                                    <param id="0" name="Object to create">P1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="705729764380111" type="P1_Aura">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="469265557198035" type="P1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="221611976729908" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="908371368770548" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="126444044003379" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Super_Count</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="417549368587608" type="Player_1">
+                                    <param id="0" name="Max Speed">76</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="206009196767915" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="290882582558167" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="987375023580540" type="Collision_Platforms">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="975684497669161" type="Collisions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="673552697381260" type="P1_Ki_Blast">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="601407311783447" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="846761611724696" type="Debug_Family_Object">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="816235521496623" type="Debug_Options">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="507377131443853" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="127386245121565" type="System">
+                                    <param id="0" name="Object to create">P1_Shild_Effect</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="942509124596042" type="P1_Shild_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="509330922533177" type="System">
+                                    <param id="0" name="Object to create">P1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="435643801907305" type="P1_Hit_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="897507553078688" type="System">
+                                    <param id="0" name="Variable">P1_Stamina</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="654805761852905">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="466059474176524" type="System">
+                            <param id="0" name="Variable">Charcter_Select_Value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="148183002362342">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="129166913920606" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="569908031944402" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charcters</param>
+                                    <param id="1" name="Value">&quot;FT1&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="243069821568039" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="687939296805758" type="Player_1">
+                                    <param id="0" name="Gravity">413</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="659446322538709" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="494492436012253" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action behavior="Platform" id="4" name="Set jump strength" sid="349771320493369" type="Player_1">
+                                    <param id="0" name="Jump strength">184</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="293948185076592" type="Player_1">
+                                    <param id="0" name="Max Speed">64</param>
+                                </action>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="240078006714157" type="Player_1">
+                                    <param id="0" name="Max fall speed">520</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="296664465508729" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="758943530213010" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_attack</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="402848299159509" type="P1_Smoke">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="981688684988261" type="System">
+                                    <param id="0" name="Object to create">P1_Smoke</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="854888906970082" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="912186653321768" type="System">
+                                    <param id="0" name="Object to create">Punch_Collision</param>
+                                    <param id="1" name="Layer">8</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="464040124263148" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="272260056020475" type="Punch_Collision">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="441490837517120" type="Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="776789507103976" type="System">
+                                    <param id="0" name="Object to create">P1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="482139969216719" type="P1_Aura">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="193241758189526" type="P1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="871709676550167" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="538061355720584" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="223252443937140" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Super_Count</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="142238143786483" type="Player_1">
+                                    <param id="0" name="Max Speed">76</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="291273573675087" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="680280110844014" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="546214870518832" type="Collision_Platforms">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="154148568467773" type="Collisions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="801944310380534" type="P1_Ki_Blast">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="705683824153817" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="690963431826102" type="Debug_Family_Object">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="405694445381159" type="Debug_Options">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="382160464165539" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="741884329144644" type="System">
+                                    <param id="0" name="Object to create">P1_Shild_Effect</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="758836825123016" type="P1_Shild_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="486919269831547" type="System">
+                                    <param id="0" name="Object to create">P1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="275320448022460" type="P1_Hit_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="742760316522014" type="System">
+                                    <param id="0" name="Variable">P1_Stamina</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="842932306224552">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="144009580845519" type="System">
+                            <param id="0" name="Variable">Charcter_Select_Value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="678072361036684">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="109287604361860" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="564874747762558" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charcters</param>
+                                    <param id="1" name="Value">&quot;TG1&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="895028043854935" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="519819979999064" type="Player_1">
+                                    <param id="0" name="Gravity">413</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="456611805820419" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="876557035031821" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action behavior="Platform" id="4" name="Set jump strength" sid="331803324351056" type="Player_1">
+                                    <param id="0" name="Jump strength">184</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="871331766463058" type="Player_1">
+                                    <param id="0" name="Max Speed">64</param>
+                                </action>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="964964847925164" type="Player_1">
+                                    <param id="0" name="Max fall speed">520</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="372501541341788" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="399920847048762" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_attack</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="923187340073583" type="P1_Smoke">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="139816988067166" type="System">
+                                    <param id="0" name="Object to create">P1_Smoke</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="110529868554017" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="884147303700754" type="System">
+                                    <param id="0" name="Object to create">Punch_Collision</param>
+                                    <param id="1" name="Layer">8</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="701931402257581" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="665194991717970" type="Punch_Collision">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="775753963276537" type="Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="284798541375591" type="System">
+                                    <param id="0" name="Object to create">P1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="995946801461452" type="P1_Aura">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="419606737177087" type="P1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="767297913723706" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="930048307308953" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="244017031051161" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Super_Count</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="635118951424309" type="Player_1">
+                                    <param id="0" name="Max Speed">76</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="520816006465965" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="461219390604638" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="355329512534310" type="Collision_Platforms">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="351258020595941" type="Collisions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="890732891656247" type="P1_Ki_Blast">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="353026162249942" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="249071549739825" type="Debug_Family_Object">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="588553858250733" type="Debug_Options">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="612216747925539" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="211367950249079" type="System">
+                                    <param id="0" name="Object to create">P1_Shild_Effect</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="923511300363322" type="P1_Shild_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="458273091712974" type="System">
+                                    <param id="0" name="Object to create">P1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="678793082442525" type="P1_Hit_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="984132569686184" type="System">
+                                    <param id="0" name="Variable">P1_Stamina</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="276084839438046">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="368819547087222" type="System">
+                            <param id="0" name="Variable">Charcter_Select_Value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="272512465519852">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="828458468023593" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="281501142667353" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charcters</param>
+                                    <param id="1" name="Value">&quot;KRILMid1&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="783883334617734" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="961406939898908" type="Player_1">
+                                    <param id="0" name="Gravity">413</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="509327329253019" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="908616717173641" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action behavior="Platform" id="4" name="Set jump strength" sid="345200789210639" type="Player_1">
+                                    <param id="0" name="Jump strength">184</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="599934288049726" type="Player_1">
+                                    <param id="0" name="Max Speed">64</param>
+                                </action>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="688579121406785" type="Player_1">
+                                    <param id="0" name="Max fall speed">520</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="814081846616493" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="628904708076975" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_attack</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="509344428813904" type="P1_Smoke">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="232961480075301" type="System">
+                                    <param id="0" name="Object to create">P1_Smoke</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="898208273697926" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="108949965051106" type="System">
+                                    <param id="0" name="Object to create">Punch_Collision</param>
+                                    <param id="1" name="Layer">8</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="290353836244027" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="692298393254250" type="Punch_Collision">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="577912649356226" type="Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="788090429092639" type="System">
+                                    <param id="0" name="Object to create">P1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="822101494033784" type="P1_Aura">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="490925569322470" type="P1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="425419441169158" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="517231465641400" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="216902102029101" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Super_Count</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="367987288403045" type="Player_1">
+                                    <param id="0" name="Max Speed">76</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="602254720137660" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="573140853378942" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="945400906878341" type="Collision_Platforms">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="997454686836891" type="Collisions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="122611613470874" type="P1_Ki_Blast">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="212578088367122" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="571255066835735" type="Debug_Family_Object">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="420365082092144" type="Debug_Options">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="453530466215603" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="268442102225286" type="System">
+                                    <param id="0" name="Object to create">P1_Shild_Effect</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="998476954071085" type="P1_Shild_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="327927870802790" type="System">
+                                    <param id="0" name="Object to create">P1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="564666533158892" type="P1_Hit_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="674437548786514" type="System">
+                                    <param id="0" name="Variable">P1_Stamina</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="351290929807394">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="426307555681339" type="System">
+                            <param id="0" name="Variable">Charcter_Select_Value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">6</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="542215854845209">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="304086084917608" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="194409139806142" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charcters</param>
+                                    <param id="1" name="Value">&quot;FRIZA1&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="298847757674147" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="283290854549154" type="Player_1">
+                                    <param id="0" name="Gravity">413</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="405540878343077" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="369377765871151" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action behavior="Platform" id="4" name="Set jump strength" sid="379525099777770" type="Player_1">
+                                    <param id="0" name="Jump strength">184</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="590814316816952" type="Player_1">
+                                    <param id="0" name="Max Speed">64</param>
+                                </action>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="344194805621184" type="Player_1">
+                                    <param id="0" name="Max fall speed">520</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="538590224082816" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="246655703596651" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_attack</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="592847417863684" type="P1_Smoke">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="194704358534984" type="System">
+                                    <param id="0" name="Object to create">P1_Smoke</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="832865432118723" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="999157557959168" type="System">
+                                    <param id="0" name="Object to create">Punch_Collision</param>
+                                    <param id="1" name="Layer">8</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="317155720941877" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="416922240957152" type="Punch_Collision">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="810578208624439" type="Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="672181429135868" type="System">
+                                    <param id="0" name="Object to create">P1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="144333802745534" type="P1_Aura">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="140541674290949" type="P1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="540684570595562" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="562384983523258" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="206448747710448" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Super_Count</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="830521817160160" type="Player_1">
+                                    <param id="0" name="Max Speed">76</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="990422732039872" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="773439010595624" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="895694941006651" type="Collision_Platforms">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="996837511451028" type="Collisions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="602949795453753" type="P1_Ki_Blast">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="956172489183724" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="748680626540705" type="Debug_Family_Object">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="497015713935142" type="Debug_Options">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="141193497595949" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="752194555460316" type="System">
+                                    <param id="0" name="Object to create">P1_Shild_Effect</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="477993717557003" type="P1_Shild_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="246499274287935" type="System">
+                                    <param id="0" name="Object to create">P1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="318901466188210" type="P1_Hit_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="254996053571757" type="System">
+                                    <param id="0" name="Variable">P1_Stamina</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="719618981785864">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="871668016449389" type="System">
+                            <param id="0" name="Variable">Charcter_Select_Value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">7</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="437859164729179">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="255624079076800" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="251057338504217" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charcters</param>
+                                    <param id="1" name="Value">&quot;CELL1&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="119022268533683" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="976374360202453" type="Player_1">
+                                    <param id="0" name="Gravity">413</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="624994516847019" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="570779338379060" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action behavior="Platform" id="4" name="Set jump strength" sid="152805788629468" type="Player_1">
+                                    <param id="0" name="Jump strength">184</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="814963305486123" type="Player_1">
+                                    <param id="0" name="Max Speed">64</param>
+                                </action>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="731727673918699" type="Player_1">
+                                    <param id="0" name="Max fall speed">520</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="799581105327808" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="602291783286493" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_attack</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="289818674950173" type="P1_Smoke">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="382976389228030" type="System">
+                                    <param id="0" name="Object to create">P1_Smoke</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="234729886988287" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="511342591837958" type="System">
+                                    <param id="0" name="Object to create">Punch_Collision</param>
+                                    <param id="1" name="Layer">8</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="787770615075711" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="911296254105800" type="Punch_Collision">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="479601872129397" type="Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="754798874124077" type="System">
+                                    <param id="0" name="Object to create">P1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="486410350710993" type="P1_Aura">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="242449501096999" type="P1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="531773368686182" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="154250633527384" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="426899198399963" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Super_Count</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="199833874754200" type="Player_1">
+                                    <param id="0" name="Max Speed">76</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="890122751032496" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="166525466936648" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="935246264470454" type="Collision_Platforms">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="332851626015292" type="Collisions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="336383970446651" type="P1_Ki_Blast">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="844789182366636" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="647890096612186" type="Debug_Family_Object">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="955251847727648" type="Debug_Options">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="626853415919338" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="468134647750361" type="System">
+                                    <param id="0" name="Object to create">P1_Shild_Effect</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="450438534016622" type="P1_Shild_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="246131695083752" type="System">
+                                    <param id="0" name="Object to create">P1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="328773200766369" type="P1_Hit_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="680565339718787" type="System">
+                                    <param id="0" name="Variable">P1_Stamina</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="681406708207438">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="182842291138193" type="System">
+                            <param id="0" name="Variable">Charcter_Select_Value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">8</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="483244356977484">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="651703637583960" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="447127663732377" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charcters</param>
+                                    <param id="1" name="Value">&quot;PIC1&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="847819525547052" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="149252101728226" type="Player_1">
+                                    <param id="0" name="Gravity">413</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="392570203456684" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="862399229608654" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action behavior="Platform" id="4" name="Set jump strength" sid="121183747859888" type="Player_1">
+                                    <param id="0" name="Jump strength">184</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="692866289316249" type="Player_1">
+                                    <param id="0" name="Max Speed">64</param>
+                                </action>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="225389522271693" type="Player_1">
+                                    <param id="0" name="Max fall speed">520</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="518888004860802" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="712013740752225" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_attack</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="540608646130686" type="P1_Smoke">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="512921709690192" type="System">
+                                    <param id="0" name="Object to create">P1_Smoke</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="110029925982452" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="779095401146722" type="System">
+                                    <param id="0" name="Object to create">Punch_Collision</param>
+                                    <param id="1" name="Layer">8</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="932102515962893" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="944603932693391" type="Punch_Collision">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="842840261121767" type="Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="902950677304316" type="System">
+                                    <param id="0" name="Object to create">P1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="279074925251958" type="P1_Aura">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="986165148346582" type="P1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="850596089759262" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="636307083028501" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="401052639273199" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Super_Count</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="713611324184281" type="Player_1">
+                                    <param id="0" name="Max Speed">76</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="734562096496948" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="312931536190817" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="958910521374718" type="Collision_Platforms">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="316166464315128" type="Collisions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="205314278672257" type="P1_Ki_Blast">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="324278573802393" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="309248714143606" type="Debug_Family_Object">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="813849221927190" type="Debug_Options">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="834521023511253" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="183411249882599" type="System">
+                                    <param id="0" name="Object to create">P1_Shild_Effect</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="861002121854074" type="P1_Shild_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="426271091025022" type="System">
+                                    <param id="0" name="Object to create">P1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="136721394043161" type="P1_Hit_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="708481531854034" type="System">
+                                    <param id="0" name="Variable">P1_Stamina</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="784422964277686">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="417676946232499" type="System">
+                            <param id="0" name="Variable">Charcter_Select_Value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">9</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="265398375530000">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="838657298637617" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="154427400116431" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charcters</param>
+                                    <param id="1" name="Value">&quot;KG2&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="671633795728398" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="154342980356421" type="Player_1">
+                                    <param id="0" name="Gravity">413</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="168477015318310" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="833701571743350" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action behavior="Platform" id="4" name="Set jump strength" sid="882322820525628" type="Player_1">
+                                    <param id="0" name="Jump strength">184</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="742835198041125" type="Player_1">
+                                    <param id="0" name="Max Speed">64</param>
+                                </action>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="517891042299806" type="Player_1">
+                                    <param id="0" name="Max fall speed">520</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="308681514362635" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="408425710390848" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_attack</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="912759002755520" type="P1_Smoke">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="782825783518286" type="System">
+                                    <param id="0" name="Object to create">P1_Smoke</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="555092870177771" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="334908906052861" type="System">
+                                    <param id="0" name="Object to create">Punch_Collision</param>
+                                    <param id="1" name="Layer">8</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="242729791657265" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="535266632472049" type="Punch_Collision">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="657779834060430" type="Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="288305315764119" type="System">
+                                    <param id="0" name="Object to create">P1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="506057730769168" type="P1_Aura">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="655158520629263" type="P1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="701419843861761" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="542061547597941" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="835962146170283" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Super_Count</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="769722640796642" type="Player_1">
+                                    <param id="0" name="Max Speed">76</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="218040432244756" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="192959116341586" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="556457065306800" type="Collision_Platforms">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="347478176229864" type="Collisions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="752878075802559" type="P1_Ki_Blast">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="736171539719451" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="535534416958357" type="Debug_Family_Object">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="497919508873647" type="Debug_Options">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="862370613541645" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="964158446193774" type="System">
+                                    <param id="0" name="Object to create">P1_Shild_Effect</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="116119472272045" type="P1_Shild_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="164006425063074" type="System">
+                                    <param id="0" name="Object to create">P1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="448934351019551" type="P1_Hit_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="399928246712311" type="System">
+                                    <param id="0" name="Variable">P1_Stamina</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="428184344117253">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="327470643463832" type="System">
+                            <param id="0" name="Variable">Charcter_Select_Value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="573823148338817">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="730871151299008" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="693192674614016" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charcters</param>
+                                    <param id="1" name="Value">&quot;ERBT1&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="548853990317778" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="366765282910259" type="Player_1">
+                                    <param id="0" name="Gravity">413</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="534415274112360" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="251737774753790" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action behavior="Platform" id="4" name="Set jump strength" sid="554010205639239" type="Player_1">
+                                    <param id="0" name="Jump strength">184</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="867213285097223" type="Player_1">
+                                    <param id="0" name="Max Speed">64</param>
+                                </action>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="414409603052511" type="Player_1">
+                                    <param id="0" name="Max fall speed">520</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="949285300248720" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="568161179378103" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_attack</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="721328483442017" type="P1_Smoke">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="467806160509857" type="System">
+                                    <param id="0" name="Object to create">P1_Smoke</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="480441017178261" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="572533609351858" type="System">
+                                    <param id="0" name="Object to create">Punch_Collision</param>
+                                    <param id="1" name="Layer">8</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="836062549285751" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="599508917772256" type="Punch_Collision">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="660171938589248" type="Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="774459117260854" type="System">
+                                    <param id="0" name="Object to create">P1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="753076081682971" type="P1_Aura">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="407574012842187" type="P1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="192935432253021" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="140627891924500" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="708401649105657" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Super_Count</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="619368238067538" type="Player_1">
+                                    <param id="0" name="Max Speed">76</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="785709197503846" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="523171662031265" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="990492838123316" type="Collision_Platforms">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="425667082400438" type="Collisions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="932549429744985" type="P1_Ki_Blast">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="983614887897624" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="230848863729136" type="Debug_Family_Object">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="603530588096688" type="Debug_Options">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="766225880624990" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="831443429000659" type="System">
+                                    <param id="0" name="Object to create">P1_Shild_Effect</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="697327806165385" type="P1_Shild_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="434461126919078" type="System">
+                                    <param id="0" name="Object to create">P1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="904921535803593" type="P1_Hit_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="681615824309741" type="System">
+                                    <param id="0" name="Variable">P1_Stamina</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="171321007569671">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="840195337355441" type="System">
+                            <param id="0" name="Variable">Charcter_Select_Value</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">11</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="167626715624211">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="683292464232946" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="350122849746910" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charcters</param>
+                                    <param id="1" name="Value">&quot;NEFF&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="593256489322480" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="563983539323587" type="Player_1">
+                                    <param id="0" name="Gravity">413</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="367562091259406" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="Platform" id="3" name="Set deceleration" sid="373072034636948" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action behavior="Platform" id="4" name="Set jump strength" sid="646405585890290" type="Player_1">
+                                    <param id="0" name="Jump strength">184</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="677421668656589" type="Player_1">
+                                    <param id="0" name="Max Speed">64</param>
+                                </action>
+                                <action behavior="Platform" id="6" name="Set max fall speed" sid="889211038458208" type="Player_1">
+                                    <param id="0" name="Max fall speed">520</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="354804565842419" type="Player_1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="646823928803972" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_attack</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="247101909386345" type="P1_Smoke">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="912618429787453" type="System">
+                                    <param id="0" name="Object to create">P1_Smoke</param>
+                                    <param id="1" name="Layer">9</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="168577355492019" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Duck</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="834126315663311" type="System">
+                                    <param id="0" name="Object to create">Punch_Collision</param>
+                                    <param id="1" name="Layer">8</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="8Direction" id="8" name="Set enabled" sid="854311788234283" type="Player_1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="485295038412759" type="Punch_Collision">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="750095999898298" type="Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="891653590272931" type="System">
+                                    <param id="0" name="Object to create">P1_Aura</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="298540713236383" type="P1_Aura">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="276739358100898" type="P1_Aura">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-27" name="Set effect enabled" sid="157562253849304" type="P1_Aura">
+                                    <param id="0" name="Mode">1</param>
+                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="348667601506573" type="P1_Swoosh_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="728597755925687" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Super_Count</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="8Direction" id="4" name="Set max speed" sid="303688807700558" type="Player_1">
+                                    <param id="0" name="Max Speed">76</param>
+                                </action>
+                                <action behavior="8Direction" id="5" name="Set acceleration" sid="400756075272497" type="Player_1">
+                                    <param id="0" name="Acceleration">150</param>
+                                </action>
+                                <action behavior="8Direction" id="6" name="Set deceleration" sid="277971957411493" type="Player_1">
+                                    <param id="0" name="Deceleration">100</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="609041850340887" type="Collision_Platforms">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="256395701159219" type="Collisions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="967264266772913" type="P1_Ki_Blast">
+                                    <param id="0" name="Speed">400</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="995852180910633" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="374208454746734" type="Debug_Family_Object">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="793666780215293" type="Debug_Options">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="332675089598742" type="System">
+                                    <param id="0" name="Variable">P1_Hp</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="840730948854512" type="System">
+                                    <param id="0" name="Object to create">P1_Shild_Effect</param>
+                                    <param id="1" name="Layer">11</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="194566678661742" type="P1_Shild_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="149617632259752" type="System">
+                                    <param id="0" name="Object to create">P1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">Player_1.X</param>
+                                    <param id="3" name="Y">Player_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="646456302325267" type="P1_Hit_Effect">
+                                    <param id="0" name="Pin to">Player_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="153864635750454" type="System">
                                     <param id="0" name="Variable">P1_Stamina</param>
                                     <param id="1" name="Value">100</param>
                                 </action>

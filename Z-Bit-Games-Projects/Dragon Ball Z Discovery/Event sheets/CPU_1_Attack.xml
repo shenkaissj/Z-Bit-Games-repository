@@ -44,6 +44,15 @@
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="450310503563631" type="Player_1">
                                     <param id="0" name="Instance variable">P1_Charge_Ki</param>
                                 </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="683126675760162" type="CPU_1">
+                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="288437519094991" type="CPU_1">
+                                    <param id="0" name="Animation">&quot;Hurt2_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="353893152145019" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Beam_State</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -372,6 +381,262 @@
                                                         </event-block>
                                                     </sub-events>
                                                 </event-group>
+                                                <event-group description="" sid="807938077088372" title="CPU1_Left_Non_Blocking_Attack_SSJ1">
+                                                    <sub-events>
+                                                        <event-block sid="132089863947368">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="132676915017225" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="509576569180311" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="138691841899579" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="513050865504604" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="141537673709285" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss1</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="740750358197538" type="Player_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="923733464373624">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="476770131030453" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="733552439943642" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" inverted="1" name="Is mirrored" sid="561514887097228" type="CPU_1" />
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="847061007300451" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="491256863667302" type="Player_1">
+                                                                            <param id="0" name="Vector X">142</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="332501124972403" type="Player_1">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="728837923519869" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Damage_State</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="437210298811646" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="161537716639346" type="Audio">
+                                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-25</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="970856655936945" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="569528081722025" type="P1_Hit_Effect">
+                                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="928868237283992" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">2</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <event-block sid="239377312429453">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="596195102994605" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="275802018541407" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="228379382475137" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="193503119140550" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="351800701818711" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss2</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="901362660988614" type="Player_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="168558426872647">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="937608662286673" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="218683925985270" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" inverted="1" name="Is mirrored" sid="143570671946830" type="CPU_1" />
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="815815100393959" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="658725787376530" type="Player_1">
+                                                                            <param id="0" name="Vector X">142</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="288945166568444" type="Player_1">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="163404630329655" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Damage_State</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="237470295119236" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="901458172042904" type="Audio">
+                                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-25</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="661684722767126" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="175253511256808" type="P1_Hit_Effect">
+                                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="748388382987420" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">2</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <event-block sid="913734855944432">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="762140666452078" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="648347194067695" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">3</param>
+                                                                </condition>
+                                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="342212686677915" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="310949557978062" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="521799917108827" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss3</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="477243993027634" type="Player_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="697601223294828">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="635381303012132" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="484681095875864" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" inverted="1" name="Is mirrored" sid="807769501864522" type="CPU_1" />
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="285378021814361" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="688766868912492" type="Player_1">
+                                                                            <param id="0" name="Vector X">142</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="970829809916945" type="Player_1">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="724862684219878" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Damage_State</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="219281181013122" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="874118235658048" type="Audio">
+                                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-25</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="735918002189030" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="997992838181622" type="P1_Hit_Effect">
+                                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="336354283862602" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">2</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-group>
                                                 <event-group description="" sid="168795709470970" title="CPU1_Left_Blocking_Attack1">
                                                     <sub-events>
                                                         <event-block sid="516348698645652">
@@ -604,6 +869,238 @@
                                                         </event-block>
                                                     </sub-events>
                                                 </event-group>
+                                                <event-group description="" sid="251240273282736" title="CPU1_Left_Blocking_Attack_SSJ_Guard_Hit">
+                                                    <sub-events>
+                                                        <event-block sid="267549292271619">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="205317071731342" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="484628272218059" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                                <condition id="-8" name="Is boolean instance variable set" sid="358783337663316" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="773470135284272" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="885076237156470" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss1</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="817024219773818" type="Player_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="932011439296540">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="433645203900320" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="589763860934847" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" inverted="1" name="Is mirrored" sid="661610663680089" type="CPU_1" />
+                                                                        <condition id="-8" name="Is boolean instance variable set" sid="943616373205690" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="0" name="Play" sid="947135190870658" type="Audio">
+                                                                            <param id="0" name="Audio file">Shild hit</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-15</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="475677471356437" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Guard_Hit_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="850286793307369" type="Player_1">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="633628992755095" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="391445542140744" type="P1_Shild_Effect">
+                                                                            <param id="0" name="Animation">&quot;Shild_Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="264159410174557" type="P1_Shild_Effect">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <event-block sid="622860420980672">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="953667852813501" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="666351969627952" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                                <condition id="-8" name="Is boolean instance variable set" sid="526418931211848" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="342191857821481" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="177459452391270" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss2</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="844933982564070" type="Player_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="580967250333532">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="738979827917573" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="468962665844233" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" inverted="1" name="Is mirrored" sid="611409940726223" type="CPU_1" />
+                                                                        <condition id="-8" name="Is boolean instance variable set" sid="478969672949082" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="0" name="Play" sid="940623551338590" type="Audio">
+                                                                            <param id="0" name="Audio file">Shild hit</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-15</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="719095166404609" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Guard_Hit_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="460047344594875" type="Player_1">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="296865289771144" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="212825814979076" type="P1_Shild_Effect">
+                                                                            <param id="0" name="Animation">&quot;Shild_Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="950676122210429" type="P1_Shild_Effect">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <event-block sid="174200374445964">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="233485138012094" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="207244436591966" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">3</param>
+                                                                </condition>
+                                                                <condition id="-8" name="Is boolean instance variable set" sid="763585215653503" type="Player_1">
+                                                                    <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="668046870553857" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="960816231208981" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss3</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="620097484146205" type="Player_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="927584665232589">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="576717711510840" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="735674642400845" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" inverted="1" name="Is mirrored" sid="709996475829990" type="CPU_1" />
+                                                                        <condition id="-8" name="Is boolean instance variable set" sid="104235183264368" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="0" name="Play" sid="100624414702832" type="Audio">
+                                                                            <param id="0" name="Audio file">Shild hit</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-15</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="556736212327128" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Guard_Hit_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="499665471573218" type="Player_1">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="309525291974927" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="696625176987756" type="P1_Shild_Effect">
+                                                                            <param id="0" name="Animation">&quot;Shild_Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="966610960604473" type="P1_Shild_Effect">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-group>
                                             </sub-events>
                                         </event-block>
                                     </sub-events>
@@ -684,6 +1181,15 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="608722907258658" type="Player_1">
                                     <param id="0" name="Instance variable">P1_Charge_Ki</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="570366796764504" type="CPU_1">
+                                    <param id="0" name="Animation">&quot;Hurt1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Is playing" sid="658297194181690" type="CPU_1">
+                                    <param id="0" name="Animation">&quot;Hurt2_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="518627559009405" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Beam_State</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -1004,6 +1510,253 @@
                                                         </event-block>
                                                     </sub-events>
                                                 </event-group>
+                                                <event-group description="" sid="317472416552710" title="CPU1_Right_Non_Blocking_Attack_SSJ1">
+                                                    <sub-events>
+                                                        <event-block sid="844369290474308">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="183509575647165" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="214110633815699" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="656746666476191" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="571849589625733" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss1</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="704220159191970" type="CPU_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="372388579646843">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="732524492106151" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="900013223811330" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" name="Is mirrored" sid="725991819983955" type="CPU_1" />
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="774389827010664" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="775560700368791" type="Player_1">
+                                                                            <param id="0" name="Vector X">142</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="485299009777991" type="Player_1">
+                                                                            <param id="0" name="State">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="610840581156495" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Damage_State</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="190165693308948" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="201388872316677" type="Audio">
+                                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-25</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="828559756483486" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="222753506804855" type="P1_Hit_Effect">
+                                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="628697046450335" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">2</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <event-block sid="571126033091164">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="903665681487644" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="957667732179118" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="773105128756819" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="957119838313413" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss2</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="291484168476697" type="CPU_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="160303696920811">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="421252090005502" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="572364772378327" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" name="Is mirrored" sid="844060695143695" type="CPU_1" />
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="957864647775681" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="974833963891565" type="Player_1">
+                                                                            <param id="0" name="Vector X">142</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="425316631167533" type="Player_1">
+                                                                            <param id="0" name="State">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="541641637492333" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Damage_State</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="540627979064256" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="735436571334107" type="Audio">
+                                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-25</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="189119115189676" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="408167448445551" type="P1_Hit_Effect">
+                                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="849707159575800" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">2</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <event-block sid="938664683229131">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="199975969835577" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="575397130541663" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">3</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="431140367358399" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="331667220675349" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss3</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="914598614577621" type="CPU_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="713290446768096">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="947817913319544" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="125900775879382" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" name="Is mirrored" sid="123680162069290" type="CPU_1" />
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="410442375660526" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action behavior="Platform" id="8" name="Set vector X" sid="226615611258379" type="Player_1">
+                                                                            <param id="0" name="Vector X">142</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="189364703540761" type="Player_1">
+                                                                            <param id="0" name="State">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="309650991285010" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Damage_State</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Add to" sid="950387790202119" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_Counter</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="0" name="Play" sid="117006722697013" type="Audio">
+                                                                            <param id="0" name="Audio file">mediumpunch</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-25</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="435613927700051" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Hurt1_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="668360894841123" type="P1_Hit_Effect">
+                                                                            <param id="0" name="Animation">&quot;Light_Hit_Effect&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="239288246411810" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">2</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-group>
                                                 <event-group description="" sid="343894364658962" title="CPU1_Right_Blocking_Attack1">
                                                     <sub-events>
                                                         <event-block sid="727577689969476">
@@ -1223,6 +1976,229 @@
                                                                         </action>
                                                                         <action id="7" name="Set mirrored" sid="864010139586051" type="P1_Shild_Effect">
                                                                             <param id="0" name="State">1</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-group>
+                                                <event-group description="" sid="255029315776918" title="CPU1_Right_Blocking_Attack_SSJ1">
+                                                    <sub-events>
+                                                        <event-block sid="990094821930026">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="950802148714046" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="431453697289566" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">1</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="155407807062104" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack1_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="216768853957512" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss1</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="650724541544383" type="CPU_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="867227675454131">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="925278535934272" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="811487092938867" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" name="Is mirrored" sid="855176627996157" type="CPU_1" />
+                                                                        <condition id="-8" name="Is boolean instance variable set" sid="425703600344085" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="0" name="Play" sid="316939205766608" type="Audio">
+                                                                            <param id="0" name="Audio file">Shild hit</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-15</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="336903836894386" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Guard_Hit_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="680903261803006" type="Player_1">
+                                                                            <param id="0" name="State">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="530261568909881" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="329199085386104" type="P1_Shild_Effect">
+                                                                            <param id="0" name="Animation">&quot;Shild_Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="267720672920699" type="P1_Shild_Effect">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <event-block sid="225854233254953">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="846280534579575" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="929408314508945" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">2</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="849448728327908" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack2_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="325122602688362" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss2</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="332234007782471" type="CPU_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="263696478444058">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="772821943053102" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="459289680148632" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" name="Is mirrored" sid="447145514790577" type="CPU_1" />
+                                                                        <condition id="-8" name="Is boolean instance variable set" sid="555515331942564" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="0" name="Play" sid="717741097598752" type="Audio">
+                                                                            <param id="0" name="Audio file">Shild hit</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-15</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="953816079095388" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Guard_Hit_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="137692706505705" type="Player_1">
+                                                                            <param id="0" name="State">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="159222675192778" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="583226484011802" type="P1_Shild_Effect">
+                                                                            <param id="0" name="Animation">&quot;Shild_Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="838993214957902" type="P1_Shild_Effect">
+                                                                            <param id="0" name="State">0</param>
+                                                                        </action>
+                                                                    </actions>
+                                                                </event-block>
+                                                            </sub-events>
+                                                        </event-block>
+                                                        <event-block sid="375221541505154">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="762443199822284" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_SSJ1</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">0</param>
+                                                                </condition>
+                                                                <condition id="-7" name="Compare instance variable" sid="434659417932789" type="CPU_Array">
+                                                                    <param id="0" name="Instance variable">CPU_1_Light_Hit_Count</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">3</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="4" name="Set animation" sid="112435191710986" type="CPU_1">
+                                                                    <param id="0" name="Animation">&quot;Attack3_&quot; &amp; CPU_Array.CPU_1_Charcters</param>
+                                                                    <param id="1" name="From">1</param>
+                                                                </action>
+                                                                <action id="0" name="Play" sid="981811239135441" type="Audio">
+                                                                    <param id="0" name="Audio file">meleemiss3</param>
+                                                                    <param id="2" name="Loop">0</param>
+                                                                    <param id="3" name="Volume">-25</param>
+                                                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                </action>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="117155092442662" type="CPU_1">
+                                                                    <param id="0" name="Max Speed">24</param>
+                                                                </action>
+                                                            </actions>
+                                                            <sub-events>
+                                                                <event-block sid="353488950591554">
+                                                                    <conditions>
+                                                                        <condition id="1" name="Is overlapping another object" sid="704971275435567" type="CPU1_Player_Punch_Collision">
+                                                                            <param id="0" name="Object">Player_1</param>
+                                                                        </condition>
+                                                                        <condition id="-7" name="Compare instance variable" sid="378742890056395" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="1" name="Comparison">0</param>
+                                                                            <param id="2" name="Value">1</param>
+                                                                        </condition>
+                                                                        <condition id="7" name="Is mirrored" sid="109119772189066" type="CPU_1" />
+                                                                        <condition id="-8" name="Is boolean instance variable set" sid="319018211247307" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
+                                                                    </conditions>
+                                                                    <actions>
+                                                                        <action id="0" name="Play" sid="633455397713971" type="Audio">
+                                                                            <param id="0" name="Audio file">Shild hit</param>
+                                                                            <param id="2" name="Loop">0</param>
+                                                                            <param id="3" name="Volume">-15</param>
+                                                                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="946478419663962" type="Player_1">
+                                                                            <param id="0" name="Animation">&quot;Guard_Hit_SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="530253794204097" type="Player_1">
+                                                                            <param id="0" name="State">1</param>
+                                                                        </action>
+                                                                        <action id="-11" name="Subtract from" sid="796321010378572" type="System">
+                                                                            <param id="0" name="Variable">P1_Hp</param>
+                                                                            <param id="1" name="Value">1</param>
+                                                                        </action>
+                                                                        <action id="4" name="Set animation" sid="247523739847899" type="P1_Shild_Effect">
+                                                                            <param id="0" name="Animation">&quot;Shild_Hit&quot;</param>
+                                                                            <param id="1" name="From">1</param>
+                                                                        </action>
+                                                                        <action id="7" name="Set mirrored" sid="890063702505459" type="P1_Shild_Effect">
+                                                                            <param id="0" name="State">0</param>
                                                                         </action>
                                                                     </actions>
                                                                 </event-block>

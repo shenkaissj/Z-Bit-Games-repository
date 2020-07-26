@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>AI_Test_Event</name>
     <events>
+        <include>Versus_Charcter_Select</include>
         <include>CPU1_KiBlast</include>
         <include>CPU_1_Ki_Chargeing_Event</include>
         <include>Mobile_Detictor</include>
@@ -105,6 +106,9 @@
                         <action id="-15" name="Set visible" sid="740166305707748" type="Mobile_Controls">
                             <param id="0" name="Visibility">0</param>
                         </action>
+                        <action id="6" name="Stop" sid="534432273578970" type="Audio">
+                            <param id="0" name="Tag">&quot;Select_Music&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="849971713625783">
@@ -195,9 +199,38 @@
                                     <param id="0" name="Mode">1</param>
                                     <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
                                 </action>
-                                <action behavior="Pin" id="0" name="Pin to object" sid="437394128679012" type="P1_Swoosh_Effect">
-                                    <param id="0" name="Pin to">Player_1</param>
+                                <action id="-3" name="Create object" sid="933179087816013" type="System">
+                                    <param id="0" name="Object to create">CPU1_Hit_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">CPU_1.X</param>
+                                    <param id="3" name="Y">CPU_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="756996064617806" type="CPU1_Hit_Effect">
+                                    <param id="0" name="Pin to">CPU_1</param>
                                     <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="827760256391411" type="System">
+                                    <param id="0" name="Object to create">CPU1_Explosion_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">CPU_1.X</param>
+                                    <param id="3" name="Y">CPU_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="388203615133091" type="CPU1_Explosion_Effect">
+                                    <param id="0" name="Pin to">CPU_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="939930963092885" type="System">
+                                    <param id="0" name="Object to create">CPU_1_Big_Explosion_Effect</param>
+                                    <param id="1" name="Layer">5</param>
+                                    <param id="2" name="X">CPU_1.X</param>
+                                    <param id="3" name="Y">CPU_1.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="450535692577928" type="CPU_1_Big_Explosion_Effect">
+                                    <param id="0" name="Pin to">CPU_1</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="101382464200349" type="CPU1_Player_Punch_Collision">
+                                    <param id="0" name="Visibility">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -205,70 +238,187 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="the main events for player" sid="797397040275900" title="Player_Events" />
-        <event-block sid="121550248177134">
-            <conditions>
-                <condition behavior="Fade" id="1" name="On fade-in finished" sid="713335252206329" type="Ready_Font" />
-            </conditions>
-            <actions>
-                <action id="0" name="Play" sid="436545416814016" type="Audio">
-                    <param id="0" name="Audio file">ready</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">-17</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="638677392610574">
-            <conditions>
-                <condition behavior="Fade" id="0" name="On fade-out finished" sid="455930568112242" type="Ready_Font" />
-            </conditions>
-            <actions>
-                <action id="-16" name="Wait" sid="439024590986877" type="System">
-                    <param id="0" name="Seconds">0.1</param>
-                </action>
-                <action id="-15" name="Set visible" sid="483758377344427" type="GO_Font">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action behavior="Fade" id="1" name="Start fade" sid="523676391397895" type="GO_Font" />
-            </actions>
-        </event-block>
-        <event-block sid="127208195376629">
-            <conditions>
-                <condition behavior="Fade" id="1" name="On fade-in finished" sid="318999843714303" type="GO_Font" />
-            </conditions>
-            <actions>
-                <action id="0" name="Play" sid="900008123108277" type="Audio">
-                    <param id="0" name="Audio file">go</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">-17</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
-                <action id="-13" name="Set boolean" sid="786562196578667" type="Player_1">
-                    <param id="0" name="Instance variable">P1_Actor</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-13" name="Set boolean" sid="457725402508073" type="CPU_Array">
-                    <param id="0" name="Instance variable">CPU_1_Actor</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-                <action id="-15" name="Set visible" sid="776788808240085" type="Health_Gui_1">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-15" name="Set visible" sid="967229694979695" type="Health_Gui_2">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-15" name="Set visible" sid="751456271210208" type="Ki_and_Hp_Bars">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-15" name="Set visible" sid="708148861048220" type="Ki_and_Hp_Bars2">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action id="-15" name="Set visible" sid="578128394369308" type="Mobile_Controls">
-                    <param id="0" name="Visibility">1</param>
-                </action>
-                <action behavior="Fade" id="1" name="Start fade" sid="856796262520400" type="Mobile_Controls" />
-            </actions>
-        </event-block>
+        <event-group description="the main events for player" sid="797397040275900" title="Versus_Mode_Events">
+            <sub-events>
+                <event-block sid="121550248177134">
+                    <conditions>
+                        <condition behavior="Fade" id="1" name="On fade-in finished" sid="713335252206329" type="Ready_Font" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="436545416814016" type="Audio">
+                            <param id="0" name="Audio file">ready</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-17</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="638677392610574">
+                    <conditions>
+                        <condition behavior="Fade" id="0" name="On fade-out finished" sid="455930568112242" type="Ready_Font" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="439024590986877" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="483758377344427" type="GO_Font">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="523676391397895" type="GO_Font" />
+                    </actions>
+                </event-block>
+                <event-block sid="127208195376629">
+                    <conditions>
+                        <condition behavior="Fade" id="1" name="On fade-in finished" sid="318999843714303" type="GO_Font" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="900008123108277" type="Audio">
+                            <param id="0" name="Audio file">go</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-17</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="786562196578667" type="Player_1">
+                            <param id="0" name="Instance variable">P1_Actor</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="457725402508073" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_1_Actor</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="776788808240085" type="Health_Gui_1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="967229694979695" type="Health_Gui_2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="751456271210208" type="Ki_and_Hp_Bars">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="708148861048220" type="Ki_and_Hp_Bars2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="578128394369308" type="Mobile_Controls">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="856796262520400" type="Mobile_Controls" />
+                    </actions>
+                </event-block>
+                <event-block sid="828013750300031">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="554520815786104" type="System">
+                            <param id="0" name="Variable">CPU1_Hp</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="607066638796373" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_1_Dead</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="335990581705347" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="335867458216034" type="CPU_Array">
+                            <param id="0" name="Instance variable">CPU_1_Knockout_State</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="254334283791634" type="Health_Gui_1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="548086507174542" type="Health_Gui_2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="610547974823833" type="Ki_and_Hp_Bars">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="756599858622768" type="Ki_and_Hp_Bars2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="354138379342002" type="Mobile_Controls">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="317945146647078" type="Audio">
+                            <param id="0" name="Audio file">time_up (online-audio-converter.com)</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-17</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="737427243994944" type="KO_Font">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="216677853746131" type="KO_Font" />
+                        <action id="-16" name="Wait" sid="975362147480368" type="System">
+                            <param id="0" name="Seconds">1.2</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="754375879997307" type="Winner">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="682144065273937" type="Winner" />
+                        <action id="0" name="Play" sid="172161071521831" type="Audio">
+                            <param id="0" name="Audio file">you_win</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-17</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="109765881872959">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="445662773874375" type="System">
+                            <param id="0" name="Variable">P1_Hp</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="475982385098626" type="Player_1">
+                            <param id="0" name="Instance variable">P1_Dead</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="250897256656986" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="892255006448266" type="Player_1">
+                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="759252027149649" type="Health_Gui_1">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="498203692857670" type="Health_Gui_2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="805979765097902" type="Ki_and_Hp_Bars">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="450857218259362" type="Ki_and_Hp_Bars2">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="501203626520697" type="Mobile_Controls">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="893992365624292" type="Audio">
+                            <param id="0" name="Audio file">time_up (online-audio-converter.com)</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-17</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="445307965311479" type="KO_Font">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="545411569488764" type="KO_Font" />
+                        <action id="-16" name="Wait" sid="609130600578488" type="System">
+                            <param id="0" name="Seconds">1.2</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="418105786808640" type="Winner">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="474681770657723" type="Winner" />
+                        <action id="0" name="Play" sid="521433195226635" type="Audio">
+                            <param id="0" name="Audio file">you_lose</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-17</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
