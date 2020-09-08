@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Lock_on_Event</name>
+    <events>
+        <event-block sid="831833776260884">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="852973249041332" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="450455004642244" type="System">
+                    <param id="0" name="Object to create">Lock_On_Icon</param>
+                    <param id="1" name="Layer">14</param>
+                    <param id="2" name="X">Sandbag.X</param>
+                    <param id="3" name="Y">Sandbag.Y</param>
+                </action>
+                <action id="-10" name="Set value" sid="894847071161132" type="Lock_On_Icon">
+                    <param id="0" name="Instance variable">LockedOn</param>
+                    <param id="1" name="Value">&quot;None&quot;</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="602170419511898" type="Lock_On_Icon">
+                    <param id="0" name="Pin to">Sandbag</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="871563232012352" type="Lock_On_Icon">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="477074721731924" type="Lock_On_Icon">
+                    <param id="0" name="Instance variable">LockOnState</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="this lockon is for the sand bag" sid="485220539970128" title="Sandbag Lock on">
+            <sub-events>
+                <event-block sid="617130712158206">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="894034549045540" type="Keyboard">
+                            <param id="0" name="Key">78</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="897177417156631" type="Lock_On_Icon">
+                            <param id="0" name="Instance variable">LockOnState</param>
+                        </condition>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="785711871651763" type="Player_1">
+                            <param id="0" name="Object">Sandbag</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="661712828096290" type="Lock_On_Icon">
+                            <param id="0" name="Instance variable">LockOnState</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="154494932512956">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="110350088285607" type="Lock_On_Icon">
+                            <param id="0" name="Instance variable">LockOnState</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="368673240057888" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="688173059374677">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="259954521643475" type="System">
+                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="513576456029255" type="Lock_On_Icon">
+                                    <param id="0" name="Instance variable">LockedOn</param>
+                                    <param id="1" name="Value">&quot;Sandbag&quot;</param>
+                                </action>
+                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="584768102812870" type="Lock_On_Icon">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="564528990987123" type="Audio">
+                                    <param id="0" name="Audio file">scouter SFX</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="427824225002495" type="Lock_On_Icon">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="588293044340643">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="633180627136643" type="Lock_On_Icon">
+                            <param id="0" name="Instance variable">LockOnState</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="646654683438356" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="775870725462430">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="677320206174386" type="System">
+                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="753923630212804" type="Lock_On_Icon">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="317828034700215" type="Lock_On_Icon">
+                                    <param id="0" name="Instance variable">LockedOn</param>
+                                    <param id="1" name="Value">&quot;None&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="594444939638338" type="Lock_On_Icon">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="895304887379466">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="404133405904770" type="Player_1">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="787353431197531" type="Lock_On_Icon">
+                    <param id="0" name="Instance variable">LockOnState</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="281596580546905">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="336248517191701" type="Sandbag">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="203680782389885" type="Lock_On_Icon">
+                    <param id="0" name="Instance variable">LockOnState</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

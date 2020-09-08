@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Zoom_Event</name>
+    <events>
+        <comment>P1_Zoom_Collision</comment>
+        <variable constant="0" name="CurrentZoom" sid="665579494363678" static="0" type="number">1</variable>
+        <variable constant="0" name="Target" sid="556028591505521" static="0" type="number">1</variable>
+        <comment>CurrentZoom is less then target</comment>
+        <event-block sid="490383328034830">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="823171621194254" type="System">
+                    <param id="0" name="Variable">CurrentZoom</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">Target</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>Adds to current Zoom</comment>
+                <event-block sid="797139347528236">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="972869269244965" type="System">
+                            <param id="0" name="Interval (seconds)">0.01</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="289533969865675" type="System">
+                            <param id="0" name="Variable">CurrentZoom</param>
+                            <param id="1" name="Value">0.01</param>
+                        </action>
+                        <action id="-20" name="Set layout scale" sid="582320156339615" type="System">
+                            <param id="0" name="Scale">CurrentZoom</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>CurrentZoom is Greater then target</comment>
+        <event-block sid="446255872409269">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="799894614455603" type="System">
+                    <param id="0" name="Variable">CurrentZoom</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">Target</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>Subtracts to current scale</comment>
+                <event-block sid="679616320242815">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="875969880856088" type="System">
+                            <param id="0" name="Interval (seconds)">0.01</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="729815007946882" type="System">
+                            <param id="0" name="Variable">CurrentZoom</param>
+                            <param id="1" name="Value">0.01</param>
+                        </action>
+                        <action id="-20" name="Set layout scale" sid="788361696829778" type="System">
+                            <param id="0" name="Scale">CurrentZoom</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>When the Zoom Event is Triggered</comment>
+        <event-block sid="357246260378840">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="448354218545167" type="Player_1">
+                    <param id="0" name="Object">ZoomTrigger</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="726681066855351" type="System">
+                    <param id="0" name="Variable">Target</param>
+                    <param id="1" name="Value">ZoomTrigger.ZoomTrigger</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="749317051708353">
+            <conditions>
+                <condition id="-22" name="Else" sid="840711050209564" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="157399187950715" type="System">
+                    <param id="0" name="Variable">Target</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>When the Zoom Event is Triggered</comment>
+        <event-block sid="636370811692254">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="505840318352106" type="Player_1_Array">
+                    <param id="0" name="Instance variable">P1_Actions</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Super_1&quot;</param>
+                </condition>
+                <condition id="-7" inverted="1" name="Compare instance variable" sid="192953327854410" type="Player_1_Array">
+                    <param id="0" name="Instance variable">P1_Actions</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Super_2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="365111890118185" type="System">
+                    <param id="0" name="Variable">Target</param>
+                    <param id="1" name="Value">ZoomTrigger.ZoomTrigger</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -3,7 +3,6 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>P1_Ki_Chargeing_Event</name>
     <events>
-        <variable constant="0" name="P1_Super_Meter" sid="136931090666157" static="0" type="number">0</variable>
         <comment>P1_KiBar_Event:the main events for the player 1 Ki</comment>
         <variable constant="0" name="P1_Ki_1" sid="350845894638391" static="0" type="number">0</variable>
         <comment>P1_KiBar_Max:the Max Ki event for player 1</comment>
@@ -52,6 +51,113 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="605958414297052">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="801783477409997" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Stop" sid="524487336885406" type="Audio">
+                                    <param id="0" name="Tag">&quot;Charge&quot;</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="797417008206043" type="P1_Aura">
+                                    <param id="0" name="Animation">&quot;Charge_End&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="280506013862743" type="Player_1">
+                                    <param id="0" name="Input">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="253490113836336" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charge_Ki</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="600792234235576" type="P1_Swoosh_Effect" />
+                                <action id="-9" name="Destroy" sid="275990801198823" type="P1_Startup_Aura" />
+                                <action id="-13" name="Set boolean" sid="401298699345600" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Charge_Ki</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="680073793956441">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="919500649537666" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="851537189974978" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Form</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="766413440158279" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="ScrollTo" id="0" name="Shake" sid="104979502366061" type="Camera">
+                                    <param id="0" name="Magnitude">1</param>
+                                    <param id="1" name="Duration">0.1</param>
+                                    <param id="2" name="Mode">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="457372893715081" type="Player_1">
+                                    <param id="0" name="Animation">&quot;Idle_&quot; &amp; Player_1.P1_Charcters</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="235410171669963" type="Audio">
+                                    <param id="0" name="Audio file">Transformation Sound Effect</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-15</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="214418392078909" type="Audio">
+                                    <param id="0" name="Audio file">aura</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="187633971302510">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="879492943903299" type="System">
+                                    <param id="0" name="Variable">P1_Ki_1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="239820068040554" type="Player_1">
+                                    <param id="0" name="Instance variable">P1_Form</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="743783968858159" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="ScrollTo" id="0" name="Shake" sid="271231400290228" type="Camera">
+                                    <param id="0" name="Magnitude">1</param>
+                                    <param id="1" name="Duration">0.1</param>
+                                    <param id="2" name="Mode">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="593956570934658" type="Player_1">
+                                    <param id="0" name="Animation">&quot;IdleSSJ1_&quot; &amp; Player_1.P1_Charcters</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="537060803337765" type="Audio">
+                                    <param id="0" name="Audio file">Transformation Sound Effect</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-15</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="449835010987646" type="Audio">
+                                    <param id="0" name="Audio file">aura</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-group>
             </sub-events>
@@ -70,6 +176,11 @@
                                 <action id="-9" name="Destroy" sid="768071032549227" type="P1_Startup_Aura" />
                                 <action id="-15" name="Set visible" sid="375376892922064" type="P1_Aura">
                                     <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action behavior="ScrollTo" id="0" name="Shake" sid="932111861892101" type="Camera">
+                                    <param id="0" name="Magnitude">1</param>
+                                    <param id="1" name="Duration">0.1</param>
+                                    <param id="2" name="Mode">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -97,8 +208,14 @@
                                 <action id="0" name="Play" sid="854477163136540" type="Audio">
                                     <param id="0" name="Audio file">ki chargeing sound</param>
                                     <param id="2" name="Loop">1</param>
-                                    <param id="3" name="Volume">-15</param>
+                                    <param id="3" name="Volume">-25</param>
                                     <param id="1" name="Tag (optional)">&quot;Charge&quot;</param>
+                                </action>
+                                <action id="0" name="Play" sid="128664726808825" type="Audio">
+                                    <param id="0" name="Audio file">aura</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-25</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -112,11 +229,7 @@
                             <actions>
                                 <action id="-10" name="Add to" sid="560307146298870" type="System">
                                     <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">0.509</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="969537951139746" type="Player_1_Array">
-                                    <param id="0" name="Instance variable">P1_Inputs</param>
-                                    <param id="1" name="Value">&quot;Chargeing&quot;</param>
+                                    <param id="1" name="Value">0.2801</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -150,7 +263,7 @@
                                                                             <param id="2" name="Value">100</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="168366098263860" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">0</param>
                                                                         </condition>
@@ -223,6 +336,9 @@
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="880053337817901" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="452166439272569" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
                                                                     </conditions>
                                                                     <actions>
                                                                         <action id="-3" name="Create object" sid="923326525899000" type="System">
@@ -242,7 +358,7 @@
                                                                             <param id="0" name="Key">16</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="236417836910493" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">0</param>
                                                                         </condition>
@@ -260,6 +376,9 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="584286693749791" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="334501499769320" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -341,7 +460,7 @@
                                                                 </event-block>
                                                             </sub-events>
                                                         </event-group>
-                                                        <event-group description="The Charging for base form while in the air" inactive="1" sid="454821361282680" title="P1_Base Charging_Fly_PC">
+                                                        <event-group description="The Charging for base form while in the air" sid="454821361282680" title="P1_Base Charging_Fly_PC">
                                                             <sub-events>
                                                                 <event-block sid="368192662033145">
                                                                     <conditions>
@@ -355,7 +474,7 @@
                                                                             <param id="2" name="Value">100</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="810076699263978" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">0</param>
                                                                         </condition>
@@ -371,6 +490,15 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="631553694900573" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="493879462746188" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="336800659403615" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="102614257202803" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -416,6 +544,18 @@
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="884146764546776" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
                                                                         </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="682667814582302" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="359764158053708" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="993639377907613" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="464187567667795" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
                                                                     </conditions>
                                                                     <actions>
                                                                         <action id="-3" name="Create object" sid="973437152167307" type="System">
@@ -435,7 +575,7 @@
                                                                             <param id="0" name="Key">16</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="116402546517594" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">0</param>
                                                                         </condition>
@@ -450,6 +590,18 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="205689982010461" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="470918000522218" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="584766476882363" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="330355250155953" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="574182873328156" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -548,7 +700,7 @@
                                                                             <param id="2" name="Value">100</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="215926665837642" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">1</param>
                                                                         </condition>
@@ -615,6 +767,9 @@
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="338343379345611" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="615942096748070" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
                                                                     </conditions>
                                                                     <actions>
                                                                         <action id="-3" name="Create object" sid="207960436116526" type="System">
@@ -634,7 +789,7 @@
                                                                             <param id="0" name="Key">16</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="728332068109605" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">1</param>
                                                                         </condition>
@@ -652,6 +807,9 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="862858639463839" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="205915100265773" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -789,7 +947,7 @@
                                                                 </event-block>
                                                             </sub-events>
                                                         </event-group>
-                                                        <event-group description="The Charging for Super Sayian form while in the air" inactive="1" sid="282417626672671" title="P1_SSJ1 Charging_Fly_PC">
+                                                        <event-group description="The Charging for Super Sayian form while in the air" sid="282417626672671" title="P1_SSJ1 Charging_Fly_PC">
                                                             <sub-events>
                                                                 <event-block sid="108935826225442">
                                                                     <conditions>
@@ -803,7 +961,7 @@
                                                                             <param id="2" name="Value">100</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="637249099437507" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">1</param>
                                                                         </condition>
@@ -819,6 +977,15 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="876041014765881" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="859405602334866" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="889066757644578" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="533773569404166" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -864,6 +1031,18 @@
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="476250034368833" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
                                                                         </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="342946413408332" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="875580365683712" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="598318053434686" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="480883088288094" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
                                                                     </conditions>
                                                                     <actions>
                                                                         <action id="-3" name="Create object" sid="634121674782745" type="System">
@@ -883,7 +1062,7 @@
                                                                             <param id="0" name="Key">16</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="515971967857432" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">1</param>
                                                                         </condition>
@@ -898,6 +1077,18 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="120026931895786" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="510846675867331" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="142065814513619" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="578113576607513" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="135736285060859" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -1004,7 +1195,7 @@
                                                                             <param id="2" name="Value">100</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="975824424889482" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">0</param>
                                                                         </condition>
@@ -1085,6 +1276,9 @@
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="860134696642236" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="298023669706395" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
                                                                     </conditions>
                                                                     <actions>
                                                                         <action id="-3" name="Create object" sid="545098614185760" type="System">
@@ -1101,7 +1295,7 @@
                                                                             <param id="0" name="Object">Charge_Button</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="643833297306448" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">0</param>
                                                                         </condition>
@@ -1121,6 +1315,9 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="435103040030399" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="688411225603103" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -1207,7 +1404,7 @@
                                                                             <param id="2" name="Value">100</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="850000345776339" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">0</param>
                                                                         </condition>
@@ -1223,6 +1420,15 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="834932127240395" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="328111011453329" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="303077751737747" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="522886693880481" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -1271,6 +1477,18 @@
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="359607826748022" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
                                                                         </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="793338522224241" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="450264934071941" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="868190637514663" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="249182158044509" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
                                                                     </conditions>
                                                                     <actions>
                                                                         <action id="-3" name="Create object" sid="223437292894809" type="System">
@@ -1287,7 +1505,7 @@
                                                                             <param id="0" name="Object">Charge_Button</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="214883154072484" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">0</param>
                                                                         </condition>
@@ -1301,6 +1519,18 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="957322777925865" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="982126075214978" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="668758112231213" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="862869096472792" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="669972443824931" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -1397,7 +1627,7 @@
                                                                             <param id="2" name="Value">100</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="704815439071117" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">1</param>
                                                                         </condition>
@@ -1478,6 +1708,9 @@
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="683541416278427" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="788844051392928" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
                                                                     </conditions>
                                                                     <actions>
                                                                         <action id="-3" name="Create object" sid="861170977441163" type="System">
@@ -1494,7 +1727,7 @@
                                                                             <param id="0" name="Object">Charge_Button</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="376926787231116" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">1</param>
                                                                         </condition>
@@ -1514,6 +1747,9 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="290960698561549" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="501239362443534" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -1600,7 +1836,7 @@
                                                                             <param id="2" name="Value">100</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="952757151206902" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">1</param>
                                                                         </condition>
@@ -1616,6 +1852,15 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="927145259752643" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="785806414281453" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="689236642054421" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="215367297448466" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -1663,6 +1908,18 @@
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="561132843124458" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
                                                                         </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="107757586979712" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="247163485190087" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="166970255070661" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="989336034171984" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
+                                                                        </condition>
                                                                     </conditions>
                                                                     <actions>
                                                                         <action id="-3" name="Create object" sid="409527342174525" type="System">
@@ -1679,7 +1936,7 @@
                                                                             <param id="0" name="Object">Charge_Button</param>
                                                                         </condition>
                                                                         <condition id="-7" name="Compare instance variable" sid="438535790431582" type="Player_1">
-                                                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                                            <param id="0" name="Instance variable">P1_Form</param>
                                                                             <param id="1" name="Comparison">0</param>
                                                                             <param id="2" name="Value">1</param>
                                                                         </condition>
@@ -1693,6 +1950,18 @@
                                                                         </condition>
                                                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="896532011616636" type="Player_1">
                                                                             <param id="0" name="Instance variable">P1_Transform</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="506990324640566" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="846151765738897" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Dead</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="198648658093347" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Knockout_State</param>
+                                                                        </condition>
+                                                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="205343093192941" type="Player_1">
+                                                                            <param id="0" name="Instance variable">P1_Guard_State</param>
                                                                         </condition>
                                                                     </conditions>
                                                                     <actions>
@@ -1783,649 +2052,6 @@
                 </event-group>
             </sub-events>
         </event-group>
-        <event-group description="this event is for when the playerbar is full and the super meter gets add up until it gose to max" sid="131144658595371" title="P1_Super_Meter">
-            <sub-events>
-                <event-block sid="381105327394447">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="230212543103617" type="System">
-                            <param id="0" name="Variable">P1_Super_Meter</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="269992490794681" type="System">
-                            <param id="0" name="Variable">P1_Super_Meter</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="128303377074163">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="871945157199756" type="System">
-                            <param id="0" name="Variable">P1_Super_Meter</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">6</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="269013291046991" type="System">
-                            <param id="0" name="Variable">P1_Super_Meter</param>
-                            <param id="1" name="Value">6</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-group description="the amount of numbers for the Super meter" sid="381823219475551" title="P1_Super_Meter_Numbers">
-                    <sub-events>
-                        <event-block sid="226414314619585">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="162225851374048" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="171144153163505" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="668679440641823" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_0&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="945963759979583">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="511175964710269" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="915325163464232" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="951550540729656" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_1&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="836950697205845">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="883058272225545" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">2</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="194998507213008" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="250783631293852" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_2&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="508056162249912">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="709467544416825" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">3</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="428383721354028" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="310837791613921" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_3&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="386118866917271">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="853474653775707" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">4</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="580986914154559" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="162306922904771" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_4&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="886946752956320">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="858078623015354" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">5</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="627021279762503" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="213881053331411" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_5&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="182336984083181">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="115062776462309" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">6</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="630123367605575" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="915845730453672" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_MAX&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-                <event-group description="adding up the super bar for the player in game" sid="625547219623575" title="P1_Adding_Super_Bar">
-                    <sub-events>
-                        <event-block sid="790699742144220">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="824759465145015" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">100</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="617083402785960" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="227735128904767" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_0&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="498206285576058" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Add to" sid="412806308230358" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="173462301461853" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="0" name="Play" sid="549714491758043" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="105352092618405" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="534259208115044">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="810637892056930" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">100</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="887318738360984" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="516483941217916" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_1&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="860807143916902" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Add to" sid="390445738289033" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="144822537776144" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="0" name="Play" sid="358781995111465" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="549588634228972" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="494008779571910">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="582607373750966" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">100</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="501284206401922" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">2</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="460940213944832" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_2&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="690343775508037" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Add to" sid="999781237576696" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="370788141405401" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="0" name="Play" sid="522558717405860" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="268242628092115" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="514289076973751">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="911079600951178" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">100</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="439298676856399" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">3</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="253401867133013" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_3&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="248100976916442" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Add to" sid="608472982062842" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="794755896796375" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="0" name="Play" sid="553347915161708" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="248410808617269" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="658587878538217">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="288750045967295" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">100</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="538222194701300" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">4</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="718829186438440" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_4&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="285894730331957" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Add to" sid="815013891468986" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="859599729304018" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="0" name="Play" sid="482855428806655" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="502976950438481" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="663107601910151">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="280592976412676" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">100</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="326917242876115" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">5</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="754837273914939" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_5&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="889682968831466" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Add to" sid="244279354390651" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="319041442920791" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="0" name="Play" sid="497615051898279" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="477969152953652" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-                <event-group description="Subtracting the super bar for the player in game" sid="451962588366900" title="P1_Subtracting_Super_Bar">
-                    <sub-events>
-                        <event-block sid="787539227236689">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="726303704948947" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-14" inverted="1" name="Compare variable" sid="669109128881305" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="456547625509425" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="314999955763085" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_1&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="201491740104162" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-11" name="Subtract from" sid="669716138509458" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="245262217098733" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">50</param>
-                                </action>
-                                <action id="0" name="Play" sid="830363151498454" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="118282429622596" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="319208825388247">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="839085698993430" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="463835762687610" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">2</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="901047024620898" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_2&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="108413974333545" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-11" name="Subtract from" sid="290239230401230" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="533921406573476" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">50</param>
-                                </action>
-                                <action id="0" name="Play" sid="111692467511485" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="989963171321121" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="672335322906248">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="984822002734251" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="844411588125711" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">3</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="385726254077594" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_3&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="816939623793735" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-11" name="Subtract from" sid="868427761856736" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="759988130210922" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">50</param>
-                                </action>
-                                <action id="0" name="Play" sid="864464877944007" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="589836879817363" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="836813970545526">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="127795068614503" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="597088044429029" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">4</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="532172975742679" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_4&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="338924330014576" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-11" name="Subtract from" sid="104552388453272" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="111745959433640" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">50</param>
-                                </action>
-                                <action id="0" name="Play" sid="459177967795397" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="285956226510824" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="843867133619590">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="706594842917797" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="426699841376774" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">5</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="619410194253577" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_5&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="210053275592035" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-11" name="Subtract from" sid="263524534578912" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="991384239588488" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">50</param>
-                                </action>
-                                <action id="0" name="Play" sid="832586468279518" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="320548311638223" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="130977154514331">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="696209828999765" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Comparison">3</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                                <condition id="-14" name="Compare variable" sid="703023680381288" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">6</param>
-                                </condition>
-                                <condition id="2" name="Is playing" sid="317907948218853" type="P1_Super_Meter">
-                                    <param id="0" name="Animation">&quot;Power_MAX&quot;</param>
-                                </condition>
-                                <condition id="-4" name="Trigger once while true" sid="229655647131784" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-11" name="Subtract from" sid="188265687407632" type="System">
-                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="318080294935585" type="System">
-                                    <param id="0" name="Variable">P1_Ki_1</param>
-                                    <param id="1" name="Value">50</param>
-                                </action>
-                                <action id="0" name="Play" sid="658798860137635" type="Audio">
-                                    <param id="0" name="Audio file">scouter SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Play" sid="845589403922395" type="Audio">
-                                    <param id="0" name="Audio file">scouter power Level SFX</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">-8</param>
-                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-            </sub-events>
-        </event-group>
         <event-block sid="117752578313778">
             <conditions>
                 <condition id="-8" name="Is boolean instance variable set" sid="671828323235405" type="Player_1">
@@ -2446,10 +2072,6 @@
                 <action behavior="Pin" id="0" name="Pin to object" sid="212388223535177" type="P1_Swoosh_Effect">
                     <param id="0" name="Pin to">Player_1</param>
                     <param id="1" name="Mode">1</param>
-                </action>
-                <action id="-10" name="Set value" sid="935572754261528" type="Player_1_Array">
-                    <param id="0" name="Instance variable">P1_Inputs</param>
-                    <param id="1" name="Value">&quot;Charge&quot;</param>
                 </action>
             </actions>
         </event-block>

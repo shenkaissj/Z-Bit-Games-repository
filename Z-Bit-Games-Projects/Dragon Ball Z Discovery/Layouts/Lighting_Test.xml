@@ -111,7 +111,7 @@
                     <instance-variables>
                         <Player>0</Player>
                         <Dialog>false</Dialog>
-                        <P1_SSJ1>0</P1_SSJ1>
+                        <P1_Form>0</P1_Form>
                         <P1_kills>0</P1_kills>
                         <P1_attack>false</P1_attack>
                         <P1_Transform>false</P1_Transform>
@@ -153,6 +153,7 @@
                         <P1_Damaged>0</P1_Damaged>
                         <P1_Damage_State>0</P1_Damage_State>
                         <P1_Dead>false</P1_Dead>
+                        <Charcter>false</Charcter>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Timer" />
@@ -181,19 +182,26 @@
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
-                        <behavior-instance type="Swiming_Direction">
+                        <behavior-instance type="ScrollTo">
                             <properties>
-                                <max-speed>200</max-speed>
-                                <acceleration>600</acceleration>
-                                <deceleration>500</deceleration>
-                                <directions>8 directions</directions>
-                                <set-angle>360 degree (smooth)</set-angle>
-                                <default-controls>Yes</default-controls>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
-                        <behavior-instance type="ScrollTo">
+                        <behavior-instance type="LineOfSight">
                             <properties>
+                                <obstacles>Solids</obstacles>
+                                <range>10000</range>
+                                <cone-of-view>360</cone-of-view>
+                                <use-collision-cells>Yes</use-collision-cells>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>400</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -211,8 +219,8 @@
                         <x>119.80342865</x>
                         <y>33.496429443</y>
                         <z>0</z>
-                        <width>19</width>
-                        <height>21</height>
+                        <width>30</width>
+                        <height>30</height>
                         <depth>0</depth>
                         <hotspotX>0.526315808</hotspotX>
                         <hotspotY>0.523809552</hotspotY>
@@ -459,6 +467,15 @@
                     <instance-variables>
                         <InitialWidth>68.969</InitialWidth>
                     </instance-variables>
+                    <effect-instances>
+                        <effect-instance type="AdjustHSL">
+                            <parameters>
+                                <hue>0</hue>
+                                <luminosity>1</luminosity>
+                                <saturation>1</saturation>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -722,11 +739,11 @@
                         <x>180.081268311</x>
                         <y>160.162185669</y>
                         <z>0</z>
-                        <width>6.196773529</width>
-                        <height>6.196773529</height>
+                        <width>5.034878731</width>
+                        <height>5.228527546</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.518518507</hotspotY>
                         <angle>0</angle>
                         <opacity>0.600000024</opacity>
                     </world>
@@ -759,11 +776,11 @@
                         <x>220.081268311</x>
                         <y>160.162185669</y>
                         <z>0</z>
-                        <width>6.196799755</width>
-                        <height>6.196799755</height>
+                        <width>5.034899712</width>
+                        <height>5.228549957</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.518518507</hotspotY>
                         <angle>0</angle>
                         <opacity>0.600000024</opacity>
                     </world>
@@ -796,11 +813,11 @@
                         <x>260.081268311</x>
                         <y>160.162185669</y>
                         <z>0</z>
-                        <width>6.196799755</width>
-                        <height>6.196799755</height>
+                        <width>5.034899712</width>
+                        <height>5.228549957</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.518518507</hotspotY>
                         <angle>0</angle>
                         <opacity>0.600000024</opacity>
                     </world>

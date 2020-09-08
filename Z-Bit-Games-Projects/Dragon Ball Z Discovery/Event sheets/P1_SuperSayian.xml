@@ -18,7 +18,7 @@
                                                     <param id="0" name="Key">66</param>
                                                 </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="642273985550904" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                    <param id="0" name="Instance variable">P1_Form</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">0</param>
                                                 </condition>
@@ -32,16 +32,6 @@
                                                     <param id="0" name="Variable">P1_Ki_1</param>
                                                     <param id="1" name="Comparison">5</param>
                                                     <param id="2" name="Value">10</param>
-                                                </condition>
-                                                <condition id="-14" name="Compare variable" sid="879749569878352" type="System">
-                                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                                    <param id="1" name="Comparison">5</param>
-                                                    <param id="2" name="Value">1</param>
-                                                </condition>
-                                                <condition id="-14" inverted="1" name="Compare variable" sid="500496954513754" type="System">
-                                                    <param id="0" name="Variable">P1_Super_Meter</param>
-                                                    <param id="1" name="Comparison">3</param>
-                                                    <param id="2" name="Value">0</param>
                                                 </condition>
                                                 <condition id="2" inverted="1" name="Is playing" sid="869431900890940" type="Player_1">
                                                     <param id="0" name="Animation">&quot;Baseform_&quot; &amp; Player_1.P1_Charcters</param>
@@ -64,13 +54,19 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action id="-3" name="Create object" sid="536587169567384" type="System">
+                                                    <param id="0" name="Object to create">P1_Startup_Aura</param>
+                                                    <param id="1" name="Layer">9</param>
+                                                    <param id="2" name="X">Player_1.X</param>
+                                                    <param id="3" name="Y">Player_1.Y</param>
+                                                </action>
+                                                <action id="4" name="Set animation" sid="128081588635677" type="P1_Startup_Aura">
+                                                    <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
                                                 <action id="-13" name="Set boolean" sid="418099771664199" type="Player_1">
                                                     <param id="0" name="Instance variable">P1_Transform</param>
                                                     <param id="1" name="Value">1</param>
-                                                </action>
-                                                <action id="4" name="Set animation" sid="226397579993172" type="Player_1">
-                                                    <param id="0" name="Animation">&quot;SSJ1_Transformation_1_&quot; &amp; Player_1.P1_Charcters</param>
-                                                    <param id="1" name="From">1</param>
                                                 </action>
                                                 <action behavior="Platform" id="0" name="Set ignoring input" sid="934220924609812" type="Player_1">
                                                     <param id="0" name="Input">1</param>
@@ -79,12 +75,6 @@
                                                     <param id="0" name="Visibility">1</param>
                                                 </action>
                                                 <action behavior="Fade" id="1" name="Start fade" sid="544482367712178" type="Super_Backgound" />
-                                                <action id="-3" name="Create object" sid="536587169567384" type="System">
-                                                    <param id="0" name="Object to create">P1_Startup_Aura</param>
-                                                    <param id="1" name="Layer">9</param>
-                                                    <param id="2" name="X">Player_1.X</param>
-                                                    <param id="3" name="Y">Player_1.Y</param>
-                                                </action>
                                                 <action id="-16" name="Wait" sid="883415123238330" type="System">
                                                     <param id="0" name="Seconds">0.2</param>
                                                 </action>
@@ -94,8 +84,8 @@
                                                     <param id="3" name="Volume">-15</param>
                                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                                 </action>
-                                                <action id="4" name="Set animation" sid="248596834824550" type="Player_1">
-                                                    <param id="0" name="Animation">&quot;SSJ1_Transformation_2_&quot; &amp; Player_1.P1_Charcters</param>
+                                                <action id="4" name="Set animation" sid="226397579993172" type="Player_1">
+                                                    <param id="0" name="Animation">&quot;SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                                 <action id="-15" name="Set visible" sid="581226141580941" type="P1_Aura">
@@ -105,12 +95,12 @@
                                                     <param id="0" name="Animation">&quot;Charge_Loop&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
+                                                <action id="-10" name="Set value" sid="851974039380273" type="Player_1">
+                                                    <param id="0" name="Instance variable">P1_Form</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="658333173718416" type="System">
                                                     <param id="0" name="Seconds">2.3</param>
-                                                </action>
-                                                <action id="-10" name="Set value" sid="851974039380273" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
-                                                    <param id="1" name="Value">1</param>
                                                 </action>
                                                 <action id="-13" name="Set boolean" sid="998494659405102" type="Player_1">
                                                     <param id="0" name="Instance variable">P1_Transform</param>
@@ -145,7 +135,7 @@
                                                     <param id="0" name="Instance variable">P1_Guard_State</param>
                                                 </condition>
                                                 <condition id="-7" name="Compare instance variable" sid="844658368198782" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                    <param id="0" name="Instance variable">P1_Form</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
@@ -156,7 +146,7 @@
                                                     <param id="0" name="Instance variable">P1_Charge_Ki</param>
                                                 </condition>
                                                 <condition id="2" inverted="1" name="Is playing" sid="255083778039377" type="Player_1">
-                                                    <param id="0" name="Animation">&quot;SSJ1_Transformation_1_&quot; &amp; Player_1.P1_Charcters</param>
+                                                    <param id="0" name="Animation">&quot;SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
                                                 </condition>
                                                 <condition id="-7" inverted="1" name="Compare instance variable" sid="782848844373577" type="Player_1">
                                                     <param id="0" name="Instance variable">P1_Charcters</param>
@@ -180,7 +170,7 @@
                                                     <param id="0" name="Instance variable">P1_Transform</param>
                                                     <param id="1" name="Value">1</param>
                                                 </action>
-                                                <action id="4" name="Set animation" sid="173447183127307" type="Player_1">
+                                                <action id="4" name="Set animation" sid="996216345675495" type="Player_1">
                                                     <param id="0" name="Animation">&quot;Baseform_&quot; &amp; Player_1.P1_Charcters</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
@@ -201,7 +191,7 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                                 <action id="-10" name="Set value" sid="543412034938083" type="Player_1">
-                                                    <param id="0" name="Instance variable">P1_SSJ1</param>
+                                                    <param id="0" name="Instance variable">P1_Form</param>
                                                     <param id="1" name="Value">0</param>
                                                 </action>
                                                 <action behavior="Platform" id="0" name="Set ignoring input" sid="650093964082764" type="Player_1">
@@ -237,7 +227,7 @@
                                             <param id="0" name="Object">SSJ_Button</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="692215267542620" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                            <param id="0" name="Instance variable">P1_Form</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">0</param>
                                         </condition>
@@ -252,18 +242,8 @@
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">10</param>
                                         </condition>
-                                        <condition id="-14" name="Compare variable" sid="916741447638435" type="System">
-                                            <param id="0" name="Variable">P1_Super_Meter</param>
-                                            <param id="1" name="Comparison">5</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                        <condition id="-14" inverted="1" name="Compare variable" sid="639358994883178" type="System">
-                                            <param id="0" name="Variable">P1_Super_Meter</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                        <condition id="2" inverted="1" name="Is playing" sid="697733926293453" type="Player_1">
-                                            <param id="0" name="Animation">&quot;Baseform_&quot; &amp; Player_1.P1_Charcters</param>
+                                        <condition id="2" inverted="1" name="Is playing" sid="625974786224197" type="Player_1">
+                                            <param id="0" name="Animation">&quot;SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
                                         </condition>
                                         <condition id="-7" inverted="1" name="Compare instance variable" sid="427777842647802" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Charcters</param>
@@ -283,27 +263,31 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-13" name="Set boolean" sid="324798820225326" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_Transform</param>
-                                            <param id="1" name="Value">1</param>
+                                        <action id="-10" name="Set value" sid="643288902814914" type="Player_1_Array">
+                                            <param id="0" name="Instance variable">P1_Actions</param>
+                                            <param id="1" name="Value">&quot;SSJ&quot;</param>
                                         </action>
-                                        <action id="4" name="Set animation" sid="717065922424207" type="Player_1">
-                                            <param id="0" name="Animation">&quot;SSJ1_Transformation_1_&quot; &amp; Player_1.P1_Charcters</param>
-                                            <param id="1" name="From">1</param>
-                                        </action>
-                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="997846797070287" type="Player_1">
-                                            <param id="0" name="Input">1</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="245078188514417" type="Super_Backgound">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                        <action behavior="Fade" id="1" name="Start fade" sid="239873404145873" type="Super_Backgound" />
-                                        <action id="-3" name="Create object" sid="833024540519556" type="System">
+                                        <action id="-3" name="Create object" sid="588332348909088" type="System">
                                             <param id="0" name="Object to create">P1_Startup_Aura</param>
                                             <param id="1" name="Layer">9</param>
                                             <param id="2" name="X">Player_1.X</param>
                                             <param id="3" name="Y">Player_1.Y</param>
                                         </action>
+                                        <action id="4" name="Set animation" sid="173018112457123" type="P1_Startup_Aura">
+                                            <param id="0" name="Animation">&quot;Charge_Start&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="324798820225326" type="Player_1">
+                                            <param id="0" name="Instance variable">P1_Transform</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Platform" id="0" name="Set ignoring input" sid="997846797070287" type="Player_1">
+                                            <param id="0" name="Input">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="610497501369680" type="Super_Backgound">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action behavior="Fade" id="1" name="Start fade" sid="448725941808632" type="Super_Backgound" />
                                         <action id="-16" name="Wait" sid="909062192491194" type="System">
                                             <param id="0" name="Seconds">0.2</param>
                                         </action>
@@ -313,8 +297,8 @@
                                             <param id="3" name="Volume">-15</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                         </action>
-                                        <action id="4" name="Set animation" sid="560375259295762" type="Player_1">
-                                            <param id="0" name="Animation">&quot;SSJ1_Transformation_2_&quot; &amp; Player_1.P1_Charcters</param>
+                                        <action id="4" name="Set animation" sid="294508428860717" type="Player_1">
+                                            <param id="0" name="Animation">&quot;SSJ1_&quot; &amp; Player_1.P1_Charcters</param>
                                             <param id="1" name="From">1</param>
                                         </action>
                                         <action id="4" name="Set animation" sid="560311852434591" type="P1_Aura">
@@ -328,7 +312,7 @@
                                             <param id="0" name="Seconds">2.3</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="636019189881312" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                            <param id="0" name="Instance variable">P1_Form</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
                                         <action id="-13" name="Set boolean" sid="726502696531574" type="Player_1">
@@ -349,6 +333,10 @@
                                             <param id="0" name="Animation">&quot;Charge_End&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
+                                        <action id="-10" name="Set value" sid="772613411074243" type="Player_1_Array">
+                                            <param id="0" name="Instance variable">P1_Actions</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -364,7 +352,7 @@
                                             <param id="0" name="Instance variable">P1_Guard_State</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="523930951782044" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                            <param id="0" name="Instance variable">P1_Form</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
@@ -395,6 +383,10 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-10" name="Set value" sid="471034224839087" type="Player_1_Array">
+                                            <param id="0" name="Instance variable">P1_Actions</param>
+                                            <param id="1" name="Value">&quot;SSJ&quot;</param>
+                                        </action>
                                         <action id="-13" name="Set boolean" sid="122429750250777" type="Player_1">
                                             <param id="0" name="Instance variable">P1_Transform</param>
                                             <param id="1" name="Value">1</param>
@@ -420,7 +412,7 @@
                                             <param id="1" name="From">1</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="310064434593862" type="Player_1">
-                                            <param id="0" name="Instance variable">P1_SSJ1</param>
+                                            <param id="0" name="Instance variable">P1_Form</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
                                         <action behavior="Platform" id="0" name="Set ignoring input" sid="451386265324781" type="Player_1">
@@ -432,6 +424,10 @@
                                         </action>
                                         <action behavior="Platform" id="1" name="Set max speed" sid="449179128647816" type="Player_1">
                                             <param id="0" name="Max Speed">64</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="503407631839595" type="Player_1_Array">
+                                            <param id="0" name="Instance variable">P1_Actions</param>
+                                            <param id="1" name="Value">&quot;None&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>

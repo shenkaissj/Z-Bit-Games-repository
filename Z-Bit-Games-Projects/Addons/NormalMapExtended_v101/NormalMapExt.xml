@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<c2effect>
+	<!-- About -->
+	<id>NormalMapExt</id>			<!-- A unique ID.  Change this!  Never change the ID after release - change the name instead. -->
+	<name>NormalMap Extended</name>		<!-- The displayed name of the effect -->
+	<category>Color</category>	<!-- Any category can be used, but try to use one of: Color, Blend, or Distortion -->
+	<description>Normal Map for 2D games</description>
+	<author>Donelwero and Matriax</author>
+	
+	<!-- Settings -->
+	
+	<!-- Extend the bounding box for effect processing by a number of pixels to show the edges
+		 of effects which go beyond the object edges, e.g. blur and warp.
+		 Do not set if not strictly necessay!  These options have a performance impact. -->
+	<extend-box-horizontal>0</extend-box-horizontal>
+	<extend-box-vertical>0</extend-box-vertical>
+	
+	<!-- Set to true if the background is sampled (see comments on background sampling in the .fx file) -->
+	<blends-background>true</blends-background>
+	
+	<!-- Set to true if the background is not sampled at 1:1 with the foreground (e.g. the
+		 background texture co-ordinates are modified in some way by the shader, as done
+		 by Glass and Lens) -->
+	<cross-sampling>false</cross-sampling>
+	
+	<!-- Set to true if the shader does not modify the opaque areas of the foreground. In other words
+		 any opaque pixels in the original image are output in the same position and still fully opaque.
+		 This is used to optimise the front-to-back renderer's depth pass, since it can still write depth
+		 and skip overdraw for any objects using only shaders which preserve opaqueness. -->
+	<preserves-opaqueness>false</preserves-opaqueness>
+	
+	<!-- Set to true if the effect changes over time, e.g. Noise or Warp effects. -->
+	<animated>false</animated>
+	
+
+	
+	<!-- Parameters -->
+	<parameters>
+		<!-- An example parameter, with the following tags:
+			name: the displayed name of the parameter
+			description: appears at the bottom of the properties bar when selected
+			type: either float or percent.  Percent is just a float but displayed x 100.
+			initial: initial value of the parameter
+			uniform: name of the corresponding uniform variable in the .fx file.
+			
+			You can add as many parameters as you like.
+		-->
+		  
+		  
+		  
+<!-- LIGHT 1 --> 	
+		<param>
+			<name>Light X Position</name>
+			<description>Light Position (X)</description>
+			<type>float</type>
+			<initial>0.0</initial>
+			<uniform>posX</uniform>
+		</param>
+    <param>
+      <name>Light YPosition</name>
+      <description>Light Position (Y)</description>
+      <type>float</type>
+      <initial>0.0</initial>
+      <uniform>posY</uniform>
+    </param>
+    <param>
+      <name>Light ZPosition</name>
+      <description>Light Position (Z)</description>
+      <type>float</type>
+      <initial>0.02</initial>
+      <uniform>posZ</uniform>
+    </param>
+    <param>
+      <name>Color (Red)</name>
+      <description>Color (Red) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>colorR</uniform>
+    </param>
+    <param>
+      <name>Color (Green)</name>
+      <description>Color (Green) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>colorG</uniform>
+    </param>
+    <param>
+      <name>Color (Blue)</name>
+      <description>Color (Blue) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>colorB</uniform>
+    </param>
+    <param>
+      <name>Light Luminosity</name>
+      <description>Luminosity) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>lightLum</uniform>
+    </param>
+     <param>      
+        <name>Ambient (Red)</name>
+      <description>Ambient (Red) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientR</uniform>
+    </param>
+    <param>
+      <name>Ambient (Green)</name>
+      <description>Ambient (Green) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientG</uniform>
+    </param>
+    <param>
+      <name>Ambient (Blue)</name>
+      <description>Ambient (Blue) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientB</uniform>
+    </param>
+    <param>
+      <name>Ambient Luminosity</name>
+      <description>Luminosity) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientLum</uniform>
+    </param>  
+    <param>      
+        <name>falloffV1</name>
+      <description>falloffV1 - Light size/intensity in the middle ¿? Lower=Bright</description>
+      <type>float</type>
+      <initial>0.1</initial>
+      <uniform>falloffV1</uniform>
+    </param>
+    <param>
+      <name>falloffV2</name>
+      <description>falloffV2 - Entire luminosity of the light ¿? Greater=Darker</description>
+      <type>float</type>
+      <initial>5</initial>
+      <uniform>falloffV2</uniform>
+    </param>
+    <param>
+      <name>falloffV3</name>
+      <description>falloffV3 - Light Distance ¿? Greater=Darker </description>
+      <type>float</type>
+      <initial>2</initial>
+      <uniform>falloffV3</uniform>
+    </param>
+
+
+
+
+    
+    <!-- LIGHT 2 --> 
+     <param>
+      <name>------ Light 2 State 0/1</name>
+      <description>Light Position (Y)</description>
+      <type>float</type>
+      <initial>0</initial>
+      <uniform>light2v</uniform>
+    </param>    
+		<param>
+			<name>Light 2 X Position</name>
+			<description>Light 2 Position (X)</description>
+			<type>float</type>
+			<initial>0.0</initial>
+			<uniform>posXb</uniform>
+		</param>
+    <param>
+      <name>Light 2 Y Position</name>
+      <description>Light 2 Position (Y)</description>
+      <type>float</type>
+      <initial>0.0</initial>
+      <uniform>posYb</uniform>
+    </param>
+    <param>
+      <name>Light 2 Z Position</name>
+      <description>Light 2 Position (Z)</description>
+      <type>float</type>
+      <initial>0.02</initial>
+      <uniform>posZb</uniform>
+    </param>   
+    <param>
+      <name>Light2 Color (Red)</name>
+      <description>Color (Red) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>colorRb</uniform>
+    </param>
+    <param>
+      <name>Light2 Color (Green)</name>
+      <description>Color (Green) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>colorGb</uniform>
+    </param>
+    <param>
+      <name>Light2 Color (Blue)</name>
+      <description>Color (Blue) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>colorBb</uniform>
+    </param>
+    <param>
+      <name>Light2 Luminosity</name>
+      <description>Luminosity) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>lightLumb</uniform>
+    </param>
+     <param>      
+        <name>Light2 Ambient (Red)</name>
+      <description>Ambient (Red) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientRb</uniform>
+    </param>
+    <param>
+      <name>Light2 Ambient (Green)</name>
+      <description>Ambient (Green) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientGb</uniform>
+    </param>
+    <param>
+      <name>Light2 Ambient (Blue)</name>
+      <description>Ambient (Blue) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientBb</uniform>
+    </param>
+    <param>
+      <name>Light2 Ambient Luminosity</name>
+      <description>Luminosity) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientLumb</uniform>
+    </param>  
+    <param>      
+        <name>Light2 falloffV1</name>
+      <description>falloffV1 - Light size/intensity in the middle ¿? Lower=Bright</description>
+      <type>float</type>
+      <initial>0.1</initial>
+      <uniform>falloffV1b</uniform>
+    </param>
+    <param>
+      <name>Light2 falloffV2</name>
+      <description>falloffV2 - Entire luminosity of the light ¿? Greater=Darker</description>
+      <type>float</type>
+      <initial>5</initial>
+      <uniform>falloffV2b</uniform>
+    </param>
+    <param>
+      <name>Light2 falloffV3</name>
+      <description>falloffV3 - Light Distance ¿? Greater=Darker </description>
+      <type>float</type>
+      <initial>2</initial>
+      <uniform>falloffV3b</uniform>
+    </param>    
+    
+ 
+ 
+    
+    <!-- LIGHT 3 --> 
+     <param>
+      <name>------ Light 3 State 0/1</name>
+      <description>Light Position (Y)</description>
+      <type>float</type>
+      <initial>0</initial>
+      <uniform>light3v</uniform>
+    </param>    
+		<param>
+			<name>Light 3 X Position</name>
+			<description>Light 3 Position (X)</description>
+			<type>float</type>
+			<initial>0.0</initial>
+			<uniform>posXc</uniform>
+		</param>
+    <param>
+      <name>Light 3 Y Position</name>
+      <description>Light 2 Position (Y)</description>
+      <type>float</type>
+      <initial>0.0</initial>
+      <uniform>posYc</uniform>
+    </param>
+    <param>
+      <name>Light 3 Z Position</name>
+      <description>Light 3 Position (Z)</description>
+      <type>float</type>
+      <initial>0.02</initial>
+      <uniform>posZc</uniform>
+    </param>   
+    <param>
+      <name>Light 3 Color (Red)</name>
+      <description>Color (Red) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>colorRc</uniform>
+    </param>
+    <param>
+      <name>Light 3 Color (Green)</name>
+      <description>Color (Green) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>colorGc</uniform>
+    </param>
+    <param>
+      <name>Light 3 Color (Blue)</name>
+      <description>Color (Blue) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>colorBc</uniform>
+    </param>
+    <param>
+      <name>Light 3 Luminosity</name>
+      <description>Luminosity) 0 to 1</description>
+      <type>float</type>
+      <initial>1</initial>
+      <uniform>lightLumc</uniform>
+    </param>
+     <param>      
+        <name>Light 3 Ambient (Red)</name>
+      <description>Ambient (Red) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientRc</uniform>
+    </param>
+    <param>
+      <name>Light 3 Ambient (Green)</name>
+      <description>Ambient (Green) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientGc</uniform>
+    </param>
+    <param>
+      <name>Light 3 Ambient (Blue)</name>
+      <description>Ambient (Blue) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientBc</uniform>
+    </param>
+    <param>
+      <name>Light 3 Ambient Luminosity</name>
+      <description>Luminosity) 0 to 1</description>
+      <type>float</type>
+      <initial>0.5</initial>
+      <uniform>ambientLumc</uniform>
+    </param>  
+    <param>      
+      <name>Light 3 falloffV1</name>
+      <description>falloffV1 - Light size/intensity in the middle ¿? Lower=Bright</description>
+      <type>float</type>
+      <initial>0.1</initial>
+      <uniform>falloffV1c</uniform>
+    </param>
+    <param>
+      <name>Light 3 falloffV2</name>
+      <description>falloffV2 - Entire luminosity of the light ¿? Greater=Darker</description>
+      <type>float</type>
+      <initial>5</initial>
+      <uniform>falloffV2c</uniform>
+    </param>
+    <param>
+      <name>Light 3 falloffV3</name>
+      <description>falloffV3 - Light Distance ¿? Greater=Darker </description>
+      <type>float</type>
+      <initial>2</initial>
+      <uniform>falloffV3c</uniform>
+    </param>        
+    
+
+
+    
+
+
+
+
+
+    
+    <param>
+      <name>Screen X Resolution</name>
+      <description>Screen Res (X)</description>
+      <type>float</type>
+      <initial>640</initial>
+      <uniform>windowX</uniform>
+    </param>
+    <param>
+      <name>Screen Y Resolution</name>
+      <description>Screen Res (Y)</description>
+      <type>float</type>
+      <initial>480</initial>
+      <uniform>windowY</uniform>
+    </param>
+
+		
+	</parameters>
+	
+</c2effect>
